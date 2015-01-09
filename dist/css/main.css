@@ -364,7 +364,7 @@ select {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 400;
   background-color: #fff;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
@@ -374,6 +374,43 @@ select {
   -webkit-appearance: none; }
   select::-ms-expand {
     display: none; }
+  select:focus {
+    border-color: #ccc;
+    box-shadow: 0 0 3px #c8c8c8;
+    outline: none; }
+  select:disabled {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: not-allowed; }
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="week"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  background-color: #fff;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 400;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="week"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus {
+    border-color: #ccc;
+    box-shadow: 0 0 3px #c8c8c8;
+    outline: none; }
+  input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="week"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: not-allowed; }
 
 .grid-window__container {
   max-width: 100%;

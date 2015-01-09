@@ -7,7 +7,8 @@
 // --------------------
 // a. Grid
 // b. Typography
-// c. Global
+// c. General
+// d. Forms
 //
 //
 // @copyright 2015, Loft Digital, www.weareloft.com
@@ -84,7 +85,7 @@ $partial-base-url: '../echo-base';
 
 
 //==============================================================================
-// b. Elements
+// b. General
 //==============================================================================
 
 //  Global
@@ -104,7 +105,9 @@ $partial-base-url: '../echo-base';
 // $body-font-style: $base-font-style;
 // $body-line-height: $base-line-height;
 
-
+//==============================================================================
+// c. Forms
+//==============================================================================
 
 // Select input
 //==============================================================================
@@ -129,3 +132,41 @@ $partial-base-url: '../echo-base';
 // $select-font-size: 0.8rem;
 // $select-font-weight: $font-weight-regular;
 // $select-appearance: none;
+
+// $select-border-color-focus: #ccc;
+// $select-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
+// $select-outline-focus: none;
+
+// $select-background-color-disabled: #f1f1f1,
+// $select-color-disabled: #333,
+// $select-cursor-disabled: not-allowed,
+
+// Input
+//==============================================================================
+
+// $input-text-display: block;
+// $input-text-width: 100%;
+// $input-text-height: 45px;
+// $input-text-padding-bottom: 0.75rem;
+// $input-text-padding-top: 0.75rem;
+// $input-text-padding-left: 0.5rem;
+// $input-text-padding-right: 0.5rem;
+// $input-text-margin-bottom: 1rem;
+// $input-text-margin-top: 0;
+// $input-text-background-color: #fff;
+// $input-text-border-color: #ccc;
+// $input-text-border-style: solid;
+// $input-text-border-width: 1px;
+// $input-text-border-radius: 5px;
+// $input-text-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+// $input-text-font-size: $base-font-size;
+// $input-text-font-weight: $base-font-weight;
+// $input-text-appearance: none;
+
+// $input-text-border-color-focus: #ccc;
+// $input-text-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
+// $input-text-outline-focus: none;
+
+// $input-text-background-color-disabled: #f1f1f1;
+// $input-text-color-disabled: #333;
+// $input-text-cursor-disabled: not-allowed;

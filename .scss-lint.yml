@@ -72,6 +72,10 @@ linters:
     enabled: true
     extra_properties: ['appearance']
 
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: true
+
   SelectorDepth:
     enabled: true
     max_depth: 3
