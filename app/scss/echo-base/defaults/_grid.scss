@@ -25,15 +25,12 @@
 //  Window grid
 //==============================================================================
 
-$grid-window-columns: 1 !default;
+// None
 
 //  Content grid
 //==============================================================================
 
-$grid-content-columns: 1 !default;
 $grid-content-container: 1280px !default;
-
-
 
 
 //==============================================================================
@@ -54,14 +51,14 @@ $susy: (
 //==============================================================================
 
 $window: (
-    columns: $grid-window-columns
+    columns: 1
 );
 
 //  Content grid
 //==============================================================================
 
 $content: (
-    columns: $grid-content-columns,
+    columns: 1,
     container: $grid-content-container,
 );
 
