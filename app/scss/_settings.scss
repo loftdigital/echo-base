@@ -1,0 +1,76 @@
+//==============================================================================
+//
+// scss/_settings.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Grids
+// b. Typography
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+$partial-base-url: '../echo-base';
+
+
+//==============================================================================
+// a. Grids
+//==============================================================================
+
+//  Window grid
+//==============================================================================
+
+// $grid-window-columns: 1;
+// $grid-window-gutters: .01;
+// $grid-window-debug-image: show;
+// $grid-window-debug-overlay: image;
+
+//  Content grid
+//==============================================================================
+
+// $grid-content-columns: 1;
+// $grid-content-container: 1280px;
+
+
+
+
+//==============================================================================
+// b. Typography
+//==============================================================================
+
+// Font weight
+//==============================================================================
+
+// $font-weight-light: 100;
+// $font-weight-regular: 400;
+// $font-weight-bold: 700;
+
+
+//  Base font
+//==============================================================================
+
+// $base-font-family: Arial, sans-serif;
+// $base-font-weight: map-get($weight, regular);
+// $base-font-size: 16px;
+// $base-font-line-height: 150%;
+
+// Fixed font
+//==============================================================================
+
+// $fixed-font-family: monospace;
+// $fixed-font-size: 85%;
+// $fixed-line-height: $base-font-line-height;
+
+// Heading font
+//==============================================================================
+
+// $heading-font-family: Arial, sans-serif;
+// $heading-font-weight: $font-weight-bold;
+// $heading-font-line-height: 1.4;
+// $heading-font-margin-top: .2rem;
+// $heading-font-margin-bottom: .5rem;
+// $heading-font-text-rendering: optimizedLegibility;

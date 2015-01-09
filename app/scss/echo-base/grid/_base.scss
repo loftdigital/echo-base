@@ -1,0 +1,99 @@
+//==============================================================================
+//
+// scss/_grid.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+//    1. Window
+//    2. Content
+// b. Layouts
+// c. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+//  Window grid
+//==============================================================================
+
+$grid-window-columns: 1 !default;
+$grid-window-gutters: .01 !default;
+$grid-window-debug-image: show !default;
+$grid-window-debug-overlay: image !default;
+
+//  Content grid
+//==============================================================================
+
+$grid-content-columns: 1 !default;
+$grid-content-container: 1280px !default;
+
+// TODO: All susy settings
+
+
+
+
+//==============================================================================
+// b. Grid layouts
+//==============================================================================
+
+//  Window grid
+//==============================================================================
+
+$susy: (
+    columns: $grid-window-columns,
+    gutters: $grid-window-gutters,
+    debug: (
+        image: $grid-window-debug-image,
+        overlay: $grid-window-debug-overlay
+    ),
+);
+
+//  Content grid
+//==============================================================================
+
+$content: (
+    container: $grid-content-container,
+    columns: $grid-content-columns,
+);
+
+
+
+
+//==============================================================================
+// c. Grid classes
+//==============================================================================
+
+.grid {
+
+    //  Window grid
+    //==========================================================================
+
+    &-window__container {
+        @include container;
+    }
+
+    &-window__block {
+        @include full;
+    }
+
+    //  Content grid
+    //==========================================================================
+
+    @include with-layout($content) {
+        &-content__container {
+            @include container;
+        }
+
+        &-content__block {
+            @include full;
+        }
+    }
+}

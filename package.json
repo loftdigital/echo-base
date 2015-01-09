@@ -1,0 +1,27 @@
+{
+  "name": "Baseone",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Loft Digital",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^2.1.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^0.8.0",
+    "grunt-notify": "^0.4.1",
+    "grunt-sass": "^0.17.0",
+    "grunt-scss-lint": "^0.3.4",
+    "jit-grunt": "^0.9.0"
+  },
+  "dependencies": {
+    "time-grunt": "^1.0.0"
+  }
+}

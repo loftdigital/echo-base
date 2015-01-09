@@ -1,0 +1,24 @@
+{
+  "name": "base one",
+  "version": "0.0.1",
+  "authors": [
+    "Ben Griffith <ben@loftdigital.com>"
+  ],
+  "description": "base one template",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "2.2.0.rc.2",
+    "normalize.css": "~3.0.2"
+  }
+}

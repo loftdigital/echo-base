@@ -1,0 +1,87 @@
+//==============================================================================
+//
+// scss/typography/_base.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+//    1. Base font
+//    2. Fixed font
+//    3. Heading font
+//    4. Font weight
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+// Font weights
+//==============================================================================
+
+$font-weight-light: 100 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+
+
+//  Base font
+//==============================================================================
+
+$base-font-family: Arial, sans-serif !default;
+$base-font-weight: $font-weight-regular !default;
+$base-font-size: 16px !default;
+$base-font-line-height: 1.4 !default;
+
+// Fixed font
+//==============================================================================
+
+$fixed-font-family: monospace !default;
+$fixed-font-size: 85% !default;
+$fixed-line-height: $base-font-line-height !default;
+
+// Heading font
+//==============================================================================
+
+$heading-font-family: Arial, sans-serif !default;
+$heading-font-weight: $font-weight-bold !default;
+$heading-font-line-height: 1.4 !default;
+$heading-font-margin-top: .2rem !default;
+$heading-font-margin-bottom: .5rem !default;
+$heading-font-text-rendering: optimizedLegibility !default;
+
+
+
+//==============================================================================
+// c. Classes
+//==============================================================================
+
+// Headings
+//==============================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-font-line-height;
+    margin-top: $heading-font-margin-top;
+    margin-bottom: $heading-font-margin-bottom;
+    text-rendering: $heading-font-text-rendering;
+}
+
+p,
+ul,
+ol {
+
+}
+
+// TODO: Fill in 
