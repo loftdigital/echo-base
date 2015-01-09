@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 
         autoprefixer: {
             options: {
-                browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+                browsers: ['last 2 version', 'ie 8', 'ie 9', 'Firefox ESR', 'Opera 12.1']
             },
             no_dest: {
                 src: '<%= config.dist %>/css/main.css' // globbing is also possible here

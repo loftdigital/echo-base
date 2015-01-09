@@ -352,7 +352,28 @@ img {
   vertical-align: middle; }
 
 select {
-  width: 100%; }
+  margin-bottom: 1rem;
+  margin-top: 0;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+  height: 45px;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  background-color: #fff;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+  select::-ms-expand {
+    display: none; }
 
 .grid-window__container {
   max-width: 100%;
@@ -398,4 +419,7 @@ select {
   font-size: 6rem;
   margin-top: 40vh; }
 .article__search {
-  width: 50%; }
+  width: 50%;
+  background-color: #f00;
+  color: #fff;
+  border-color: #f00; }

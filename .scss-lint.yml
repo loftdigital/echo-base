@@ -66,11 +66,11 @@ linters:
     enabled: true
 
   PropertySortOrder:
-    enabled: true
+    enabled: false
 
   PropertySpelling:
     enabled: true
-    extra_properties: []
+    extra_properties: ['appearance']
 
   SelectorDepth:
     enabled: true

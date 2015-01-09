@@ -22,12 +22,59 @@
 // a. Defaults
 //==============================================================================
 
-// Font weights
+$select-width: 100% !default;
+$select-height: 45px !default;
+$select-padding-bottom: 0.75rem !default;
+$select-padding-top: 0.75rem !default;
+$select-padding-left: 0.5rem !default;
+$select-padding-right: 0.5rem !default;
+$select-margin-bottom: 1rem !default;
+$select-margin-top: 0 !default;
+$select-background-color: #fff !default;
+$select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) !default;
+$select-background-repeat: no-repeat !default;
+$select-background-position: 100% center !default;
+$select-border-color: #ccc !default;
+$select-border-style: solid !default;
+$select-border-width: 1px !default;
+$select-border-radius: 5px !default;
+$select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$select-font-size: 0.8rem !default;
+$select-font-weight: $font-weight-regular !default;
+$select-appearance: none !default;
+
+//==============================================================================
+//  b. Classes
 //==============================================================================
 
-$select-width: 100% !default;
-
-
 select {
+    margin-bottom: $select-margin-bottom;
+    margin-top: $select-margin-top;
+    padding-bottom: $select-padding-bottom;
+    padding-top: $select-padding-top;
+    padding-left: $select-padding-left;
+    padding-right: $select-padding-right;
     width: $select-width;
+    height: $select-height;
+
+    border-color: $select-border-color;
+    border-style: $select-border-style;
+    border-width: $select-border-width;
+    border-radius: $select-border-radius;
+
+    font-size: $select-font-size;
+    font-weight: $select-font-weight;
+
+    background-color: $select-background-color;
+    background-image: $select-background-image;
+    background-position: $select-background-position;
+    background-repeat: $select-background-repeat;
+
+    -moz-appearance: $select-appearance;
+    -webkit-appearance: $select-appearance;
+
+    // Hide the dropdown arrow shown in newer IE versions
+    &::-ms-expand {
+        display: none;
+    }
 }
