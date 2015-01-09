@@ -1,6 +1,6 @@
 //==============================================================================
 //
-// echo-base/defaults/typography/_base.scss
+// echo-base/defaults/_typography.scss
 //
 // --------------------
 // Table of contents
@@ -29,31 +29,31 @@ $font-weight-light: 100 !default;
 $font-weight-regular: 400 !default;
 $font-weight-bold: 700 !default;
 
-
 //  Base font
 //==============================================================================
 
 $base-font-family: Arial, sans-serif !default;
 $base-font-weight: $font-weight-regular !default;
 $base-font-size: 16px !default;
-$base-font-line-height: 1.4 !default;
+$base-font-style: normal;
+$base-line-height: 1.5 !default;
 
 // Fixed font
 //==============================================================================
 
 $fixed-font-family: monospace !default;
 $fixed-font-size: 85% !default;
-$fixed-line-height: $base-font-line-height !default;
+$fixed-line-height: $base-line-height !default;
 
 // Heading font
 //==============================================================================
 
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
-$heading-font-line-height: 1.4 !default;
 $heading-font-margin-top: 0.2rem !default;
 $heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
+$heading-line-height: 1.4 !default;
 
 
 $h1-font-size: 4rem !default;
@@ -74,7 +74,7 @@ h5,
 h6, {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
-    line-height: $heading-font-line-height;
+    line-height: $heading-line-height;
     margin-bottom: $heading-font-margin-bottom;
     margin-top: $heading-font-margin-top;
     text-rendering: $heading-font-text-rendering;

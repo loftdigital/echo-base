@@ -1,13 +1,16 @@
 //==============================================================================
 //
-// echo-base/defaults/_all.scss
+// echo-base/defaults/_select.scss
 //
 // --------------------
 // Table of contents
 // --------------------
-// a. Import defaults
-//    1. Grid
-//    2. Typography
+// a. Defaults
+//    1. Base font
+//    2. Fixed font
+//    3. Heading font
+//    4. Font weight
+// b. Classes
 //
 //
 // @copyright 2015, Loft Digital, www.weareloft.com
@@ -16,14 +19,15 @@
 
 
 //==============================================================================
-// a. Import defaults
+// a. Defaults
 //==============================================================================
 
+// Font weights
+//==============================================================================
 
-@import 'typography';
+$select-width: 100% !default;
 
-@import 'global';
 
-@import 'select';
-
-@import 'grid';
+select {
+    width: $select-width;
+}
