@@ -18,14 +18,14 @@
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
 //  Window grid
 //==============================================================================
 
 $grid-window-columns: 1 !default;
-$grid-window-gutters: .01 !default;
+$grid-window-gutters: 0.01 !default;
 $grid-window-debug-image: hide !default;
 $grid-window-debug-overlay: image !default;
 
@@ -41,13 +41,21 @@ $grid-content-container: 1280px !default;
 
 
 //==============================================================================
-// b. Grid layouts
+//  b. Grid layouts
 //==============================================================================
+
+//  Default susy grid
+//==============================================================================
+
+$susy: (
+    columns: 12,
+    gutters: 0.25,
+);
 
 //  Window grid
 //==============================================================================
 
-$susy: (
+$window: (
     columns: $grid-window-columns,
     gutters: $grid-window-gutters,
     debug: (
@@ -68,7 +76,7 @@ $content: (
 
 
 //==============================================================================
-// c. Grid classes
+//  c. Grid classes
 //==============================================================================
 
 .grid {
@@ -76,12 +84,14 @@ $content: (
     //  Window grid
     //==========================================================================
 
-    &-window__container {
-        @include container;
-    }
+    @include with-layout($window) {
+        &-window__container {
+            @include container;
+        }
 
-    &-window__block {
-        @include full;
+        &-window__block {
+            @include full;
+        }
     }
 
     //  Content grid

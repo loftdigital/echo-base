@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         },
 
         scsslint: {
-            allFiles: ['<%= config.app %>/scss/**/*.scss'],
+            allFiles: ['<%= config.app %>/scss/echo-base/**/*.scss'],
             options: {
                 compact: true
             }
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['<%= config.app %>/scss/**/*.scss'],
-                tasks: [ 'sass:development', 'autoprefixer', 'notify:sass'] //'newer:scsslint',
+                tasks: [ 'newer:scsslint', 'sass:development', 'autoprefixer', 'notify:sass']
             }
         },
 
@@ -121,5 +121,5 @@ module.exports = function(grunt) {
         },
     });
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['newer:scsslint', 'sass:development', 'autoprefixer', 'notify:sass', 'watch']);
 };

@@ -51,8 +51,8 @@ $fixed-line-height: $base-font-line-height !default;
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
 $heading-font-line-height: 1.4 !default;
-$heading-font-margin-top: .2rem !default;
-$heading-font-margin-bottom: .5rem !default;
+$heading-font-margin-top: 0.2rem !default;
+$heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
 
 
@@ -75,17 +75,12 @@ h6, {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     line-height: $heading-font-line-height;
-    margin-top: $heading-font-margin-top;
     margin-bottom: $heading-font-margin-bottom;
+    margin-top: $heading-font-margin-top;
     text-rendering: $heading-font-text-rendering;
 }
 
 h1 { font-size: $h1-font-size; }
 
-p,
-ul,
-ol {
-
-}
 
 // TODO: Fill in
