@@ -51,7 +51,8 @@ $susy: (
 //==============================================================================
 
 $window: (
-    columns: 1
+    columns: 1,
+    gutters: 0,
 );
 
 //  Content grid
@@ -59,6 +60,7 @@ $window: (
 
 $content: (
     columns: 1,
+    gutters: 0,
     container: $grid-content-container,
 );
 
