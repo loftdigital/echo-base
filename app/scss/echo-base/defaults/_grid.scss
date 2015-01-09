@@ -17,6 +17,7 @@
 //==============================================================================
 
 
+
 //==============================================================================
 //  a. Defaults
 //==============================================================================
@@ -25,17 +26,12 @@
 //==============================================================================
 
 $grid-window-columns: 1 !default;
-$grid-window-gutters: 0.01 !default;
-$grid-window-debug-image: hide !default;
-$grid-window-debug-overlay: image !default;
 
 //  Content grid
 //==============================================================================
 
 $grid-content-columns: 1 !default;
 $grid-content-container: 1280px !default;
-
-// TODO: All susy settings
 
 
 
@@ -47,11 +43,10 @@ $grid-content-container: 1280px !default;
 //  Default susy grid
 //==============================================================================
 
-// NB. This is required to set a standard fallback grid if no context is
-// specified.
+// This is required as by default Susy sets gutters to be a fraction which
+// Libsass flags up as an error. Wait for fix.
 
 $susy: (
-    columns: 12,
     gutters: 0.25,
 );
 
@@ -59,12 +54,7 @@ $susy: (
 //==============================================================================
 
 $window: (
-    columns: $grid-window-columns,
-    gutters: $grid-window-gutters,
-    debug: (
-        image: $grid-window-debug-image,
-        overlay: $grid-window-debug-overlay
-    ),
+    columns: $grid-window-columns
 );
 
 //  Content grid
