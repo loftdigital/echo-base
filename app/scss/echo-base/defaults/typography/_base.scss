@@ -56,6 +56,8 @@ $heading-font-margin-bottom: .5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
 
 
+$h1-font-size: 4rem !default;
+
 
 //==============================================================================
 // c. Classes
@@ -78,10 +80,12 @@ h6, {
     text-rendering: $heading-font-text-rendering;
 }
 
+h1 { font-size: $h1-font-size; }
+
 p,
 ul,
 ol {
 
 }
 
-// TODO: Fill in 
+// TODO: Fill in
