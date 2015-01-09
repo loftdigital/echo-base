@@ -31,12 +31,10 @@
 // Defaults
 //==============================================================================
 
-@import "echo-base/defaults/defaults";
+@import "echo-base/defaults/all";
 
 //==============================================================================
 // Partials
 //==============================================================================
 
-@import "echo-base/partials/grid";
-
-@import "echo-base/partials/context/article";
+@import "echo-base/partials/all";
