@@ -47,6 +47,9 @@ $grid-content-container: 1280px !default;
 //  Default susy grid
 //==============================================================================
 
+// NB. This is required to set a standard fallback grid if no context is
+// specified.
+
 $susy: (
     columns: 12,
     gutters: 0.25,
@@ -68,8 +71,8 @@ $window: (
 //==============================================================================
 
 $content: (
-    container: $grid-content-container,
     columns: $grid-content-columns,
+    container: $grid-content-container,
 );
 
 
@@ -81,8 +84,8 @@ $content: (
 
 .grid {
 
-    //  Window grid
-    //==========================================================================
+//  Window grid
+//==============================================================================
 
     @include with-layout($window) {
         &-window__container {
@@ -94,8 +97,8 @@ $content: (
         }
     }
 
-    //  Content grid
-    //==========================================================================
+//  Content grid
+//==============================================================================
 
     @include with-layout($content) {
         &-content__container {
