@@ -14,18 +14,34 @@
 
                     <h1>Hello World</h1>
 
-                    <select>
-                        <option>option 1</option>
-                        <option>option 2</option>
-                    </select>
+                    <fieldset>
+                        <legend>Select</legend>
+                        <select>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                        <select disabled="disabled">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </fieldset>
 
-                    <select disabled="disabled">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                    </select>
+                    <fieldset>
+                        <legend>Inputs</legend>
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Enter a password">
+                        <input type="text" value="Disabled" disabled="disabled">
+                    </fieldset>
 
-                    <input type="password" placeholder="Enter a password">
-                    <input type="text" value="Disabled" disabled="disabled">
+                    <fieldset>
+                        <legend>Textarea</legend>
+                        <textarea>Textarea content...</textarea>
+                        <textarea disabled="disabled">Textarea content...</textarea>
+                    </fieldset>
+
+
+
+
 
                     <article class="article">
                         <h1 class="article__heading">Article title</h1>

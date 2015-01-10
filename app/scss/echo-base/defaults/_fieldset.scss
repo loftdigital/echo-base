@@ -1,0 +1,49 @@
+//==============================================================================
+//
+// echo-base/defaults/_fieldset.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+$fieldset-padding-bottom: 0.5rem !default;
+$fieldset-padding-top: 0.5rem !default;
+$fieldset-padding-right: 0.5rem !default;
+$fieldset-padding-left: 0.5rem !default;
+$fieldset-margin-bottom: 1rem !default;
+$fieldset-margin-top: 0 !default;
+$fieldset-background-color: transparent !default;
+$fieldset-border-color: #ccc !default;
+$fieldset-border-style: solid !default;
+$fieldset-border-width: 1px !default;
+$fieldset-border-radius: 5px !default;
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+fieldset {
+    padding-bottom: $fieldset-padding-bottom;
+    padding-top: $fieldset-padding-top;
+    padding-right: $fieldset-padding-right;
+    padding-left: $fieldset-padding-left;
+    margin-bottom: $fieldset-margin-bottom;
+    margin-top: $fieldset-margin-top;
+    background-color: $fieldset-background-color;
+    border-color: $fieldset-border-color;
+    border-style: $fieldset-border-style;
+    border-width: $fieldset-border-width;
+    border-radius: $fieldset-border-radius;
+}

@@ -1,0 +1,9 @@
+$legend-font-family: $base-font-family !default;
+$legend-font-size: $base-font-size !default;
+$legend-font-weight: $base-font-weight !default;
+
+legend {
+    font-family: $legend-font-family;
+    font-size: $legend-font-size;
+    font-weight: $legend-font-weight;
+}

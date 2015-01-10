@@ -1,0 +1,88 @@
+//==============================================================================
+//
+// echo-base/defaults/_textarea.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+$textarea-display: block !default;
+$textarea-width: 100% !default;
+$textarea-height: auto !default;
+$textarea-padding-bottom: 0.5rem !default;
+$textarea-padding-top: 0.5rem !default;
+$textarea-padding-right: 0.5rem !default;
+$textarea-padding-left: 0.5rem !default;
+$textarea-margin-bottom: 1rem !default;
+$textarea-margin-top: 0 !default;
+$textarea-background-color: #fff !default;
+$textarea-border-color: #ccc !default;
+$textarea-border-style: solid !default;
+$textarea-border-width: 1px !default;
+$textarea-border-radius: 5px !default;
+$textarea-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$textarea-font-size: $base-font-size !default;
+$textarea-font-weight: $base-font-weight !default;
+$textarea-appearance: none !default;
+
+// State: Focus
+//==============================================================================
+
+$textarea-border-color-focus: #ccc !default;
+$textarea-box-shadow-focus: 0 0 3px rgb(200, 200, 200) !default;
+$textarea-outline-focus: none !default;
+
+// State: Disabled
+//==============================================================================
+
+$textarea-background-color-disabled: #f1f1f1 !default;
+$textarea-color-disabled: #333 !default;
+$textarea-cursor-disabled: not-allowed !default;
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+textarea {
+    display: $textarea-display;
+    width: $textarea-width;
+    height: $textarea-height;
+    padding-bottom: $textarea-padding-bottom;
+    padding-top: $textarea-padding-top;
+    padding-right: $textarea-padding-right;
+    padding-left: $textarea-padding-left;
+    margin-bottom: $textarea-margin-bottom;
+    margin-top: $textarea-margin-top;
+    background-color: $textarea-background-color;
+    border-color: $textarea-border-color;
+    border-style: $textarea-border-style;
+    border-width: $textarea-border-width;
+    border-radius: $textarea-border-radius;
+    box-shadow: $textarea-box-shadow;
+    font-size: $textarea-font-size;
+    font-weight: $textarea-font-weight;
+    appearance: $textarea-appearance;
+
+    &:focus {
+        border-color: $textarea-border-color-focus;
+        outline: $textarea-outline-focus;
+    }
+
+    &:disabled {
+        background-color: $textarea-background-color-disabled;
+        color: $textarea-color-disabled;
+        cursor: $textarea-cursor-disabled;
+    }
+}

@@ -109,7 +109,22 @@ $partial-base-url: '../echo-base';
 // c. Forms
 //==============================================================================
 
-// Select input
+// Fieldset
+//==============================================================================
+
+// $fieldset-padding-bottom: 0.5rem;
+// $fieldset-padding-top: 0.5rem;
+// $fieldset-padding-right: 0.5rem;
+// $fieldset-padding-left: 0.5rem;
+// $fieldset-margin-bottom: 1rem;
+// $fieldset-margin-top: 0;
+// $fieldset-background-color: transparent;
+// $fieldset-border-color: #ccc;
+// $fieldset-border-style: solid;
+// $fieldset-border-width: 1px;
+// $fieldset-border-radius: 5px;
+
+// Select
 //==============================================================================
 
 // $select-width: 100%;
@@ -170,3 +185,34 @@ $partial-base-url: '../echo-base';
 // $input-text-background-color-disabled: #f1f1f1;
 // $input-text-color-disabled: #333;
 // $input-text-cursor-disabled: not-allowed;
+
+
+// Textarea
+//==============================================================================
+
+// $textarea-display: block;
+// $textarea-width: 100%;
+// $textarea-height: auto;
+// $textarea-padding-bottom: 0.5rem;
+// $textarea-padding-top: 0.5rem;
+// $textarea-padding-right: 0.5rem;
+// $textarea-padding-left: 0.5rem;
+// $textarea-margin-bottom: 1rem;
+// $textarea-margin-top: 0;
+// $textarea-background-color: #fff;
+// $textarea-border-color: #ccc;
+// $textarea-border-style: solid;
+// $textarea-border-width: 1px;
+// $textarea-border-radius: 5px;
+// $textarea-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+// $textarea-font-size: $base-font-size;
+// $textarea-font-weight: $base-font-weight;
+// $textarea-appearance: none;
+//
+// $textarea-border-color-focus: #ccc;
+// $textarea-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
+// $textarea-outline-focus: none;
+//
+// $textarea-background-color-disabled: #f1f1f1;
+// $textarea-color-disabled: #333;
+// $textarea-cursor-disabled: not-allowed;
