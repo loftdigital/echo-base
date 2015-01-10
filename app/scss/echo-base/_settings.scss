@@ -109,6 +109,14 @@ $partial-base-url: '../echo-base';
 // c. Forms
 //==============================================================================
 
+// Form
+//==============================================================================
+
+// $form-margin-bottom: 1rem;
+// $form-margin-top: 0;
+// $form-margin-right: 0;
+// $form-margin-left: 0;
+
 // Fieldset
 //==============================================================================
 
@@ -139,6 +147,17 @@ $partial-base-url: '../echo-base';
 // $label-font-size: $base-font-size;
 // $label-font-weight: $base-font-weight;
 // $label-line-height: $base-line-height;
+
+// $label-inline-display: inline-block;
+// $label-inline-margin-bottom: 0;
+// $label-inline-margin-top: 0;
+// $label-inline-margin-right: 1rem;
+// $label-inline-margin-left: 0.5rem;
+// $label-inline-vertical-align: baseline;
+
+// $label-inline-color-disabled: #969696;
+// $label-inline-cursor-disabled: not-allowed;
+
 
 // Select
 //==============================================================================

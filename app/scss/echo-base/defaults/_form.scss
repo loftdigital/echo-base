@@ -1,0 +1,35 @@
+//==============================================================================
+//
+// echo-base/defaults/_form.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+$form-margin-bottom: 1rem !default;
+$form-margin-top: 0 !default;
+$form-margin-right: 0 !default;
+$form-margin-left: 0 !default;
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+form {
+    margin-bottom: $form-margin-bottom;
+    margin-top: $form-margin-top;
+    margin-right: $form-margin-right;
+    margin-left: $form-margin-left;
+}
