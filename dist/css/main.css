@@ -374,9 +374,8 @@ label {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5; }
-
-label[for] {
-  cursor: pointer; }
+  label[for] {
+    cursor: pointer; }
 
 select {
   margin-bottom: 1rem;

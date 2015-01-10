@@ -1,34 +1,40 @@
+//==============================================================================
+//
+// echo-base/defaults/_label.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
 $label-display: block !default;
 $label-cursor: pointer !default;
 $label-font-size: $base-font-size !default;
 $label-font-weight: $base-font-weight !default;
 $label-line-height: $base-line-height !default;
 
-
-// $label-inline-display: inline-block !default;
-// $label-inline-margin-bottom: 0 !default;
-// $label-inline-margin-top: 0 !default;
-// $label-inline-margin-right: 1rem !default;
-// $label-inline-margin-left: 0.5rem !default;
-// $label-inline-vertical-align: baseline !default;
-
-
+//==============================================================================
+// b. Classes
+//==============================================================================
 
 label {
     display: $label-display;
-
     font-size: $label-font-size;
     font-weight: $label-font-weight;
     line-height: $label-line-height;
-}
 
-label[for] {
-    cursor: $label-cursor;
+    &[for] {
+        cursor: $label-cursor;
+    }
 }
-
-// $label-inline-display: inline-block !default;
-// $label-inline-margin-bottom: 0 !default;
-// $label-inline-margin-top: 0 !default;
-// $label-inline-margin-right: 1rem !default;
-// $label-inline-margin-left: 0.5rem !default;
-// $label-inline-vertical-align: baseline !default;
