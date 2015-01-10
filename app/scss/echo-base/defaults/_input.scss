@@ -51,6 +51,8 @@ $input-text-background-color-disabled: #f1f1f1 !default;
 $input-text-color-disabled: #969696 !default;
 $input-text-cursor-disabled: not-allowed !default;
 
+$input-inline-cursor-disabled: not-allowed !default;
+
 //==============================================================================
 //  b. Classes
 //==============================================================================
@@ -98,5 +100,12 @@ input[type="url"] {
         background-color: $input-text-background-color-disabled;
         color: $input-text-color-disabled;
         cursor: $input-text-cursor-disabled;
+    }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    &:disabled {
+        cursor: $input-inline-cursor-disabled;
     }
 }

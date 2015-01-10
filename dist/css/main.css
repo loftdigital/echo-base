@@ -456,6 +456,9 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
     color: #969696;
     cursor: not-allowed; }
 
+input[type="radio"]:disabled, input[type="checkbox"]:disabled {
+  cursor: not-allowed; }
+
 textarea {
   display: block;
   width: 100%;
