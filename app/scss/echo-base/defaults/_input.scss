@@ -27,8 +27,8 @@ $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
 $input-text-margin-bottom: 1rem !default;
 $input-text-margin-top: 0 !default;
-$input-text-background-color: #fff !default;
-$input-text-border-color: #ccc !default;
+$input-text-background-color: rgb(255, 255, 255) !default;
+$input-text-border-color: rgb(228, 228, 228) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
 $input-text-border-radius: 5px !default;
@@ -47,8 +47,8 @@ $input-text-outline-focus: none !default;
 // State: Disabled
 //==============================================================================
 
-$input-text-background-color-disabled: #f1f1f1 !default;
-$input-text-color-disabled: #969696 !default;
+$input-text-background-color-disabled: rgb(245, 245, 245) !default;
+$input-text-color-disabled: rgb(150, 150, 150) !default;
 $input-text-cursor-disabled: not-allowed !default;
 
 $input-inline-cursor-disabled: not-allowed !default;

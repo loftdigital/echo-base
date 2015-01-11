@@ -27,8 +27,8 @@ $textarea-padding-right: 0.5rem !default;
 $textarea-padding-left: 0.5rem !default;
 $textarea-margin-bottom: 1rem !default;
 $textarea-margin-top: 0 !default;
-$textarea-background-color: #fff !default;
-$textarea-border-color: #ccc !default;
+$textarea-background-color: rgb(255, 255, 255) !default;
+$textarea-border-color: rgb(228, 228, 228) !default;
 $textarea-border-style: solid !default;
 $textarea-border-width: 1px !default;
 $textarea-border-radius: 5px !default;
@@ -47,8 +47,8 @@ $textarea-outline-focus: none !default;
 // State: Disabled
 //==============================================================================
 
-$textarea-background-color-disabled: #f1f1f1 !default;
-$textarea-color-disabled: #969696 !default;
+$textarea-background-color-disabled: rgb(245, 245, 245) !default;
+$textarea-color-disabled: rgb(150, 150, 150) !default;
 $textarea-cursor-disabled: not-allowed !default;
 
 //==============================================================================

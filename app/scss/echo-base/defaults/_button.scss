@@ -1,0 +1,178 @@
+//==============================================================================
+//
+// echo-base/defaults/_button.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+//  Standard
+//==============================================================================
+
+$button-position: relative !default;
+$button-display: inline-block !default;
+$button-padding-bottom: 0.75rem !default;
+$button-padding-top: 0.75rem !default;
+$button-padding-right: 1rem !default;
+$button-padding-left: 1rem !default;
+$button-margin-bottom: 1rem !default;
+$button-margin-top: 0 !default;
+$button-margin-right: 0 !default;
+$button-margin-left: 0 !default;
+$button-cursor: pointer !default;
+$button-border-style: solid !default;
+$button-border-width: 1px !default;
+$button-border-radius: 5px !default;
+$button-font-size: $base-font-size !default;
+$button-font-weight: $base-font-weight !default;
+$button-line-height: $base-line-height !default;
+$button-text-decoration: none !default;
+$button-text-align: center !default;
+$button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out) !default;
+$button-vertical-align: middle !default;
+
+
+
+// Standard color
+
+$button-background-color: rgb(241, 241, 241) !default;
+$button-border-color: rgb(228, 228, 228) !default;
+$button-color: rgb(40, 40, 40) !default;
+
+// Standard color hover
+
+$button-background-color-hover: darken($button-background-color, 5%) !default;
+$button-border-color-hover: darken($button-border-color, 5%) !default;
+
+
+
+//  Primary color
+//==============================================================================
+
+$button-primary-background-color: rgb(0, 173, 255) !default;
+$button-primary-border-color: rgb(0, 173, 255) !default;
+$button-primary-color: rgb(255, 255, 255) !default;
+
+// Primary color hover
+
+$button-primary-background-color-hover: darken($button-primary-background-color, 5%) !default;
+$button-primary-border-color-hover: darken($button-primary-border-color, 5%) !default;
+
+
+
+//  Sueccess color
+//==============================================================================
+
+$button-success-background-color: rgb(114, 195, 125) !default;
+$button-success-border-color: rgb(114, 195, 125) !default;
+$button-success-color: rgb(255, 255, 255) !default;
+
+// Sueccess color hover
+
+$button-success-background-color-hover: darken($button-success-background-color, 5%) !default;
+$button-success-border-color-hover: darken($button-success-border-color, 5%) !default;
+
+
+
+//  Error color
+//==============================================================================
+
+$button-error-background-color: rgb(199, 74, 74) !default;
+$button-error-border-color: rgb(199, 74, 74) !default;
+$button-error-color: rgb(255, 255, 255) !default;
+
+// Error color hover
+
+$button-error-background-color-hover: darken($button-error-background-color, 5%) !default;
+$button-error-border-color-hover: darken($button-error-border-color, 5%) !default;
+
+
+
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+button,
+input[type="button"],
+input[type="submit"],
+.button {
+
+    position: $button-position;
+    display: $button-display;
+    padding-bottom: $button-padding-bottom;
+    padding-top: $button-padding-top;
+    padding-right: $button-padding-right;
+    padding-left: $button-padding-left;
+    margin-bottom: $button-margin-bottom;
+    margin-top: $button-margin-top;
+    margin-right: $button-margin-right;
+    margin-left: $button-margin-left;
+    cursor: $button-cursor;
+    border-style: $button-border-style;
+    border-width: $button-border-width;
+    border-radius: $button-border-radius;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    line-height: $button-line-height;
+    text-decoration: $button-text-decoration;
+    text-align: $button-text-align;
+    transition: $button-transition;
+    vertical-align: $button-vertical-align;
+
+    background-color: $button-background-color;
+    border-color: $button-border-color;
+    color: $button-color;
+
+    &:hover {
+        background-color: $button-background-color-hover;
+        border-color: $button-border-color-hover;
+    }
+}
+
+.button {
+    &--primary {
+        background-color: $button-primary-background-color;
+        border-color: $button-primary-border-color;
+        color: $button-primary-color;
+
+        &:hover {
+            background-color: $button-primary-background-color-hover;
+            border-color: $button-primary-border-color-hover;
+        }
+    }
+
+    &--success {
+        background-color: $button-success-background-color;
+        border-color: $button-success-border-color;
+        color: $button-success-color;
+
+        &:hover {
+            background-color: $button-success-background-color-hover;
+            border-color: $button-success-border-color-hover;
+        }
+    }
+
+    &--error {
+        background-color: $button-error-background-color;
+        border-color: $button-error-border-color;
+        color: $button-error-color;
+
+        &:hover {
+            background-color: $button-error-background-color-hover;
+            border-color: $button-error-border-color-hover;
+        }
+    }
+}

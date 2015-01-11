@@ -155,7 +155,7 @@ $partial-base-url: '../echo-base';
 // $label-inline-margin-left: 0.5rem;
 // $label-inline-vertical-align: baseline;
 
-// $label-inline-color-disabled: #969696;
+// $label-inline-color-disabled: rgb(150, 150, 150);
 // $label-inline-cursor-disabled: not-allowed;
 
 
@@ -170,11 +170,11 @@ $partial-base-url: '../echo-base';
 // $select-padding-right: 0.5rem;
 // $select-margin-bottom: 1rem;
 // $select-margin-top: 0;
-// $select-background-color: #fff;
+// $select-background-color: rgb(255, 255, 255);
 // $select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
 // $select-background-repeat: no-repeat;
 // $select-background-position: 100% center;
-// $select-border-color: #ccc;
+// $select-border-color: rgb(228, 228, 228);
 // $select-border-style: solid;
 // $select-border-width: 1px;
 // $select-border-radius: 5px;
@@ -187,8 +187,8 @@ $partial-base-url: '../echo-base';
 // $select-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
 // $select-outline-focus: none;
 
-// $select-background-color-disabled: #f1f1f1,
-// $select-color-disabled: #333,
+// $select-background-color-disabled: rgb(245, 245, 245),
+// $select-color-disabled: rgb(150, 150, 150),
 // $select-cursor-disabled: not-allowed,
 
 // Input
@@ -203,8 +203,8 @@ $partial-base-url: '../echo-base';
 // $input-text-padding-right: 0.5rem;
 // $input-text-margin-bottom: 1rem;
 // $input-text-margin-top: 0;
-// $input-text-background-color: #fff;
-// $input-text-border-color: #ccc;
+// $input-text-background-color: rgb(255, 255, 255);
+// $input-text-border-color: rgb(228, 228, 228);
 // $input-text-border-style: solid;
 // $input-text-border-width: 1px;
 // $input-text-border-radius: 5px;
@@ -217,8 +217,8 @@ $partial-base-url: '../echo-base';
 // $input-text-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
 // $input-text-outline-focus: none;
 
-// $input-text-background-color-disabled: #f1f1f1;
-// $input-text-color-disabled: #333;
+// $input-text-background-color-disabled: rgb(245, 245, 245);
+// $input-text-color-disabled: rgb(150, 150, 150);
 // $input-text-cursor-disabled: not-allowed;
 
 
@@ -234,8 +234,8 @@ $partial-base-url: '../echo-base';
 // $textarea-padding-left: 0.5rem;
 // $textarea-margin-bottom: 1rem;
 // $textarea-margin-top: 0;
-// $textarea-background-color: #fff;
-// $textarea-border-color: #ccc;
+// $textarea-background-color: rgb(255, 255, 255);
+// $textarea-border-color: rgb(228, 228, 228);
 // $textarea-border-style: solid;
 // $textarea-border-width: 1px;
 // $textarea-border-radius: 5px;
@@ -248,6 +248,92 @@ $partial-base-url: '../echo-base';
 // $textarea-box-shadow-focus: 0 0 3px rgb(200, 200, 200);
 // $textarea-outline-focus: none;
 //
-// $textarea-background-color-disabled: #f1f1f1;
-// $textarea-color-disabled: #333;
+// $textarea-background-color-disabled: rgb(245, 245, 245);
+// $textarea-color-disabled: rgb(150, 150, 150);
 // $textarea-cursor-disabled: not-allowed;
+
+
+
+
+// Buttons
+//==============================================================================
+
+//  Standard
+//==============================================================================
+
+// $button-position: relative;
+// $button-display: inline-block;
+// $button-padding-bottom: 0.75rem;
+// $button-padding-top: 0.75rem;
+// $button-padding-right: 1rem;
+// $button-padding-left: 1rem;
+// $button-margin-bottom: 1rem;
+// $button-margin-top: 0;
+// $button-margin-right: 0;
+// $button-margin-left: 0;
+// $button-cursor: pointer;
+// $button-border-style: solid;
+// $button-border-width: 1px;
+// $button-border-radius: 5px;
+// $button-font-size: $base-font-size;
+// $button-font-weight: $base-font-weight;
+// $button-line-height: $base-line-height;
+// $button-text-decoration: none;
+// $button-text-align: center;
+// $button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out);
+// $button-vertical-align: middle;
+
+
+
+// Standard color
+
+// $button-background-color: rgb(241, 241, 241);
+// $button-border-color: rgb(228, 228, 228);
+// $button-color: rgb(40, 40, 40);
+
+// Standard color hover
+
+// $button-background-color-hover: darken($button-background-color, 5%);
+// $button-border-color-hover: darken($button-border-color, 5%);
+
+
+
+//  Primary color
+//==============================================================================
+
+// $button-primary-background-color: rgb(0, 173, 255);
+// $button-primary-border-color: rgb(0, 173, 255);
+// $button-primary-color: rgb(255, 255, 255);
+
+// Primary color hover
+
+// $button-primary-background-color-hover: darken($button-primary-background-color, 5%);
+// $button-primary-border-color-hover: darken($button-primary-border-color, 5%);
+
+
+
+//  Sueccess color
+//==============================================================================
+
+// $button-success-background-color: rgb(114, 195, 125);
+// $button-success-border-color: rgb(114, 195, 125);
+// $button-success-color: rgb(255, 255, 255);
+
+// Sueccess color hover
+
+// $button-success-background-color-hover: darken($button-success-background-color, 5%);
+// $button-success-border-color-hover: darken($button-success-border-color, 5%);
+
+
+
+//  Error color
+//==============================================================================
+
+// $button-error-background-color: rgb(199, 74, 74);
+// $button-error-border-color: rgb(199, 74, 74);
+// $button-error-color: rgb(255, 255, 255);
+
+// Error color hover
+
+// $button-error-background-color-hover: darken($button-error-background-color, 5%);
+// $button-error-border-color-hover: darken($button-error-border-color, 5%);
