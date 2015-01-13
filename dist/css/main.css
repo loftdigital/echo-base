@@ -32,6 +32,13 @@ img {
   max-width: 100%;
   vertical-align: middle; }
 
+hr {
+  height: 0;
+  margin: 1.5rem 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #e4e4e4; }
+
 form {
   margin-bottom: 1rem;
   margin-top: 0;
@@ -218,6 +225,37 @@ button, input[type="button"], input[type="submit"], .button {
   .button--error:hover {
     background-color: #bd3a3a;
     border-color: #bd3a3a; }
+
+table {
+  width: 100%; }
+
+thead {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #e4e4e4; }
+
+tbody {
+  border: 1px solid #fff; }
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9; }
+tr:nth-child(even) {
+  background-color: #f1f1f1; }
+
+th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background-color: #fff;
+  font-weight: 400; }
+
+td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-weight: 400; }
 
 .grid-window__container {
   max-width: 100%;

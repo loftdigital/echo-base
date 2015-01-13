@@ -1,0 +1,115 @@
+//==============================================================================
+//
+// echo-base/defaults/_table.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Defaults
+//    1. Table
+//    2. Table head
+//    3. Table body
+//    4. Table row
+//    5. Table heading
+//    6. Table data
+// b. Classes
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+//==============================================================================
+// a. Defaults
+//==============================================================================
+
+// Table
+//==============================================================================
+
+$table-width: 100% !default;
+
+// Table head
+//==============================================================================
+
+$thead-border-bottom-width: 2px !default;
+$thead-border-bottom-style: solid !default;
+$thead-border-bottom-color: #e4e4e4 !default;
+
+// Table body
+//==============================================================================
+
+// Table row
+//==============================================================================
+
+$tr-background-color-odd: #f9f9f9 !default;
+$tr-background-color-even: #f1f1f1 !default;
+
+// Table heading
+//==============================================================================
+
+$th-padding-top: 1rem !default;
+$th-padding-bottom: 1rem !default;
+$th-padding-right: 1rem !default;
+$th-padding-left: 1rem !default;
+$th-background-color: #fff !default;
+$th-font-weight: $base-font-weight !default;
+
+// Table data
+//==============================================================================
+
+$td-padding-top: 1rem !default;
+$td-padding-bottom: 1rem !default;
+$td-padding-right: 1rem !default;
+$td-padding-left: 1rem !default;
+$td-font-weight: $base-font-weight !default;
+
+
+
+
+//==============================================================================
+// b. Classes
+//==============================================================================
+
+table {
+    width: $table-width;
+}
+
+thead {
+    border-bottom-width: $thead-border-bottom-width;
+    border-bottom-style: $thead-border-bottom-style;
+    border-bottom-color: $thead-border-bottom-color;
+}
+
+tbody {
+    border: 1px solid #fff;
+}
+
+tr {
+    &:nth-child(odd) {
+        background-color: $tr-background-color-odd;
+    }
+
+    &:nth-child(even) {
+        background-color: $tr-background-color-even;
+    }
+}
+
+th {
+    padding-top: $th-padding-top;
+    padding-bottom: $th-padding-bottom;
+    padding-right: $th-padding-right;
+    padding-left: $th-padding-left;
+    background-color: $th-background-color;
+    font-weight: $th-font-weight;
+}
+
+td {
+    padding-top: $td-padding-top;
+    padding-bottom: $td-padding-bottom;
+    padding-right: $td-padding-right;
+    padding-left: $td-padding-left;
+    font-weight: $td-font-weight;
+
+}
