@@ -53,7 +53,7 @@ $partial-base-url: '../echo-base';
 //==============================================================================
 
 // $base-font-family: Arial, sans-serif;
-// $base-font-weight: map-get($weight, regular);
+// $base-font-weight: $font-weight-regular;
 // $base-font-size: 16px;
 // $base-font-line-height: 150%;
 
@@ -74,15 +74,73 @@ $partial-base-url: '../echo-base';
 // $heading-font-margin-bottom: .5rem;
 // $heading-font-text-rendering: optimizedLegibility;
 
-
-
+// h1
+//==============================================================================
 
 // $h1-font-size: 4rem;
+// $h1-font-family: $heading-font-family;
+// $h1-font-weight: $heading-font-weight;
+// $h1-line-height: $heading-font-line-height;
+// $h1-font-margin-bottom: $heading-font-margin-bottom;
+// $h1-font-margin-top: $heading-font-margin-top;
+// $h1-font-text-rendering: $heading-font-text-rendering;
+
+// h2
+//==============================================================================
+
+// $h2-font-size: 3.5rem;
+// $h2-font-family: $heading-font-family;
+// $h2-font-weight: $heading-font-weight;
+// $h2-line-height: $heading-font-line-height;
+// $h2-font-margin-bottom: $heading-font-margin-bottom;
+// $h2-font-margin-top: $heading-font-margin-top;
+// $h2-font-text-rendering: $heading-font-text-rendering;
+
+// h3
+//==============================================================================
+
+// $h3-font-size: 3rem;
+// $h3-font-family: $heading-font-family;
+// $h3-font-weight: $heading-font-weight;
+// $h3-line-height: $heading-font-line-height;
+// $h3-font-margin-bottom: $heading-font-margin-bottom;
+// $h3-font-margin-top: $heading-font-margin-top;
+// $h3-font-text-rendering: $heading-font-text-rendering;
+
+// h4
+//==============================================================================
+
+// $h4-font-size: 2.5rem;
+// $h4-font-family: $heading-font-family;
+// $h4-font-weight: $heading-font-weight;
+// $h4-line-height: $heading-font-line-height;
+// $h4-font-margin-bottom: $heading-font-margin-bottom;
+// $h4-font-margin-top: $heading-font-margin-top;
+// $h4-font-text-rendering: $heading-font-text-rendering;
+
+// h5
+//==============================================================================
+
+// $h5-font-size: 2rem;
+// $h5-font-family: $heading-font-family;
+// $h5-font-weight: $heading-font-weight;
+// $h5-line-height: $heading-font-line-height;
+// $h5-font-margin-bottom: $heading-font-margin-bottom;
+// $h5-font-margin-top: $heading-font-margin-top;
+// $h5-font-text-rendering: $heading-font-text-rendering;
+
+// h6
+//==============================================================================
+
+// $h6-font-size: 1.5rem;
+// $h6-font-family: $heading-font-family;
+// $h6-font-weight: $heading-font-weight;
+// $h6-line-height: $heading-font-line-height;
+// $h6-font-margin-bottom: $heading-font-margin-bottom;
+// $h6-font-margin-top: $heading-font-margin-top;
+// $h6-font-text-rendering: $heading-font-text-rendering;
 
 // TODO: H1 settings/defaults etc
-
-
-
 
 
 //==============================================================================

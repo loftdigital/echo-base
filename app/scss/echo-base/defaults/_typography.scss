@@ -50,13 +50,77 @@ $fixed-line-height: $base-line-height !default;
 
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
+$heading-line-height: 1.4 !default;
 $heading-font-margin-top: 0.2rem !default;
 $heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
-$heading-line-height: 1.4 !default;
 
+
+// h1
+//==============================================================================
 
 $h1-font-size: 4rem !default;
+$h1-font-family: $heading-font-family !default;
+$h1-font-weight: $heading-font-weight !default;
+$h1-line-height: $heading-line-height !default;
+$h1-font-margin-bottom: $heading-font-margin-bottom !default;
+$h1-font-margin-top: $heading-font-margin-top !default;
+$h1-font-text-rendering: optimizedLegibility !default;
+
+// h2
+//==============================================================================
+
+$h2-font-size: 3.5rem !default;
+$h2-font-family: $heading-font-family !default;
+$h2-font-weight: $heading-font-weight !default;
+$h2-line-height: $heading-line-height !default;
+$h2-font-margin-bottom: $heading-font-margin-bottom !default;
+$h2-font-margin-top: $heading-font-margin-top !default;
+$h2-font-text-rendering: optimizedLegibility !default;
+
+// h3
+//==============================================================================
+
+$h3-font-size: 3rem !default;
+$h3-font-family: $heading-font-family !default;
+$h3-font-weight: $heading-font-weight !default;
+$h3-line-height: $heading-line-height !default;
+$h3-font-margin-bottom: $heading-font-margin-bottom !default;
+$h3-font-margin-top: $heading-font-margin-top !default;
+$h3-font-text-rendering: optimizedLegibility !default;
+
+// h4
+//==============================================================================
+
+$h4-font-size: 2.5rem !default;
+$h4-font-family: $heading-font-family !default;
+$h4-font-weight: $heading-font-weight !default;
+$h4-line-height: $heading-line-height !default;
+$h4-font-margin-bottom: $heading-font-margin-bottom !default;
+$h4-font-margin-top: $heading-font-margin-top !default;
+$h4-font-text-rendering: optimizedLegibility !default;
+
+// h5
+//==============================================================================
+
+$h5-font-size: 2rem !default;
+$h5-font-family: $heading-font-family !default;
+$h5-font-weight: $heading-font-weight !default;
+$h5-line-height: $heading-line-height !default;
+$h5-font-margin-bottom: $heading-font-margin-bottom !default;
+$h5-font-margin-top: $heading-font-margin-top !default;
+$h5-font-text-rendering: optimizedLegibility !default;
+
+// h6
+//==============================================================================
+
+$h6-font-size: 1.5rem !default;
+$h6-font-family: $heading-font-family !default;
+$h6-font-weight: $heading-font-weight !default;
+$h6-line-height: $heading-line-height !default;
+$h6-font-margin-bottom: $heading-font-margin-bottom !default;
+$h6-font-margin-top: $heading-font-margin-top !default;
+$h6-font-text-rendering: optimizedLegibility !default;
 
 
 //==============================================================================
@@ -66,21 +130,70 @@ $h1-font-size: 4rem !default;
 // Headings
 //==============================================================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6, {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
-    line-height: $heading-line-height;
-    margin-bottom: $heading-font-margin-bottom;
-    margin-top: $heading-font-margin-top;
-    text-rendering: $heading-font-text-rendering;
-}
+h1{
 
-h1 { font-size: $h1-font-size; }
+    font-size: $h1-font-size;
+    font-family: $h1-font-family;
+    font-weight: $h1-font-weight;
+    line-height: $h1-line-height;
+    margin-bottom: $h1-font-margin-bottom;
+    margin-top: $h1-font-margin-top;
+    text-rendering: $h1-font-text-rendering;
+
+}
+h2{
+
+    font-size: $h2-font-size;
+    font-family: $h2-font-family;
+    font-weight: $h2-font-weight;
+    line-height: $h2-line-height;
+    margin-bottom: $h2-font-margin-bottom;
+    margin-top: $h2-font-margin-top;
+    text-rendering: $h2-font-text-rendering;
+
+}
+h3{
+
+    font-size: $h3-font-size;
+    font-family: $h3-font-family;
+    font-weight: $h3-font-weight;
+    line-height: $h3-line-height;
+    margin-bottom: $h3-font-margin-bottom;
+    margin-top: $h3-font-margin-top;
+    text-rendering: $h3-font-text-rendering;
+
+
+}
+h4{
+
+    font-size: $h4-font-size;
+    font-family: $h4-font-family;
+    font-weight: $h4-font-weight;
+    line-height: $h4-line-height;
+    margin-bottom: $h4-font-margin-bottom;
+    margin-top: $h4-font-margin-top;
+    text-rendering: $h4-font-text-rendering;
+
+}
+h5{
+
+    font-size: $h5-font-size;
+    font-family: $h5-font-family;
+    font-weight: $h5-font-weight;
+    line-height: $h5-line-height;
+    margin-bottom: $h5-font-margin-bottom;
+    margin-top: $h5-font-margin-top;
+    text-rendering: $h5-font-text-rendering;
+
+}
+h6 {
+    font-family: $h6-font-family;
+    font-weight: $h6-font-weight;
+    line-height: $h6-line-height;
+    margin-bottom: $h6-font-margin-bottom;
+    margin-top: $h6-font-margin-top;
+    text-rendering: $h6-font-text-rendering;
+}
 
 
 // TODO: Fill in
