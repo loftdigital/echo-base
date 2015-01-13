@@ -54,6 +54,8 @@ $heading-line-height: 1.4 !default;
 $heading-font-margin-top: 0.2rem !default;
 $heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
+$heading-letter-spacing: normal !default;
+$heading-text-transform: none !default;
 
 
 // h1
@@ -65,7 +67,9 @@ $h1-font-weight: $heading-font-weight !default;
 $h1-line-height: $heading-line-height !default;
 $h1-font-margin-bottom: $heading-font-margin-bottom !default;
 $h1-font-margin-top: $heading-font-margin-top !default;
-$h1-font-text-rendering: optimizedLegibility !default;
+$h1-font-text-rendering: $heading-font-text-rendering !default;
+$h1-letter-spacing: $heading-letter-spacing !default;
+$h1-text-transform: $heading-text-transform !default;
 
 // h2
 //==============================================================================
@@ -77,6 +81,8 @@ $h2-line-height: $heading-line-height !default;
 $h2-font-margin-bottom: $heading-font-margin-bottom !default;
 $h2-font-margin-top: $heading-font-margin-top !default;
 $h2-font-text-rendering: optimizedLegibility !default;
+$h2-letter-spacing: $heading-letter-spacing !default;
+$h2-text-transform: $heading-text-transform !default;
 
 // h3
 //==============================================================================
@@ -88,6 +94,8 @@ $h3-line-height: $heading-line-height !default;
 $h3-font-margin-bottom: $heading-font-margin-bottom !default;
 $h3-font-margin-top: $heading-font-margin-top !default;
 $h3-font-text-rendering: optimizedLegibility !default;
+$h3-letter-spacing: $heading-letter-spacing !default;
+$h3-text-transform: $heading-text-transform !default;
 
 // h4
 //==============================================================================
@@ -99,6 +107,8 @@ $h4-line-height: $heading-line-height !default;
 $h4-font-margin-bottom: $heading-font-margin-bottom !default;
 $h4-font-margin-top: $heading-font-margin-top !default;
 $h4-font-text-rendering: optimizedLegibility !default;
+$h4-letter-spacing: $heading-letter-spacing !default;
+$h4-text-transform: $heading-text-transform !default;
 
 // h5
 //==============================================================================
@@ -110,6 +120,8 @@ $h5-line-height: $heading-line-height !default;
 $h5-font-margin-bottom: $heading-font-margin-bottom !default;
 $h5-font-margin-top: $heading-font-margin-top !default;
 $h5-font-text-rendering: optimizedLegibility !default;
+$h5-letter-spacing: $heading-letter-spacing !default;
+$h5-text-transform: $heading-text-transform !default;
 
 // h6
 //==============================================================================
@@ -121,6 +133,8 @@ $h6-line-height: $heading-line-height !default;
 $h6-font-margin-bottom: $heading-font-margin-bottom !default;
 $h6-font-margin-top: $heading-font-margin-top !default;
 $h6-font-text-rendering: optimizedLegibility !default;
+$h6-letter-spacing: $heading-letter-spacing !default;
+$h6-text-transform: $heading-text-transform !default;
 
 
 //==============================================================================
@@ -138,6 +152,8 @@ h1 {
     margin-bottom: $h1-font-margin-bottom;
     margin-top: $h1-font-margin-top;
     text-rendering: $h1-font-text-rendering;
+    letter-spacing: $h1-letter-spacing;
+    text-transform: $h1-text-transform;
 }
 
 h2 {
@@ -148,6 +164,8 @@ h2 {
     margin-bottom: $h2-font-margin-bottom;
     margin-top: $h2-font-margin-top;
     text-rendering: $h2-font-text-rendering;
+    letter-spacing: $h2-letter-spacing;
+    text-transform: $h2-text-transform;
 }
 
 h3 {
@@ -158,6 +176,8 @@ h3 {
     margin-bottom: $h3-font-margin-bottom;
     margin-top: $h3-font-margin-top;
     text-rendering: $h3-font-text-rendering;
+    letter-spacing: $h3-letter-spacing;
+    text-transform: $h3-text-transform;
 }
 
 h4 {
@@ -168,6 +188,8 @@ h4 {
     margin-bottom: $h4-font-margin-bottom;
     margin-top: $h4-font-margin-top;
     text-rendering: $h4-font-text-rendering;
+    letter-spacing: $h4-letter-spacing;
+    text-transform: $h4-text-transform;
 }
 
 h5 {
@@ -178,6 +200,8 @@ h5 {
     margin-bottom: $h5-font-margin-bottom;
     margin-top: $h5-font-margin-top;
     text-rendering: $h5-font-text-rendering;
+    letter-spacing: $h5-letter-spacing;
+    text-transform: $h5-text-transform;
 }
 
 h6 {
@@ -187,6 +211,8 @@ h6 {
     margin-bottom: $h6-font-margin-bottom;
     margin-top: $h6-font-margin-top;
     text-rendering: $h6-font-text-rendering;
+    letter-spacing: $h6-letter-spacing;
+    text-transform: $h6-text-transform;
 }
 
 
