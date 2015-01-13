@@ -1,4 +1,5 @@
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-size: 4rem;
   font-family: Arial, sans-serif;
   font-weight: 700;
   line-height: 1.4;
@@ -6,8 +7,49 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2rem;
   text-rendering: optimizedLegibility; }
 
-h1 {
-  font-size: 4rem; }
+h2 {
+  font-size: 3.5rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-rendering: optimizedLegibility; }
+
+h3 {
+  font-size: 3rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-rendering: optimizedLegibility; }
+
+h4 {
+  font-size: 2.5rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-rendering: optimizedLegibility; }
+
+h5 {
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-rendering: optimizedLegibility; }
+
+h6 {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-rendering: optimizedLegibility; }
 
 *, *:before, *:after {
   box-sizing: border-box; }
