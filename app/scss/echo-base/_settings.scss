@@ -9,6 +9,7 @@
 // b. Typography
 // c. General
 // d. Forms
+// e. Table
 //
 //
 // @copyright 2015, Loft Digital, www.weareloft.com
@@ -337,3 +338,50 @@ $partial-base-url: '../echo-base';
 
 // $button-error-background-color-hover: darken($button-error-background-color, 5%);
 // $button-error-border-color-hover: darken($button-error-border-color, 5%);
+
+
+
+
+
+
+
+
+// Table
+//==============================================================================
+
+// $table-width: 100%;
+
+// Table head
+//==============================================================================
+
+// $thead-border-bottom-width: 2px;
+// $thead-border-bottom-style: solid;
+// $thead-border-bottom-color: #e4e4e4;
+
+// Table body
+//==============================================================================
+
+// Table row
+//==============================================================================
+
+// $tr-background-color-odd: #f9f9f9;
+// $tr-background-color-even: #f1f1f1;
+
+// Table heading
+//==============================================================================
+
+// $th-padding-top: 1rem;
+// $th-padding-bottom: 1rem;
+// $th-padding-right: 1rem;
+// $th-padding-left: 1rem;
+// $th-background-color: #fff;
+// $th-font-weight: $base-font-weight;
+
+// Table data
+//==============================================================================
+
+// $td-padding-top: 1rem;
+// $td-padding-bottom: 1rem;
+// $td-padding-right: 1rem;
+// $td-padding-left: 1rem;
+// $td-font-weight: $base-font-weight;
