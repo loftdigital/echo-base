@@ -1,14 +1,13 @@
 {
-  "name": "base one",
-  "version": "0.0.1",
+  "name": "Echo Base",
+  "version": "0.0.5",
   "authors": [
-    "Ben Griffith <ben@loftdigital.com>"
+    "Loft Digital"
   ],
-  "description": "base one template",
+  "description": "Echo base front end framework",
   "moduleType": [
     "node"
   ],
-  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
