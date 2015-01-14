@@ -19,25 +19,18 @@
 // a. Import defaults
 //==============================================================================
 
-
 @import 'typography';
 
 @import 'global';
 
-
-// Form elements
-//==============================================================================
-
-@import 'form';
-@import 'fieldset';
-@import 'legend';
-@import 'label';
-@import 'select';
-@import 'input';
-@import 'textarea';
 @import 'button';
-
+@import 'fieldset';
+@import 'form';
+@import 'input';
+@import 'label';
+@import 'legend';
+@import 'select';
 @import 'table';
-
+@import 'textarea';
 
 @import 'grid';
