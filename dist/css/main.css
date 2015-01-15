@@ -5,7 +5,7 @@ h1 {
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
