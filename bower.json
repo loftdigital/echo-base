@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "2.2.0.rc.2",
+    "susy": "2.2.1",
     "normalize.css": "~3.0.2"
   }
 }
