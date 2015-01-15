@@ -160,8 +160,8 @@ $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
 //==============================================================================
 
 $ul-list-style-type: disc !default;
-$ul-margin-top: 1rem !default;
-$ul-margin-bottom: 1rem !default;
+$ul-margin-top: 1.5rem !default;
+$ul-margin-bottom: 1.5rem !default;
 $ul-margin-right: 0 !default;
 $ul-margin-left: 1.3rem !default;
 
@@ -169,8 +169,8 @@ $ul-margin-left: 1.3rem !default;
 //==============================================================================
 
 $ol-list-style-type: decimal !default;
-$ol-margin-top: 1rem !default;
-$ol-margin-bottom: 1rem !default;
+$ol-margin-top: 1.5rem !default;
+$ol-margin-bottom: 1.5rem !default;
 $ol-margin-right: 0 !default;
 $ol-margin-left: 1.3rem !default;
 
@@ -189,6 +189,26 @@ $li-padding-top: 0 !default;
 $li-padding-bottom: 0 !default;
 $li-padding-right: 0 !default;
 $li-padding-left: 0 !default;
+
+// blockquote
+//==============================================================================
+
+$blockquote-font-family: $base-font-family !default;
+$blockquote-font-size: $base-font-size !default;
+$blockquote-font-weight: $base-font-weight !default;
+$blockquote-line-height: $base-line-height !default;
+$blockquote-margin-top: 1.5rem !default;
+$blockquote-margin-bottom: 1.5rem !default;
+$blockquote-margin-right: 1.5rem !default;
+$blockquote-margin-left: 1.5rem !default;
+$blockquote-padding-top: 0 !default;
+$blockquote-padding-bottom: 0 !default;
+$blockquote-padding-right: 0 !default;
+$blockquote-padding-left: 0.5rem !default;
+$blockquote-border-left-width: 5px !default;
+$blockquote-border-left-style: solid !default;
+$blockquote-border-left-color: rgb(0, 200, 162) !default;
+
 
 
 //==============================================================================
@@ -331,6 +351,26 @@ li {
     padding-left: $li-padding-left;
 }
 
+// Blockquote
+//==============================================================================
+
+blockquote {
+    font-family: $blockquote-font-family;
+    font-size: $blockquote-font-size;
+    font-weight: $blockquote-font-weight;
+    line-height: $blockquote-line-height;
+    margin-top: $blockquote-margin-top;
+    margin-bottom: $blockquote-margin-bottom;
+    margin-right: $blockquote-margin-right;
+    margin-left: $blockquote-margin-left;
+    padding-top: $blockquote-padding-top;
+    padding-bottom: $blockquote-padding-bottom;
+    padding-right: $blockquote-padding-right;
+    padding-left: $blockquote-padding-left;
+    border-left-width: $blockquote-border-left-width;
+    border-left-style: $blockquote-border-left-style;
+    border-left-color: $blockquote-border-left-color;
+}
 
 
 // TODO: Fill in

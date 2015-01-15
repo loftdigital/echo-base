@@ -83,15 +83,15 @@ a {
 
 ul {
   list-style-type: disc;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   margin-right: 0;
   margin-left: 1.3rem; }
 
 ol {
   list-style-type: decimal;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   margin-right: 0;
   margin-left: 1.3rem; }
 
@@ -108,6 +108,23 @@ li {
   padding-bottom: 0;
   padding-right: 0;
   padding-left: 0; }
+
+blockquote {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0.5rem;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-left-color: #00c8a2; }
 
 *, *:before, *:after {
   box-sizing: border-box; }
