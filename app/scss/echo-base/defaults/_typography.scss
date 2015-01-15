@@ -80,7 +80,7 @@ $h2-font-weight: $heading-font-weight !default;
 $h2-line-height: $heading-line-height !default;
 $h2-font-margin-bottom: $heading-font-margin-bottom !default;
 $h2-font-margin-top: $heading-font-margin-top !default;
-$h2-font-text-rendering: optimizedLegibility !default;
+$h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
@@ -93,7 +93,7 @@ $h3-font-weight: $heading-font-weight !default;
 $h3-line-height: $heading-line-height !default;
 $h3-font-margin-bottom: $heading-font-margin-bottom !default;
 $h3-font-margin-top: $heading-font-margin-top !default;
-$h3-font-text-rendering: optimizedLegibility !default;
+$h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
 
@@ -106,7 +106,7 @@ $h4-font-weight: $heading-font-weight !default;
 $h4-line-height: $heading-line-height !default;
 $h4-font-margin-bottom: $heading-font-margin-bottom !default;
 $h4-font-margin-top: $heading-font-margin-top !default;
-$h4-font-text-rendering: optimizedLegibility !default;
+$h4-font-text-rendering: $heading-font-text-rendering !default;
 $h4-letter-spacing: $heading-letter-spacing !default;
 $h4-text-transform: $heading-text-transform !default;
 
@@ -119,7 +119,7 @@ $h5-font-weight: $heading-font-weight !default;
 $h5-line-height: $heading-line-height !default;
 $h5-font-margin-bottom: $heading-font-margin-bottom !default;
 $h5-font-margin-top: $heading-font-margin-top !default;
-$h5-font-text-rendering: optimizedLegibility !default;
+$h5-font-text-rendering: $heading-font-text-rendering !default;
 $h5-letter-spacing: $heading-letter-spacing !default;
 $h5-text-transform: $heading-text-transform !default;
 
@@ -132,7 +132,7 @@ $h6-font-weight: $heading-font-weight !default;
 $h6-line-height: $heading-line-height !default;
 $h6-font-margin-bottom: $heading-font-margin-bottom !default;
 $h6-font-margin-top: $heading-font-margin-top !default;
-$h6-font-text-rendering: optimizedLegibility !default;
+$h6-font-text-rendering: $heading-font-text-rendering !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
 
@@ -251,6 +251,7 @@ h5 {
 }
 
 h6 {
+    font-size: $h6-font-size;
     font-family: $h6-font-family;
     font-weight: $h6-font-weight;
     line-height: $h6-line-height;

@@ -16,7 +16,7 @@ h2 {
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
@@ -27,7 +27,7 @@ h3 {
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
@@ -38,7 +38,7 @@ h4 {
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
@@ -49,17 +49,18 @@ h5 {
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
 h6 {
+  font-size: 1.5rem;
   font-family: Arial, sans-serif;
   font-weight: 700;
   line-height: 1.5;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
-  text-rendering: optimizedLegibility;
+  text-rendering: optimizeLegibility;
   letter-spacing: normal;
   text-transform: none; }
 
