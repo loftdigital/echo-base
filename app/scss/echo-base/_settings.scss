@@ -155,7 +155,26 @@ $partial-base-url: '../echo-base';
 // $h6-letter-spacing: $heading-letter-spacing;
 // $h6-text-transform: $heading-text-transform;
 
-// TODO: H1 settings/defaults etc
+// ul
+//==============================================================================
+
+// $ul-list-style-type: disc;
+// $ul-margin-top: 1rem;
+// $ul-margin-bottom: 1rem;
+// $ul-margin-right: 0;
+// $ul-margin-left: 1.3rem;
+
+// ol
+//==============================================================================
+
+// $ol-list-style-type: decimal;
+// $ol-margin-top: 1rem;
+// $ol-margin-bottom: 1rem;
+// $ol-margin-right: 0;
+// $ol-margin-left: 1.3rem;
+
+// li
+//==============================================================================
 
 
 //==============================================================================
@@ -237,8 +256,8 @@ $partial-base-url: '../echo-base';
 //==============================================================================
 
 // $select-width: 100%;
-// $select-height: 45px;
-// $select-padding-bottom: 0.75rem;
+// $select-height: auto;
+// $select-padding-bottom: 0.5rem;
 // $select-padding-top: 0.75rem;
 // $select-padding-left: 0.5rem;
 // $select-padding-right: 0.5rem;
@@ -253,8 +272,10 @@ $partial-base-url: '../echo-base';
 // $select-border-width: 1px;
 // $select-border-radius: 5px;
 // $select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-// $select-font-size: 0.8rem;
-// $select-font-weight: $font-weight-regular;
+// $select-font-family: $base-font-family;
+// $select-font-size: $base-font-size;
+// $select-font-weight: $base-font-weight;
+// $select-line-height: $base-line-height;
 // $select-appearance: none;
 
 // $select-border-color-focus: #ccc;
@@ -270,7 +291,7 @@ $partial-base-url: '../echo-base';
 
 // $input-text-display: block;
 // $input-text-width: 100%;
-// $input-text-height: 45px;
+// $input-text-height: auto;
 // $input-text-padding-bottom: 0.75rem;
 // $input-text-padding-top: 0.75rem;
 // $input-text-padding-left: 0.5rem;
@@ -283,8 +304,10 @@ $partial-base-url: '../echo-base';
 // $input-text-border-width: 1px;
 // $input-text-border-radius: 5px;
 // $input-text-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+// $input-text-font-family: $base-font-family;
 // $input-text-font-size: $base-font-size;
 // $input-text-font-weight: $base-font-weight;
+// $input-text-line-height: $base-line-height;
 // $input-text-appearance: none;
 
 // $input-text-border-color-focus: #ccc;

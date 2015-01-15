@@ -34,7 +34,7 @@ $font-weight-bold: 700 !default;
 
 $base-font-family: Arial, sans-serif !default;
 $base-font-weight: $font-weight-regular !default;
-$base-font-size: 16px !default;
+$base-font-size: 18px !default;
 $base-font-style: normal;
 $base-line-height: 1.5 !default;
 
@@ -50,7 +50,7 @@ $fixed-line-height: $base-line-height !default;
 
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
-$heading-line-height: 1.4 !default;
+$heading-line-height: 1.5 !default;
 $heading-font-margin-top: 0.2rem !default;
 $heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizedLegibility !default;
@@ -136,6 +136,52 @@ $h6-font-text-rendering: optimizedLegibility !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
 
+// p
+//==============================================================================
+
+$p-font-family: $base-font-family !default;
+$p-font-size: $base-font-size !default;
+$p-font-weight: $base-font-weight !default;
+$p-line-height: $base-line-height !default;
+$p-letter-spacing: 0 !default;
+$p-text-transform: none !default;
+$p-margin-top: 1.5rem !default;
+$p-margin-bottom: 1.5rem !default;
+
+// ul
+//==============================================================================
+
+$ul-list-style-type: disc !default;
+$ul-margin-top: 1rem !default;
+$ul-margin-bottom: 1rem !default;
+$ul-margin-right: 0 !default;
+$ul-margin-left: 1.3rem !default;
+
+// ol
+//==============================================================================
+
+$ol-list-style-type: decimal !default;
+$ol-margin-top: 1rem !default;
+$ol-margin-bottom: 1rem !default;
+$ol-margin-right: 0 !default;
+$ol-margin-left: 1.3rem !default;
+
+// li
+//==============================================================================
+
+$li-font-family: $base-font-family !default;
+$li-font-size: $base-font-size !default;
+$li-font-weight: $base-font-weight !default;
+$li-line-height: $base-line-height !default;
+$li-margin-top: 0 !default;
+$li-margin-bottom: 0 !default;
+$li-margin-right: 0 !default;
+$li-margin-left: 0 !default;
+$li-padding-top: 0 !default;
+$li-padding-bottom: 0 !default;
+$li-padding-right: 0 !default;
+$li-padding-left: 0 !default;
+
 
 //==============================================================================
 // c. Classes
@@ -214,6 +260,55 @@ h6 {
     letter-spacing: $h6-letter-spacing;
     text-transform: $h6-text-transform;
 }
+
+// Paragraph
+//==============================================================================
+
+p {
+    font-family: $p-font-family;
+    font-size: $p-font-size;
+    font-weight: $p-font-weight;
+    line-height: $p-line-height;
+    letter-spacing: $p-letter-spacing;
+    text-transform: $p-text-transform;
+    margin-top: $p-margin-top;
+    margin-bottom: $p-margin-bottom;
+}
+
+// Lists
+//==============================================================================
+
+ul {
+    list-style-type: $ul-list-style-type;
+    margin-top: $ul-margin-top;
+    margin-bottom: $ul-margin-bottom;
+    margin-right: $ul-margin-right;
+    margin-left: $ul-margin-left;
+}
+
+ol {
+    list-style-type: $ol-list-style-type;
+    margin-top: $ol-margin-top;
+    margin-bottom: $ol-margin-bottom;
+    margin-right: $ol-margin-right;
+    margin-left: $ol-margin-left;
+}
+
+li {
+    font-family: $li-font-family;
+    font-size: $li-font-size;
+    font-weight: $li-font-weight;
+    line-height: $li-line-height;
+    margin-top: $li-margin-top;
+    margin-bottom: $li-margin-bottom;
+    margin-right: $li-margin-right;
+    margin-left: $li-margin-left;
+    padding-top: $li-padding-top;
+    padding-bottom: $li-padding-bottom;
+    padding-right: $li-padding-right;
+    padding-left: $li-padding-left;
+}
+
 
 
 // TODO: Fill in

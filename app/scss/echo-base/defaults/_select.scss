@@ -19,8 +19,8 @@
 //==============================================================================
 
 $select-width: 100% !default;
-$select-height: 45px !default;
-$select-padding-bottom: 0.75rem !default;
+$select-height: auto !default;
+$select-padding-bottom: 0.5rem !default;
 $select-padding-top: 0.75rem !default;
 $select-padding-left: 0.5rem !default;
 $select-padding-right: 0.5rem !default;
@@ -35,8 +35,10 @@ $select-border-style: solid !default;
 $select-border-width: 1px !default;
 $select-border-radius: 5px !default;
 $select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$select-font-family: $base-font-family !default;
 $select-font-size: $base-font-size !default;
 $select-font-weight: $base-font-weight !default;
+$select-line-height: $base-line-height !default;
 $select-appearance: none !default;
 
 // State: Focus
@@ -70,8 +72,10 @@ select {
     border-style: $select-border-style;
     border-width: $select-border-width;
     border-radius: $select-border-radius;
+    font-family: $select-font-family;
     font-size: $select-font-size;
     font-weight: $select-font-weight;
+    line-height: $select-line-height;
     background-color: $select-background-color;
     background-image: $select-background-image;
     background-position: $select-background-position;

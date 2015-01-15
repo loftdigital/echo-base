@@ -23,6 +23,8 @@
 
 $button-position: relative !default;
 $button-display: inline-block !default;
+$button-width: auto !default;
+$button-height: auto !default;
 $button-padding-bottom: 0.75rem !default;
 $button-padding-top: 0.75rem !default;
 $button-padding-right: 1rem !default;
@@ -35,6 +37,7 @@ $button-cursor: pointer !default;
 $button-border-style: solid !default;
 $button-border-width: 1px !default;
 $button-border-radius: 5px !default;
+$button-font-family: $base-font-family !default;
 $button-font-size: $base-font-size !default;
 $button-font-weight: $base-font-weight !default;
 $button-line-height: $base-line-height !default;
@@ -112,6 +115,8 @@ input[type="submit"],
 
     position: $button-position;
     display: $button-display;
+    width: $button-width;
+    height: $button-height;
     padding-bottom: $button-padding-bottom;
     padding-top: $button-padding-top;
     padding-right: $button-padding-right;
@@ -124,6 +129,7 @@ input[type="submit"],
     border-style: $button-border-style;
     border-width: $button-border-width;
     border-radius: $button-border-radius;
+    font-family: $button-font-family;
     font-size: $button-font-size;
     font-weight: $button-font-weight;
     line-height: $button-line-height;

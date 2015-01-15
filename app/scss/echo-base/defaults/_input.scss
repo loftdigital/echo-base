@@ -20,8 +20,8 @@
 
 $input-text-display: block !default;
 $input-text-width: 100% !default;
-$input-text-height: 45px !default;
-$input-text-padding-bottom: 0.75rem !default;
+$input-text-height: auto !default;
+$input-text-padding-bottom: 0.5rem !default;
 $input-text-padding-top: 0.75rem !default;
 $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
@@ -33,8 +33,10 @@ $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
 $input-text-border-radius: 5px !default;
 $input-text-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$input-text-font-family: $base-font-family !default;
 $input-text-font-size: $base-font-size !default;
 $input-text-font-weight: $base-font-weight !default;
+$input-text-line-height: $base-line-height !default;
 $input-text-appearance: none !default;
 
 // State: Focus
@@ -85,8 +87,10 @@ input[type="url"] {
     border-width: $input-text-border-width;
     border-radius: $input-text-border-radius;
     box-shadow: $input-text-box-shadow;
+    font-family: $input-text-font-family;
     font-size: $input-text-font-size;
     font-weight: $input-text-font-weight;
+    line-height: $input-text-line-height;
     -moz-appearance: $input-text-appearance;
     -webkit-appearance: $input-text-appearance;
 
