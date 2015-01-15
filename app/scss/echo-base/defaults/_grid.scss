@@ -31,7 +31,8 @@
 //==============================================================================
 
 $grid-content-container: 1280px !default;
-
+$grid-content-block-padding-left: 2% !default;
+$grid-content-block-padding-right: 2% !default;
 
 //==============================================================================
 //  b. Grid layouts
@@ -96,6 +97,8 @@ $content: (
 
         &-content__block {
             @include full;
+            padding-left: $grid-content-block-padding-left;
+            padding-right: $grid-content-block-padding-right;
         }
     }
 }
