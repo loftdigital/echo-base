@@ -148,6 +148,14 @@ $p-text-transform: none !default;
 $p-margin-top: 1.5rem !default;
 $p-margin-bottom: 1.5rem !default;
 
+// a
+//==============================================================================
+
+$a-text-decoration: none !default;
+$a-text-decoration-hover: none !default;
+$a-font-color: rgb(0, 200, 162) !default;
+$a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
+
 // ul
 //==============================================================================
 
@@ -274,6 +282,19 @@ p {
     text-transform: $p-text-transform;
     margin-top: $p-margin-top;
     margin-bottom: $p-margin-bottom;
+}
+
+// Anchors
+//==============================================================================
+
+a {
+    text-decoration: $a-text-decoration;
+    color: $a-font-color;
+
+    &:hover {
+        text-decoration: $a-text-decoration-hover;
+        color: $a-font-color-hover;
+    }
 }
 
 // Lists

@@ -74,6 +74,13 @@ p {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem; }
 
+a {
+  text-decoration: none;
+  color: #00c8a2; }
+  a:hover {
+    text-decoration: none;
+    color: #00ac8b; }
+
 ul {
   list-style-type: disc;
   margin-top: 1rem;
