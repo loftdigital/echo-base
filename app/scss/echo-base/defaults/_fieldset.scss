@@ -28,7 +28,7 @@ $fieldset-background-color: transparent !default;
 $fieldset-border-color: #ccc !default;
 $fieldset-border-style: solid !default;
 $fieldset-border-width: 1px !default;
-$fieldset-border-radius: 5px !default;
+$fieldset-border-radius: $global-border-radius !default;
 
 //==============================================================================
 //  b. Classes

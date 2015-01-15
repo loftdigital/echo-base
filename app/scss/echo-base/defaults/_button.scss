@@ -36,7 +36,7 @@ $button-margin-left: 0 !default;
 $button-cursor: pointer !default;
 $button-border-style: solid !default;
 $button-border-width: 1px !default;
-$button-border-radius: 5px !default;
+$button-border-radius: $global-border-radius !default;
 $button-font-family: $base-font-family !default;
 $button-font-size: $base-font-size !default;
 $button-font-weight: $base-font-weight !default;

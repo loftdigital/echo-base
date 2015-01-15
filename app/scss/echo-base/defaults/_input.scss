@@ -31,7 +31,7 @@ $input-text-background-color: rgb(255, 255, 255) !default;
 $input-text-border-color: rgb(228, 228, 228) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
-$input-text-border-radius: 5px !default;
+$input-text-border-radius: $global-border-radius !default;
 $input-text-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
 $input-text-font-family: $base-font-family !default;
 $input-text-font-size: $base-font-size !default;
