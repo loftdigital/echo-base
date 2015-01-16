@@ -58,7 +58,7 @@ $heading-letter-spacing: normal !default;
 $heading-text-transform: none !default;
 
 
-// h1
+// Heading - <h1>
 //==============================================================================
 
 $h1-font-size: 4rem !default;
@@ -71,7 +71,7 @@ $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
-// h2
+// Heading - <h2>
 //==============================================================================
 
 $h2-font-size: 3.5rem !default;
@@ -84,7 +84,7 @@ $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
-// h3
+// Heading - <h3>
 //==============================================================================
 
 $h3-font-size: 3rem !default;
@@ -97,7 +97,7 @@ $h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
 
-// h4
+// Heading - <h4>
 //==============================================================================
 
 $h4-font-size: 2.5rem !default;
@@ -110,7 +110,7 @@ $h4-font-text-rendering: $heading-font-text-rendering !default;
 $h4-letter-spacing: $heading-letter-spacing !default;
 $h4-text-transform: $heading-text-transform !default;
 
-// h5
+// Heading - <h5>
 //==============================================================================
 
 $h5-font-size: 2rem !default;
@@ -123,7 +123,7 @@ $h5-font-text-rendering: $heading-font-text-rendering !default;
 $h5-letter-spacing: $heading-letter-spacing !default;
 $h5-text-transform: $heading-text-transform !default;
 
-// h6
+// heading - <h6>
 //==============================================================================
 
 $h6-font-size: 1.5rem !default;
@@ -136,7 +136,7 @@ $h6-font-text-rendering: $heading-font-text-rendering !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
 
-// p
+// Paragraph - <p>
 //==============================================================================
 
 $p-font-family: $base-font-family !default;
@@ -148,7 +148,7 @@ $p-text-transform: none !default;
 $p-margin-top: 1.5rem !default;
 $p-margin-bottom: 1.5rem !default;
 
-// a
+// Anchor - <a>
 //==============================================================================
 
 $a-text-decoration: none !default;
@@ -156,7 +156,7 @@ $a-text-decoration-hover: none !default;
 $a-font-color: rgb(0, 200, 162) !default;
 $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
 
-// ul
+// Unordered list - <ul>
 //==============================================================================
 
 $ul-list-style-type: disc !default;
@@ -165,7 +165,7 @@ $ul-margin-bottom: 1.5rem !default;
 $ul-margin-right: 0 !default;
 $ul-margin-left: 1.3rem !default;
 
-// ol
+// Ordered list - <ol>
 //==============================================================================
 
 $ol-list-style-type: decimal !default;
@@ -174,7 +174,7 @@ $ol-margin-bottom: 1.5rem !default;
 $ol-margin-right: 0 !default;
 $ol-margin-left: 1.3rem !default;
 
-// li
+// List item - <li>
 //==============================================================================
 
 $li-font-family: $base-font-family !default;
@@ -190,7 +190,7 @@ $li-padding-bottom: 0 !default;
 $li-padding-right: 0 !default;
 $li-padding-left: 0 !default;
 
-// blockquote
+// Blockquote - <blockquote>
 //==============================================================================
 
 $blockquote-font-family: $base-font-family !default;
@@ -371,6 +371,3 @@ blockquote {
     border-left-style: $blockquote-border-left-style;
     border-left-color: $blockquote-border-left-color;
 }
-
-
-// TODO: Fill in

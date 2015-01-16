@@ -77,7 +77,7 @@ $partial-base-url: '../echo-base';
 // $heading-letter-spacing: normal;
 // $heading-text-transform: none;
 
-// h1
+// Heading - <h1>
 //==============================================================================
 
 // $h1-font-size: 4rem;
@@ -90,7 +90,7 @@ $partial-base-url: '../echo-base';
 // $h1-letter-spacing: $heading-letter-spacing;
 // $h1-text-transform: $heading-text-transform;
 
-// h2
+// Heading - <h2>
 //==============================================================================
 
 // $h2-font-size: 3.5rem;
@@ -103,7 +103,7 @@ $partial-base-url: '../echo-base';
 // $h2-letter-spacing: $heading-letter-spacing;
 // $h2-text-transform: $heading-text-transform;
 
-// h3
+// Heading - <h3>
 //==============================================================================
 
 // $h3-font-size: 3rem;
@@ -116,7 +116,7 @@ $partial-base-url: '../echo-base';
 // $h3-letter-spacing: $heading-letter-spacing;
 // $h3-text-transform: $heading-text-transform;
 
-// h4
+// Heading - <h4>
 //==============================================================================
 
 // $h4-font-size: 2.5rem;
@@ -129,7 +129,7 @@ $partial-base-url: '../echo-base';
 // $h4-letter-spacing: $heading-letter-spacing;
 // $h4-text-transform: $heading-text-transform;
 
-// h5
+// Heading - <h5>
 //==============================================================================
 
 // $h5-font-size: 2rem;
@@ -142,7 +142,7 @@ $partial-base-url: '../echo-base';
 // $h5-letter-spacing: $heading-letter-spacing;
 // $h5-text-transform: $heading-text-transform;
 
-// h6
+// Heading - <h6>
 //==============================================================================
 
 // $h6-font-size: 1.5rem;
@@ -155,7 +155,7 @@ $partial-base-url: '../echo-base';
 // $h6-letter-spacing: $heading-letter-spacing;
 // $h6-text-transform: $heading-text-transform;
 
-// p
+// Paragraph - <p>
 //==============================================================================
 
 // $p-font-family: $base-font-family;
@@ -167,7 +167,7 @@ $partial-base-url: '../echo-base';
 // $p-margin-top: 1.5rem;
 // $p-margin-bottom: 1.5rem;
 
-// a
+// Anchor - <a>
 //==============================================================================
 
 // $a-text-decoration: none;
@@ -175,7 +175,7 @@ $partial-base-url: '../echo-base';
 // $a-font-color: rgb(0, 200, 162);
 // $a-font-color-hover: scale-color($a-font-color, $lightness: -14%);
 
-// ul
+// Unordered list - <ul>
 //==============================================================================
 
 // $ul-list-style-type: disc;
@@ -184,7 +184,7 @@ $partial-base-url: '../echo-base';
 // $ul-margin-right: 0;
 // $ul-margin-left: 1.3rem;
 
-// ol
+// Ordered list - <ol>
 //==============================================================================
 
 // $ol-list-style-type: decimal;
@@ -193,7 +193,7 @@ $partial-base-url: '../echo-base';
 // $ol-margin-right: 0;
 // $ol-margin-left: 1.3rem;
 
-// li
+// List item - <li>
 //==============================================================================
 
 // $li-font-family: $base-font-family;
@@ -209,10 +209,7 @@ $partial-base-url: '../echo-base';
 // $li-padding-right: 0;
 // $li-padding-left: 0;
 
-
-
-
-// blockquote
+// Blockquote - <blockquote>
 //==============================================================================
 
 // $blockquote-font-family: $base-font-family;
