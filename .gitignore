@@ -17,3 +17,4 @@ node_modules/grunt-newer/.cache
 dist/img/*
 dist/js/*
 dist/css/*
+dist/index-old.html
