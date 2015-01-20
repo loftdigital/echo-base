@@ -23,7 +23,7 @@
 
 $button-position: relative !default;
 $button-display: inline-block !default;
-$button-width: auto !default;
+$button-width: 12px !default;
 $button-height: auto !default;
 $button-padding-bottom: 0.75rem !default;
 $button-padding-top: 0.75rem !default;
@@ -58,7 +58,6 @@ $button-color: rgb(40, 40, 40) !default;
 
 $button-background-color-hover: darken($button-background-color, 5%) !default;
 $button-border-color-hover: darken($button-border-color, 5%) !default;
-
 
 
 //  Primary color
