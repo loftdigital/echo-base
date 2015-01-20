@@ -9,3 +9,11 @@
 .sass-cache
 *.css.map
 Gemfile.lock
+
+# Node Modules
+node_modules/grunt-newer/.cache
+
+# Dist structure
+dist/img/*
+dist/js/*
+dist/css/*

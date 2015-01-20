@@ -74,9 +74,11 @@
                     options: {
                         compact: true
                     },
-                    files: {
-                        src: ['<%= config.app %>/scss/echo-base/**/*.scss']
-                    }
+                    files: [{
+                        expand: true,
+                        cwd: '<%= config.app %>/scss/echo-base/',
+                        src: ['**/*.{scss,sass}'],
+                    }]
                 }
             },
 
@@ -117,15 +119,15 @@
             watch: {
                 js: {
                     files: ['<%= config.app %>/js/**/*.js'],
-                    tasks: ['newer:jshint:all', 'concat', 'uglify', 'notify:js']
+                    tasks: ['do-js']
                 },
                 sass: {
                     files: ['<%= config.app %>/scss/**/*.scss'],
-                    tasks: ['newer:scsslint:all', 'newer:sass:development', 'newer:autoprefixer:all', 'notify:sass']
+                    tasks: ['do-sass']
                 },
                 img: {
                     files: ['<%= config.app %>/img/**/*.{png,jpg,gif}'],
-                    tasks: ['newer:imagemin:all']
+                    tasks: ['do-img']
                 }
             },
 
@@ -139,16 +141,28 @@
                 js: {
                     options: {
                         title: 'Grunt JS Notification',
-                        message: 'Js compiling complete'
+                        message: 'Js compiling complete!'
+                    }
+                },
+                img: {
+                    options: {
+                        title: 'Grunt Imagemin Notification',
+                        message: 'Img optimisation complete!'
                     }
                 }
             },
         });
 
-        grunt.registerTask('js', ['newer:jshint:all', 'concat', 'uglify', 'notify:js', 'watch']);
+        // Do image related tasks
+        grunt.registerTask('do-img', ['newer:imagemin:all', 'notify:img']);
 
-        grunt.registerTask('sass', ['newer:scsslint:all', 'newer:sass:development', 'newer:autoprefixer:all', 'notify:sass', 'watch']);
+        // Do JavaScript related tasks
+        grunt.registerTask('do-js', ['jshint:all', 'concat', 'uglify', 'notify:js']);
 
-        grunt.registerTask('default', ['imagemin:all', 'scsslint:all', 'sass:development', 'autoprefixer:all', 'notify:sass', 'watch']);
+        // Do Sass related tasks
+        grunt.registerTask('do-sass', ['scsslint', 'sass:development', 'autoprefixer:all', 'notify:sass']);
+
+        // Default - Compile all then watch for changes
+        grunt.registerTask('default', ['do-img', 'do-sass', 'do-js', 'watch']);
     };
 })();
