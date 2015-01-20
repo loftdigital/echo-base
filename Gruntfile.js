@@ -63,9 +63,11 @@
                         },
                         '-W099': true // Hide tabs spaces warning
                     },
-                    files: {
-                        src: ['Gruntfile.js', '<%= config.app %>/js/main.js', '<%= config.app %>/js/plugins.js']
-                    }
+                    files: [{
+                        expand: true,
+                        cwd: '<%= config.app %>/js/',
+                        src: ['main.js', 'Loft/**/*.js']
+                    }]
                 }
             },
 
@@ -76,8 +78,8 @@
                     },
                     files: [{
                         expand: true,
-                        cwd: '<%= config.app %>/scss/echo-base/',
-                        src: ['**/*.{scss,sass}'],
+                        cwd: '<%= config.app %>/scss/',
+                        src: ['main.scss', 'echo-base/**/*.scss'],
                     }]
                 }
             },
@@ -91,17 +93,25 @@
                     options: {
                         outputStyle: 'expanded',
                     },
-                    files: {
-                        '<%= config.dist %>/css/main.css': '<%= config.app %>/scss/main.scss',
-                    }
+                    files: [{
+                        expand: true,
+                        cwd: '<%= config.app %>/scss/',
+                        src: '*.scss',
+                        dest: '<%= config.dist %>/css/',
+                        ext: '.min.css'
+                    }]
                 },
                 production: {
                     options: {
                         outputStyle: 'compressed',
                     },
-                    files: {
-                        '<%= config.dist %>/css/main.css': '<%= config.app %>/scss/main.scss',
-                    }
+                    files: [{
+                        expand: true,
+                        cwd: '<%= config.app %>/scss/',
+                        src: '*.scss',
+                        dest: '<%= config.dist %>/css/',
+                        ext: '.min.css'
+                    }]
                 }
             },
 
@@ -110,9 +120,13 @@
                     options: {
                         browsers: ['last 2 version', 'ie 8', 'ie 9', 'Firefox ESR', 'Opera 12.1']
                     },
-                    no_dest: {
-                        src: '<%= config.dist %>/css/main.css' // globbing is also possible here
-                    }
+                    files: [{
+                        expand: true,
+                        cwd: '<%= config.dist %>/css/',
+                        src: '*.min.css',
+                        dest: '<%= config.dist %>/css/',
+                        ext: '.min.css'
+                    }]
                 }
             },
 
