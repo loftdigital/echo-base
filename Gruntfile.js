@@ -16,7 +16,6 @@
 
         grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
-
             config: config,
 
             imagemin: {
@@ -61,7 +60,6 @@
                             module: true,
                             document: true
                         },
-                        '-W099': true // Hide tabs spaces warning
                     },
                     files: [{
                         expand: true,
