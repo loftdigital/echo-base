@@ -528,9 +528,6 @@
 // g. Buttons
 //==============================================================================
 
-//  Standard
-//==============================================================================
-
 // $button-position: relative;
 // $button-display: inline-block;
 // $button-padding-bottom: 0.75rem;
@@ -555,16 +552,21 @@
 
 
 
-// Standard color
+//  Standard color
+//==============================================================================
 
 // $button-background-color: rgb(241, 241, 241);
 // $button-border-color: rgb(228, 228, 228);
 // $button-color: rgb(40, 40, 40);
 
-// Standard color hover
+
+
+//  Standard color :hover
+//==============================================================================
 
 // $button-background-color-hover: darken($button-background-color, 5%);
 // $button-border-color-hover: darken($button-border-color, 5%);
+// $button-color-hover: rgb(40, 40, 40);
 
 
 
@@ -575,24 +577,32 @@
 // $button-primary-border-color: rgb(0, 173, 255);
 // $button-primary-color: rgb(255, 255, 255);
 
-// Primary color hover
+
+
+// Primary color :hover
+//==============================================================================
 
 // $button-primary-background-color-hover: darken($button-primary-background-color, 5%);
 // $button-primary-border-color-hover: darken($button-primary-border-color, 5%);
+// $button-primary-color-hover: rgb(255, 255, 255);
 
 
 
-//  Sueccess color
+//  Success color
 //==============================================================================
 
 // $button-success-background-color: rgb(114, 195, 125);
 // $button-success-border-color: rgb(114, 195, 125);
 // $button-success-color: rgb(255, 255, 255);
 
-// Sueccess color hover
+
+
+// Success color :hover
+//==============================================================================
 
 // $button-success-background-color-hover: darken($button-success-background-color, 5%);
 // $button-success-border-color-hover: darken($button-success-border-color, 5%);
+// $button-success-color-hover: rgb(255, 255, 255);
 
 
 
@@ -603,10 +613,14 @@
 // $button-error-border-color: rgb(199, 74, 74);
 // $button-error-color: rgb(255, 255, 255);
 
+
+
 // Error color hover
+//==============================================================================
 
 // $button-error-background-color-hover: darken($button-error-background-color, 5%);
 // $button-error-border-color-hover: darken($button-error-border-color, 5%);
+// $button-error-color-hover: rgb(255, 255, 255);
 
 
 
