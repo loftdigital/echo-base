@@ -15,7 +15,6 @@
 //
 //==============================================================================
 
-
 @function setup-breakpoints() {
     @if (length($custom-breakpoints) > 0) {
         @return map-merge($default-breakpoints, $custom-breakpoints);
@@ -23,8 +22,6 @@
         @return $default-breakpoints;
     }
 }
-
-
 
 
 @function break($key) {
