@@ -39,13 +39,25 @@
 
 
 
-
+@function setup-palettes() {
+    @if (length($custom-palettes) > 0) {
+        @return map-merge($default-palettes, $custom-palettes);
+    } @else {
+        @return $default-palettes;
+    }
+}
 
 
 @function palette($palette, $tone: 'base') {
-    @if (map-has-key($palettes, $palette)) {
 
-        $color: map-get($palettes, $palette);
+
+    $palette-map: setup-palettes();
+
+
+
+    @if (map-has-key($palette-map, $palette)) {
+
+        $color: map-get($palette-map, $palette);
 
         @if (map-has-key($color, $tone)) {
             @return map-get($color, $tone);

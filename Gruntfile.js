@@ -163,6 +163,18 @@
                     }
                 }
             },
+
+            pixrem: {
+                options: {
+                    rootvalue: '100%',
+                    replace: true
+                },
+                dist: {
+                    src: 'dist/css/main.min.css',
+                    dest: 'dist/css/ie.min.css'
+                }
+            }
+
         });
 
         // Do image related tasks
@@ -172,7 +184,10 @@
         grunt.registerTask('do-js', ['jshint:all', 'concat', 'uglify', 'notify:js']);
 
         // Do Sass related tasks
-        grunt.registerTask('do-sass', ['scsslint', 'sass:development', 'autoprefixer:all', 'notify:sass']);
+        grunt.registerTask('do-sass', ['scsslint', 'sass:development', 'autoprefixer:all', 'notify:sass', 'do-ie']);
+
+        // Do IE8 Legacy specific tasks
+        grunt.registerTask('do-ie', ['pixrem']);
 
         // Default - Compile all then watch for changes
         grunt.registerTask('default', ['do-img', 'do-sass', 'do-js', 'watch']);

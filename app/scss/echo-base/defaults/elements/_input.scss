@@ -27,7 +27,7 @@ $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
 $input-text-margin-bottom: 1rem !default;
 $input-text-margin-top: 0 !default;
-$input-text-background-color: rgb(255, 255, 255) !default;
+$input-text-background-color: palette(global-form-element-background) !default;
 $input-text-border-color: rgb(228, 228, 228) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
