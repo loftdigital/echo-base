@@ -13,7 +13,39 @@
 //==============================================================================
 
 
-$global-form-element-background: rgb(255, 255, 255) !default;
+
+
+
+// Form elements
+
+$global-form-element-background-color: rgb(255, 255, 255) !default;
+$global-form-element-border-color: rgb(228, 228, 228) !default;
+$global-form-element-box-shadow-color: rgba(0, 0, 0, 0.1) !default;
+$global-form-element-color: rgb(150, 150, 150) !default;
+
+// Form elements - Focus
+
+$global-form-element-background-color-focus: rgb(255, 255, 255) !default;
+$global-form-element-border-color-focus: #ccc !default;
+$global-form-element-box-shadow-color-focus: rgb(200, 200, 200) !default;
+$global-form-element-color-focus: rgb(150, 150, 150) !default;
+
+// Form elements - Disabled
+
+$global-form-element-background-color-disabled: rgb(245, 245, 245) !default;
+$global-form-element-border-color-disabled: rgb(228, 228, 228) !default;
+$global-form-element-color-disabled: rgb(150, 150, 150) !default;
+
+
+
+
+
+
+
+
+
+
+
 
 //==============================================================================
 // a. Palettes
@@ -48,11 +80,66 @@ $default-palettes: (
 // Global palettes
 //==============================================================================
 
-    global-form-element-background: (
-        base: $global-form-element-background
+
+    // Form elements
+
+    global-form-element-color: (
+        base: $global-form-element-color
     ),
 
-    
+    global-form-element-background-color: (
+        base: $global-form-element-background-color
+    ),
+
+    global-form-element-border-color: (
+        base: $global-form-element-border-color
+    ),
+
+    global-form-element-box-shadow-color: (
+        base: $global-form-element-box-shadow-color
+    ),
+
+
+    // Form elements - Focus
+
+    global-form-element-background-color-focus: (
+        base: $global-form-element-background-color-focus
+    ),
+
+    global-form-element-border-color-focus: (
+        base: $global-form-element-border-color-focus
+    ),
+
+    global-form-element-box-shadow-color-focus: (
+        base: $global-form-element-box-shadow-color-focus
+    ),
+
+    global-form-element-color-focus: (
+        base: $global-form-element-color-focus
+    ),
+
+
+    // Form elements - Disabled
+
+    global-form-element-background-color-disabled: (
+        base: $global-form-element-background-color-disabled
+    ),
+
+    global-form-element-border-color-disabled: (
+        base: $global-form-element-border-color-disabled
+    ),
+
+    global-form-element-color-disabled: (
+        base: $global-form-element-color-disabled
+    ),
+
+
+
+
+
+
+
+
 
 
 

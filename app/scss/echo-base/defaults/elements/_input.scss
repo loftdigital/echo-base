@@ -27,12 +27,13 @@ $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
 $input-text-margin-bottom: 1rem !default;
 $input-text-margin-top: 0 !default;
-$input-text-background-color: palette(global-form-element-background) !default;
-$input-text-border-color: rgb(228, 228, 228) !default;
+$input-text-background-color: palette(global-form-element-background-color) !default;
+$input-text-border-color: palette(global-form-element-border-color) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
 $input-text-border-radius: $global-border-radius !default;
-$input-text-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$input-text-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color) !default;
+$input-text-color: palette(global-form-element-color) !default;
 $input-text-font-family: $base-font-family !default;
 $input-text-font-size: $base-font-size !default;
 $input-text-font-weight: $base-font-weight !default;
@@ -42,15 +43,19 @@ $input-text-appearance: none !default;
 // State: Focus
 //==============================================================================
 
-$input-text-border-color-focus: #ccc !default;
-$input-text-box-shadow-focus: 0 0 3px rgb(200, 200, 200) !default;
+$input-text-background-color-focus: palette(global-form-element-background-color-focus) !default;
+$input-text-border-color-focus: palette(global-form-element-border-color-focus) !default;
+$input-text-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus) !default;
+$input-text-color-focus: palette(global-form-element-color-focus) !default;
 $input-text-outline-focus: none !default;
+
 
 // State: Disabled
 //==============================================================================
 
-$input-text-background-color-disabled: rgb(245, 245, 245) !default;
-$input-text-color-disabled: rgb(150, 150, 150) !default;
+$input-text-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
+$input-text-border-color-disabled: palette(global-form-element-border-color-disabled) !default;
+$input-text-color-disabled: palette(global-form-element-color-disabled) !default;
 $input-text-cursor-disabled: not-allowed !default;
 
 $input-inline-cursor-disabled: not-allowed !default;
@@ -87,6 +92,7 @@ input[type="url"] {
     border-width: $input-text-border-width;
     border-radius: $input-text-border-radius;
     box-shadow: $input-text-box-shadow;
+    color: $input-text-color;
     font-family: $input-text-font-family;
     font-size: $input-text-font-size;
     font-weight: $input-text-font-weight;
@@ -95,13 +101,16 @@ input[type="url"] {
     -webkit-appearance: $input-text-appearance;
 
     &:focus {
+        background-color: $input-text-background-color-focus;
         border-color: $input-text-border-color-focus;
         box-shadow: $input-text-box-shadow-focus;
+        color: $input-text-color-focus;
         outline: $input-text-outline-focus;
     }
 
     &:disabled {
         background-color: $input-text-background-color-disabled;
+        border-color: $input-text-border-color-disabled;
         color: $input-text-color-disabled;
         cursor: $input-text-cursor-disabled;
     }

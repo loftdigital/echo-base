@@ -26,15 +26,16 @@ $select-padding-left: 0.5rem !default;
 $select-padding-right: 0.5rem !default;
 $select-margin-bottom: 1rem !default;
 $select-margin-top: 0 !default;
-$select-background-color: rgb(255, 255, 255) !default;
+$select-background-color: palette(global-form-element-background-color) !default;
 $select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) !default;
 $select-background-repeat: no-repeat !default;
 $select-background-position: 100% center !default;
-$select-border-color: rgb(228, 228, 228) !default;
+$select-border-color: palette(global-form-element-border-color) !default;
 $select-border-style: solid !default;
 $select-border-width: 1px !default;
 $select-border-radius: $global-border-radius !default;
-$select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1) !default;
+$select-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color) !default;
+$select-color: palette(global-form-element-color) !default;
 $select-font-family: $base-font-family !default;
 $select-font-size: $base-font-size !default;
 $select-font-weight: $base-font-weight !default;
@@ -44,15 +45,18 @@ $select-appearance: none !default;
 // State: Focus
 //==============================================================================
 
-$select-border-color-focus: #ccc !default;
-$select-box-shadow-focus: 0 0 3px rgb(200, 200, 200) !default;
+$select-background-color-focus: palette(global-form-element-background-color-focus) !default;
+$select-border-color-focus: palette(global-form-element-border-color-focus) !default;
+$select-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus) !default;
+$select-color-focus: palette(global-form-element-color-focus) !default;
 $select-outline-focus: none !default;
 
 // State: Disabled
 //==============================================================================
 
-$select-background-color-disabled: rgb(245, 245, 245) !default;
-$select-color-disabled: rgb(150, 150, 150) !default;
+$select-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
+$select-border-color-disabled: palette(global-form-element-border-color-disabled) !default;
+$select-color-disabled: palette(global-form-element-color-disabled) !default;
 $select-cursor-disabled: not-allowed !default;
 
 //==============================================================================
@@ -68,19 +72,20 @@ select {
     padding-right: $select-padding-right;
     width: $select-width;
     height: $select-height;
-    border-color: $select-border-color;
-    border-style: $select-border-style;
-    border-width: $select-border-width;
-    border-radius: $select-border-radius;
-    font-family: $select-font-family;
-    font-size: $select-font-size;
-    font-weight: $select-font-weight;
-    line-height: $select-line-height;
     background-color: $select-background-color;
     background-image: $select-background-image;
     background-position: $select-background-position;
     background-repeat: $select-background-repeat;
+    border-color: $select-border-color;
+    border-style: $select-border-style;
+    border-width: $select-border-width;
+    border-radius: $select-border-radius;
     box-shadow: $select-box-shadow;
+    color: $select-color;
+    font-family: $select-font-family;
+    font-size: $select-font-size;
+    font-weight: $select-font-weight;
+    line-height: $select-line-height;
     -moz-appearance: $select-appearance;
     -webkit-appearance: $select-appearance;
 
@@ -90,13 +95,16 @@ select {
     }
 
     &:focus {
+        background-color: $select-background-color-focus;
         border-color: $select-border-color-focus;
         box-shadow: $select-box-shadow-focus;
+        color: $select-color-focus;
         outline: $select-outline-focus;
     }
 
     &:disabled {
         background-color: $select-background-color-disabled;
+        border-color: $select-border-color-disabled;
         color: $select-color-disabled;
         cursor: $select-cursor-disabled;
     }
