@@ -1,0 +1,62 @@
+//==============================================================================
+//
+// echo-base/defaults/utilities/_functions.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Breakpoints
+//    1. Setup
+//    2. Get breakpoint
+// b. Palette
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+@function setup-breakpoints() {
+    @if (length($custom-breakpoints) > 0) {
+        @return map-merge($default-breakpoints, $custom-breakpoints);
+    } @else {
+        @return $default-breakpoints;
+    }
+}
+
+
+
+
+@function break($key) {
+    $breakpoints: setup-breakpoints();
+
+    @if (map-has-key($breakpoints, $key)) {
+        @return map-get($breakpoints, $key);
+    } @else {
+        @warn "Breakpoint doesn't exist!";
+    }
+}
+
+
+
+
+
+
+
+
+
+@function palette($palette, $tone: 'base') {
+    @if (map-has-key($palettes, $palette)) {
+
+        $color: map-get($palettes, $palette);
+
+        @if (map-has-key($color, $tone)) {
+            @return map-get($color, $tone);
+        } @else {
+            @warn "Tone doesn't exist";
+        }
+
+    } @else {
+        @warn "Palette doesn't exist!";
+    }
+}
