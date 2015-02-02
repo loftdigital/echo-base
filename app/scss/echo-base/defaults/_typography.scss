@@ -6,10 +6,22 @@
 // Table of contents
 // --------------------
 // a. Defaults
-//    1. Base font
-//    2. Fixed font
-//    3. Heading font
-//    4. Font weight
+//    1. Font weight
+//    2. Base font
+//    3. Fixed font
+//    4. Heading font
+//    5. Heading - <h1>
+//    6. Heading - <h2>
+//    7. Heading - <h3>
+//    8. Heading - <h4>
+//    9. Heading - <h5>
+//    10. Heading - <h6>
+//    11. Paragraph - <p>
+//    12. Anchor - <a>
+//    13. Unordered list - <ul>
+//    14. Ordered list - <ol>
+//    15. List item - <li>
+//    16. Blockquote - <blockquote>
 // b. Classes
 //
 //
@@ -22,14 +34,16 @@
 // a. Defaults
 //==============================================================================
 
-// Font weights
+// 1. Font weights
 //==============================================================================
 
 $font-weight-light: 100 !default;
 $font-weight-regular: 400 !default;
 $font-weight-bold: 700 !default;
 
-//  Base font
+
+
+//  2. Base font
 //==============================================================================
 
 $base-font-family: Arial, sans-serif !default;
@@ -38,14 +52,18 @@ $base-font-size: 18px !default;
 $base-font-style: normal;
 $base-line-height: 1.5 !default;
 
-// Fixed font
+
+
+// 3. Fixed font
 //==============================================================================
 
 $fixed-font-family: monospace !default;
 $fixed-font-size: 85% !default;
 $fixed-line-height: $base-line-height !default;
 
-// Heading font
+
+
+// 4. Heading font
 //==============================================================================
 
 $heading-font-family: Arial, sans-serif !default;
@@ -58,7 +76,8 @@ $heading-letter-spacing: normal !default;
 $heading-text-transform: none !default;
 
 
-// Heading - <h1>
+
+// 5. Heading - <h1>
 //==============================================================================
 
 $h1-font-size: 4rem !default;
@@ -71,7 +90,9 @@ $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
-// Heading - <h2>
+
+
+// 6. Heading - <h2>
 //==============================================================================
 
 $h2-font-size: 3.5rem !default;
@@ -84,7 +105,9 @@ $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
-// Heading - <h3>
+
+
+// 7. Heading - <h3>
 //==============================================================================
 
 $h3-font-size: 3rem !default;
@@ -97,7 +120,9 @@ $h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
 
-// Heading - <h4>
+
+
+// 8. Heading - <h4>
 //==============================================================================
 
 $h4-font-size: 2.5rem !default;
@@ -110,7 +135,9 @@ $h4-font-text-rendering: $heading-font-text-rendering !default;
 $h4-letter-spacing: $heading-letter-spacing !default;
 $h4-text-transform: $heading-text-transform !default;
 
-// Heading - <h5>
+
+
+// 9. Heading - <h5>
 //==============================================================================
 
 $h5-font-size: 2rem !default;
@@ -123,7 +150,9 @@ $h5-font-text-rendering: $heading-font-text-rendering !default;
 $h5-letter-spacing: $heading-letter-spacing !default;
 $h5-text-transform: $heading-text-transform !default;
 
-// heading - <h6>
+
+
+// 10. heading - <h6>
 //==============================================================================
 
 $h6-font-size: 1.5rem !default;
@@ -136,7 +165,9 @@ $h6-font-text-rendering: $heading-font-text-rendering !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
 
-// Paragraph - <p>
+
+
+// 11. Paragraph - <p>
 //==============================================================================
 
 $p-font-family: $base-font-family !default;
@@ -148,7 +179,9 @@ $p-text-transform: none !default;
 $p-margin-top: 1.5rem !default;
 $p-margin-bottom: 1.5rem !default;
 
-// Anchor - <a>
+
+
+// 12. Anchor - <a>
 //==============================================================================
 
 $a-text-decoration: none !default;
@@ -156,7 +189,9 @@ $a-text-decoration-hover: none !default;
 $a-font-color: rgb(0, 200, 162) !default;
 $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
 
-// Unordered list - <ul>
+
+
+// 13. Unordered list - <ul>
 //==============================================================================
 
 $ul-list-style-type: disc !default;
@@ -165,7 +200,9 @@ $ul-margin-bottom: 1.5rem !default;
 $ul-margin-right: 0 !default;
 $ul-margin-left: 1.3rem !default;
 
-// Ordered list - <ol>
+
+
+// 14. Ordered list - <ol>
 //==============================================================================
 
 $ol-list-style-type: decimal !default;
@@ -174,7 +211,9 @@ $ol-margin-bottom: 1.5rem !default;
 $ol-margin-right: 0 !default;
 $ol-margin-left: 1.3rem !default;
 
-// List item - <li>
+
+
+// 15. List item - <li>
 //==============================================================================
 
 $li-font-family: $base-font-family !default;
@@ -190,7 +229,9 @@ $li-padding-bottom: 0 !default;
 $li-padding-right: 0 !default;
 $li-padding-left: 0 !default;
 
-// Blockquote - <blockquote>
+
+
+// 16. Blockquote - <blockquote>
 //==============================================================================
 
 $blockquote-font-family: $base-font-family !default;
@@ -208,6 +249,7 @@ $blockquote-padding-left: 0.5rem !default;
 $blockquote-border-left-width: 5px !default;
 $blockquote-border-left-style: solid !default;
 $blockquote-border-left-color: rgb(0, 200, 162) !default;
+
 
 
 
@@ -290,6 +332,8 @@ h6 {
     text-transform: $h6-text-transform;
 }
 
+
+
 // Paragraph
 //==============================================================================
 
@@ -304,6 +348,8 @@ p {
     margin-bottom: $p-margin-bottom;
 }
 
+
+
 // Anchors
 //==============================================================================
 
@@ -316,6 +362,8 @@ a {
         color: $a-font-color-hover;
     }
 }
+
+
 
 // Lists
 //==============================================================================
@@ -350,6 +398,8 @@ li {
     padding-right: $li-padding-right;
     padding-left: $li-padding-left;
 }
+
+
 
 // Blockquote
 //==============================================================================

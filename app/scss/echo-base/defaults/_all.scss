@@ -5,9 +5,10 @@
 // --------------------
 // Table of contents
 // --------------------
-// a. Import defaults
-//    1. Grid
-//    2. Typography
+// a. Import utilities
+// b. Import globals
+// c. Import element defaults
+// d. Import grid defaults
 //
 //
 // @copyright 2015, Loft Digital, www.weareloft.com
@@ -16,7 +17,7 @@
 
 
 //==============================================================================
-// a. Import defaults
+// a. Import utilities
 //==============================================================================
 
 @import 'utilities/functions';
@@ -25,14 +26,21 @@
 
 
 
+//==============================================================================
+// a. Import globals
+//==============================================================================
+
 @import 'typography';
-
 @import 'global';
-
-
 @import 'breakpoints';
 @import 'palettes';
 
+
+
+
+//==============================================================================
+// a. Import element defaults
+//==============================================================================
 
 @import 'elements/button';
 @import 'elements/fieldset';
@@ -43,5 +51,11 @@
 @import 'elements/select';
 @import 'elements/table';
 @import 'elements/textarea';
+
+
+
+//==============================================================================
+// a. Import grid defaults
+//==============================================================================
 
 @import 'grid';

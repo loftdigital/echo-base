@@ -17,7 +17,7 @@
 // a. Default variables
 //==============================================================================
 
-// Form elements
+// Global form elements
 //==============================================================================
 
 $global-form-element-background-color: rgb(255, 255, 255) !default;
@@ -25,14 +25,20 @@ $global-form-element-border-color: rgb(228, 228, 228) !default;
 $global-form-element-box-shadow-color: rgba(0, 0, 0, 0.1) !default;
 $global-form-element-color: rgb(150, 150, 150) !default;
 
-// State: Focus
+
+
+// Global form elements :focus
+//==============================================================================
 
 $global-form-element-background-color-focus: rgb(255, 255, 255) !default;
 $global-form-element-border-color-focus: rgb(204, 204, 204) !default;
 $global-form-element-box-shadow-color-focus: rgb(200, 200, 200) !default;
 $global-form-element-color-focus: rgb(150, 150, 150) !default;
 
-// State: Disabled
+
+
+// Global form elements :disabled
+//==============================================================================
 
 $global-form-element-background-color-disabled: rgb(245, 245, 245) !default;
 $global-form-element-border-color-disabled: rgb(228, 228, 228) !default;
@@ -47,11 +53,8 @@ $global-form-element-color-disabled: rgb(150, 150, 150) !default;
 
 $default-palettes: (
 
-
-// Global Echo Base palettes
+// Global form elements
 //==============================================================================
-
-    // Form elements
 
     global-form-element-color: (
         base: $global-form-element-color
@@ -71,7 +74,8 @@ $default-palettes: (
 
 
 
-    // Form elements - Focus
+// Global form elements :focus
+//==============================================================================
 
     global-form-element-background-color-focus: (
         base: $global-form-element-background-color-focus
@@ -91,7 +95,8 @@ $default-palettes: (
 
 
 
-    // Form elements - Disabled
+// Global form elements :disabled
+//==============================================================================
 
     global-form-element-background-color-disabled: (
         base: $global-form-element-background-color-disabled
@@ -104,8 +109,6 @@ $default-palettes: (
     global-form-element-color-disabled: (
         base: $global-form-element-color-disabled
     ),
-
-
 
 
 
