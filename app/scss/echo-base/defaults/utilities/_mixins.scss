@@ -1,0 +1,26 @@
+//==============================================================================
+//
+// echo-base/defaults/utilities/_mixins.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Breakpoints
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+@mixin breakpoint($key, $flag:max) {
+
+    @if ($flag == 'min') {
+        $flow: min-width;
+    } @else {
+        $flow: max-width;
+    }
+
+    @media ($flow: break($key)) {
+        @content;
+    }
+}

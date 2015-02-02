@@ -1,0 +1,41 @@
+//==============================================================================
+//
+// echo-base/defaults/_breakpoints.scss
+//
+// --------------------
+// Table of contents
+// --------------------
+// a. Default breakpoint vars
+// b. Default breakpoint map
+// c. Custom breakpoint map
+//
+//
+// @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+//  Default breakpoint vars
+//==============================================================================
+
+$break-large: 900px !default;
+$break-medium: 768px !default;
+$break-small: 450px !default;
+
+
+
+//  Default breakpoint map
+//==============================================================================
+
+$default-breakpoints: (
+    large: $break-large,
+    medium: $break-medium,
+    small: $break-small
+);
+
+
+//  Custom breakpoint map
+//==============================================================================
+
+$custom-breakpoints: () !default;

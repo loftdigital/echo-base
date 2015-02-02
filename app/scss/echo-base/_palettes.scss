@@ -19,21 +19,30 @@
 
 $palettes: (
 
-// Third-party
+// Third-party palettes
 //==============================================================================
 
-    third-party: (
-        facebook:   rgb(59, 89, 152),
-        twitter:    rgb(0, 172, 237),
-        linkedin:   rgb(0, 123, 182),
-        googleplus: rgb(221, 75, 57),
-        youtube:    rgb(187, 0, 0)
+    facebook: (
+        base: rgb(59, 89, 152)
+    ),
+
+    twitter: (
+        base: rgb(0, 172, 237),
+    ),
+
+    linkedin: (
+        base: rgb(0, 123, 182),
+    ),
+
+    googleplus: (
+        base: rgb(221, 75, 57),
+    ),
+
+    youtube: (
+        base: rgb(187, 0, 0)
     ),
 
 // Colors
 //==============================================================================
-
-
-
 
 );
