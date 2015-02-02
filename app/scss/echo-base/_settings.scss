@@ -7,10 +7,12 @@
 // --------------------
 // a. Grid
 // b. Breakpoints
+// c. Global colors & palettes
 // c. Typography
 // d. General
 // e. Forms
-// f. Table
+// f. Buttons
+// g. Table
 //
 //
 // @copyright 2015, Loft Digital, www.weareloft.com
@@ -60,6 +62,7 @@
 // $break-small: 450px;
 
 
+
 //  Custom breakpoints map
 //==============================================================================
 
@@ -73,32 +76,46 @@
 
 
 
-$global-form-element-background: rgb(255, 255, 0);
+
+//==============================================================================
+// c. Global colors & palettes
+//==============================================================================
+
+// Custom palettes map
+//==============================================================================
+
+// $custom-palettes: (
+//
+// );
 
 
 
+// Global form elements
+//==============================================================================
 
-
-
-
-
-$custom-palettes: (
-
-    loft-red: (
-        base: rgb(255, 0, 0)
-    )
-
-);
-
-
-
-
+// $global-form-element-background-color: rgb(255, 255, 255);
+// $global-form-element-border-color: rgb(228, 228, 228);
+// $global-form-element-box-shadow-color: rgba(0, 0, 0, 0.1);
+// $global-form-element-color: rgb(150, 150, 150);
+//
+// // State: Focus
+//
+// $global-form-element-background-color-focus: rgb(255, 255, 255);
+// $global-form-element-border-color-focus: rgb(204, 204, 204);
+// $global-form-element-box-shadow-color-focus: rgb(200, 200, 200);
+// $global-form-element-color-focus: rgb(150, 150, 150);
+//
+// // State: Disabled
+//
+// $global-form-element-background-color-disabled: rgb(245, 245, 245);
+// $global-form-element-border-color-disabled: rgb(228, 228, 228);
+// $global-form-element-color-disabled: rgb(150, 150, 150);
 
 
 
 
 //==============================================================================
-// c. Typography
+// d. Typography
 //==============================================================================
 
 // Font weight
@@ -109,6 +126,7 @@ $custom-palettes: (
 // $font-weight-bold: 700;
 
 
+
 //  Base font
 //==============================================================================
 
@@ -117,12 +135,16 @@ $custom-palettes: (
 // $base-font-size: 16px;
 // $base-font-line-height: 150%;
 
+
+
 // Fixed font
 //==============================================================================
 
 // $fixed-font-family: monospace;
 // $fixed-font-size: 85%;
 // $fixed-line-height: $base-font-line-height;
+
+
 
 // Heading font
 //==============================================================================
@@ -135,6 +157,8 @@ $custom-palettes: (
 // $heading-font-text-rendering: optimizeLegibility;
 // $heading-letter-spacing: normal;
 // $heading-text-transform: none;
+
+
 
 // Heading - <h1>
 //==============================================================================
@@ -149,6 +173,8 @@ $custom-palettes: (
 // $h1-letter-spacing: $heading-letter-spacing;
 // $h1-text-transform: $heading-text-transform;
 
+
+
 // Heading - <h2>
 //==============================================================================
 
@@ -161,6 +187,8 @@ $custom-palettes: (
 // $h2-font-text-rendering: $heading-font-text-rendering;
 // $h2-letter-spacing: $heading-letter-spacing;
 // $h2-text-transform: $heading-text-transform;
+
+
 
 // Heading - <h3>
 //==============================================================================
@@ -175,6 +203,8 @@ $custom-palettes: (
 // $h3-letter-spacing: $heading-letter-spacing;
 // $h3-text-transform: $heading-text-transform;
 
+
+
 // Heading - <h4>
 //==============================================================================
 
@@ -187,6 +217,8 @@ $custom-palettes: (
 // $h4-font-text-rendering: $heading-font-text-rendering;
 // $h4-letter-spacing: $heading-letter-spacing;
 // $h4-text-transform: $heading-text-transform;
+
+
 
 // Heading - <h5>
 //==============================================================================
@@ -201,6 +233,8 @@ $custom-palettes: (
 // $h5-letter-spacing: $heading-letter-spacing;
 // $h5-text-transform: $heading-text-transform;
 
+
+
 // Heading - <h6>
 //==============================================================================
 
@@ -214,6 +248,8 @@ $custom-palettes: (
 // $h6-letter-spacing: $heading-letter-spacing;
 // $h6-text-transform: $heading-text-transform;
 
+
+
 // Paragraph - <p>
 //==============================================================================
 
@@ -226,6 +262,8 @@ $custom-palettes: (
 // $p-margin-top: 1.5rem;
 // $p-margin-bottom: 1.5rem;
 
+
+
 // Anchor - <a>
 //==============================================================================
 
@@ -233,6 +271,8 @@ $custom-palettes: (
 // $a-text-decoration-hover: none;
 // $a-font-color: rgb(0, 200, 162);
 // $a-font-color-hover: scale-color($a-font-color, $lightness: -14%);
+
+
 
 // Unordered list - <ul>
 //==============================================================================
@@ -243,6 +283,8 @@ $custom-palettes: (
 // $ul-margin-right: 0;
 // $ul-margin-left: 1.3rem;
 
+
+
 // Ordered list - <ol>
 //==============================================================================
 
@@ -251,6 +293,8 @@ $custom-palettes: (
 // $ol-margin-bottom: 1rem;
 // $ol-margin-right: 0;
 // $ol-margin-left: 1.3rem;
+
+
 
 // List item - <li>
 //==============================================================================
@@ -267,6 +311,8 @@ $custom-palettes: (
 // $li-padding-bottom: 0;
 // $li-padding-right: 0;
 // $li-padding-left: 0;
+
+
 
 // Blockquote - <blockquote>
 //==============================================================================
@@ -291,7 +337,7 @@ $custom-palettes: (
 
 
 //==============================================================================
-// d. General
+// e. General
 //==============================================================================
 
 //  Global
@@ -312,8 +358,11 @@ $custom-palettes: (
 // $body-font-style: $base-font-style;
 // $body-line-height: $base-line-height;
 
+
+
+
 //==============================================================================
-// e. Forms
+// f. Forms
 //==============================================================================
 
 // Form
@@ -323,6 +372,8 @@ $custom-palettes: (
 // $form-margin-top: 0;
 // $form-margin-right: 0;
 // $form-margin-left: 0;
+
+
 
 // Fieldset
 //==============================================================================
@@ -339,12 +390,16 @@ $custom-palettes: (
 // $fieldset-border-width: 1px;
 // $fieldset-border-radius: $global-border-radius;
 
+
+
 // Legend
 //==============================================================================
 
 // $legend-font-family: $base-font-family;
 // $legend-font-size: $base-font-size;
 // $legend-font-weight: $base-font-weight;
+
+
 
 // Label
 //==============================================================================
@@ -364,6 +419,7 @@ $custom-palettes: (
 
 // $label-inline-color-disabled: rgb(150, 150, 150);
 // $label-inline-cursor-disabled: not-allowed;
+
 
 
 // Select
@@ -400,6 +456,8 @@ $custom-palettes: (
 // $select-color-disabled: rgb(150, 150, 150),
 // $select-cursor-disabled: not-allowed,
 
+
+
 // Input
 //==============================================================================
 
@@ -431,6 +489,7 @@ $custom-palettes: (
 // $input-text-background-color-disabled: rgb(245, 245, 245);
 // $input-text-color-disabled: rgb(150, 150, 150);
 // $input-text-cursor-disabled: not-allowed;
+
 
 
 // Textarea
@@ -465,8 +524,8 @@ $custom-palettes: (
 
 
 
-
-// Buttons
+//==============================================================================
+// g. Buttons
 //==============================================================================
 
 //  Standard
@@ -552,14 +611,16 @@ $custom-palettes: (
 
 
 
-
-
-
+//==============================================================================
+// h. Tables
+//==============================================================================
 
 // Table
 //==============================================================================
 
 // $table-width: 100%;
+
+
 
 // Table head
 //==============================================================================
@@ -568,14 +629,20 @@ $custom-palettes: (
 // $thead-border-bottom-style: solid;
 // $thead-border-bottom-color: #e4e4e4;
 
+
+
 // Table body
 //==============================================================================
+
+
 
 // Table row
 //==============================================================================
 
 // $tr-background-color-odd: #f9f9f9;
 // $tr-background-color-even: #f1f1f1;
+
+
 
 // Table heading
 //==============================================================================
@@ -586,6 +653,8 @@ $custom-palettes: (
 // $th-padding-left: 1rem;
 // $th-background-color: #fff;
 // $th-font-weight: $base-font-weight;
+
+
 
 // Table data
 //==============================================================================
