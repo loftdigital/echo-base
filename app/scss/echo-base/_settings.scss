@@ -1,26 +1,26 @@
 //==============================================================================
 //
-// echo-base/_settings.scss
+//  echo-base/_settings.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Grid
-// b. Breakpoints
-// c. Global colors & palettes
-// c. Typography
-// d. General
-// e. Forms
-// f. Buttons
-// g. Table
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Grid
+//  b. Breakpoints
+//  c. Global colors & palettes
+//  c. Typography
+//  d. General
+//  e. Forms
+//  f. Buttons
+//  g. Table
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 //==============================================================================
-// a. Grid
+//  a. Grid
 //==============================================================================
 
 //  Window grid
@@ -39,7 +39,7 @@
 
 
 //==============================================================================
-// b. Breakpoints
+//  b. Breakpoints
 //==============================================================================
 
 //  Default breakpoints
@@ -62,10 +62,10 @@
 
 
 //==============================================================================
-// c. Global colors & palettes
+//  c. Global colors & palettes
 //==============================================================================
 
-// Custom palettes map
+//  Custom palettes map
 //==============================================================================
 
 // $custom-palettes: (
@@ -74,7 +74,7 @@
 
 
 
-// Global form elements
+//  Global form elements
 //==============================================================================
 
 // $global-form-element-background-color: rgb(255, 255, 255);
@@ -84,7 +84,7 @@
 
 
 
-// Global form elements :focus
+//  Global form elements :focus
 //==============================================================================
 
 // $global-form-element-background-color-focus: rgb(255, 255, 255);
@@ -94,7 +94,7 @@
 
 
 
-// Global form elements :disabled
+//  Global form elements :disabled
 //==============================================================================
 
 // $global-form-element-background-color-disabled: rgb(245, 245, 245);
@@ -105,10 +105,10 @@
 
 
 //==============================================================================
-// d. Typography
+//  d. Typography
 //==============================================================================
 
-// Font weight
+//  Font weight
 //==============================================================================
 
 // $font-weight-light: 100;
@@ -127,7 +127,7 @@
 
 
 
-// Fixed font
+//  Fixed font
 //==============================================================================
 
 // $fixed-font-family: monospace;
@@ -136,7 +136,7 @@
 
 
 
-// Heading font
+//  Heading font
 //==============================================================================
 
 // $heading-font-family: Arial, sans-serif;
@@ -150,7 +150,7 @@
 
 
 
-// Heading - <h1>
+//  Heading - <h1>
 //==============================================================================
 
 // $h1-font-size: 4rem;
@@ -165,7 +165,7 @@
 
 
 
-// Heading - <h2>
+//  Heading - <h2>
 //==============================================================================
 
 // $h2-font-size: 3.5rem;
@@ -180,7 +180,7 @@
 
 
 
-// Heading - <h3>
+//  Heading - <h3>
 //==============================================================================
 
 // $h3-font-size: 3rem;
@@ -195,7 +195,7 @@
 
 
 
-// Heading - <h4>
+//  Heading - <h4>
 //==============================================================================
 
 // $h4-font-size: 2.5rem;
@@ -210,7 +210,7 @@
 
 
 
-// Heading - <h5>
+//  Heading - <h5>
 //==============================================================================
 
 // $h5-font-size: 2rem;
@@ -225,7 +225,7 @@
 
 
 
-// Heading - <h6>
+//  Heading - <h6>
 //==============================================================================
 
 // $h6-font-size: 1.5rem;
@@ -240,7 +240,7 @@
 
 
 
-// Paragraph - <p>
+//  Paragraph - <p>
 //==============================================================================
 
 // $p-font-family: $base-font-family;
@@ -254,7 +254,7 @@
 
 
 
-// Anchor - <a>
+//  Anchor - <a>
 //==============================================================================
 
 // $a-text-decoration: none;
@@ -264,7 +264,7 @@
 
 
 
-// Unordered list - <ul>
+//  Unordered list - <ul>
 //==============================================================================
 
 // $ul-list-style-type: disc;
@@ -275,7 +275,7 @@
 
 
 
-// Ordered list - <ol>
+//  Ordered list - <ol>
 //==============================================================================
 
 // $ol-list-style-type: decimal;
@@ -286,7 +286,7 @@
 
 
 
-// List item - <li>
+//  List item - <li>
 //==============================================================================
 
 // $li-font-family: $base-font-family;
@@ -304,7 +304,7 @@
 
 
 
-// Blockquote - <blockquote>
+//  Blockquote - <blockquote>
 //==============================================================================
 
 // $blockquote-font-family: $base-font-family;
@@ -327,7 +327,7 @@
 
 
 //==============================================================================
-// e. General
+//  e. General
 //==============================================================================
 
 //  Global
@@ -352,10 +352,10 @@
 
 
 //==============================================================================
-// f. Forms
+//  f. Forms
 //==============================================================================
 
-// Form
+//  Form
 //==============================================================================
 
 // $form-margin-bottom: 1rem;
@@ -365,7 +365,7 @@
 
 
 
-// Fieldset
+//  Fieldset
 //==============================================================================
 
 // $fieldset-padding-bottom: 0.5rem;
@@ -382,7 +382,7 @@
 
 
 
-// Legend
+//  Legend
 //==============================================================================
 
 // $legend-font-family: $base-font-family;
@@ -400,6 +400,11 @@
 // $label-font-weight: $base-font-weight;
 // $label-line-height: $base-line-height;
 
+
+
+//  Label inline
+//==============================================================================
+
 // $label-inline-display: inline-block;
 // $label-inline-margin-bottom: 0;
 // $label-inline-margin-top: 0;
@@ -407,12 +412,17 @@
 // $label-inline-margin-left: 0.5rem;
 // $label-inline-vertical-align: baseline;
 
+
+
+//  Label inline :disabled
+//==============================================================================
+
 // $label-inline-color-disabled: rgb(150, 150, 150);
 // $label-inline-cursor-disabled: not-allowed;
 
 
 
-// Select
+//  Select
 //==============================================================================
 
 // $select-width: 100%;
@@ -439,11 +449,21 @@
 // $select-line-height: $base-line-height;
 // $select-appearance: none;
 
+
+
+//  Select :focus
+//==============================================================================
+
 // $select-background-color-focus: palette(global-form-element-background-color-focus);
 // $select-border-color-focus: palette(global-form-element-border-color-focus);
 // $select-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
 // $select-color-focus: palette(global-form-element-color-focus);
 // $select-outline-focus: none;
+
+
+
+//  Select :disabled
+//==============================================================================
 
 // $select-background-color-disabled: palette(global-form-element-background-color-disabled);
 // $select-border-color-disabled: palette(global-form-element-border-color-disabled);
@@ -452,7 +472,7 @@
 
 
 
-// Input
+//  Input
 //==============================================================================
 
 // $input-text-display: block;
@@ -477,22 +497,37 @@
 // $input-text-line-height: $base-line-height;
 // $input-text-appearance: none;
 
+
+
+//  Input :focus
+//==============================================================================
+
 // $input-text-background-color-focus: palette(global-form-element-background-color-focus);
 // $input-text-border-color-focus: palette(global-form-element-border-color-focus);
 // $input-text-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
 // $input-text-color-focus: palette(global-form-element-color-focus);
 // $input-text-outline-focus: none;
 
+
+
+//  Input :disabled
+//==============================================================================
+
 // $input-text-background-color-disabled: palette(global-form-element-background-color-disabled);
 // $input-text-border-color-disabled: palette(global-form-element-border-color-disabled);
 // $input-text-color-disabled: palette(global-form-element-color-disabled);
 // $input-text-cursor-disabled: not-allowed;
 
+
+
+//  Input inline :disabled
+//==============================================================================
+
 // $input-inline-cursor-disabled: not-allowed;
 
 
 
-// Textarea
+//  Textarea
 //==============================================================================
 
 // $textarea-display: block;
@@ -517,11 +552,21 @@
 // $textarea-line-height: $base-line-height;
 // $textarea-appearance: none;
 
+
+
+//  Textarea :focus
+//==============================================================================
+
 // $textarea-background-color-focus: palette(global-form-element-background-color-focus);
 // $textarea-border-color-focus: palette(global-form-element-border-color-focus);
 // $textarea-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
 // $textarea-color-focus: palette(global-form-element-color-focus);
 // $textarea-outline-focus: none;
+
+
+
+//  Textarea :disabled
+//==============================================================================
 
 // $textarea-background-color-disabled: palette(global-form-element-background-color-disabled);
 // $textarea-border-color-disabled: palette(global-form-element-border-color-disabled);
@@ -530,8 +575,9 @@
 
 
 
+
 //==============================================================================
-// g. Buttons
+//  g. Buttons
 //==============================================================================
 
 // $button-position: relative;
@@ -585,7 +631,7 @@
 
 
 
-// Primary color :hover
+//  Primary color :hover
 //==============================================================================
 
 // $button-primary-background-color-hover: darken($button-primary-background-color, 5%);
@@ -603,7 +649,7 @@
 
 
 
-// Success color :hover
+//  Success color :hover
 //==============================================================================
 
 // $button-success-background-color-hover: darken($button-success-background-color, 5%);
@@ -621,7 +667,7 @@
 
 
 
-// Error color hover
+//  Error color :hover
 //==============================================================================
 
 // $button-error-background-color-hover: darken($button-error-background-color, 5%);
@@ -632,17 +678,17 @@
 
 
 //==============================================================================
-// h. Tables
+//  h. Tables
 //==============================================================================
 
-// Table
+//  Table
 //==============================================================================
 
 // $table-width: 100%;
 
 
 
-// Table head
+//  Table head
 //==============================================================================
 
 // $thead-border-bottom-width: 2px;
@@ -651,12 +697,12 @@
 
 
 
-// Table body
+//  Table body
 //==============================================================================
 
 
 
-// Table row
+//  Table row
 //==============================================================================
 
 // $tr-background-color-odd: #f9f9f9;
@@ -664,7 +710,7 @@
 
 
 
-// Table heading
+//  Table heading
 //==============================================================================
 
 // $th-padding-top: 1rem;
@@ -676,7 +722,7 @@
 
 
 
-// Table data
+//  Table data
 //==============================================================================
 
 // $td-padding-top: 1rem;

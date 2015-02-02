@@ -1,23 +1,23 @@
 //==============================================================================
 //
-// echo-base/defaults/_palettes.scss
+//  echo-base/defaults/_palettes.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Default variables
-// b. Default palettes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Default variables
+//  b. Default palettes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 //==============================================================================
-// a. Default variables
+//  a. Default variables
 //==============================================================================
 
-// Global form elements
+//  Global form elements
 //==============================================================================
 
 $global-form-element-background-color: rgb(255, 255, 255) !default;
@@ -27,7 +27,7 @@ $global-form-element-color: rgb(150, 150, 150) !default;
 
 
 
-// Global form elements :focus
+//  Global form elements :focus
 //==============================================================================
 
 $global-form-element-background-color-focus: rgb(255, 255, 255) !default;
@@ -37,7 +37,7 @@ $global-form-element-color-focus: rgb(150, 150, 150) !default;
 
 
 
-// Global form elements :disabled
+//  Global form elements :disabled
 //==============================================================================
 
 $global-form-element-background-color-disabled: rgb(245, 245, 245) !default;
@@ -48,12 +48,12 @@ $global-form-element-color-disabled: rgb(150, 150, 150) !default;
 
 
 //==============================================================================
-// b. Default palettes
+//  b. Default palettes
 //==============================================================================
 
 $default-palettes: (
 
-// Global form elements
+//  Global form elements
 //==============================================================================
 
     global-form-element-color: (
@@ -74,7 +74,7 @@ $default-palettes: (
 
 
 
-// Global form elements :focus
+//  Global form elements :focus
 //==============================================================================
 
     global-form-element-background-color-focus: (
@@ -95,7 +95,7 @@ $default-palettes: (
 
 
 
-// Global form elements :disabled
+//  Global form elements :disabled
 //==============================================================================
 
     global-form-element-background-color-disabled: (
@@ -112,7 +112,7 @@ $default-palettes: (
 
 
 
-// Third-party palettes
+//  Third-party palettes
 //==============================================================================
 
     facebook: (

@@ -1,52 +1,60 @@
 //==============================================================================
 //
-// echo-base/defaults/elements/_table.scss
+//  echo-base/defaults/elements/_table.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Defaults
-//    1. Table
-//    2. Table head
-//    3. Table body
-//    4. Table row
-//    5. Table heading
-//    6. Table data
-// b. Classes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Table
+//      2. Table head
+//      3. Table body
+//      4. Table row
+//      5. Table heading
+//      6. Table data
+//  b. Classes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
-// Table
+//  Table
 //==============================================================================
 
 $table-width: 100% !default;
 
-// Table head
+
+
+//  Table head
 //==============================================================================
 
 $thead-border-bottom-width: 2px !default;
 $thead-border-bottom-style: solid !default;
 $thead-border-bottom-color: #e4e4e4 !default;
 
-// Table body
+
+
+//  Table body
 //==============================================================================
 
-// Table row
+
+
+//  Table row
 //==============================================================================
 
 $tr-background-color-odd: #f9f9f9 !default;
 $tr-background-color-even: #f1f1f1 !default;
 
-// Table heading
+
+
+//  Table heading
 //==============================================================================
 
 $th-padding-top: 1rem !default;
@@ -56,7 +64,9 @@ $th-padding-left: 1rem !default;
 $th-background-color: #fff !default;
 $th-font-weight: $base-font-weight !default;
 
-// Table data
+
+
+//  Table data
 //==============================================================================
 
 $td-padding-top: 1rem !default;
@@ -69,7 +79,7 @@ $td-font-weight: $base-font-weight !default;
 
 
 //==============================================================================
-// b. Classes
+//  b. Classes
 //==============================================================================
 
 table {

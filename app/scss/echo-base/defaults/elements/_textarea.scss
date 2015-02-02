@@ -1,21 +1,21 @@
 //==============================================================================
 //
-// echo-base/defaults/elements/_textarea.scss
+//  echo-base/defaults/elements/_textarea.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Defaults
-// b. Classes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//  b. Classes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
 $textarea-display: block !default;
@@ -40,7 +40,9 @@ $textarea-font-weight: $base-font-weight !default;
 $textarea-line-height: $base-line-height !default;
 $textarea-appearance: none !default;
 
-// State: Focus
+
+
+// textarea :focus
 //==============================================================================
 
 $textarea-background-color-focus: palette(global-form-element-background-color-focus) !default;
@@ -49,13 +51,19 @@ $textarea-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color
 $textarea-color-focus: palette(global-form-element-color-focus) !default;
 $textarea-outline-focus: none !default;
 
-// State: Disabled
+
+
+// textarea :disabled
 //==============================================================================
 
 $textarea-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
 $textarea-border-color-disabled: palette(global-form-element-border-color-disabled) !default;
 $textarea-color-disabled: palette(global-form-element-color-disabled) !default;
 $textarea-cursor-disabled: not-allowed !default;
+
+
+
+
 
 //==============================================================================
 //  b. Classes

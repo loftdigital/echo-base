@@ -1,40 +1,40 @@
 //==============================================================================
 //
-// echo-base/defaults/_typography.scss
+//  echo-base/defaults/_typography.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Defaults
-//    1. Font weight
-//    2. Base font
-//    3. Fixed font
-//    4. Heading font
-//    5. Heading - <h1>
-//    6. Heading - <h2>
-//    7. Heading - <h3>
-//    8. Heading - <h4>
-//    9. Heading - <h5>
-//    10. Heading - <h6>
-//    11. Paragraph - <p>
-//    12. Anchor - <a>g
-//    13. Unordered list - <ul>
-//    14. Ordered list - <ol>
-//    15. List item - <li>
-//    16. Blockquote - <blockquote>
-// b. Classes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Font weight
+//      2. Base font
+//      3. Fixed font
+//      4. Heading font
+//      5. Heading - <h1>
+//      6. Heading - <h2>
+//      7. Heading - <h3>
+//      8. Heading - <h4>
+//      9. Heading - <h5>
+//      10. Heading - <h6>
+//      11. Paragraph - <p>
+//      12. Anchor - <a>g
+//      13. Unordered list - <ul>
+//      14. Ordered list - <ol>
+//      15. List item - <li>
+//      16. Blockquote - <blockquote>
+//  b. Classes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
-// 1. Font weights
+//  1. Font weights
 //==============================================================================
 
 $font-weight-light: 100 !default;
@@ -54,7 +54,7 @@ $base-line-height: 1.5 !default;
 
 
 
-// 3. Fixed font
+//  3. Fixed font
 //==============================================================================
 
 $fixed-font-family: monospace !default;
@@ -63,7 +63,7 @@ $fixed-line-height: $base-line-height !default;
 
 
 
-// 4. Heading font
+//  4. Heading font
 //==============================================================================
 
 $heading-font-family: Arial, sans-serif !default;
@@ -77,7 +77,7 @@ $heading-text-transform: none !default;
 
 
 
-// 5. Heading - <h1>
+//  5. Heading - <h1>
 //==============================================================================
 
 $h1-font-size: 4rem !default;
@@ -92,7 +92,7 @@ $h1-text-transform: $heading-text-transform !default;
 
 
 
-// 6. Heading - <h2>
+//  6. Heading - <h2>
 //==============================================================================
 
 $h2-font-size: 3.5rem !default;
@@ -107,7 +107,7 @@ $h2-text-transform: $heading-text-transform !default;
 
 
 
-// 7. Heading - <h3>
+//  7. Heading - <h3>
 //==============================================================================
 
 $h3-font-size: 3rem !default;
@@ -122,7 +122,7 @@ $h3-text-transform: $heading-text-transform !default;
 
 
 
-// 8. Heading - <h4>
+//  8. Heading - <h4>
 //==============================================================================
 
 $h4-font-size: 2.5rem !default;
@@ -137,7 +137,7 @@ $h4-text-transform: $heading-text-transform !default;
 
 
 
-// 9. Heading - <h5>
+//  9. Heading - <h5>
 //==============================================================================
 
 $h5-font-size: 2rem !default;
@@ -152,7 +152,7 @@ $h5-text-transform: $heading-text-transform !default;
 
 
 
-// 10. heading - <h6>
+//  10. heading - <h6>
 //==============================================================================
 
 $h6-font-size: 1.5rem !default;
@@ -167,7 +167,7 @@ $h6-text-transform: $heading-text-transform !default;
 
 
 
-// 11. Paragraph - <p>
+//  11. Paragraph - <p>
 //==============================================================================
 
 $p-font-family: $base-font-family !default;
@@ -181,7 +181,7 @@ $p-margin-bottom: 1.5rem !default;
 
 
 
-// 12. Anchor - <a>
+//  12. Anchor - <a>
 //==============================================================================
 
 $a-text-decoration: none !default;
@@ -191,7 +191,7 @@ $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
 
 
 
-// 13. Unordered list - <ul>
+//  13. Unordered list - <ul>
 //==============================================================================
 
 $ul-list-style-type: disc !default;
@@ -202,7 +202,7 @@ $ul-margin-left: 1.3rem !default;
 
 
 
-// 14. Ordered list - <ol>
+//  14. Ordered list - <ol>
 //==============================================================================
 
 $ol-list-style-type: decimal !default;
@@ -213,7 +213,7 @@ $ol-margin-left: 1.3rem !default;
 
 
 
-// 15. List item - <li>
+//  15. List item - <li>
 //==============================================================================
 
 $li-font-family: $base-font-family !default;
@@ -231,7 +231,7 @@ $li-padding-left: 0 !default;
 
 
 
-// 16. Blockquote - <blockquote>
+//  16. Blockquote - <blockquote>
 //==============================================================================
 
 $blockquote-font-family: $base-font-family !default;
@@ -254,10 +254,10 @@ $blockquote-border-left-color: rgb(0, 200, 162) !default;
 
 
 //==============================================================================
-// c. Classes
+//  c. Classes
 //==============================================================================
 
-// Headings
+//  Headings
 //==============================================================================
 
 h1 {
@@ -334,7 +334,7 @@ h6 {
 
 
 
-// Paragraph
+//  Paragraph
 //==============================================================================
 
 p {
@@ -350,7 +350,7 @@ p {
 
 
 
-// Anchors
+//  Anchors
 //==============================================================================
 
 a {
@@ -365,7 +365,7 @@ a {
 
 
 
-// Lists
+//  Lists
 //==============================================================================
 
 ul {
@@ -401,7 +401,7 @@ li {
 
 
 
-// Blockquote
+//  Blockquote
 //==============================================================================
 
 blockquote {

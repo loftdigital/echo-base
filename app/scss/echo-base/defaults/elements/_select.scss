@@ -1,21 +1,21 @@
 //==============================================================================
 //
-// echo-base/defaults/elements/_select.scss
+//  echo-base/defaults/elements/_select.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Defaults
-// b. Classes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//  b. Classes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
 $select-width: 100% !default;
@@ -42,7 +42,7 @@ $select-font-weight: $base-font-weight !default;
 $select-line-height: $base-line-height !default;
 $select-appearance: none !default;
 
-// State: Focus
+//  select :focus
 //==============================================================================
 
 $select-background-color-focus: palette(global-form-element-background-color-focus) !default;
@@ -51,7 +51,7 @@ $select-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-f
 $select-color-focus: palette(global-form-element-color-focus) !default;
 $select-outline-focus: none !default;
 
-// State: Disabled
+//  select :disabled
 //==============================================================================
 
 $select-background-color-disabled: palette(global-form-element-background-color-disabled) !default;

@@ -1,21 +1,21 @@
 //==============================================================================
 //
-// echo-base/defaults/elements/_input.scss
+//  echo-base/defaults/elements/_input.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Defaults
-// b. Classes
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//  b. Classes
 //
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 //==============================================================================
-// a. Defaults
+//  a. Defaults
 //==============================================================================
 
 $input-text-display: block !default;
@@ -40,7 +40,9 @@ $input-text-font-weight: $base-font-weight !default;
 $input-text-line-height: $base-line-height !default;
 $input-text-appearance: none !default;
 
-// State: Focus
+
+
+//  Input :focus
 //==============================================================================
 
 $input-text-background-color-focus: palette(global-form-element-background-color-focus) !default;
@@ -50,7 +52,8 @@ $input-text-color-focus: palette(global-form-element-color-focus) !default;
 $input-text-outline-focus: none !default;
 
 
-// State: Disabled
+
+//  Input :disabled
 //==============================================================================
 
 $input-text-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
@@ -58,7 +61,15 @@ $input-text-border-color-disabled: palette(global-form-element-border-color-disa
 $input-text-color-disabled: palette(global-form-element-color-disabled) !default;
 $input-text-cursor-disabled: not-allowed !default;
 
+
+
+//  Input inline :disabled
+//==============================================================================
+
 $input-inline-cursor-disabled: not-allowed !default;
+
+
+
 
 //==============================================================================
 //  b. Classes
