@@ -34,28 +34,28 @@
 
 
 
-@mixin text-size($text-size, $breakpoint-name: "small") {
-  $text-size-properties: text-properties-for($text-size, $breakpoint-name);
+@mixin text-size($text-size, $breakpoint-name: 'small') {
+    $text-size-properties: text-properties-for($text-size, $breakpoint-name);
 
-  @if $text-size-properties != null {
-    font-size: map-get($text-size-properties, "font-size");
-    line-height: map-get($text-size-properties, "line-height");
-  } @else {
-    @warn "Breakpoint '#{$breakpoint-name}' for text size '#{$text-size}' is not defined";
-  }
+    @if $text-size-properties != null {
+        font-size: map-get($text-size-properties, 'font-size');
+        line-height: map-get($text-size-properties, 'line-height');
+    } @else {
+        @warn "Breakpoint '#{$breakpoint-name}' for text size '#{$text-size}' is not defined";
+    }
 }
 
 @mixin responsive-text-size($text-size, $default: 'default') {
-  @include text-size($text-size, $default);
+    @include text-size($text-size, $default);
 
-  $text-breakpoints-map: text-breakpoints-for($text-size);
-  $text-breakpoints-keys: map-keys($text-breakpoints-map);
+    $text-breakpoints-map: text-breakpoints-for($text-size);
+    $text-breakpoints-keys: map-keys($text-breakpoints-map);
 
-  @each $breakpoint-name in $text-breakpoints-keys {
-    @if $breakpoint-name != $default and breakpoint($breakpoint-name) != null {
-      @include breakpoint($breakpoint-name) {
-        @include text-size($text-size, $breakpoint-name);
-      }
+    @each $breakpoint-name in $text-breakpoints-keys {
+        @if $breakpoint-name != $default and breakpoint($breakpoint-name) != null {
+            @include breakpoint($breakpoint-name) {
+                @include text-size($text-size, $breakpoint-name);
+            }
+        }
     }
-  }
 }
