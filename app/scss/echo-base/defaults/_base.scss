@@ -1,0 +1,68 @@
+//==============================================================================
+//
+//  echo-base/defaults/_base.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Global
+//      2. Body
+//  b. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+//  Body
+//==============================================================================
+
+$body-background: #fff !default;
+$body-font-color: #000 !default;
+$body-font-family: $base-font-family !default;
+$body-font-weight: $base-font-weight !default;
+$body-font-style: $base-font-style !default;
+$body-line-height: $base-line-height !default;
+
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+*,
+*:before,
+*:after {
+    box-sizing: $global-box-sizing;
+}
+
+html,
+body {
+    font-size: $base-font-size;
+    height: 100%;
+}
+
+body {
+    background: $body-background;
+    color: $body-font-color;
+    font-family: $body-font-family;
+    font-style: $body-font-style;
+    font-weight: $body-font-weight;
+    line-height: $body-line-height;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+hr {
+    height: 0;
+    margin: 1.5rem 0;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #e4e4e4;
+}
