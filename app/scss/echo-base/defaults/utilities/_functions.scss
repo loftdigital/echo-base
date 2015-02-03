@@ -100,6 +100,34 @@
 
 
 //==============================================================================
+//  c. Typography
+//==============================================================================
+
+// http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
+
+@function text-breakpoints-for($text-size) {
+    @if map-has-key($text-sizing, $text-size) {
+        @return map-get($text-sizing, $text-size);
+    } @else {
+        @warn "Text size map '#{$text-size}' doesn't exist";
+    }
+}
+
+
+
+@function text-properties-for($text-size, $breakpoint-name) {
+    $text-breakpoints-map: text-breakpoints-for($text-size);
+    
+    @if map-has-key($text-breakpoints-map, $breakpoint-name) {
+        @return map-get($text-breakpoints-map, $breakpoint-name);
+    } @else {
+        @warn "Text size '#{$text-size}' for '#{$breakpoint-name}'"
+    }
+}
+
+
+
+//==============================================================================
 //  c. Helpers
 //==============================================================================
 

@@ -27,7 +27,7 @@
         $flow: max-width;
     }
 
-    @media ($flow: breakpoint($key)) {
+    @media (#{$flow}: breakpoint($key)) {
         @content;
     }
 }
