@@ -6,7 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
+//  b. Mixins
+//  c. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -17,6 +18,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-input-defaults: $use-echo-base-defaults !default;
 
 $input-text-display: block !default;
 $input-text-width: 100% !default;
@@ -72,22 +75,10 @@ $input-inline-cursor-disabled: not-allowed !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
+@mixin input {
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="number"],
-input[type="week"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"] {
     display: $input-text-display;
     width: $input-text-width;
     height: $input-text-height;
@@ -125,11 +116,47 @@ input[type="url"] {
         color: $input-text-color-disabled;
         cursor: $input-text-cursor-disabled;
     }
+
+
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+@mixin input-other {
+
     &:disabled {
-        cursor: $input-inline-cursor-disabled;
+        cursor: $input-other-cursor-disabled;
+    }
+
+}
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+
+@if $use-input-defaults {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="number"],
+    input[type="week"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"] {
+
+        @include input;
+
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+
+        @include input-other;
+
     }
 }

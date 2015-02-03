@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
-//
+//  b. Mixins
+//  c. Classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
@@ -17,6 +17,9 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-label-defaults: $use-echo-base-defaults !default;
+
 
 $label-display: block !default;
 $label-cursor: pointer !default;
@@ -36,31 +39,65 @@ $label-inline-cursor-disabled: not-allowed !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
 
-label {
+@mixin label {
+
     display: $label-display;
     font-size: $label-font-size;
     font-weight: $label-font-weight;
     line-height: $label-line-height;
 
     &[for] {
+
         cursor: $label-cursor;
+
     }
+
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label {
+@mixin label-other {
+
     display: $label-inline-display;
     margin-bottom: $label-inline-margin-bottom;
     margin-top: $label-inline-margin-top;
     margin-right: $label-inline-margin-right;
     margin-left: $label-inline-margin-left;
     vertical-align: $label-inline-vertical-align;
+
 }
 
-input[disabled] + label {
+@mixin label-disabled {
+
     color: $label-inline-color-disabled;
     cursor: $label-inline-cursor-disabled;
+
+}
+
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+@if $use-label-defaults {
+
+    label {
+        @include label;
+    }
+
+    input[type="radio"] + label,
+    input[type="checkbox"] + label {
+
+        @include label-other;
+
+    }
+
+    input[disabled] + label {
+
+        @include label-disabled;
+
+    }
+
 }

@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
-//
+//  b. Mixins
+//  c. Classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
@@ -38,6 +38,7 @@ $form-margin-left: 0 !default;
 }
 
 @if $use-form-defaults {
+
     form {
 
         @include form;

@@ -12,7 +12,8 @@
 //      4. Table row
 //      5. Table heading
 //      6. Table data
-//  b. Classes
+//  b. Mixins
+//  c. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -24,6 +25,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-table-defaults: $use-echo-base-defaults !default;
 
 //  Table
 //==============================================================================
@@ -79,24 +82,21 @@ $td-font-weight: $base-font-weight !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
 
-table {
+@mixin table {
     width: $table-width;
 }
 
-thead {
+@mixin table-head {
     border-bottom-width: $thead-border-bottom-width;
     border-bottom-style: $thead-border-bottom-style;
     border-bottom-color: $thead-border-bottom-color;
 }
 
-tbody {
-    border: 1px solid #fff;
-}
+@mixin table-row {
 
-tr {
     &:nth-child(odd) {
         background-color: $tr-background-color-odd;
     }
@@ -106,7 +106,7 @@ tr {
     }
 }
 
-th {
+@mixin table-heading {
     padding-top: $th-padding-top;
     padding-bottom: $th-padding-bottom;
     padding-right: $th-padding-right;
@@ -115,10 +115,38 @@ th {
     font-weight: $th-font-weight;
 }
 
-td {
+@mixin table-data {
     padding-top: $td-padding-top;
     padding-bottom: $td-padding-bottom;
     padding-right: $td-padding-right;
     padding-left: $td-padding-left;
     font-weight: $td-font-weight;
+}
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+@if $use-table-defaults {
+
+    table {
+        @include table;
+    }
+
+    thead {
+        @include table-head;
+    }
+
+    tr {
+        @include table-row;
+    }
+
+    th {
+        @include table-heading;
+    }
+
+    td {
+        @include table-data;
+    }
 }
