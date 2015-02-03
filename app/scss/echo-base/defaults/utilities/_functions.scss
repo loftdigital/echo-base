@@ -44,7 +44,7 @@
 //  2. Get breakpoint
 //==============================================================================
 
-@function break($key) {
+@function breakpoint($key) {
     $breakpoints: setup-breakpoints();
 
     @if (map-has-key($breakpoints, $key)) {
