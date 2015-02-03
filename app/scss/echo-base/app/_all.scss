@@ -5,27 +5,27 @@
 //  -----------------------------------------------------------------------------
 //  Table of contents
 //  -----------------------------------------------------------------------------
-//  a. Import custom non-contextual classes
-//      1. Grid
-//  b. Import custom contextual classes
-//      1. Article
-//      2. Footer
-//      3. Header
-//      4. Sidebar
+//  a. Import general classes
+//  b. Import custom block classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
+
+
 //==============================================================================
-//  a. Import custom non-contextual classes
+//  a. Import general classes
 //==============================================================================
 
 @import 'grid';
 
+
+
+
 //==============================================================================
-//  b. Import custom contextual classes
+//  b. Import custom block classes
 //==============================================================================
 
-// @import 'block/example';
+// @import 'blocks/example';

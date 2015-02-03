@@ -31,6 +31,8 @@
 //==============================================================================
 
 
+
+
 //==============================================================================
 //  a. Defaults
 //==============================================================================
@@ -189,7 +191,7 @@ $p-margin-bottom: 1.5rem !default;
 
 $a-text-decoration: none !default;
 $a-text-decoration-hover: none !default;
-$a-font-color: rgb(0, 200, 162) !default;
+$a-font-color: palette(primary) !default;
 $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
 
 
@@ -251,7 +253,7 @@ $blockquote-padding-right: 0 !default;
 $blockquote-padding-left: 0.5rem !default;
 $blockquote-border-left-width: 5px !default;
 $blockquote-border-left-style: solid !default;
-$blockquote-border-left-color: rgb(0, 200, 162) !default;
+$blockquote-border-left-color: palette(primary) !default;
 
 
 
@@ -436,6 +438,7 @@ $blockquote-border-left-color: rgb(0, 200, 162) !default;
     h6 {
         @include h6;
     }
+
 
 
 //  Paragraph
