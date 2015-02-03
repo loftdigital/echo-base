@@ -375,7 +375,7 @@
 // $fieldset-margin-bottom: 1rem;
 // $fieldset-margin-top: 0;
 // $fieldset-background-color: transparent;
-// $fieldset-border-color: #ccc;
+// $fieldset-border-color: palette(default-grey);
 // $fieldset-border-style: solid;
 // $fieldset-border-width: 1px;
 // $fieldset-border-radius: $global-border-radius;
@@ -417,7 +417,7 @@
 //  Label inline :disabled
 //==============================================================================
 
-// $label-inline-color-disabled: rgb(150, 150, 150);
+// $label-inline-color-disabled: palette(default-grey, dark);
 // $label-inline-cursor-disabled: not-allowed;
 
 
@@ -433,16 +433,16 @@
 // $select-padding-right: 0.5rem;
 // $select-margin-bottom: 1rem;
 // $select-margin-top: 0;
-// $select-background-color: palette(global-form-element-background-color);
+// $select-background-color: palette(default-white);
 // $select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
 // $select-background-repeat: no-repeat;
 // $select-background-position: 100% center;
-// $select-border-color: palette(global-form-element-border-color);
+// $select-border-color: palette(default-grey);
 // $select-border-style: solid;
 // $select-border-width: 1px;
 // $select-border-radius: $global-border-radius;
-// $select-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color);
-// $select-color: palette(global-form-element-color);
+// $select-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
+// $select-color: palette(default-grey, dark);
 // $select-font-family: $base-font-family;
 // $select-font-size: $base-font-size;
 // $select-font-weight: $base-font-weight;
@@ -454,10 +454,10 @@
 //  Select :focus
 //==============================================================================
 
-// $select-background-color-focus: palette(global-form-element-background-color-focus);
-// $select-border-color-focus: palette(global-form-element-border-color-focus);
-// $select-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
-// $select-color-focus: palette(global-form-element-color-focus);
+// $select-background-color-focus: palette(default-white);
+// $select-border-color-focus: palette(default-grey);
+// $select-box-shadow-focus: 0 0 3px palette(default-grey);
+// $select-color-focus: palette(default-grey, dark);
 // $select-outline-focus: none;
 
 
@@ -465,9 +465,9 @@
 //  Select :disabled
 //==============================================================================
 
-// $select-background-color-disabled: palette(global-form-element-background-color-disabled);
-// $select-border-color-disabled: palette(global-form-element-border-color-disabled);
-// $select-color-disabled: palette(global-form-element-color-disabled);
+// $select-background-color-disabled: palette(default-grey, x-light);
+// $select-border-color-disabled: palette(default-grey, light);
+// $select-color-disabled: palette(default-grey, dark);
 // $select-cursor-disabled: not-allowed;
 
 
@@ -484,13 +484,13 @@
 // $input-text-padding-right: 0.5rem;
 // $input-text-margin-bottom: 1rem;
 // $input-text-margin-top: 0;
-// $input-text-background-color: palette(global-form-element-background-color);
-// $input-text-border-color: palette(global-form-element-border-color);
+// $input-text-background-color: palette(default-white);
+// $input-text-border-color: palette(default-grey);
 // $input-text-border-style: solid;
 // $input-text-border-width: 1px;
 // $input-text-border-radius: $global-border-radius;
-// $input-text-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color);
-// $input-text-color: palette(global-form-element-color);
+// $input-text-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
+// $input-text-color: palette(default-grey, dark);
 // $input-text-font-family: $base-font-family;
 // $input-text-font-size: $base-font-size;
 // $input-text-font-weight: $base-font-weight;
@@ -502,20 +502,19 @@
 //  Input :focus
 //==============================================================================
 
-// $input-text-background-color-focus: palette(global-form-element-background-color-focus);
-// $input-text-border-color-focus: palette(global-form-element-border-color-focus);
-// $input-text-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
-// $input-text-color-focus: palette(global-form-element-color-focus);
+// $input-text-background-color-focus: palette(default-white);
+// $input-text-border-color-focus: palette(default-grey);
+// $input-text-box-shadow-focus: 0 0 3px palette(default-grey);
+// $input-text-color-focus: palette(default-grey, dark);
 // $input-text-outline-focus: none;
-
 
 
 //  Input :disabled
 //==============================================================================
 
-// $input-text-background-color-disabled: palette(global-form-element-background-color-disabled);
-// $input-text-border-color-disabled: palette(global-form-element-border-color-disabled);
-// $input-text-color-disabled: palette(global-form-element-color-disabled);
+// $input-text-background-color-disabled: palette(default-grey, x-light);
+// $input-text-border-color-disabled: palette(default-grey, light);
+// $input-text-color-disabled: palette(default-grey, dark);
 // $input-text-cursor-disabled: not-allowed;
 
 
@@ -539,13 +538,13 @@
 // $textarea-padding-left: 0.5rem;
 // $textarea-margin-bottom: 1rem;
 // $textarea-margin-top: 0;
-// $textarea-background-color: palette(global-form-element-background-color);
-// $textarea-border-color: palette(global-form-element-border-color);
+// $textarea-background-color: palette(default-white);
+// $textarea-border-color: palette(default-grey);
 // $textarea-border-style: solid;
 // $textarea-border-width: 1px;
 // $textarea-border-radius: $global-border-radius;
-// $textarea-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color);
-// $textarea-color: palette(global-form-element-color);
+// $textarea-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
+// $textarea-color: palette(default-grey, dark);
 // $textarea-font-family: $base-font-family;
 // $textarea-font-size: $base-font-size;
 // $textarea-font-weight: $base-font-weight;
@@ -557,10 +556,10 @@
 //  Textarea :focus
 //==============================================================================
 
-// $textarea-background-color-focus: palette(global-form-element-background-color-focus);
-// $textarea-border-color-focus: palette(global-form-element-border-color-focus);
-// $textarea-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus);
-// $textarea-color-focus: palette(global-form-element-color-focus);
+// $textarea-background-color-focus: palette(default-white);
+// $textarea-border-color-focus: palette(default-grey);
+// $textarea-box-shadow-focus: 0 0 3px palette(default-grey);
+// $textarea-color-focus: palette(default-grey, dark);
 // $textarea-outline-focus: none;
 
 
@@ -568,9 +567,9 @@
 //  Textarea :disabled
 //==============================================================================
 
-// $textarea-background-color-disabled: palette(global-form-element-background-color-disabled);
-// $textarea-border-color-disabled: palette(global-form-element-border-color-disabled);
-// $textarea-color-disabled: palette(global-form-element-color-disabled);
+// $textarea-background-color-disabled: palette(default-grey, x-light);
+// $textarea-border-color-disabled: palette(default-grey, light);
+// $textarea-color-disabled: palette(default-grey, dark);
 // $textarea-cursor-disabled: not-allowed;
 
 

@@ -42,6 +42,8 @@ $select-font-weight: $base-font-weight !default;
 $select-line-height: $base-line-height !default;
 $select-appearance: none !default;
 
+
+
 //  select :focus
 //==============================================================================
 
@@ -51,6 +53,8 @@ $select-box-shadow-focus: 0 0 3px palette(default-grey) !default;
 $select-color-focus: palette(default-grey, dark) !default;
 $select-outline-focus: none !default;
 
+
+
 //  select :disabled
 //==============================================================================
 
@@ -58,6 +62,9 @@ $select-background-color-disabled: palette(default-grey, x-light) !default;
 $select-border-color-disabled: palette(default-grey, light) !default;
 $select-color-disabled: palette(default-grey, dark) !default;
 $select-cursor-disabled: not-allowed !default;
+
+
+
 
 //==============================================================================
 //  b. Classes
