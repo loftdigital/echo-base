@@ -17,11 +17,12 @@
 //      9. Heading - <h5>
 //      10. Heading - <h6>
 //      11. Paragraph - <p>
-//      12. Anchor - <a>g
+//      12. Anchor - <a>
 //      13. Unordered list - <ul>
 //      14. Ordered list - <ol>
 //      15. List item - <li>
 //      16. Blockquote - <blockquote>
+//      17. Code - <code>
 //  b. Mixins
 //  c. Classes
 //
@@ -63,6 +64,7 @@ $base-line-height: 1.5 !default;
 //==============================================================================
 
 $fixed-font-family: monospace !default;
+$fixed-font-weight: normal;
 $fixed-font-size: 85% !default;
 $fixed-line-height: $base-line-height !default;
 
@@ -257,6 +259,25 @@ $blockquote-border-left-color: palette(primary) !default;
 
 
 
+//  17. Code - <code>
+//==============================================================================
+
+$code-display: block !default;
+$code-padding: rem-calc(16px) !default;
+$code-margin: 1.5rem 0 !default;
+$code-color: palette(default-grey, dark) !default;
+$code-font-family: $fixed-font-family !default;
+$code-font-weight: $fixed-font-weight !default;
+$code-font-size: $fixed-font-size !default;
+$code-line-height: $fixed-line-height !default;
+$code-background-color: palette(default-grey, x-light) !default;
+$code-border-width: 1px !default;
+$code-border-style: solid !default;
+$code-border-color: palette(default-grey) !default;
+$code-border-radius: $global-border-radius !default;
+
+
+
 
 //==============================================================================
 //  b. Classes
@@ -404,6 +425,22 @@ $blockquote-border-left-color: palette(primary) !default;
     border-left-color: $blockquote-border-left-color;
 }
 
+@mixin code {
+    display: $code-display;
+    padding: $code-padding;
+    margin: $code-margin;
+    color: $code-color;
+    font-family: $code-font-family;
+    font-weight: $code-font-weight;
+    font-size: $code-font-size;
+    line-height: $code-line-height;
+    background-color: $code-background-color;
+    border-width: $code-border-width;
+    border-style: $code-border-style;
+    border-color: $code-border-color;
+    border-radius: $code-border-radius;
+}
+
 //==============================================================================
 //  c. Classes
 //==============================================================================
@@ -482,4 +519,14 @@ $blockquote-border-left-color: palette(primary) !default;
     blockquote {
         @include blockquote;
     }
+
+
+
+//  Code
+//==============================================================================
+
+    code {
+        @include code;
+    }
+
 }
