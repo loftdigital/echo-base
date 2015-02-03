@@ -571,6 +571,9 @@ $reponsive-text-defaults: (
     text-rendering: $h2-font-text-rendering;
     letter-spacing: $h2-letter-spacing;
     text-transform: $h2-text-transform;
+
+    @include responsive-text-size(h2);
+
 }
 
 @mixin h3 {
@@ -583,6 +586,9 @@ $reponsive-text-defaults: (
     text-rendering: $h3-font-text-rendering;
     letter-spacing: $h3-letter-spacing;
     text-transform: $h3-text-transform;
+
+    @include responsive-text-size(h3);
+
 }
 
 @mixin h4 {
@@ -595,6 +601,9 @@ $reponsive-text-defaults: (
     text-rendering: $h4-font-text-rendering;
     letter-spacing: $h4-letter-spacing;
     text-transform: $h4-text-transform;
+
+    @include responsive-text-size(h4);
+
 }
 
 @mixin h5 {
@@ -607,6 +616,9 @@ $reponsive-text-defaults: (
     text-rendering: $h5-font-text-rendering;
     letter-spacing: $h5-letter-spacing;
     text-transform: $h5-text-transform;
+
+    @include responsive-text-size(h5);
+
 }
 
 @mixin h6 {
@@ -619,6 +631,9 @@ $reponsive-text-defaults: (
     text-rendering: $h6-font-text-rendering;
     letter-spacing: $h6-letter-spacing;
     text-transform: $h6-text-transform;
+
+    @include responsive-text-size(h6);
+
 }
 
 @mixin p {
