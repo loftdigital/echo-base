@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//      1. Global
-//      2. Body
+//      1. Body - <body>
+//      2. Horizontal rule - <hr>
 //  b. Classes
 //
 //
@@ -15,20 +15,35 @@
 //
 //==============================================================================
 
-//  Body
+
+//==============================================================================
+//  a. Defaults
 //==============================================================================
 
-$body-background: #fff !default;
-$body-font-color: #000 !default;
+//  1. Body - <body>
+//==============================================================================
+
+$body-background: palette(default-white) !default;
+$body-font-color: palette(default-black) !default;
 $body-font-family: $base-font-family !default;
 $body-font-weight: $base-font-weight !default;
 $body-font-style: $base-font-style !default;
 $body-line-height: $base-line-height !default;
 
 
+
+//  2. Horizontal rule - <hr>
+//==============================================================================
+
+$hr-border-color: palette(default-grey, light) !default;
+
+
+
+
 //==============================================================================
 //  b. Classes
 //==============================================================================
+
 *,
 *:before,
 *:after {
@@ -64,5 +79,5 @@ hr {
     margin: 1.5rem 0;
     border-width: 1px 0 0;
     border-style: solid;
-    border-color: #e4e4e4;
+    border-color: $hr-border-color;
 }
