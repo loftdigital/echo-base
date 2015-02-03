@@ -11,6 +11,10 @@
 //  b. Palette
 //      1. Setup palettes
 //      2. Get palette
+//  c. Helpers
+//      1. Strip Unit
+//      2. Remify
+//      3. Rem Calc
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -89,5 +93,74 @@
 
     } @else {
         @warn "Palette doesn't exist!";
+    }
+}
+
+
+
+
+//==============================================================================
+//  c. Helpers
+//==============================================================================
+
+//  1. Strip Unit
+//==============================================================================
+
+@function strip-unit($val) {
+    @return $val / ($val * 0 + 1);
+}
+
+
+
+//  2. Remify
+//==============================================================================
+
+@function remify($value, $rem-base) {
+
+    $value: strip-unit($value);
+
+    @if $value == 0 {
+
+        @return 0;
+
+    } @else {
+
+        @return $value / strip-unit($rem-base) * 1rem;
+
+    }
+
+
+}
+
+
+
+//  3. Rem Calc
+//==============================================================================
+
+@function rem-calc($values, $rem-base: $base-font-size) {
+
+    $num-vals : length($values);
+
+    @if $num-vals <= 0 {
+
+        @warn 'You need to supply at least one value to calcRem';
+
+    } @else if $num-vals == 1 {
+
+        $val: nth($values, 1);
+
+        @return remify($val, $rem-base);
+
+
+    } @else {
+
+        $rem-values: ();
+
+        @for $i from 1 through $num-vals {
+            $rem-values: append($rem-values, remify(nth($values, $i), $rem-base));
+        }
+
+        @return $rem-values;
+
     }
 }
