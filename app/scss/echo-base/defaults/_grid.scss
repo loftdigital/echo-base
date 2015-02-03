@@ -22,7 +22,7 @@
 //  a. Defaults
 //==============================================================================
 
-$use-grid-default: $use-echo-base-defaults !default;
+$use-grid-defaults: $use-echo-base-defaults !default;
 
 //  Window grid
 //==============================================================================
@@ -83,7 +83,7 @@ $content: (
 //  c. Grid classes
 //==============================================================================
 
-@if $use-grid-default {
+@if $use-grid-defaults {
     .grid {
 
     //  Window grid
