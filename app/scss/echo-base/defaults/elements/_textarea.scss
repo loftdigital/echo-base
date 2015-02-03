@@ -6,7 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
+//  b. Mixins
+//  c. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -17,6 +18,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-textarea-defaults: $use-echo-base-defaults !default;
 
 $textarea-display: block !default;
 $textarea-width: 100% !default;
@@ -65,10 +68,9 @@ $textarea-cursor-disabled: not-allowed !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
-
-textarea {
+@mixin textarea {
     display: $textarea-display;
     width: $textarea-width;
     height: $textarea-height;
@@ -105,5 +107,19 @@ textarea {
         border-color: $textarea-border-color-disabled;
         color: $textarea-color-disabled;
         cursor: $textarea-cursor-disabled;
+    }
+}
+
+
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+@if $use-textarea-defaults {
+
+    textarea {
+        @include textarea;
     }
 }

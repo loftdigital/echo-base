@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
-//
+//  b. Mixins
+//  c. Classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
@@ -18,6 +18,8 @@
 //  a. Defaults
 //==============================================================================
 
+$use-legend-defaults: $use-echo-base-defaults !default;
+
 $legend-font-family: $base-font-family !default;
 $legend-font-size: $base-font-size !default;
 $legend-font-weight: $base-font-weight !default;
@@ -26,11 +28,29 @@ $legend-font-weight: $base-font-weight !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
 
-legend {
+@mixin legend {
+
     font-family: $legend-font-family;
     font-size: $legend-font-size;
     font-weight: $legend-font-weight;
+
+}
+
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+@if $use-legend-defaults {
+
+    legend {
+
+        @include legend;
+
+    }
+
 }

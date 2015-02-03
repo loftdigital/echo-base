@@ -19,6 +19,12 @@
 //
 //==============================================================================
 
+//  Include Echo Base defaults
+//==============================================================================
+
+// $use-echo-base-defaults: true;
+
+
 //==============================================================================
 //  a. Grid
 //==============================================================================
@@ -355,7 +361,14 @@
 //  f. Forms
 //==============================================================================
 
-//  Form
+//  Enable Defaults
+//==============================================================================
+
+// $use-form-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
 //==============================================================================
 
 // $form-margin-bottom: 1rem;
@@ -365,7 +378,19 @@
 
 
 
-//  Fieldset
+
+//==============================================================================
+//  g. Fieldset
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-fieldset-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
 //==============================================================================
 
 // $fieldset-padding-bottom: 0.5rem;
@@ -381,8 +406,18 @@
 // $fieldset-border-radius: $global-border-radius;
 
 
-
+//==============================================================================
 //  Legend
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-legend-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
 //==============================================================================
 
 // $legend-font-family: $base-font-family;
@@ -391,7 +426,18 @@
 
 
 
+//==============================================================================
 // Label
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-label-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
 //==============================================================================
 
 // $label-display: block;
@@ -402,7 +448,7 @@
 
 
 
-//  Label inline
+//  Label inline Defaults
 //==============================================================================
 
 // $label-inline-display: inline-block;
@@ -414,15 +460,25 @@
 
 
 
-//  Label inline :disabled
+//  Label inline :disabled Defaults
 //==============================================================================
 
 // $label-inline-color-disabled: palette(default-grey, dark);
 // $label-inline-cursor-disabled: not-allowed;
 
 
-
+//==============================================================================
 //  Select
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-select-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
 //==============================================================================
 
 // $select-width: 100%;
@@ -451,7 +507,7 @@
 
 
 
-//  Select :focus
+//  Select :focus Defaults
 //==============================================================================
 
 // $select-background-color-focus: palette(default-white);
@@ -462,7 +518,7 @@
 
 
 
-//  Select :disabled
+//  Select :disabled Defaults
 //==============================================================================
 
 // $select-background-color-disabled: palette(default-grey, x-light);
@@ -471,9 +527,19 @@
 // $select-cursor-disabled: not-allowed;
 
 
-
+//==============================================================================
 //  Input
 //==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-input-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//=============================================================================
 
 // $input-text-display: block;
 // $input-text-width: 100%;
@@ -499,7 +565,7 @@
 
 
 
-//  Input :focus
+//  Input :focus Defaults
 //==============================================================================
 
 // $input-text-background-color-focus: palette(default-white);
@@ -509,7 +575,8 @@
 // $input-text-outline-focus: none;
 
 
-//  Input :disabled
+
+//  Input :disabled Defaults
 //==============================================================================
 
 // $input-text-background-color-disabled: palette(default-grey, x-light);
@@ -519,15 +586,25 @@
 
 
 
-//  Input inline :disabled
+//  Input inline :disabled Defaults
 //==============================================================================
 
 // $input-inline-cursor-disabled: not-allowed;
 
 
-
+//==============================================================================
 //  Textarea
 //==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-textarea-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//=============================================================================
 
 // $textarea-display: block;
 // $textarea-width: 100%;
@@ -553,7 +630,7 @@
 
 
 
-//  Textarea :focus
+//  Textarea :focus Defaults
 //==============================================================================
 
 // $textarea-background-color-focus: palette(default-white);
@@ -564,7 +641,7 @@
 
 
 
-//  Textarea :disabled
+//  Textarea :disabled Defaults
 //==============================================================================
 
 // $textarea-background-color-disabled: palette(default-grey, x-light);
@@ -578,6 +655,17 @@
 //==============================================================================
 //  g. Buttons
 //==============================================================================
+
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-button-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//=============================================================================
 
 // $button-position: relative;
 // $button-display: inline-block;
@@ -621,73 +709,27 @@
 
 
 
-//  Primary color
-//==============================================================================
-
-// $button-primary-background-color: rgb(0, 173, 255);
-// $button-primary-border-color: rgb(0, 173, 255);
-// $button-primary-color: rgb(255, 255, 255);
-
-
-
-//  Primary color :hover
-//==============================================================================
-
-// $button-primary-background-color-hover: darken($button-primary-background-color, 5%);
-// $button-primary-border-color-hover: darken($button-primary-border-color, 5%);
-// $button-primary-color-hover: rgb(255, 255, 255);
-
-
-
-//  Success color
-//==============================================================================
-
-// $button-success-background-color: rgb(114, 195, 125);
-// $button-success-border-color: rgb(114, 195, 125);
-// $button-success-color: rgb(255, 255, 255);
-
-
-
-//  Success color :hover
-//==============================================================================
-
-// $button-success-background-color-hover: darken($button-success-background-color, 5%);
-// $button-success-border-color-hover: darken($button-success-border-color, 5%);
-// $button-success-color-hover: rgb(255, 255, 255);
-
-
-
-//  Error color
-//==============================================================================
-
-// $button-error-background-color: rgb(199, 74, 74);
-// $button-error-border-color: rgb(199, 74, 74);
-// $button-error-color: rgb(255, 255, 255);
-
-
-
-//  Error color :hover
-//==============================================================================
-
-// $button-error-background-color-hover: darken($button-error-background-color, 5%);
-// $button-error-border-color-hover: darken($button-error-border-color, 5%);
-// $button-error-color-hover: rgb(255, 255, 255);
-
-
-
 
 //==============================================================================
 //  h. Tables
 //==============================================================================
 
-//  Table
+
+//  Enable Defaults
 //==============================================================================
+
+// $use-table-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//=============================================================================
 
 // $table-width: 100%;
 
 
 
-//  Table head
+//  Table head Defaults
 //==============================================================================
 
 // $thead-border-bottom-width: 2px;
@@ -696,12 +738,12 @@
 
 
 
-//  Table body
+//  Table body Defaults
 //==============================================================================
 
 
 
-//  Table row
+//  Table row Defaults
 //==============================================================================
 
 // $tr-background-color-odd: palette(default-grey, x-light);
@@ -709,7 +751,7 @@
 
 
 
-//  Table heading
+//  Table heading Defaults
 //==============================================================================
 
 // $th-padding-top: 1rem;
@@ -721,7 +763,7 @@
 
 
 
-//  Table data
+//  Table data Defaults
 //==============================================================================
 
 // $td-padding-top: 1rem;

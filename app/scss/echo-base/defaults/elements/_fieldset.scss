@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
-//
+//  b. Mixins
+//  c. Classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
@@ -17,6 +17,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-fieldset-defaults: $use-echo-base-defaults !default;
 
 $fieldset-padding-bottom: 0.5rem !default;
 $fieldset-padding-top: 0.5rem !default;
@@ -30,11 +32,14 @@ $fieldset-border-style: solid !default;
 $fieldset-border-width: 1px !default;
 $fieldset-border-radius: $global-border-radius !default;
 
+
+
+
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
 
-fieldset {
+@mixin fieldset {
     padding-bottom: $fieldset-padding-bottom;
     padding-top: $fieldset-padding-top;
     padding-right: $fieldset-padding-right;
@@ -46,4 +51,20 @@ fieldset {
     border-style: $fieldset-border-style;
     border-width: $fieldset-border-width;
     border-radius: $fieldset-border-radius;
+}
+
+
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+@if $use-fieldset-defaults {
+
+    fieldset {
+
+        @include fieldset;
+
+    }
+
 }

@@ -6,7 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
+//  b. Mixins
+//  c. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -17,6 +18,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-button-defaults: $use-echo-base-defaults !default;
 
 $button-position: relative !default;
 $button-display: inline-block !default;
@@ -63,69 +66,11 @@ $button-color-hover: rgb(40, 40, 40) !default;
 
 
 
-//  Primary color
+//==============================================================================
+//  b. Mixins
 //==============================================================================
 
-$button-primary-background-color: rgb(0, 173, 255) !default;
-$button-primary-border-color: rgb(0, 173, 255) !default;
-$button-primary-color: rgb(255, 255, 255) !default;
-
-
-
-//  Primary color :hover
-//==============================================================================
-
-$button-primary-background-color-hover: darken($button-primary-background-color, 5%) !default;
-$button-primary-border-color-hover: darken($button-primary-border-color, 5%) !default;
-$button-primary-color-hover: rgb(255, 255, 255) !default;
-
-
-
-//  Success color
-//==============================================================================
-
-$button-success-background-color: rgb(114, 195, 125) !default;
-$button-success-border-color: rgb(114, 195, 125) !default;
-$button-success-color: rgb(255, 255, 255) !default;
-
-
-
-//  Success color :hover
-//==============================================================================
-
-$button-success-background-color-hover: darken($button-success-background-color, 5%) !default;
-$button-success-border-color-hover: darken($button-success-border-color, 5%) !default;
-$button-success-color-hover: rgb(255, 255, 255) !default;
-
-
-
-//  Error color
-//==============================================================================
-
-$button-error-background-color: rgb(199, 74, 74) !default;
-$button-error-border-color: rgb(199, 74, 74) !default;
-$button-error-color: rgb(255, 255, 255) !default;
-
-
-
-//  Error color :hover
-//==============================================================================
-
-$button-error-background-color-hover: darken($button-error-background-color, 5%) !default;
-$button-error-border-color-hover: darken($button-error-border-color, 5%) !default;
-$button-error-color-hover: rgb(255, 255, 255) !default;
-
-
-
-
-//==============================================================================
-//  b. Classes
-//==============================================================================
-
-button,
-input[type="button"],
-input[type="submit"],
-.button {
+@mixin button {
     position: $button-position;
     display: $button-display;
     width: $button-width;
@@ -150,7 +95,6 @@ input[type="submit"],
     text-align: $button-text-align;
     transition: $button-transition;
     vertical-align: $button-vertical-align;
-
     background-color: $button-background-color;
     border-color: $button-border-color;
     color: $button-color;
@@ -162,40 +106,20 @@ input[type="submit"],
     }
 }
 
-.button {
-    &--primary {
-        background-color: $button-primary-background-color;
-        border-color: $button-primary-border-color;
-        color: $button-primary-color;
 
-        &:hover {
-            background-color: $button-primary-background-color-hover;
-            border-color: $button-primary-border-color-hover;
-            color: $button-primary-color-hover;
-        }
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+@if $use-button-defaults {
+
+    button,
+    input[type="button"],
+    input[type="submit"],
+    .button {
+
+        @include button;
+
     }
 
-    &--success {
-        background-color: $button-success-background-color;
-        border-color: $button-success-border-color;
-        color: $button-success-color;
-
-        &:hover {
-            background-color: $button-success-background-color-hover;
-            border-color: $button-success-border-color-hover;
-            color: $button-success-color-hover;
-        }
-    }
-
-    &--error {
-        background-color: $button-error-background-color;
-        border-color: $button-error-border-color;
-        color: $button-error-color;
-
-        &:hover {
-            background-color: $button-error-background-color-hover;
-            border-color: $button-error-border-color-hover;
-            color: $button-error-color-hover;
-        }
-    }
 }

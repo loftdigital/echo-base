@@ -6,8 +6,8 @@
 //  Table of contents
 //  ----------------------------------------------------------------------------
 //  a. Defaults
-//  b. Classes
-//
+//  b. Mixins
+//  c. Classes
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
@@ -17,6 +17,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-select-defaults: $use-echo-base-defaults !default;
 
 $select-width: 100% !default;
 $select-height: auto !default;
@@ -67,10 +69,10 @@ $select-cursor-disabled: not-allowed !default;
 
 
 //==============================================================================
-//  b. Classes
+//  b. Mixins
 //==============================================================================
 
-select {
+@mixin select {
     margin-bottom: $select-margin-bottom;
     margin-top: $select-margin-top;
     padding-bottom: $select-padding-bottom;
@@ -114,5 +116,17 @@ select {
         border-color: $select-border-color-disabled;
         color: $select-color-disabled;
         cursor: $select-cursor-disabled;
+    }
+}
+
+
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+@if $use-select-defaults {
+    select {
+        @include select;
     }
 }
