@@ -27,13 +27,13 @@ $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
 $input-text-margin-bottom: 1rem !default;
 $input-text-margin-top: 0 !default;
-$input-text-background-color: palette(global-form-element-background-color) !default;
-$input-text-border-color: palette(global-form-element-border-color) !default;
+$input-text-background-color: palette(default-white) !default;
+$input-text-border-color: palette(default-grey) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
 $input-text-border-radius: $global-border-radius !default;
-$input-text-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color) !default;
-$input-text-color: palette(global-form-element-color) !default;
+$input-text-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1) !default;
+$input-text-color: palette(default-grey, dark) !default;
 $input-text-font-family: $base-font-family !default;
 $input-text-font-size: $base-font-size !default;
 $input-text-font-weight: $base-font-weight !default;
@@ -45,10 +45,10 @@ $input-text-appearance: none !default;
 //  Input :focus
 //==============================================================================
 
-$input-text-background-color-focus: palette(global-form-element-background-color-focus) !default;
-$input-text-border-color-focus: palette(global-form-element-border-color-focus) !default;
-$input-text-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus) !default;
-$input-text-color-focus: palette(global-form-element-color-focus) !default;
+$input-text-background-color-focus: palette(default-white) !default;
+$input-text-border-color-focus: palette(default-grey) !default;
+$input-text-box-shadow-focus: 0 0 3px palette(default-grey) !default;
+$input-text-color-focus: palette(default-grey, dark) !default;
 $input-text-outline-focus: none !default;
 
 
@@ -56,9 +56,9 @@ $input-text-outline-focus: none !default;
 //  Input :disabled
 //==============================================================================
 
-$input-text-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
-$input-text-border-color-disabled: palette(global-form-element-border-color-disabled) !default;
-$input-text-color-disabled: palette(global-form-element-color-disabled) !default;
+$input-text-background-color-disabled: palette(default-grey, x-light) !default;
+$input-text-border-color-disabled: palette(default-grey, light) !default;
+$input-text-color-disabled: palette(default-grey, dark) !default;
 $input-text-cursor-disabled: not-allowed !default;
 
 

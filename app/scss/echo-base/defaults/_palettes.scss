@@ -7,6 +7,8 @@
 //  ----------------------------------------------------------------------------
 //  a. Default variables
 //  b. Default palettes
+//  c. Third-party palettes
+//  d. Custom palettes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -17,35 +19,6 @@
 //  a. Default variables
 //==============================================================================
 
-//  Global form elements
-//==============================================================================
-
-$global-form-element-background-color: rgb(255, 255, 255) !default;
-$global-form-element-border-color: rgb(228, 228, 228) !default;
-$global-form-element-box-shadow-color: rgba(0, 0, 0, 0.1) !default;
-$global-form-element-color: rgb(150, 150, 150) !default;
-
-
-
-//  Global form elements :focus
-//==============================================================================
-
-$global-form-element-background-color-focus: rgb(255, 255, 255) !default;
-$global-form-element-border-color-focus: rgb(204, 204, 204) !default;
-$global-form-element-box-shadow-color-focus: rgb(200, 200, 200) !default;
-$global-form-element-color-focus: rgb(150, 150, 150) !default;
-
-
-
-//  Global form elements :disabled
-//==============================================================================
-
-$global-form-element-background-color-disabled: rgb(245, 245, 245) !default;
-$global-form-element-border-color-disabled: rgb(228, 228, 228) !default;
-$global-form-element-color-disabled: rgb(150, 150, 150) !default;
-
-
-
 
 //==============================================================================
 //  b. Default palettes
@@ -53,68 +26,31 @@ $global-form-element-color-disabled: rgb(150, 150, 150) !default;
 
 $default-palettes: (
 
-//  Global form elements
+    default-black: (
+        base: rgb(0, 0, 0),
+    ),
+
+    default-grey: (
+        x-light: rgb(245, 245, 245),
+        light: rgb(228, 228, 228),
+        base: rgb(200, 200, 200),
+        dark: rgb(150, 150, 150),
+
+    ),
+
+    default-white: (
+        base: rgb(255, 255, 255),
+    )
+);
+
+
+
+
+//==============================================================================
+//  c. Third-party palettes
 //==============================================================================
 
-    global-form-element-color: (
-        base: $global-form-element-color
-    ),
-
-    global-form-element-background-color: (
-        base: $global-form-element-background-color
-    ),
-
-    global-form-element-border-color: (
-        base: $global-form-element-border-color
-    ),
-
-    global-form-element-box-shadow-color: (
-        base: $global-form-element-box-shadow-color
-    ),
-
-
-
-//  Global form elements :focus
-//==============================================================================
-
-    global-form-element-background-color-focus: (
-        base: $global-form-element-background-color-focus
-    ),
-
-    global-form-element-border-color-focus: (
-        base: $global-form-element-border-color-focus
-    ),
-
-    global-form-element-box-shadow-color-focus: (
-        base: $global-form-element-box-shadow-color-focus
-    ),
-
-    global-form-element-color-focus: (
-        base: $global-form-element-color-focus
-    ),
-
-
-
-//  Global form elements :disabled
-//==============================================================================
-
-    global-form-element-background-color-disabled: (
-        base: $global-form-element-background-color-disabled
-    ),
-
-    global-form-element-border-color-disabled: (
-        base: $global-form-element-border-color-disabled
-    ),
-
-    global-form-element-color-disabled: (
-        base: $global-form-element-color-disabled
-    ),
-
-
-
-//  Third-party palettes
-//==============================================================================
-
+$third-party-palettes: (
     facebook: (
         base: rgb(59, 89, 152)
     ),
@@ -136,5 +72,11 @@ $default-palettes: (
     )
 );
 
+
+
+
+//==============================================================================
+//  d. Custom palettes
+//==============================================================================
 
 $custom-palettes: () !default;

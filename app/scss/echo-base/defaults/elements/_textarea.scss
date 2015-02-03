@@ -27,13 +27,13 @@ $textarea-padding-right: 0.5rem !default;
 $textarea-padding-left: 0.5rem !default;
 $textarea-margin-bottom: 1rem !default;
 $textarea-margin-top: 0 !default;
-$textarea-background-color: palette(global-form-element-background-color) !default;
-$textarea-border-color: palette(global-form-element-border-color) !default;
+$textarea-background-color: palette(default-white) !default;
+$textarea-border-color: palette(default-grey) !default;
 $textarea-border-style: solid !default;
 $textarea-border-width: 1px !default;
 $textarea-border-radius: $global-border-radius !default;
-$textarea-box-shadow: inset 0 1px 2px palette(global-form-element-box-shadow-color) !default;
-$textarea-color: palette(global-form-element-color) !default;
+$textarea-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1) !default;
+$textarea-color: palette(default-grey, dark) !default;
 $textarea-font-family: $base-font-family !default;
 $textarea-font-size: $base-font-size !default;
 $textarea-font-weight: $base-font-weight !default;
@@ -45,10 +45,10 @@ $textarea-appearance: none !default;
 // textarea :focus
 //==============================================================================
 
-$textarea-background-color-focus: palette(global-form-element-background-color-focus) !default;
-$textarea-border-color-focus: palette(global-form-element-border-color-focus) !default;
-$textarea-box-shadow-focus: 0 0 3px palette(global-form-element-box-shadow-color-focus) !default;
-$textarea-color-focus: palette(global-form-element-color-focus) !default;
+$textarea-background-color-focus: palette(default-white) !default;
+$textarea-border-color-focus: palette(default-grey) !default;
+$textarea-box-shadow-focus: 0 0 3px palette(default-grey) !default;
+$textarea-color-focus: palette(default-grey, dark) !default;
 $textarea-outline-focus: none !default;
 
 
@@ -56,11 +56,10 @@ $textarea-outline-focus: none !default;
 // textarea :disabled
 //==============================================================================
 
-$textarea-background-color-disabled: palette(global-form-element-background-color-disabled) !default;
-$textarea-border-color-disabled: palette(global-form-element-border-color-disabled) !default;
-$textarea-color-disabled: palette(global-form-element-color-disabled) !default;
+$textarea-background-color-disabled: palette(default-grey, x-light) !default;
+$textarea-border-color-disabled: palette(default-grey, light) !default;
+$textarea-color-disabled: palette(default-grey, dark) !default;
 $textarea-cursor-disabled: not-allowed !default;
-
 
 
 
