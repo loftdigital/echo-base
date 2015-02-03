@@ -95,8 +95,8 @@ $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
-$h1-font-size: 4rem !default;
-$h1-line-height: $heading-line-height !default;
+$h1-font-size: rem-calc(48px) !default;
+$h1-line-height: 1.05em !default;
 
 $h1-font-size--large: 4rem !default;
 $h1-line-height--large: 1.5 !default;
@@ -106,6 +106,9 @@ $h1-line-height--medium: 1.5 !default;
 
 $h1-font-size--small: 4rem !default;
 $h1-line-height--small: 1.5 !default;
+
+$h1-font-size--x-small: 4rem !default;
+$h1-line-height--x-small: 1.5 !default;
 
 
 
@@ -132,6 +135,9 @@ $h2-line-height--medium: 1.5 !default;
 $h2-font-size--small: 3.5rem !default;
 $h2-line-height--small: 1.5 !default;
 
+$h2-font-size--x-small: 3.5rem !default;
+$h2-line-height--x-small: 1.5 !default;
+
 
 
 //  7. Heading - <h3>
@@ -156,6 +162,9 @@ $h3-line-height--medium: 1.5 !default;
 
 $h3-font-size--small: 3rem !default;
 $h3-line-height--small: 1.5 !default;
+
+$h3-font-size--x-small: 3rem !default;
+$h3-line-height--x-small: 1.5 !default;
 
 
 
@@ -182,6 +191,9 @@ $h4-line-height--medium: 1.5 !default;
 
 $h4-font-size--small: 2.5rem !default;
 $h4-line-height--small: 1.5 !default;
+
+$h4-font-size--x-small: 2.5rem !default;
+$h4-line-height--x-small: 1.5 !default;
 
 
 //  9. Heading - <h5>
@@ -210,6 +222,9 @@ $h5-line-height--medium: 1.5 !default;
 $h5-font-size--small: 2rem !default;
 $h5-line-height--small: 1.5 !default;
 
+$h5-font-size--x-small: 2rem !default;
+$h5-line-height--x-small: 1.5 !default;
+
 
 
 //  10. heading - <h6>
@@ -235,6 +250,9 @@ $h6-line-height--medium: 1.5 !default;
 
 $h6-font-size--small: 1.5rem !default;
 $h6-line-height--small: 1.5 !default;
+
+$h6-font-size--x-small: 1.5rem !default;
+$h6-line-height--x-small: 1.5 !default;
 
 
 
@@ -378,6 +396,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h1-font-size--small,
             line-height: $h1-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h1-font-size--x-small,
+            line-height: $h1-line-height--x-small
         )
     ),
 
@@ -400,6 +423,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h2-font-size--small,
             line-height: $h2-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h2-font-size--x-small,
+            line-height: $h2-line-height--x-small
         )
     ),
 
@@ -422,6 +450,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h3-font-size--small,
             line-height: $h3-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h3-font-size--x-small,
+            line-height: $h3-line-height--x-small
         )
     ),
 
@@ -444,6 +477,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h4-font-size--small,
             line-height: $h4-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h4-font-size--x-small,
+            line-height: $h4-line-height--x-small
         )
     ),
 
@@ -466,6 +504,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h5-font-size--small,
             line-height: $h5-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h5-font-size--x-small,
+            line-height: $h5-line-height--x-small
         )
     ),
 
@@ -488,6 +531,11 @@ $reponsive-text-defaults: (
         small: (
             font-size: $h6-font-size--small,
             line-height: $h6-line-height--small
+        ),
+
+        x-small: (
+            font-size: $h6-font-size--x-small,
+            line-height: $h6-line-height--x-small
         )
     )
 );
