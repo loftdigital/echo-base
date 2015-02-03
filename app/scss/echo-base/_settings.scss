@@ -692,7 +692,7 @@
 
 // $thead-border-bottom-width: 2px;
 // $thead-border-bottom-style: solid;
-// $thead-border-bottom-color: #e4e4e4;
+// $thead-border-bottom-color: palette(default-grey, light);
 
 
 
@@ -704,8 +704,8 @@
 //  Table row
 //==============================================================================
 
-// $tr-background-color-odd: #f9f9f9;
-// $tr-background-color-even: #f1f1f1;
+// $tr-background-color-odd: palette(default-grey, x-light);
+// $tr-background-color-even: palette(default-grey, light);
 
 
 
@@ -716,7 +716,7 @@
 // $th-padding-bottom: 1rem;
 // $th-padding-right: 1rem;
 // $th-padding-left: 1rem;
-// $th-background-color: #fff;
+// $th-background-color: palette(default-white);
 // $th-font-weight: $base-font-weight;
 
 

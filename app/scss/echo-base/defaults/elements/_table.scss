@@ -37,7 +37,7 @@ $table-width: 100% !default;
 
 $thead-border-bottom-width: 2px !default;
 $thead-border-bottom-style: solid !default;
-$thead-border-bottom-color: #e4e4e4 !default;
+$thead-border-bottom-color: palette(default-grey, light) !default;
 
 
 
@@ -49,8 +49,8 @@ $thead-border-bottom-color: #e4e4e4 !default;
 //  Table row
 //==============================================================================
 
-$tr-background-color-odd: #f9f9f9 !default;
-$tr-background-color-even: #f1f1f1 !default;
+$tr-background-color-odd: palette(default-grey, x-light) !default;
+$tr-background-color-even: palette(default-grey, light) !default;
 
 
 
@@ -61,7 +61,7 @@ $th-padding-top: 1rem !default;
 $th-padding-bottom: 1rem !default;
 $th-padding-right: 1rem !default;
 $th-padding-left: 1rem !default;
-$th-background-color: #fff !default;
+$th-background-color: palette(default-white) !default;
 $th-font-weight: $base-font-weight !default;
 
 
@@ -90,10 +90,6 @@ thead {
     border-bottom-width: $thead-border-bottom-width;
     border-bottom-style: $thead-border-bottom-style;
     border-bottom-color: $thead-border-bottom-color;
-}
-
-tbody {
-    border: 1px solid #fff;
 }
 
 tr {
