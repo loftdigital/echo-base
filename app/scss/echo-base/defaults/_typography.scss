@@ -259,11 +259,115 @@ $blockquote-border-left-color: palette(primary) !default;
 
 
 //==============================================================================
+//  a. Responsive text sizing
+//==============================================================================
+
+
+
+
+$reponsive-text-defaults: (
+
+    h1: (
+        default: (
+            font-size: $h1-font-size,
+            line-height: $h1-line-height
+        ),
+        large: (
+            font-size: 3em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 2em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+
+    ),
+
+    h2: (
+        large: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+    ),
+
+    h3: (
+        large: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+    ),
+
+    h4: (
+        large: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+    ),
+
+    h5: (
+        large: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+    ),
+
+    h6: (
+        large: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        medium: (
+            font-size: 1em,
+            line-height: 1
+        ),
+        small: (
+            font-size: 1em,
+            line-height: 1
+        )
+    )
+);
+
+//==============================================================================
 //  b. Classes
 //==============================================================================
 
 @mixin h1 {
-    font-size: $h1-font-size;
     font-family: $h1-font-family;
     font-weight: $h1-font-weight;
     line-height: $h1-line-height;
@@ -272,6 +376,9 @@ $blockquote-border-left-color: palette(primary) !default;
     text-rendering: $h1-font-text-rendering;
     letter-spacing: $h1-letter-spacing;
     text-transform: $h1-text-transform;
+
+    @include responsive-text-size(h1);
+
 }
 
 @mixin h2 {
