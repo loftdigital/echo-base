@@ -22,7 +22,8 @@
 //      14. Ordered list - <ol>
 //      15. List item - <li>
 //      16. Blockquote - <blockquote>
-//  b. Classes
+//  b. Mixins
+//  c. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -33,6 +34,8 @@
 //==============================================================================
 //  a. Defaults
 //==============================================================================
+
+$use-type-defaults: $use-echo-base-defaults !default;
 
 //  1. Font weights
 //==============================================================================
@@ -254,13 +257,10 @@ $blockquote-border-left-color: rgb(0, 200, 162) !default;
 
 
 //==============================================================================
-//  c. Classes
+//  b. Classes
 //==============================================================================
 
-//  Headings
-//==============================================================================
-
-h1 {
+@mixin h1 {
     font-size: $h1-font-size;
     font-family: $h1-font-family;
     font-weight: $h1-font-weight;
@@ -272,7 +272,7 @@ h1 {
     text-transform: $h1-text-transform;
 }
 
-h2 {
+@mixin h2 {
     font-size: $h2-font-size;
     font-family: $h2-font-family;
     font-weight: $h2-font-weight;
@@ -284,7 +284,7 @@ h2 {
     text-transform: $h2-text-transform;
 }
 
-h3 {
+@mixin h3 {
     font-size: $h3-font-size;
     font-family: $h3-font-family;
     font-weight: $h3-font-weight;
@@ -296,7 +296,7 @@ h3 {
     text-transform: $h3-text-transform;
 }
 
-h4 {
+@mixin h4 {
     font-size: $h4-font-size;
     font-family: $h4-font-family;
     font-weight: $h4-font-weight;
@@ -308,7 +308,7 @@ h4 {
     text-transform: $h4-text-transform;
 }
 
-h5 {
+@mixin h5 {
     font-size: $h5-font-size;
     font-family: $h5-font-family;
     font-weight: $h5-font-weight;
@@ -320,7 +320,7 @@ h5 {
     text-transform: $h5-text-transform;
 }
 
-h6 {
+@mixin h6 {
     font-size: $h6-font-size;
     font-family: $h6-font-family;
     font-weight: $h6-font-weight;
@@ -332,12 +332,7 @@ h6 {
     text-transform: $h6-text-transform;
 }
 
-
-
-//  Paragraph
-//==============================================================================
-
-p {
+@mixin p {
     font-family: $p-font-family;
     font-size: $p-font-size;
     font-weight: $p-font-weight;
@@ -348,12 +343,7 @@ p {
     margin-bottom: $p-margin-bottom;
 }
 
-
-
-//  Anchors
-//==============================================================================
-
-a {
+@mixin anchor {
     text-decoration: $a-text-decoration;
     color: $a-font-color;
 
@@ -363,12 +353,7 @@ a {
     }
 }
 
-
-
-//  Lists
-//==============================================================================
-
-ul {
+@mixin unordered-list {
     list-style-type: $ul-list-style-type;
     margin-top: $ul-margin-top;
     margin-bottom: $ul-margin-bottom;
@@ -376,7 +361,7 @@ ul {
     margin-left: $ul-margin-left;
 }
 
-ol {
+@mixin ordered-list {
     list-style-type: $ol-list-style-type;
     margin-top: $ol-margin-top;
     margin-bottom: $ol-margin-bottom;
@@ -384,7 +369,7 @@ ol {
     margin-left: $ol-margin-left;
 }
 
-li {
+@mixin list-item {
     font-family: $li-font-family;
     font-size: $li-font-size;
     font-weight: $li-font-weight;
@@ -399,12 +384,7 @@ li {
     padding-left: $li-padding-left;
 }
 
-
-
-//  Blockquote
-//==============================================================================
-
-blockquote {
+@mixin blockquote {
     font-family: $blockquote-font-family;
     font-size: $blockquote-font-size;
     font-weight: $blockquote-font-weight;
@@ -420,4 +400,83 @@ blockquote {
     border-left-width: $blockquote-border-left-width;
     border-left-style: $blockquote-border-left-style;
     border-left-color: $blockquote-border-left-color;
+}
+
+//==============================================================================
+//  c. Classes
+//==============================================================================
+
+
+
+@if $use-type-defaults {
+
+//  Headings
+//==============================================================================
+
+    h1 {
+        @include h1;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    h4 {
+        @include h4;
+    }
+
+    h5 {
+        @include h5;
+    }
+
+    h6 {
+        @include h6;
+    }
+
+
+//  Paragraph
+//==============================================================================
+
+    p {
+        @include p;
+    }
+
+
+
+//  Anchors
+//==============================================================================
+
+    a {
+        @include anchor;
+    }
+
+
+
+//  Lists
+//==============================================================================
+
+    ul {
+        @include unordered-list;
+    }
+
+    ol {
+        @include ordered-list;
+    }
+
+    li {
+        @include list-item;
+    }
+
+
+
+//  Blockquote
+//==============================================================================
+
+    blockquote {
+        @include blockquote;
+    }
 }

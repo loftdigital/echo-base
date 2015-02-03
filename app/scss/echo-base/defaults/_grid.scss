@@ -22,6 +22,8 @@
 //  a. Defaults
 //==============================================================================
 
+$use-grid-default: $use-echo-base-defaults !default;
+
 //  Window grid
 //==============================================================================
 
@@ -81,35 +83,37 @@ $content: (
 //  c. Grid classes
 //==============================================================================
 
-.grid {
+@if $use-grid-default {
+    .grid {
 
-//  Window grid
-//==============================================================================
+    //  Window grid
+    //==============================================================================
 
-    @include with-layout($window) {
-        &-window__container {
-            @include container;
+        @include with-layout($window) {
+            &-window__container {
+                @include container;
+            }
+
+            &-window__block {
+                @include full;
+            }
         }
 
-        &-window__block {
-            @include full;
-        }
-    }
 
 
+    //  Content grid
+    //==============================================================================
 
-//  Content grid
-//==============================================================================
+        @include with-layout($content) {
+            &-content__container {
+                @include container;
+            }
 
-    @include with-layout($content) {
-        &-content__container {
-            @include container;
-        }
-
-        &-content__block {
-            @include full;
-            padding-left: $grid-content-block-padding-left;
-            padding-right: $grid-content-block-padding-right;
+            &-content__block {
+                @include full;
+                padding-left: $grid-content-block-padding-left;
+                padding-right: $grid-content-block-padding-right;
+            }
         }
     }
 }

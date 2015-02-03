@@ -7,8 +7,10 @@
 //  ----------------------------------------------------------------------------
 //  a. Import utilities
 //  b. Import globals
-//  c. Import element defaults
-//  d. Import grid defaults
+//  c. Import global defaults
+//  d. Import base defaults
+//  e. Import element defaults
+//  f. Import grid defaults
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -30,16 +32,33 @@
 //  b. Import globals
 //==============================================================================
 
-@import 'typography';
 @import 'global';
-@import 'breakpoints';
-@import 'palettes';
 
 
 
 
 //==============================================================================
-//  c. Import element defaults
+//  c. Import global defaults
+//==============================================================================
+
+@import 'palettes';
+@import 'typography';
+@import 'breakpoints';
+
+
+
+
+//==============================================================================
+//  d. Import base defaults
+//==============================================================================
+
+@import 'base';
+
+
+
+
+//==============================================================================
+//  e. Import element defaults
 //==============================================================================
 
 @import 'elements/button';
@@ -56,7 +75,7 @@
 
 
 //==============================================================================
-//  d. Import grid defaults
+//  f. Import grid defaults
 //==============================================================================
 
 @import 'grid';
