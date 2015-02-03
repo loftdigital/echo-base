@@ -184,52 +184,111 @@
 //  Heading - <h1>
 //==============================================================================
 
-// $h1-font-size: 4rem;
 // $h1-font-family: $heading-font-family;
 // $h1-font-weight: $heading-font-weight;
-// $h1-line-height: $heading-font-line-height;
 // $h1-font-margin-bottom: $heading-font-margin-bottom;
 // $h1-font-margin-top: $heading-font-margin-top;
 // $h1-font-text-rendering: $heading-font-text-rendering;
 // $h1-letter-spacing: $heading-letter-spacing;
 // $h1-text-transform: $heading-text-transform;
 
+//  Heading - <h1> Responsive font sizes
+//==============================================================================
+
+// $h1-font-size: rem-calc(90px);
+// $h1-line-height: 1.05;
+
+// $h1-font-ratio--large: 1;
+// $h1-font-size--large: $h1-font-size * $h1-font-ratio--large;
+// $h1-line-height--large: 1.05;
+//
+// $h1-font-ratio--medium: 0.84;
+// $h1-font-size--medium: $h1-font-size * $h1-font-ratio--medium;
+// $h1-line-height--medium: 1.125;
+//
+// $h1-font-ratio--small: 0.67;
+// $h1-font-size--small: $h1-font-size * $h1-font-ratio--small;
+// $h1-line-height--small: 1.125;
+//
+// $h1-font-ratio--x-small: 0.67;
+// $h1-font-size--x-small: $h1-font-size * $h1-font-ratio--x-small;
+// $h1-line-height--x-small: 1.125;
+
 
 
 //  Heading - <h2>
 //==============================================================================
 
-// $h2-font-size: 3.5rem;
 // $h2-font-family: $heading-font-family;
 // $h2-font-weight: $heading-font-weight;
-// $h2-line-height: $heading-font-line-height;
 // $h2-font-margin-bottom: $heading-font-margin-bottom;
 // $h2-font-margin-top: $heading-font-margin-top;
 // $h2-font-text-rendering: $heading-font-text-rendering;
 // $h2-letter-spacing: $heading-letter-spacing;
 // $h2-text-transform: $heading-text-transform;
 
+//  Heading - <h2> Responsive font sizes
+//==============================================================================
+
+// $h2-font-size: rem-calc(60px);
+// $h2-line-height: 1.25;
+//
+// $h2-font-ratio--large: 1;
+// $h2-font-size--large: $h2-font-size * $h2-font-ratio--large;
+// $h2-line-height--large: 1.25;
+//
+// $h2-font-ratio--medium: 0.89;
+// $h2-font-size--medium: $h2-font-size * $h2-font-ratio--medium;
+// $h2-line-height--medium: 1.25;
+//
+// $h2-font-ratio--small: 0.72;
+// $h2-font-size--small: $h2-font-size * $h2-font-ratio--small;
+// $h2-line-height--small: 1.15384615;
+//
+// $h2-font-ratio--x-small: 0.72;
+// $h2-font-size--x-small: $h2-font-size * $h2-font-ratio--x-small;
+// $h2-line-height--x-small: 1.15384615;
+
 
 
 //  Heading - <h3>
 //==============================================================================
 
-// $h3-font-size: 3rem;
 // $h3-font-family: $heading-font-family;
 // $h3-font-weight: $heading-font-weight;
-// $h3-line-height: $heading-font-line-height;
 // $h3-font-margin-bottom: $heading-font-margin-bottom;
 // $h3-font-margin-top: $heading-font-margin-top;
 // $h3-font-text-rendering: $heading-font-text-rendering;
 // $h3-letter-spacing: $heading-letter-spacing;
 // $h3-text-transform: $heading-text-transform;
 
+//  Heading - <h3> Responsive font sizes
+//==============================================================================
+
+// $h3-font-size: rem-calc(40px);
+// $h3-line-height: 1.25;
+//
+// $h3-font-ratio--large: 1;
+// $h3-font-size--large: $h3-font-size * $h3-font-ratio--large;
+// $h3-line-height--large: 1.25;
+//
+// $h3-font-ratio--medium: 0.86;
+// $h3-font-size--medium: $h3-font-size * $h3-font-ratio--medium;
+// $h3-line-height--medium: 1.25;
+//
+// $h3-font-ratio--small: 0.79;
+// $h3-font-size--small: $h3-font-size * $h3-font-ratio--small;
+// $h3-line-height--small: 1.13636364;
+//
+// $h3-font-ratio--x-small: 0.79;
+// $h3-font-size--x-small: $h3-font-size * $h3-font-ratio--x-small;
+// $h3-line-height--x-small: 1.13636364;
+
 
 
 //  Heading - <h4>
 //==============================================================================
 
-// $h4-font-size: 2.5rem;
 // $h4-font-family: $heading-font-family;
 // $h4-font-weight: $heading-font-weight;
 // $h4-line-height: $heading-font-line-height;
@@ -239,35 +298,98 @@
 // $h4-letter-spacing: $heading-letter-spacing;
 // $h4-text-transform: $heading-text-transform;
 
+//  Heading - <h4> Responsive font sizes
+//==============================================================================
+
+// $h4-font-size: rem-calc(30px);
+// $h4-line-height: 1.22;
+//
+// $h4-font-ratio--large: 1;
+// $h4-font-size--large: $h4-font-size * $h4-font-ratio--large;
+// $h4-line-height--large: 1.22;
+//
+// $h4-font-ratio--medium: 1;
+// $h4-font-size--medium: $h4-font-size * $h4-font-ratio--medium;
+// $h4-line-height--medium: 1.22;
+//
+// $h4-font-ratio--small: 0.94;
+// $h4-font-size--small: $h4-font-size * $h4-font-ratio--small;
+// $h4-line-height--small: 1.11;
+//
+// $h4-font-ratio--x-small: 0.94;
+// $h4-font-size--x-small: $h4-font-size * $h4-font-ratio--x-small;
+// $h4-line-height--x-small: 1.11;
+
+
 
 
 //  Heading - <h5>
 //==============================================================================
 
-// $h5-font-size: 2rem;
 // $h5-font-family: $heading-font-family;
 // $h5-font-weight: $heading-font-weight;
-// $h5-line-height: $heading-font-line-height;
 // $h5-font-margin-bottom: $heading-font-margin-bottom;
 // $h5-font-margin-top: $heading-font-margin-top;
 // $h5-font-text-rendering: $heading-font-text-rendering;
 // $h5-letter-spacing: $heading-letter-spacing;
 // $h5-text-transform: $heading-text-transform;
 
+//  Heading - <h5> Responsive font sizes
+//==============================================================================
+
+// $h5-font-size: rem-calc(25px);
+// $h5-line-height: 1.2;
+//
+// $h5-font-ratio--large: 1;
+// $h5-font-size--large: $h5-font-size * $h5-font-ratio--large;
+// $h5-line-height--large: 1.2;
+//
+// $h5-font-ratio--medium: 1;
+// $h5-font-size--medium: $h5-font-size * $h5-font-ratio--medium;
+// $h5-line-height--medium: 1.2;
+//
+// $h5-font-ratio--small: 1;
+// $h5-font-size--small: $h5-font-size * $h5-font-ratio--small;
+// $h5-line-height--small: 1.2;
+//
+// $h5-font-ratio--x-small: 1;
+// $h5-font-size--x-small: $h5-font-size * $h5-font-ratio--x-small;
+// $h5-line-height--x-small: 1.2;
+
 
 
 //  Heading - <h6>
 //==============================================================================
 
-// $h6-font-size: 1.5rem;
 // $h6-font-family: $heading-font-family;
 // $h6-font-weight: $heading-font-weight;
-// $h6-line-height: $heading-font-line-height;
 // $h6-font-margin-bottom: $heading-font-margin-bottom;
 // $h6-font-margin-top: $heading-font-margin-top;
 // $h6-font-text-rendering: $heading-font-text-rendering;
 // $h6-letter-spacing: $heading-letter-spacing;
 // $h6-text-transform: $heading-text-transform;
+
+//  Heading - <h6> Responsive font sizes
+//==============================================================================
+
+// $h6-font-size: rem-calc(20px);
+// $h6-line-height: 1.1;
+//
+// $h6-font-ratio--large: 1;
+// $h6-font-size--large: $h6-font-size * $h6-font-ratio--large;
+// $h6-line-height--large: 1.1;
+//
+// $h6-font-ratio--medium: 1;
+// $h6-font-size--medium: $h6-font-size * $h6-font-ratio--medium;
+// $h6-line-height--medium: 1.1;
+//
+// $h6-font-ratio--small: 1;
+// $h6-font-size--small: $h6-font-size * $h6-font-ratio--small;
+// $h6-line-height--small: 1.1;
+//
+// $h6-font-ratio--x-small: 1;
+// $h6-font-size--x-small: $h6-font-size * $h6-font-ratio--x-small;
+// $h6-line-height--x-small: 1.1;
 
 
 
@@ -275,13 +397,33 @@
 //==============================================================================
 
 // $p-font-family: $base-font-family;
-// $p-font-size: $base-font-size;
 // $p-font-weight: $base-font-weight;
-// $p-line-height: $base-line-height;
 // $p-letter-spacing: normal;
 // $p-text-transform: none;
 // $p-margin-top: 1.5rem;
 // $p-margin-bottom: 1.5rem;
+
+//  Paragraph - <p> Responsive font sizes
+//==============================================================================
+
+// $p-font-size: rem-calc($base-font-size);
+// $p-line-height: 1.375;
+//
+// $p-font-ratio--large: 1;
+// $p-font-size--large: $p-font-size * $p-font-ratio--large;
+// $p-line-height--large: 1.375;
+//
+// $p-font-ratio--medium: 1;
+// $p-font-size--medium: $p-font-size * $p-font-ratio--medium;
+// $p-line-height--medium: 1.375;
+//
+// $p-font-ratio--small: 1;
+// $p-font-size--small: $p-font-size * $p-font-ratio--small;
+// $p-line-height--small: 1.25;
+//
+// $p-font-ratio--x-small: 1;
+// $p-font-size--x-small: $p-font-size * $p-font-ratio--x-small;
+// $p-line-height--x-small: 1.25;
 
 
 
