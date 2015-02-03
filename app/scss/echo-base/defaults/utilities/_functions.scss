@@ -154,7 +154,7 @@
 
     } @else if $num-vals > 4 {
 
-        @warn 'You\'ve supplied too many values to calcRem';
+        @warn "You\'ve supplied too many values to calcRem";
 
     } @else {
 
