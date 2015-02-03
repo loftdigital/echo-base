@@ -31,6 +31,8 @@
 //  1. Setup breakpoints
 //==============================================================================
 
+$breakpoints: ();
+
 @function setup-breakpoints() {
     @if (length($custom-breakpoints) > 0) {
         @return map-merge($default-breakpoints, $custom-breakpoints);
@@ -45,14 +47,35 @@
 //==============================================================================
 
 @function breakpoint($key) {
-    $breakpoints: setup-breakpoints();
+
+    @if length($breakpoints) == 0 {
+        $breakpoints: setup-breakpoints();
+
+    }
 
     @if (map-has-key($breakpoints, $key)) {
         @return map-get($breakpoints, $key);
     } @else {
         @warn "Breakpoint '#{$key}' doesn't exist!";
+        @return false;
     }
 }
+
+
+// @function check-breakpoint($key) {
+//
+//     $success: breakpoint($key);
+//
+//     @if $success == true {
+//
+//         @return true;
+//
+//     } @else {
+//
+//         @return false;
+//
+//     }
+// }
 
 
 
@@ -117,8 +140,8 @@
 // http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
 
 @function text-breakpoints-for($text-size) {
-    @if map-has-key($text-sizing, $text-size) {
-        @return map-get($text-sizing, $text-size);
+    @if map-has-key($reponsive-text-defaults, $text-size) {
+        @return map-get($reponsive-text-defaults, $text-size);
     } @else {
         @warn "Text size map '#{$text-size}' doesn't exist";
     }
@@ -130,10 +153,11 @@
 
     $text-breakpoints-map: text-breakpoints-for($text-size);
 
+
     @if map-has-key($text-breakpoints-map, $breakpoint-name) {
         @return map-get($text-breakpoints-map, $breakpoint-name);
     } @else {
-        @warn "Text size '#{$text-size}' for '#{$breakpoint-name}'";
+        @warn "Breakpoint '#{$breakpoint-name}' for '#{$text-size}' doesn't exist";
     }
 }
 
