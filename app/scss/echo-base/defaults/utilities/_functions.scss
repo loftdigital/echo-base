@@ -127,12 +127,13 @@
 
 
 @function text-properties-for($text-size, $breakpoint-name) {
+
     $text-breakpoints-map: text-breakpoints-for($text-size);
-    
+
     @if map-has-key($text-breakpoints-map, $breakpoint-name) {
         @return map-get($text-breakpoints-map, $breakpoint-name);
     } @else {
-        @warn "Text size '#{$text-size}' for '#{$breakpoint-name}'"
+        @warn "Text size '#{$text-size}' for '#{$breakpoint-name}'";
     }
 }
 
