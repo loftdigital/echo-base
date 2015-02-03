@@ -18,6 +18,8 @@
 //  a. Defaults
 //==============================================================================
 
+$use-form-defaults: $use-echo-base-defaults !default;
+
 $form-margin-bottom: 1rem !default;
 $form-margin-top: 0 !default;
 $form-margin-right: 0 !default;
@@ -27,9 +29,18 @@ $form-margin-left: 0 !default;
 //  b. Classes
 //==============================================================================
 
-form {
+
+@mixin form {
     margin-bottom: $form-margin-bottom;
     margin-top: $form-margin-top;
     margin-right: $form-margin-right;
     margin-left: $form-margin-left;
+}
+
+@if $use-form-defaults {
+    form {
+
+        @include form;
+
+    }
 }
