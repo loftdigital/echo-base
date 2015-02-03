@@ -50,7 +50,7 @@
     @if (map-has-key($breakpoints, $key)) {
         @return map-get($breakpoints, $key);
     } @else {
-        @warn "Breakpoint doesn't exist!";
+        @warn "Breakpoint '#{$key}' doesn't exist!";
     }
 }
 
