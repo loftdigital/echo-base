@@ -1,32 +1,31 @@
 //==============================================================================
 //
-// echo-base/partials/_all.scss
+//  echo-base/app/_all.scss
 //
-// --------------------
-// Table of contents
-// --------------------
-// a. Import custom non-contextual classes
-//    1. Grid
-// b. Import custom contextual classes
-//    1. Article
-//    2. Footer
-//    3. Header
-//    4. Sidebar
+//  -----------------------------------------------------------------------------
+//  Table of contents
+//  -----------------------------------------------------------------------------
+//  a. Import custom non-contextual classes
+//      1. Grid
+//  b. Import custom contextual classes
+//      1. Article
+//      2. Footer
+//      3. Header
+//      4. Sidebar
 //
-// @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
 
 
 //==============================================================================
-// a. Import custom non-contextual classes
+//  a. Import custom non-contextual classes
 //==============================================================================
 
 @import 'grid';
 
 //==============================================================================
-// b. Import custom contextual classes
+//  b. Import custom contextual classes
 //==============================================================================
 
-
-//@import 'block/example';
+// @import 'block/example';
