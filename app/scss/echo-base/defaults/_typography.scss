@@ -291,9 +291,6 @@ $code-border-radius: $global-border-radius !default;
 //  a. Responsive text sizing
 //==============================================================================
 
-
-
-
 $reponsive-text-defaults: (
 
     h1: (
@@ -301,93 +298,130 @@ $reponsive-text-defaults: (
             font-size: $h1-font-size,
             line-height: $h1-line-height
         ),
-        large: (
-            font-size: 3em,
-            line-height: 1
-        ),
-        medium: (
-            font-size: 2em,
-            line-height: 1
-        ),
-        small: (
-            font-size: 1em,
-            line-height: 1
-        )
 
+        large: (
+            font-size: $h1-font-size--large,
+            line-height: $h1-line-height--large
+        ),
+
+        medium: (
+            font-size: $h1-font-size--medium,
+            line-height: $h1-line-height--medium
+        ),
+
+        small: (
+            font-size: $h1-font-size--small,
+            line-height: $h1-line-height--small
+        )
     ),
 
     h2: (
+        default: (
+            font-size: $h2-font-size,
+            line-height: $h2-line-height
+        ),
+
         large: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h2-font-size--large,
+            line-height: $h2-line-height--large
         ),
+
         medium: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h2-font-size--medium,
+            line-height: $h2-line-height--medium
         ),
+
         small: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h2-font-size--small,
+            line-height: $h2-line-height--small
         )
     ),
 
     h3: (
+        default: (
+            font-size: $h3-font-size,
+            line-height: $h3-line-height
+        ),
+
         large: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h3-font-size--large,
+            line-height: $h3-line-height--large
         ),
+
         medium: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h3-font-size--medium,
+            line-height: $h3-line-height--medium
         ),
+
         small: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h3-font-size--small,
+            line-height: $h3-line-height--small
         )
     ),
 
     h4: (
+        default: (
+            font-size: $h4-font-size,
+            line-height: $h4-line-height
+        ),
+
         large: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h4-font-size--large,
+            line-height: $h4-line-height--large
         ),
+
         medium: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h4-font-size--medium,
+            line-height: $h4-line-height--medium
         ),
+
         small: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h4-font-size--small,
+            line-height: $h4-line-height--small
         )
     ),
 
     h5: (
+        default: (
+            font-size: $h5-font-size,
+            line-height: $h5-line-height
+        ),
+
         large: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h5-font-size--large,
+            line-height: $h5-line-height--large
         ),
+
         medium: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h5-font-size--medium,
+            line-height: $h5-line-height--medium
         ),
+
         small: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h5-font-size--small,
+            line-height: $h5-line-height--small
         )
     ),
 
     h6: (
+        default: (
+            font-size: $h6-font-size,
+            line-height: $h6-line-height
+        ),
+
         large: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h6-font-size--large,
+            line-height: $h6-line-height--large
         ),
+
         medium: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h6-font-size--medium,
+            line-height: $h6-line-height--medium
         ),
+
         small: (
-            font-size: 1em,
-            line-height: 1
+            font-size: $h6-font-size--small,
+            line-height: $h6-line-height--small
         )
     )
 );
