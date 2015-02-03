@@ -97,19 +97,19 @@ $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
 $h1-font-size: rem-calc(48px) !default;
-$h1-line-height: 1.05em !default;
+$h1-line-height: 1.05 !default;
 
-$h1-font-size--large: 4rem !default;
-$h1-line-height--large: 1.5 !default;
+$h1-font-size--large: rem-calc(48px) !default;
+$h1-line-height--large: 1.05 !default;
 
-$h1-font-size--medium: 4rem !default;
-$h1-line-height--medium: 1.5 !default;
+$h1-font-size--medium: rem-calc(40px) !default;
+$h1-line-height--medium: 1.125 !default;
 
-$h1-font-size--small: 4rem !default;
-$h1-line-height--small: 1.5 !default;
+$h1-font-size--small: rem-calc(32px) !default;
+$h1-line-height--small: 1.125 !default;
 
-$h1-font-size--x-small: 4rem !default;
-$h1-line-height--x-small: 1.5 !default;
+$h1-font-size--x-small: rem-calc(32px) !default;
+$h1-line-height--x-small: 1.125 !default;
 
 
 
@@ -124,20 +124,20 @@ $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
-$h2-font-size: 3.5rem !default;
-$h2-line-height: $heading-line-height !default;
+$h2-font-size: rem-calc(36px) !default;
+$h2-line-height: 1.25 !default;
 
-$h2-font-size--large: 3.5rem !default;
-$h2-line-height--large: 1.5 !default;
+$h2-font-size--large: rem-calc(36px) !default;
+$h2-line-height--large: 1.25 !default;
 
-$h2-font-size--medium: 3.5rem !default;
-$h2-line-height--medium: 1.5 !default;
+$h2-font-size--medium: rem-calc(32px) !default;
+$h2-line-height--medium: 1.25 !default;
 
-$h2-font-size--small: 3.5rem !default;
-$h2-line-height--small: 1.5 !default;
+$h2-font-size--small: rem-calc(26px) !default;
+$h2-line-height--small: 1.15384615 !default;
 
-$h2-font-size--x-small: 3.5rem !default;
-$h2-line-height--x-small: 1.5 !default;
+$h2-font-size--x-small: rem-calc(26px) !default;
+$h2-line-height--x-small: 1.15384615 !default;
 
 
 
@@ -164,8 +164,8 @@ $h3-line-height--medium: 1.25 !default;
 $h3-font-size--small: rem-calc(22px) !default;
 $h3-line-height--small: 1.13636364 !default;
 
-$h3-font-size--x-small: 3rem !default;
-$h3-line-height--x-small: 1.5 !default;
+$h3-font-size--x-small: rem-calc(22px) !default;
+$h3-line-height--x-small: 1.13636364 !default;
 
 
 
@@ -191,10 +191,10 @@ $h4-font-size--medium: rem-calc(18px) !default;
 $h4-line-height--medium: 1.22 !default;
 
 $h4-font-size--small: rem-calc(18px) !default;
-$h4-line-height--small: 1.22 !default;
+$h4-line-height--small: 1.11 !default;
 
-$h4-font-size--x-small: 2.5rem !default;
-$h4-line-height--x-small: 1.5 !default;
+$h4-font-size--x-small: rem-calc(18px) !default;
+$h4-line-height--x-small: 1.11 !default;
 
 
 //  9. Heading - <h5>
