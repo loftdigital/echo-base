@@ -85,45 +85,75 @@ $heading-text-transform: none !default;
 //  5. Heading - <h1>
 //==============================================================================
 
-$h1-font-size: 4rem !default;
 $h1-font-family: $heading-font-family !default;
 $h1-font-weight: $heading-font-weight !default;
-$h1-line-height: $heading-line-height !default;
 $h1-font-margin-bottom: $heading-font-margin-bottom !default;
 $h1-font-margin-top: $heading-font-margin-top !default;
 $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
+$h1-font-size: 4rem !default;
+$h1-line-height: $heading-line-height !default;
+
+$h1-font-size--large: 4rem !default;
+$h1-line-height--large: 1.5 !default;
+
+$h1-font-size--medium: 4rem !default;
+$h1-line-height--medium: 1.5 !default;
+
+$h1-font-size--small: 4rem !default;
+$h1-line-height--small: 1.5 !default;
+
 
 
 //  6. Heading - <h2>
 //==============================================================================
 
-$h2-font-size: 3.5rem !default;
 $h2-font-family: $heading-font-family !default;
 $h2-font-weight: $heading-font-weight !default;
-$h2-line-height: $heading-line-height !default;
 $h2-font-margin-bottom: $heading-font-margin-bottom !default;
 $h2-font-margin-top: $heading-font-margin-top !default;
 $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
+$h2-font-size: 3.5rem !default;
+$h2-line-height: $heading-line-height !default;
+
+$h2-font-size--large: 3.5rem !default;
+$h2-line-height--large: 1.5 !default;
+
+$h2-font-size--medium: 3.5rem !default;
+$h2-line-height--medium: 1.5 !default;
+
+$h2-font-size--small: 3.5rem !default;
+$h2-line-height--small: 1.5 !default;
+
 
 
 //  7. Heading - <h3>
 //==============================================================================
 
-$h3-font-size: 3rem !default;
 $h3-font-family: $heading-font-family !default;
 $h3-font-weight: $heading-font-weight !default;
-$h3-line-height: $heading-line-height !default;
 $h3-font-margin-bottom: $heading-font-margin-bottom !default;
 $h3-font-margin-top: $heading-font-margin-top !default;
 $h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
+
+$h3-font-size: 3rem !default;
+$h3-line-height: $heading-line-height !default;
+
+$h3-font-size--large: 3rem !default;
+$h3-line-height--large: 1.5 !default;
+
+$h3-font-size--medium: 3rem !default;
+$h3-line-height--medium: 1.5 !default;
+
+$h3-font-size--small: 3rem !default;
+$h3-line-height--small: 1.5 !default;
 
 
 
