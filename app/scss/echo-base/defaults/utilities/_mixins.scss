@@ -67,11 +67,17 @@
 
     @each $breakpoint-name in $text-breakpoints-keys {
 
-        @if $breakpoint-name != $default and breakpoint($breakpoint-name) != null {
+        @if $breakpoint-name != $default {
 
-            //need to check if breakpoint exists here.
-            @include breakpoint($breakpoint-name) {
-                @include text-size($text-size, $breakpoint-name);
+            @if breakpoint($breakpoint-name) != false {
+
+                //need to check if breakpoint exists here.
+                @include breakpoint($breakpoint-name) {
+                    @include text-size($text-size, $breakpoint-name);
+                }
+            } @else {
+
+                @warn "Text size '#{$breakpoint-name}' for the selector '#{$text-size}' was skipped as breakpoint: '#{$breakpoint-name}' doesn't exist "
             }
         }
     }
