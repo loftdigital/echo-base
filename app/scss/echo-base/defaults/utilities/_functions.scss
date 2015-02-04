@@ -62,22 +62,6 @@ $breakpoints: ();
 }
 
 
-// @function check-breakpoint($key) {
-//
-//     $success: breakpoint($key);
-//
-//     @if $success == true {
-//
-//         @return true;
-//
-//     } @else {
-//
-//         @return false;
-//
-//     }
-// }
-
-
 
 
 //==============================================================================
@@ -149,31 +133,40 @@ $breakpoints: ();
 //==============================================================================
 
 $responsive-text-map: ();
-@function setup-responsive-text() {
+
+@function setup-responsive-text($text-size) {
 
     $num-custom-rules: length($responsive-text-custom);
 
-
     @if ($num-custom-rules > 0) {
 
-        @each $key, $value in $responsive-text-defaults {
+        @if map-has-key($responsive-text-map, $text-size) {
 
-            @if map-has-key($responsive-text-custom, $key) {
+            @return $responsive-text-map;
 
-                $existing-map: (test: map-get($responsive-text-defaults, $key));
+        } @else {
 
-                $new: ($key: map-get($responsive-text-custom, $key));
+            @each $key, $value in $responsive-text-defaults {
 
-                $new-map: ($key: map-merge(map-get($existing-map, test), map-get($new, $key)));
+                @if map-has-key($responsive-text-custom, $key) {
 
-                $responsive-text-map: map-merge($responsive-text-map, $new-map);
+                    //assign the defaults map value of the same name to a new map with the key test
+                    // if we were to merge two maps with the same key they would overwrite, this way we can be sure that the map will merge
+                    $existing-map: (test: map-get($responsive-text-defaults, $key));
 
-            }@else {
+                    $new-map: ($key: map-merge(map-get($existing-map, test), map-get($responsive-text-custom, $key)));
 
-                $new-map: ($key: $value);
-                $responsive-text-map: map-merge($responsive-text-map, $new-map);
+                    $responsive-text-map: map-merge($responsive-text-map, $new-map);
+                    // @warn map-keys(map-get($responsive-text-map, $key));
+                }@else {
 
+                    $new-map: ($key: $value);
+
+                    $responsive-text-map: map-merge($responsive-text-map, $new-map);
+
+                }
             }
+
         }
 
         @return $responsive-text-map;
@@ -190,7 +183,7 @@ $responsive-text-map: ();
 
 @function text-breakpoints-for($text-size) {
 
-    $responsive-text: setup-responsive-text();
+    $responsive-text: setup-responsive-text($text-size);
 
     @if map-has-key($responsive-text, $text-size) {
         @return map-get($responsive-text, $text-size);
