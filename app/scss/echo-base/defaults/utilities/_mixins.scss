@@ -12,7 +12,21 @@
 //
 //==============================================================================
 
-
+@mixin debug-map($map) {
+    @at-root {
+        @debug-map {
+            __toString__: inspect($map);
+            __length__: length($map);
+            __depth__: depth($map);
+            __keys__: map-keys($map);
+            __properties__ {
+                @each $key, $value in $map {
+                    #{'(' + type-of($value) + ') ' + $key}: inspect($value);
+                }
+            }
+        }
+    }
+}
 
 
 //==============================================================================
@@ -52,7 +66,10 @@
     $text-breakpoints-keys: map-keys($text-breakpoints-map);
 
     @each $breakpoint-name in $text-breakpoints-keys {
+
         @if $breakpoint-name != $default and breakpoint($breakpoint-name) != null {
+
+            //need to check if breakpoint exists here.
             @include breakpoint($breakpoint-name) {
                 @include text-size($text-size, $breakpoint-name);
             }
