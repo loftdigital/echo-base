@@ -130,6 +130,17 @@ $breakpoints: ();
     }
 }
 
+@function depth($map) {
+    $level: 1;
+
+    @each $key, $value in $map {
+        @if type-of($value) == 'map' {
+            $level: max(depth($value) + 1, $level);
+        }
+    }
+
+    @return $level;
+}
 
 
 
@@ -137,11 +148,52 @@ $breakpoints: ();
 //  c. Typography
 //==============================================================================
 
+$responsive-text-map: ();
+@function setup-responsive-text() {
+
+    $num-custom-rules: length($responsive-text-custom);
+
+
+    @if ($num-custom-rules > 0) {
+
+        @each $key, $value in $responsive-text-defaults {
+
+            @if map-has-key($responsive-text-custom, $key) {
+
+                $existing-map: (test: map-get($responsive-text-defaults, $key));
+
+                $new: ($key: map-get($responsive-text-custom, $key));
+
+                $new-map: ($key: map-merge(map-get($existing-map, test), map-get($new, $key)));
+
+                $responsive-text-map: map-merge($responsive-text-map, $new-map);
+
+            }@else {
+
+                $new-map: ($key: $value);
+                $responsive-text-map: map-merge($responsive-text-map, $new-map);
+
+            }
+        }
+
+        @return $responsive-text-map;
+
+
+    } @else {
+
+        @return $responsive-text-defaults;
+
+    }
+
+}
 // http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
 
 @function text-breakpoints-for($text-size) {
-    @if map-has-key($reponsive-text-defaults, $text-size) {
-        @return map-get($reponsive-text-defaults, $text-size);
+
+    $responsive-text: setup-responsive-text();
+
+    @if map-has-key($responsive-text, $text-size) {
+        @return map-get($responsive-text, $text-size);
     } @else {
         @warn "Text size map '#{$text-size}' doesn't exist";
     }
@@ -152,7 +204,6 @@ $breakpoints: ();
 @function text-properties-for($text-size, $breakpoint-name) {
 
     $text-breakpoints-map: text-breakpoints-for($text-size);
-
 
     @if map-has-key($text-breakpoints-map, $breakpoint-name) {
         @return map-get($text-breakpoints-map, $breakpoint-name);
