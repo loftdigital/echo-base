@@ -11,7 +11,11 @@
 //  b. Palette
 //      1. Setup palettes
 //      2. Get palette
-//  c. Helpers
+//  c. Typography
+//      1. Merge responsive text maps
+//      2. Get responsive text properties
+//      3. Get breakpoint for responsive text
+//  d. Helpers
 //      1. Strip Unit
 //      2. Remify
 //      3. Rem Calc
@@ -132,6 +136,9 @@ $breakpoints: ();
 //  c. Typography
 //==============================================================================
 
+//  1. Merge responsive text maps
+//==============================================================================
+
 $responsive-text-map: ();
 
 @function setup-responsive-text($text-size) {
@@ -179,6 +186,12 @@ $responsive-text-map: ();
     }
 
 }
+
+
+
+//  2. Get responsive text properties
+//==============================================================================
+
 // http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
 
 @function text-breakpoints-for($text-size) {
@@ -194,6 +207,10 @@ $responsive-text-map: ();
 
 
 
+
+//  3. Get breakpoint for responsive text
+//==============================================================================
+
 @function text-properties-for($text-size, $breakpoint-name) {
 
     $text-breakpoints-map: text-breakpoints-for($text-size);
@@ -207,8 +224,9 @@ $responsive-text-map: ();
 
 
 
+
 //==============================================================================
-//  c. Helpers
+//  d. Helpers
 //==============================================================================
 
 //  1. Strip Unit
