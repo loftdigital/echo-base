@@ -175,7 +175,6 @@ $breakpoints: ();
 /// @return {Map}
 
 @function palette($palette, $tone: 'base') {
-
     $palettes: setup-palettes();
 
     @if (map-has-key($palettes, $palette)) {
