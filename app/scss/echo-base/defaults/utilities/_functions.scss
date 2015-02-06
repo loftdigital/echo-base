@@ -31,8 +31,15 @@
 //  1. Setup breakpoints
 //==============================================================================
 
-/// Sets up the breakpoints map. If custom breakpoints are available, return
-/// these as well as the defaults, else only return defaults map
+/// This function will check to see if custom breakpoints have been specified
+/// within the $custom-breakpoints map within the _settings.scss file.
+///
+/// If custom breakpoints have been specified it will return a new map which
+/// comprises the contents of $default-breakpoints and $custom-breakpoints.
+///
+/// If no custom breakpoints are specified only the default breakpoints will be
+/// returned.
+///
 /// @access private
 /// @return {Map}
 
@@ -49,9 +56,18 @@
 //  2. Get breakpoint
 //==============================================================================
 
-/// Retrieves the breakpoint identified by the passed in key
+/// The break function is used within the Breakpoint mixin.
+///
+/// It is used to pull the specified key from the breakpoints map, first it sets
+/// the map returned from our setup-breakpoints function and assigns it to a
+/// $breakpoints variable.
+///
+/// Using the sass function map-has-key it then looks to see if the key passed
+/// to the function exists in the map. If the key does exist it returns that
+/// key's value else it returns a sass warning.
+///
 /// @access private
-/// @param {String} $key - breakpoint map key
+/// @param {String} $key - Breakpoint map key
 /// @return {Map}
 
 @function break($key) {
@@ -74,6 +90,18 @@
 //  1. Setup palettes
 //==============================================================================
 
+/// This function will check to see if custom palettes have been specified
+/// within the $custom-palettes map within the _settings.scss file.
+///
+/// If custom palettes have been specified then this function will return a new
+/// map which comprises the contents of $default-palettes and $custom-palettes.
+///
+/// If no custom palettes are specified only the default palette map will be
+/// returned.
+///
+/// @access private
+/// @return {Map}
+
 @function setup-palettes() {
     @if (length($custom-palettes) > 0) {
         @return map-merge($default-palettes, $custom-palettes);
@@ -87,12 +115,17 @@
 //  2. Get palette
 //==============================================================================
 
-@function palette($palette, $tone: 'base') {
+/// Retrieves the palette and the specified tone from the global palettes map
+///
+/// @access public
+/// @param {String} $palette - Palette name
+/// @param {String} $tone ['base'] - Palette tone
+/// @return {Map}
 
+@function palette($palette, $tone: 'base') {
     $palette-map: setup-palettes();
 
     @if (map-has-key($palette-map, $palette)) {
-
         $color: map-get($palette-map, $palette);
 
         @if (map-has-key($color, $tone)) {
@@ -100,7 +133,6 @@
         } @else {
             @warn "Tone doesn't exist";
         }
-
     } @else {
         @warn "Palette doesn't exist!";
     }
@@ -116,8 +148,13 @@
 //  1. Strip Unit
 //==============================================================================
 
-@function strip-unit($val) {
-    @return $val / ($val * 0 + 1);
+/// Strips the units from the passed in value
+/// @access private
+/// @param {String} $value - Value to be stripped of unit
+/// @return {Int}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
 }
 
 
@@ -125,21 +162,19 @@
 //  2. Remify
 //==============================================================================
 
-@function remify($value, $rem-base) {
+/// Appends the rem unit to the passed in value
+/// @access private
+/// @param {Int} $value - Value to append rem unit to
+/// @return {Int}
 
+@function remify($value, $rem-base) {
     $value: strip-unit($value);
 
     @if $value == 0 {
-
         @return 0;
-
     } @else {
-
         @return $value / strip-unit($rem-base) * 1rem;
-
     }
-
-
 }
 
 
@@ -147,8 +182,13 @@
 //  3. Rem Calc
 //==============================================================================
 
-@function rem-calc($values, $rem-base: $base-font-size) {
+/// Turns a pixel unit into a rem unit by using the base-font-size
+/// @access public
+/// @param {List|Int|String} $values - Values to remify
+/// @param {Int} $rem-base [$base-font-size] - REM base font size
+/// @return {Int}
 
+@function rem-calc($values, $rem-base: $base-font-size) {
     $num-vals : length($values);
 
     @if $num-vals <= 0 {
@@ -158,9 +198,7 @@
     } @else if $num-vals == 1 {
 
         $val: nth($values, 1);
-
         @return remify($val, $rem-base);
-
 
     } @else if $num-vals > 4 {
 
@@ -175,6 +213,5 @@
         }
 
         @return $rem-values;
-
     }
 }
