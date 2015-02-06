@@ -31,6 +31,11 @@
 //  1. Setup breakpoints
 //==============================================================================
 
+/// Sets up the breakpoints map. If custom breakpoints are available, return
+/// these as well as the defaults, else only return defaults map
+/// @access private
+/// @return {Map}
+
 @function setup-breakpoints() {
     @if (length($custom-breakpoints) > 0) {
         @return map-merge($default-breakpoints, $custom-breakpoints);
@@ -43,6 +48,11 @@
 
 //  2. Get breakpoint
 //==============================================================================
+
+/// Retrieves the breakpoint identified by the passed in key
+/// @access private
+/// @param {String} $key - breakpoint map key
+/// @return {Map}
 
 @function break($key) {
     $breakpoints: setup-breakpoints();
