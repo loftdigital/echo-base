@@ -115,6 +115,12 @@
                 }
             },
 
+            sassdoc: {
+                default: {
+                    src: '<%= config.app %>/scss/',
+                },
+            },
+
             watch: {
                 options: {
                     livereload: true,
