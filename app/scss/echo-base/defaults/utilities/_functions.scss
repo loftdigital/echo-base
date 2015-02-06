@@ -36,8 +36,15 @@
 //  1. Setup breakpoints
 //==============================================================================
 
-/// Sets up the breakpoints map. If custom breakpoints are available, return
-/// these as well as the defaults, else only return defaults map
+/// This function will check to see if custom breakpoints have been specified
+/// within the $custom-breakpoints map within the _settings.scss file.
+///
+/// If custom breakpoints have been specified it will return a new map which
+/// comprises the contents of $default-breakpoints and $custom-breakpoints.
+///
+/// If no custom breakpoints are specified only the default breakpoints will be
+/// returned.
+///
 /// @access private
 /// @return {Map}
 
@@ -56,9 +63,18 @@ $breakpoints: ();
 //  2. Get breakpoint
 //==============================================================================
 
-/// Retrieves the breakpoint identified by the passed in key
+/// The break function is used within the Breakpoint mixin.
+///
+/// It is used to pull the specified key from the breakpoints map, first it sets
+/// the map returned from our setup-breakpoints function and assigns it to a
+/// $breakpoints variable.
+///
+/// Using the sass function map-has-key it then looks to see if the key passed
+/// to the function exists in the map. If the key does exist it returns that
+/// key's value else it returns a sass warning.
+///
 /// @access private
-/// @param {String} $key - breakpoint map key
+/// @param {String} $key - Breakpoint map key
 /// @return {Map}
 
 @function breakpoint($key) {
@@ -171,7 +187,6 @@ $breakpoints: ();
         } @else {
             @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
         }
-
     } @else {
         @warn "Palette '#{$palette}' doesn't exist!";
     }
@@ -286,8 +301,8 @@ $responsive-text-map: ();
 /// @param {String} $value - Value to be stripped of unit
 /// @return {Int}
 
-@function strip-unit($val) {
-    @return $val / ($val * 0 + 1);
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
 }
 
 
@@ -301,17 +316,12 @@ $responsive-text-map: ();
 /// @return {Int}
 
 @function remify($value, $rem-base) {
-
     $value: strip-unit($value);
 
     @if $value == 0 {
-
         @return 0;
-
     } @else {
-
         @return $value / strip-unit($rem-base) * 1rem;
-
     }
 }
 
@@ -327,7 +337,6 @@ $responsive-text-map: ();
 /// @return {Int}
 
 @function rem-calc($values, $rem-base: $base-font-size) {
-
     $num-vals : length($values);
 
     @if $num-vals <= 0 {
@@ -337,9 +346,7 @@ $responsive-text-map: ();
     } @else if $num-vals == 1 {
 
         $val: nth($values, 1);
-
         @return remify($val, $rem-base);
-
 
     } @else if $num-vals > 4 {
 
@@ -354,6 +361,5 @@ $responsive-text-map: ();
         }
 
         @return $rem-values;
-
     }
 }
