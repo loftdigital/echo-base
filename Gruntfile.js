@@ -54,17 +54,16 @@
             jshint: {
                 all: {
                     options: {
-                        globals: {
-                            jQuery: true,
-                            console: true,
-                            module: true,
-                            document: true
-                        },
+                        jshintrc: true,
+                        reporter: require('jshint-stylish')
                     },
                     files: [{
                         expand: true,
-                        cwd: '<%= config.app %>/js/',
-                        src: ['main.js', 'Loft/**/*.js']
+                        src: [
+                            'Gruntfile.js',
+                            '<%= config.app %>/js/main.js',
+                            '<%= config.app %>/js/Loft/**/*.js'
+                        ]
                     }]
                 }
             },
