@@ -86,19 +86,7 @@
                     sourceMap: true,
                     includePaths: ['bower_components']
                 },
-                development: {
-                    options: {
-                        outputStyle: 'expanded',
-                    },
-                    files: [{
-                        expand: true,
-                        cwd: '<%= config.app %>/scss/',
-                        src: '*.scss',
-                        dest: '<%= config.dist %>/css/',
-                        ext: '.min.css'
-                    }]
-                },
-                production: {
+                dist: {
                     options: {
                         outputStyle: 'compressed',
                     },
@@ -109,13 +97,13 @@
                         dest: '<%= config.dist %>/css/',
                         ext: '.min.css'
                     }]
-                }
+                },
             },
 
             autoprefixer: {
                 all: {
                     options: {
-                        browsers: ['last 2 version', 'ie 8', 'ie 9', 'Firefox ESR', 'Opera 12.1']
+                        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
                     },
                     files: [{
                         expand: true,
@@ -128,6 +116,9 @@
             },
 
             watch: {
+                options: {
+                    livereload: true,
+                },
                 js: {
                     files: ['<%= config.app %>/js/**/*.js'],
                     tasks: ['do-js']
@@ -180,10 +171,10 @@
         grunt.registerTask('do-img', ['newer:imagemin:all', 'notify:img']);
 
         // Do JavaScript related tasks
-        grunt.registerTask('do-js', ['jshint:all', 'concat', 'uglify', 'notify:js']);
+        grunt.registerTask('do-js', ['newer:jshint:all', 'concat', 'uglify', 'notify:js']);
 
         // Do Sass related tasks
-        grunt.registerTask('do-sass', ['scsslint', 'sass:development', 'autoprefixer:all', 'notify:sass', 'do-ie']);
+        grunt.registerTask('do-sass', ['scsslint', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie']);
 
         // Do IE8 Legacy specific tasks
         grunt.registerTask('do-ie', ['pixrem']);
