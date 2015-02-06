@@ -67,6 +67,50 @@ $breakpoints: ();
 
 
 
+//  3. Order Breakpoints by size
+//==============================================================================
+
+@function order-breakpoints($dir) {
+
+    //
+    $breakpoint-map: setup-breakpoints();
+
+    $num-breakpoints: length($breakpoint-map);
+
+    $map-list: ();
+    $current-highest: 0;
+    $current-value: '';
+    $i: 0;
+
+    @while ($i < $num-breakpoints ) {
+
+        @each $key, $value in $breakpoint-map {
+
+             @if index($map-list, $key) == null {
+
+                $value: strip-unit($value);
+
+                 @if($value > $current-highest) {
+
+                     $current-highest: $value;
+                     $current-value: $key;
+                 }
+             }
+         }
+
+         $current-highest: 0;
+         $map-list: append($map-list, $current-value);
+         $i: $i+1;
+
+         @warn nth($map-list, $i);
+
+    }
+
+     @return $map-list;
+}
+
+
+
 
 //==============================================================================
 //  b. Palettes
