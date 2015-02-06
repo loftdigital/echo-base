@@ -36,6 +36,11 @@
 //  1. Setup breakpoints
 //==============================================================================
 
+/// Sets up the breakpoints map. If custom breakpoints are available, return
+/// these as well as the defaults, else only return defaults map
+/// @access private
+/// @return {Map}
+
 $breakpoints: ();
 
 @function setup-breakpoints() {
@@ -50,6 +55,11 @@ $breakpoints: ();
 
 //  2. Get breakpoint
 //==============================================================================
+
+/// Retrieves the breakpoint identified by the passed in key
+/// @access private
+/// @param {String} $key - breakpoint map key
+/// @return {Map}
 
 @function breakpoint($key) {
 
@@ -105,9 +115,21 @@ $breakpoints: ();
 //  1. Setup palettes
 //==============================================================================
 
+/// This function will check to see if custom palettes have been specified
+/// within the $custom-palettes map within the _settings.scss file.
+///
+/// If custom palettes have been specified then this function will return a new
+/// map which comprises the contents of $default-palettes and $custom-palettes.
+///
+/// If no custom palettes are specified only the default palette map will be
+/// returned.
+///
+/// @access private
+/// @return {Map}
+
 @function setup-palettes() {
 
-    $palettes:();
+    $palettes: ();
 
     // Include if custom palettes are in use
     @if (length($custom-palettes) > 0) {
@@ -128,6 +150,13 @@ $breakpoints: ();
 
 //  2. Get palette
 //==============================================================================
+
+/// Retrieves the palette and the specified tone from the global palettes map
+///
+/// @access public
+/// @param {String} $palette - Palette name
+/// @param {String} $tone ['base'] - Palette tone
+/// @return {Map}
 
 @function palette($palette, $tone: 'base') {
 
@@ -252,6 +281,11 @@ $responsive-text-map: ();
 //  1. Strip Unit
 //==============================================================================
 
+/// Strips the units from the passed in value
+/// @access private
+/// @param {String} $value - Value to be stripped of unit
+/// @return {Int}
+
 @function strip-unit($val) {
     @return $val / ($val * 0 + 1);
 }
@@ -260,6 +294,11 @@ $responsive-text-map: ();
 
 //  2. Remify
 //==============================================================================
+
+/// Appends the rem unit to the passed in value
+/// @access private
+/// @param {Int} $value - Value to append rem unit to
+/// @return {Int}
 
 @function remify($value, $rem-base) {
 
@@ -274,14 +313,18 @@ $responsive-text-map: ();
         @return $value / strip-unit($rem-base) * 1rem;
 
     }
-
-
 }
 
 
 
 //  3. Rem Calc
 //==============================================================================
+
+/// Turns a pixel unit into a rem unit by using the base-font-size
+/// @access public
+/// @param {List|Int|String} $values - Values to remify
+/// @param {Int} $rem-base [$base-font-size] - REM base font size
+/// @return {Int}
 
 @function rem-calc($values, $rem-base: $base-font-size) {
 
