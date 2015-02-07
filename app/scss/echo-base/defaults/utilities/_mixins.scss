@@ -11,7 +11,7 @@
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //
 //==============================================================================
-
+//
 // @mixin test() {
 //     $test: order-breakpoints('desc');
 //
@@ -61,19 +61,32 @@
 @mixin text-size($text-size, $breakpoint-name: 'small') {
     $text-size-properties: text-properties-for($text-size, $breakpoint-name);
 
-    @if $text-size-properties != null {
-        font-size: map-get($text-size-properties, 'font-size');
-        line-height: map-get($text-size-properties, 'line-height');
+    @if $text-size-properties != false {
+
+        // runs through each key, value map to include all values you may have specified for a certain size.
+
+        @each $key, $value in $text-size-properties {
+            #{$key}: #{$value}
+        }
+
     } @else {
+
+        // the breakpoint has no defined properties which to parse
         @warn "Breakpoint '#{$breakpoint-name}' for text size '#{$text-size}' is not defined";
     }
 }
 
-@mixin responsive-text-size($text-size, $default: 'default') {
+@mixin responsive-text-size($text-size) {
+
+    $default: 'default';
+
     @include text-size($text-size, $default);
 
     $text-breakpoints-map: text-breakpoints-for($text-size);
-    $text-breakpoints-keys: map-keys($text-breakpoints-map);
+    $text-breakpoints-keys: order-breakpoints();
+    // $text-breakpoints-keys: map-keys($text-breakpoints-map);
+
+
 
     @each $breakpoint-name in $text-breakpoints-keys {
 

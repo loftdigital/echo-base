@@ -70,9 +70,8 @@ $breakpoints: ();
 //  3. Order Breakpoints by size
 //==============================================================================
 
-@function order-breakpoints($dir) {
+@function order-breakpoints($dir:'max') {
 
-    //
     $breakpoint-map: setup-breakpoints();
 
     $num-breakpoints: length($breakpoint-map);
@@ -101,8 +100,6 @@ $breakpoints: ();
          $current-highest: 0;
          $map-list: append($map-list, $current-value);
          $i: $i+1;
-
-         @warn nth($map-list, $i);
 
     }
 
@@ -262,7 +259,7 @@ $responsive-text-map: ();
     @if map-has-key($text-breakpoints-map, $breakpoint-name) {
         @return map-get($text-breakpoints-map, $breakpoint-name);
     } @else {
-        @warn "Breakpoint '#{$breakpoint-name}' for '#{$text-size}' doesn't exist";
+        @return false;
     }
 }
 
