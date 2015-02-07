@@ -94,9 +94,10 @@
 //  Custom breakpoints map
 //==============================================================================
 
-// $custom-breakpoints: (
-//
-// );
+$custom-breakpoints: (
+    mediumish: 600px,
+    test: 40000px
+);
 
 
 
@@ -196,15 +197,15 @@
 // $h1-font-size--large: $h1-font-size * $h1-font-ratio--large;
 // $h1-line-height--large: 1.05;
 //
-// $h1-font-ratio--medium: 0.84;
+$h1-font-ratio--medium: 0.3;
 // $h1-font-size--medium: $h1-font-size * $h1-font-ratio--medium;
 // $h1-line-height--medium: 1.125;
 //
-// $h1-font-ratio--small: 0.67;
+$h1-font-ratio--small: 0.2;
 // $h1-font-size--small: $h1-font-size * $h1-font-ratio--small;
 // $h1-line-height--small: 1.125;
 //
-// $h1-font-ratio--x-small: 0.67;
+$h1-font-ratio--x-small: 0.1;
 // $h1-font-size--x-small: $h1-font-size * $h1-font-ratio--x-small;
 // $h1-line-height--x-small: 1.125;
 
