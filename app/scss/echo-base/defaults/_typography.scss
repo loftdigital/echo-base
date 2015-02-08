@@ -606,25 +606,7 @@ $responsive-text-defaults: (
     )
 );
 
-$responsive-text-custom: (
-
-    h1: (
-        mediumish: (
-            font-size: rem-calc(78px),
-            line-height: 1.3,
-            border: 1px solid palette(default-black)
-        )
-    ),
-    h2: (
-        large: (
-            font-size: 20px
-        ),
-        test: (
-            text-spacing: 1px,
-            font-size: 40px
-        )
-    ),
-) !default;
+$responsive-text-custom: () !default;
 
 //==============================================================================
 //  b. Classes
