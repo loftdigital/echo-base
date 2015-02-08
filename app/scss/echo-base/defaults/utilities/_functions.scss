@@ -79,21 +79,21 @@ $breakpoints: ();
         $current-value: '';
 
         @each $key, $value in $breakpoint-map {
-             @if index($map-list, $key) == null {
+            @if index($map-list, $key) == null {
                 $value: strip-unit($value);
 
-                 @if($value > $current-highest) {
-                     $current-highest: $value;
-                     $current-value: $key;
-                 }
-             }
-         }
+                @if($value > $current-highest) {
+                    $current-highest: $value;
+                    $current-value: $key;
+                }
+            }
+        }
 
-         $map-list: append($map-list, $current-value);
+        $map-list: append($map-list, $current-value);
 
     }
 
-     @return $map-list;
+    @return $map-list;
 }
 
 

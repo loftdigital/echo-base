@@ -66,7 +66,7 @@
         // runs through each key, value map to include all values you may have specified for a certain size.
 
         @each $key, $value in $text-size-properties {
-            #{$key}: #{$value}
+            #{$key}: #{$value};
         }
 
     } @else {
