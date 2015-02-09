@@ -22,8 +22,10 @@
 //      14. Ordered list - <ol>
 //      15. List item - <li>
 //      16. Blockquote - <blockquote>
-//  b. Mixins
-//  c. Classes
+//  b. Responsive text sizing
+//  c. Custom responsive text sizing
+//  d. Mixins
+//  e. Classes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -382,7 +384,7 @@ $blockquote-border-left-color: palette(primary) !default;
 
 
 //==============================================================================
-//  a. Responsive text sizing
+//  b. Responsive text sizing
 //==============================================================================
 
 $responsive-text-defaults: (
@@ -577,10 +579,20 @@ $responsive-text-defaults: (
     )
 );
 
-$responsive-text-custom: () !default;
+
+
 
 //==============================================================================
-//  b. Classes
+//  c. Custom responsive text sizing
+//==============================================================================
+
+$responsive-text-custom: () !default;
+
+
+
+
+//==============================================================================
+//  d. Classes
 //==============================================================================
 
 @mixin h1 {
@@ -744,13 +756,16 @@ $responsive-text-custom: () !default;
     border-left-color: $blockquote-border-left-color;
 }
 
-//==============================================================================
-//  c. Classes
-//==============================================================================
 
 
+
+//==============================================================================
+//  e. Classes
+//==============================================================================
 
 @if $use-type-defaults {
+
+
 
 //  Headings
 //==============================================================================
