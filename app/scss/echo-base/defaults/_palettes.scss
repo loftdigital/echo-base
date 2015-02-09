@@ -5,10 +5,11 @@
 //  ----------------------------------------------------------------------------
 //  Table of contents
 //  ----------------------------------------------------------------------------
-//  a. Default variables
-//  b. Default palettes
-//  c. Third-party palettes
-//  d. Custom palettes
+//  a. Use third-party palettes flag
+//  b. Default variables
+//  c. Default palettes
+//  d. Third-party palettes
+//  e. Custom palettes
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -17,9 +18,17 @@
 
 
 
+//==============================================================================
+//  a. Use third-party palette flag
+//==============================================================================
+
+$use-third-party-palette: true !default;
+
+
+
 
 //==============================================================================
-//  a. Default variables
+//  b. Default variables
 //==============================================================================
 
 $primary-color: rgb(0, 200, 162) !default;
@@ -28,7 +37,7 @@ $primary-color: rgb(0, 200, 162) !default;
 
 
 //==============================================================================
-//  b. Default palettes
+//  c. Default palettes
 //==============================================================================
 
 $default-palettes: (
@@ -56,7 +65,7 @@ $default-palettes: (
 
 
 //==============================================================================
-//  c. Third-party palettes
+//  d. Third-party palettes
 //==============================================================================
 
 $third-party-palettes: (
@@ -85,7 +94,7 @@ $third-party-palettes: (
 
 
 //==============================================================================
-//  d. Custom palettes
+//  e. Custom palettes
 //==============================================================================
 
 $custom-palettes: () !default;
