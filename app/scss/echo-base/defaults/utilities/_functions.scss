@@ -187,6 +187,7 @@ $breakpoints: ();
         } @else {
             @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
         }
+
     } @else {
         @warn "Palette '#{$palette}' doesn't exist!";
     }
