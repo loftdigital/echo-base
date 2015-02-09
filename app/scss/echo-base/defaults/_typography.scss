@@ -206,6 +206,10 @@ $ul-margin-top: 1.5rem !default;
 $ul-margin-bottom: 1.5rem !default;
 $ul-margin-right: 0 !default;
 $ul-margin-left: 1.3rem !default;
+$ul-padding-top: 0 !default;
+$ul-padding-bottom: 0 !default;
+$ul-padding-left: 2rem !default;
+$ul-padding-right: 0 !default;
 
 
 
@@ -217,6 +221,10 @@ $ol-margin-top: 1.5rem !default;
 $ol-margin-bottom: 1.5rem !default;
 $ol-margin-right: 0 !default;
 $ol-margin-left: 1.3rem !default;
+$ol-padding-top: 0 !default;
+$ol-padding-bottom: 0 !default;
+$ol-padding-left: 2rem !default;
+$ol-padding-right: 0 !default;
 
 
 
@@ -382,6 +390,10 @@ $code-border-radius: $global-border-radius !default;
     margin-bottom: $ul-margin-bottom;
     margin-right: $ul-margin-right;
     margin-left: $ul-margin-left;
+    padding-top: $ul-padding-top;
+    padding-bottom: $ul-padding-bottom;
+    padding-right: $ul-padding-right;
+    padding-left: $ul-padding-left;
 }
 
 @mixin ordered-list {
@@ -390,6 +402,10 @@ $code-border-radius: $global-border-radius !default;
     margin-bottom: $ol-margin-bottom;
     margin-right: $ol-margin-right;
     margin-left: $ol-margin-left;
+    padding-top: $ol-padding-top;
+    padding-bottom: $ol-padding-bottom;
+    padding-right: $ol-padding-right;
+    padding-left: $ol-padding-left;
 }
 
 @mixin list-item {
