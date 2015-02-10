@@ -65,11 +65,22 @@
 //==============================================================================
 
 @function setup-palettes() {
+
+    $palettes:();
+
+    // Include if custom palettes are in use
     @if (length($custom-palettes) > 0) {
-        @return map-merge($default-palettes, $custom-palettes);
+        $palettes: map-merge($default-palettes, $custom-palettes);
     } @else {
-        @return $default-palettes;
+        $palettes: $default-palettes;
     }
+
+    // Include third-party palette if enabled
+    @if ($use-third-party-palette) {
+        $palettes: map-merge($palettes, $third-party-palettes);
+    }
+
+    @return $palettes;
 }
 
 
@@ -79,20 +90,20 @@
 
 @function palette($palette, $tone: 'base') {
 
-    $palette-map: setup-palettes();
+    $palettes: setup-palettes();
 
-    @if (map-has-key($palette-map, $palette)) {
+    @if (map-has-key($palettes, $palette)) {
 
-        $color: map-get($palette-map, $palette);
+        $color: map-get($palettes, $palette);
 
         @if (map-has-key($color, $tone)) {
             @return map-get($color, $tone);
         } @else {
-            @warn "Tone doesn't exist";
+            @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
         }
 
     } @else {
-        @warn "Palette doesn't exist!";
+        @warn "Palette '#{$palette}' doesn't exist!";
     }
 }
 
