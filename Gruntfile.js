@@ -115,6 +115,17 @@
                 }
             },
 
+            pixrem: {
+                options: {
+                    rootvalue: '100%',
+                    replace: true
+                },
+                dist: {
+                    src: 'dist/css/main.min.css',
+                    dest: 'dist/css/ie.min.css'
+                }
+            },
+
             sassdoc: {
                 default: {
                     src: '<%= config.app %>/scss/',
@@ -160,17 +171,6 @@
                 }
             },
 
-            pixrem: {
-                options: {
-                    rootvalue: '100%',
-                    replace: true
-                },
-                dist: {
-                    src: 'dist/css/main.min.css',
-                    dest: 'dist/css/ie.min.css'
-                }
-            }
-
         });
 
         // Do image related tasks
@@ -184,6 +184,9 @@
 
         // Run a dev task for all options except sass lint
         grunt.registerTask('dev', ['do-img', 'do-js', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie'] );
+
+        // Do documentation
+        grunt.registerTask('do-docs', ['sassdoc']);
 
         // Do IE8 Legacy specific tasks
         grunt.registerTask('do-ie', ['pixrem']);

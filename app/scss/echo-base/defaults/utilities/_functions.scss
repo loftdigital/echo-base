@@ -175,6 +175,7 @@ $breakpoints: ();
 /// @return {Map}
 
 @function palette($palette, $tone: 'base') {
+
     $palettes: setup-palettes();
 
     @if (map-has-key($palettes, $palette)) {
@@ -186,7 +187,6 @@ $breakpoints: ();
         } @else {
             @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
         }
-
     } @else {
         @warn "Palette '#{$palette}' doesn't exist!";
     }
