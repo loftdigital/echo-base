@@ -1,22 +1,22 @@
 'use strict';
 
 module.exports = function byGroupAndType(data) {
-  var byGroupAndType = {};
+  var sorted = {};
 
   data.forEach(function (item) {
     var group = item.group[0];
     var type = item.context.type;
 
-    if (!(group in byGroupAndType)) {
-      byGroupAndType[group] = {};
+    if (!(group in sorted)) {
+      sorted[group] = {};
     }
 
-    if (!(type in byGroupAndType[group])) {
-      byGroupAndType[group][type] = [];
+    if (!(type in sorted[group])) {
+      sorted[group][type] = [];
     }
 
-    byGroupAndType[group][type].push(item);
+    sorted[group][type].push(item);
   });
 
-  return byGroupAndType;
+  return sorted;
 };
