@@ -318,7 +318,7 @@ $responsive-text-map: ();
 @function remify($value, $rem-base) {
     $value: strip-unit($value);
 
-    @if $value == 0 {
+    @if ($value == 0) {
         @return 0;
     } @else {
         @return $value / strip-unit($rem-base) * 1rem;
@@ -339,16 +339,16 @@ $responsive-text-map: ();
 @function rem-calc($values, $rem-base: $base-font-size) {
     $num-vals : length($values);
 
-    @if $num-vals <= 0 {
+    @if ($num-vals <= 0) {
 
         @warn 'You need to supply at least one value to calcRem';
 
-    } @else if $num-vals == 1 {
+    } @else if ($num-vals == 1) {
 
         $val: nth($values, 1);
         @return remify($val, $rem-base);
 
-    } @else if $num-vals > 4 {
+    } @else if ($num-vals > 4) {
 
         @warn "You\'ve supplied too many values to calcRem";
 
@@ -356,7 +356,7 @@ $responsive-text-map: ();
 
         $rem-values: ();
 
-        @for $i from 1 through $num-vals {
+        @for ($i from 1 through $num-vals) {
             $rem-values: append($rem-values, remify(nth($values, $i), $rem-base));
         }
 
