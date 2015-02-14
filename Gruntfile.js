@@ -177,10 +177,7 @@
         grunt.registerTask('do-sass', ['scsslint', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie']);
 
         // Run a dev task for all options except sass lint
-        grunt.registerTask('dev', ['do-img', 'do-js', 'sass:development', 'autoprefixer:all', 'notify:sass', 'do-ie'] )
-
-        // Run a dev task for all options except sass lint
-        grunt.registerTask('dev', ['do-img', 'do-js', 'sass:development', 'autoprefixer:all', 'notify:sass', 'do-ie'] )
+        grunt.registerTask('dev', ['do-img', 'do-js', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie'] );
 
         // Do IE8 Legacy specific tasks
         grunt.registerTask('do-ie', ['pixrem']);
