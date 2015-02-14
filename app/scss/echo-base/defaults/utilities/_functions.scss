@@ -242,7 +242,7 @@ $responsive-text-map: ();
             $new-map: ($key: map-merge(map-get($existing-map, test), map-get($responsive-text-custom, $key)));
             $responsive-text-map: map-merge($responsive-text-map, $new-map);
 
-        }@else {
+        } @else {
 
             $new-map: ($key: $value);
             $responsive-text-map: map-merge($responsive-text-map, $new-map);
@@ -356,7 +356,7 @@ $responsive-text-map: ();
 
         $rem-values: ();
 
-        @for ($i from 1 through $num-vals) {
+        @for $i from 1 through $num-vals {
             $rem-values: append($rem-values, remify(nth($values, $i), $rem-base));
         }
 
