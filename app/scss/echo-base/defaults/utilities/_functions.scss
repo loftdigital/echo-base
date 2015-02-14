@@ -313,7 +313,7 @@ $responsive-text-map: ();
 /// Appends the rem unit to the passed in value
 /// @access private
 /// @param {Int} $value - Value to append rem unit to
-/// @return {Int}
+/// @return {String} - returns the value as a rem unit
 
 @function remify($value, $rem-base) {
     $value: strip-unit($value);
