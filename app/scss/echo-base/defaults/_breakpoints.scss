@@ -21,10 +21,10 @@
 //  a. Default breakpoint vars
 //==============================================================================
 
-$break-large: 900px !default;
+$break-large: 960px !default;
 $break-medium: 768px !default;
-$break-small: 450px !default;
-
+$break-small: 480px !default;
+$break-x-small: 320px !default;
 
 
 
@@ -35,7 +35,8 @@ $break-small: 450px !default;
 $default-breakpoints: (
     large: $break-large,
     medium: $break-medium,
-    small: $break-small
+    small: $break-small,
+    x-small: $break-x-small
 );
 
 
