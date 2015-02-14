@@ -626,7 +626,6 @@ $responsive-text-custom: () !default;
 @mixin h1 {
     font-family: $h1-font-family;
     font-weight: $h1-font-weight;
-    line-height: $h1-line-height;
     margin-bottom: $h1-font-margin-bottom;
     margin-top: $h1-font-margin-top;
     text-rendering: $h1-font-text-rendering;
@@ -638,10 +637,8 @@ $responsive-text-custom: () !default;
 }
 
 @mixin h2 {
-    font-size: $h2-font-size;
     font-family: $h2-font-family;
     font-weight: $h2-font-weight;
-    line-height: $h2-line-height;
     margin-bottom: $h2-font-margin-bottom;
     margin-top: $h2-font-margin-top;
     text-rendering: $h2-font-text-rendering;
@@ -653,10 +650,8 @@ $responsive-text-custom: () !default;
 }
 
 @mixin h3 {
-    font-size: $h3-font-size;
     font-family: $h3-font-family;
     font-weight: $h3-font-weight;
-    line-height: $h3-line-height;
     margin-bottom: $h3-font-margin-bottom;
     margin-top: $h3-font-margin-top;
     text-rendering: $h3-font-text-rendering;
@@ -668,10 +663,8 @@ $responsive-text-custom: () !default;
 }
 
 @mixin h4 {
-    font-size: $h4-font-size;
     font-family: $h4-font-family;
     font-weight: $h4-font-weight;
-    line-height: $h4-line-height;
     margin-bottom: $h4-font-margin-bottom;
     margin-top: $h4-font-margin-top;
     text-rendering: $h4-font-text-rendering;
@@ -683,10 +676,8 @@ $responsive-text-custom: () !default;
 }
 
 @mixin h5 {
-    font-size: $h5-font-size;
     font-family: $h5-font-family;
     font-weight: $h5-font-weight;
-    line-height: $h5-line-height;
     margin-bottom: $h5-font-margin-bottom;
     margin-top: $h5-font-margin-top;
     text-rendering: $h5-font-text-rendering;
@@ -698,10 +689,8 @@ $responsive-text-custom: () !default;
 }
 
 @mixin h6 {
-    font-size: $h6-font-size;
     font-family: $h6-font-family;
     font-weight: $h6-font-weight;
-    line-height: $h6-line-height;
     margin-bottom: $h6-font-margin-bottom;
     margin-top: $h6-font-margin-top;
     text-rendering: $h6-font-text-rendering;
@@ -714,9 +703,7 @@ $responsive-text-custom: () !default;
 
 @mixin p {
     font-family: $p-font-family;
-    font-size: $p-font-size;
     font-weight: $p-font-weight;
-    line-height: $p-line-height;
     letter-spacing: $p-letter-spacing;
     text-transform: $p-text-transform;
     margin-top: $p-margin-top;
