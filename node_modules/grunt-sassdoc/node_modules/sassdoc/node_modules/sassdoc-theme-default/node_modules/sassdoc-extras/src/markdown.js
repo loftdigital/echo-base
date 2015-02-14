@@ -30,6 +30,10 @@ module.exports = function markdown(ctx) {
     ctx.package.description = md(ctx.package.description);
   }
 
+  if (ctx.description) {
+    ctx.description = md(ctx.description);
+  }
+
   ctx.data.forEach(function (item) {
     if ('description' in item) {
       item.description = marked(item.description);

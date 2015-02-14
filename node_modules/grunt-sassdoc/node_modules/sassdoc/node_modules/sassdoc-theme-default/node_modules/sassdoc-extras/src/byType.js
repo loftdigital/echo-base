@@ -1,17 +1,17 @@
 'use strict';
 
 module.exports = function byType(data) {
-  var byType = {};
+  var sorted = {};
 
   data.forEach(function (item) {
     var type = item.context.type;
 
-    if (!(type in byType)) {
-      byType[type] = [];
+    if (!(type in sorted)) {
+      sorted[type] = [];
     }
 
-    byType[type].push(item);
+    sorted[type].push(item);
   });
 
-  return byType;
+  return sorted;
 };
