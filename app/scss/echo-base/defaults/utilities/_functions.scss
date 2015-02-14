@@ -38,7 +38,7 @@
 
 $breakpoints: ();
 
-/// TESTTT!!! This function will check to see if custom breakpoints have been specified
+/// This function will check to see if custom breakpoints have been specified
 /// within the $custom-breakpoints map within the _settings.scss file.
 ///
 /// If custom breakpoints have been specified it will return a new map which
@@ -95,6 +95,23 @@ $breakpoints: ();
 
 //  3. Order Breakpoints by size
 //==============================================================================
+
+/// This function returns a sorted list of all the specified breakpoints
+/// currently in a descending format for desktop first implementation. This is
+/// mostly required when specifying custom breakpoints as we need some way of
+/// ordering the custom and default breakpoints once they've been merged to a
+/// single map.
+///
+/// It returns a list of all the breakpoint names specified which can then be used
+/// in list order to ensure that all breakpoints are called in the correct order.
+///
+/// The function loops through the breakpoint map to find the highest value, then
+/// it appends this key to the map-list. The process is repeated but if the key
+/// already exists in map-list() it is ignored. This provides us a descending
+/// ordered list.
+///
+/// @access private
+/// @return {List}
 
 @function order-breakpoints() {
     $breakpoint-map: setup-breakpoints();
