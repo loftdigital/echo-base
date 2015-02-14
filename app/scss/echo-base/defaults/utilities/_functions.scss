@@ -36,6 +36,8 @@
 //  1. Setup breakpoints
 //==============================================================================
 
+$breakpoints: ();
+
 /// This function will check to see if custom breakpoints have been specified
 /// within the $custom-breakpoints map within the _settings.scss file.
 ///
@@ -47,8 +49,6 @@
 ///
 /// @access private
 /// @return {Map}
-
-$breakpoints: ();
 
 @function setup-breakpoints() {
     @if (length($custom-breakpoints) > 0) {

@@ -88,7 +88,7 @@
                 },
                 dist: {
                     options: {
-                        outputStyle: 'compressed',
+                        outputStyle: 'expanded',
                     },
                     files: [{
                         expand: true,
