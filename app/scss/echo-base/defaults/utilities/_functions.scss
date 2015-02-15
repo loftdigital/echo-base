@@ -219,6 +219,11 @@ $breakpoints: ();
 //  1. Merge responsive text element maps
 //==============================================================================
 
+/// A variable used throughout our functions file. It will hold the merged
+/// responsive text maps.
+
+$responsive-text-map: ();
+
 /// Checks to see if the responsive-text-custom map from settings.scss has any
 /// properties defined. If it does it looks to see if the default responsive text map
 /// and custom responsive text map have been merged by checking if the specified
@@ -232,8 +237,6 @@ $breakpoints: ();
 /// @access private
 /// @param {String} $element - element name
 /// @return {Map}
-
-$responsive-text-map: ();
 
 @function setup-responsive-text($element) {
 
