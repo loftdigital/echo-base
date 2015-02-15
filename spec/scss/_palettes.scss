@@ -1,7 +1,9 @@
 
+$custom-palette-base: rgb(255, 0, 0);
+
 $custom-palettes: (
-    custom: (
-        base: rgb(255, 0, 0)
+    custom-palette: (
+        base: $custom-palette-base
     )
 );
 
@@ -33,11 +35,26 @@ $custom-palettes: (
 
         // Setup
         $palettes: setup-palettes();
-        $palette: map-get($palettes, custom);
+
+        // Values to compare
+        $test: map-has-key($palettes, custom-palette);
+        $expect: true;
+
+        @include assert-equal($test, $expect, 'Returns a merged map of default & custom palettes');
+    }
+
+
+
+    // Returns a custom palette value
+    @include test('setup-palettes') {
+
+        // Setup
+        $palettes: setup-palettes();
+        $palette: map-get($palettes, custom-palette);
 
         // Values to compare
         $test: map-get($palette, base);
-        $expect: rgb(255, 0, 0);
+        $expect: $custom-palette-base;
 
         @include assert-equal($test, $expect, 'Returns a custom palette value');
     }
