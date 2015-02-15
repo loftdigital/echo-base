@@ -18,7 +18,10 @@ $custom-palettes: (
 
 @include test-module('Setup palettes') {
 
-    // Returns a map of palettes
+    /// Test if setup-palettes() returns an object of type map
+    ///
+    /// @group Tests
+
     @include test('setup-palettes') {
 
         // Values to compare
@@ -30,7 +33,11 @@ $custom-palettes: (
 
 
 
-    // Returns a custom palette value
+    /// Test if setup-palettes() successfully merges the default and custom
+    /// palette maps by checking for the existance of a custom key
+    ///
+    /// @group Tests
+
     @include test('setup-palettes') {
 
         // Setup
@@ -45,7 +52,11 @@ $custom-palettes: (
 
 
 
-    // Returns a custom palette value
+    /// Test if setup-palettes() successfully merges the default and custom
+    /// palette maps by checking the value of a custom key
+    ///
+    /// @group Tests
+
     @include test('setup-palettes') {
 
         // Setup
