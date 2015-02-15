@@ -1,3 +1,6 @@
+//==============================================================================
+//  Custom dependacies
+//==============================================================================
 
 $custom-palette-base: rgb(255, 0, 0);
 
@@ -7,23 +10,32 @@ $custom-palettes: (
     )
 );
 
+
+
+
+//==============================================================================
+//  Palette dependancies
+//==============================================================================
+
 @import "../../app/scss/echo-base/defaults/palettes";
 
+
+
+
 //==============================================================================
-// Palette functions
+//  Palette functions
 //==============================================================================
 
-// Setup palettes - setup-palettes()
+//  Setup palettes - setup-palettes()
 //==============================================================================
 
-@include test-module('Setup palettes') {
+/// Test if setup-palettes() returns an object of type map
+///
+/// @group Tests
 
-    /// Test if setup-palettes() returns an object of type map
-    ///
-    /// @group Tests
+@mixin setup-palettes-test-01() {
 
     @include test('setup-palettes') {
-
         // Values to compare
         $test: type-of(setup-palettes());
         $expect: map;
@@ -31,15 +43,18 @@ $custom-palettes: (
         @include assert-equal($test, $expect, 'Returns a map');
     }
 
+}
 
 
-    /// Test if setup-palettes() successfully merges the default and custom
-    /// palette maps by checking for the existance of a custom key
-    ///
-    /// @group Tests
+
+/// Test if setup-palettes() successfully merges the default and custom
+/// palette maps by checking for the existance of a custom key
+///
+/// @group Tests
+
+@mixin setup-palettes-test-02() {
 
     @include test('setup-palettes') {
-
         // Setup
         $palettes: setup-palettes();
 
@@ -50,12 +65,16 @@ $custom-palettes: (
         @include assert-equal($test, $expect, 'Returns a merged map of default & custom palettes');
     }
 
+}
 
 
-    /// Test if setup-palettes() successfully merges the default and custom
-    /// palette maps by checking the value of a custom key
-    ///
-    /// @group Tests
+
+/// Test if setup-palettes() successfully merges the default and custom
+/// palette maps by checking the value of a custom key
+///
+/// @group Tests
+
+@mixin setup-palettes-test-03() {
 
     @include test('setup-palettes') {
 
@@ -69,5 +88,18 @@ $custom-palettes: (
 
         @include assert-equal($test, $expect, 'Returns a custom palette value');
     }
+}
+
+
+
+//==============================================================================
+//  Tests
+//==============================================================================
+
+@include test-module('Setup palettes') {
+
+    @include setup-palettes-test-01;
+    @include setup-palettes-test-02;
+    @include setup-palettes-test-03;
 
 }
