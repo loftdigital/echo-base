@@ -51,7 +51,7 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__01-return-map() {
+@mixin palettes-return-map() {
 
     @include test('setup-palettes') {
         // Values to compare
@@ -70,7 +70,7 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__02-has-custom-key() {
+@mixin palettes-has-custom-key() {
 
     @include test('setup-palettes') {
         // Setup
@@ -92,7 +92,7 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__03-return-custom-value() {
+@mixin palettes-return-custom-value() {
 
     @include test('setup-palettes') {
         // Setup
@@ -119,8 +119,8 @@ $custom-palettes: (
 
 @include test-module('Setup palettes') {
 
-    @include setup-palettes__01-return-map();
-    @include setup-palettes__02-has-custom-key();
-    @include setup-palettes__03-return-custom-value();
+    @include palettes-return-map();
+    @include palettes-has-custom-key();
+    @include palettes-return-custom-value();
 
 }

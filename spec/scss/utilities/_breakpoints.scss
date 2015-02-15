@@ -50,7 +50,7 @@ $custom-breakpoints: (
 ///
 /// @group Tests
 
-@mixin setup-breakpoints__01-return-map() {
+@mixin breakpoints__return-map() {
 
     @include test('setup-breakpoints') {
         // Values to compare
@@ -69,7 +69,7 @@ $custom-breakpoints: (
 ///
 /// @group Tests
 
-@mixin setup-breakpoints__02-has-custom-key() {
+@mixin breakpoints-has-custom-key() {
 
     @include test('setup-breakpoints') {
         // Setup
@@ -91,7 +91,7 @@ $custom-breakpoints: (
 ///
 /// @group Tests
 
-@mixin setup-breakpoints__03-return-custom-value() {
+@mixin breakpoints-return-custom-value() {
 
     @include test('setup-breakpoints') {
         // Setup
@@ -113,7 +113,7 @@ $custom-breakpoints: (
 ///
 /// @group Tests
 
-@mixin setup-breakpoints__04-return-merged-key-list() {
+@mixin breakpoints-return-merged-key-list() {
 
     @include test('setup-breakpoints') {
         // Setup
@@ -140,9 +140,9 @@ $custom-breakpoints: (
 
 @include test-module('Setup breakpoints') {
 
-    @include setup-breakpoints__01-return-map();
-    @include setup-breakpoints__02-has-custom-key();
-    @include setup-breakpoints__03-return-custom-value();
-    @include setup-breakpoints__04-return-merged-key-list();
+    @include breakpoints-return-map();
+    @include breakpoints-has-custom-key();
+    @include breakpoints-return-custom-value();
+    @include breakpoints-return-merged-key-list();
 
 }
