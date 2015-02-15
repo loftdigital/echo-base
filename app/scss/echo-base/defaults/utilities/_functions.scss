@@ -381,7 +381,7 @@ $responsive-text-map: ();
 @function text-properties-for($element, $breakpoint-name) {
     $element-breakpoints: text-breakpoints-for($element);
 
-    @if (map-has-key($element-breakpoints, $breakpoint-name) {
+    @if (map-has-key($element-breakpoints, $breakpoint-name)) {
         @return map-get($element-breakpoints, $breakpoint-name);
     } @else {
         @return false;
