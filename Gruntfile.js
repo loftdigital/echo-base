@@ -88,7 +88,7 @@
                 },
                 dist: {
                     options: {
-                        outputStyle: 'compressed',
+                        outputStyle: 'expanded',
                     },
                     files: [{
                         expand: true,
@@ -112,6 +112,17 @@
                         dest: '<%= config.dist %>/css/',
                         ext: '.min.css'
                     }]
+                }
+            },
+
+            pixrem: {
+                options: {
+                    rootvalue: '100%',
+                    replace: true
+                },
+                dist: {
+                    src: 'dist/css/main.min.css',
+                    dest: 'dist/css/ie.min.css'
                 }
             },
 
@@ -153,17 +164,6 @@
                     }
                 }
             },
-
-            pixrem: {
-                options: {
-                    rootvalue: '100%',
-                    replace: true
-                },
-                dist: {
-                    src: 'dist/css/main.min.css',
-                    dest: 'dist/css/ie.min.css'
-                }
-            }
 
         });
 
