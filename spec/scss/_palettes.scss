@@ -80,10 +80,10 @@ $custom-palettes: (
 
         // Setup
         $palettes: setup-palettes();
-        $palette: map-get($palettes, custom-palette);
+        $custom-color: map-get($palettes, custom-palette);
 
         // Values to compare
-        $test: map-get($palette, base);
+        $test: map-get($custom-color, base);
         $expect: $custom-palette-base;
 
         @include assert-equal($test, $expect, 'Returns a custom palette value');
