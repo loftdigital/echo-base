@@ -96,7 +96,7 @@ $breakpoints: ();
 //  3. Order Breakpoints by size
 //==============================================================================
 
-/// This function returns a sorted list of all the specified breakpoints
+/// Returns a sorted list of all the specified breakpoints
 /// currently in a descending format for desktop first implementation. This is
 /// mostly required when specifying custom breakpoints as we need some way of
 /// ordering the custom and default breakpoints once they've been merged to a
@@ -219,6 +219,20 @@ $breakpoints: ();
 //  1. Merge responsive text element maps
 //==============================================================================
 
+/// Checks to see if the responsive-text-custom map from settings.scss has any
+/// properties defined. If it does it looks to see if the default responsive text map
+/// and custom responsive text map have been merged by checking if the specified
+/// element is present in this merged map. If it's present the merged map is
+/// returned. If not merge-responsive-maps is called to perform the merge. If no
+/// custom map exists / has any properties then the defaults map is returned.
+///
+/// In the event that the custom map has properties but no merged map is found
+/// then this function call merge-responsive-maps to perform the merge.
+///
+/// @access private
+/// @param {String} $element - element name
+/// @return {Map}
+
 $responsive-text-map: ();
 
 @function setup-responsive-text($element) {
@@ -247,6 +261,26 @@ $responsive-text-map: ();
 //  2. Merge responsive text custom map with default map
 //==============================================================================
 
+/// Returns a merged map comprised of the $responsive-text-defaults map from
+/// typography.scss and the $responsive-text-custom map from settings.scss allowing
+/// us to work with one single map for all our responsive text element needs.
+///
+/// Loops through each key in the default map and checks to see if that key also
+/// exists in the custom map, if it does then we are extending this text elements
+/// breakpoints and assosciated properties which will need to be merged.
+///
+/// If you merge two maps of identical name SASS will overwrite the first, therefore
+/// our first step is to rename the key in the default map to 'test'. We then merge
+/// this with the corresponding keys map from the custom map giving us a clean new map
+/// incorporating properties from both default and custom map.
+///
+/// If the current key doesn't exist in the custom map we aren't trying to extend
+/// this element therefore we just need to merge this from the default map into
+/// merged map.
+///
+/// @access private
+/// @return {Map}
+
 @function merge-responsive-maps() {
 
     @each $key, $value in $responsive-text-defaults {
@@ -274,7 +308,20 @@ $responsive-text-map: ();
 //  3. Get responsive text element properties
 //==============================================================================
 
-// http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
+/// Utilises the idea from this posting.
+///
+/// http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html
+///
+/// Returns a map of the responsive text properties of the specified element to the
+/// text-properties-for function to use. If the specified element isn't found in
+/// our responsive text map then it will throw a warning.
+///
+/// Calls the setup-responsive-text function to make sure we are utilising both the
+/// defaults map and the custom map if used.
+///
+/// @access private
+/// @param {String} $element - element to pull properties for
+/// @return {Map}
 
 @function text-breakpoints-for($element) {
 
@@ -291,6 +338,15 @@ $responsive-text-map: ();
 
 //  4. Get breakpoint for responsive text element
 //==============================================================================
+
+/// Returns the properties for a certain element at a certain specified breakpoint.
+/// Uses the text-breakpoints-for function to pull this elements breakpoints and
+/// properties.
+///
+/// @access private
+/// @param {String} $element - element name
+/// @param {String} $breakpoint-name - name of the specified breakpoint
+/// @return {Map}
 
 @function text-properties-for($element, $breakpoint-name) {
 
