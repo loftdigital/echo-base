@@ -1,7 +1,7 @@
 
-$custom-palettes:(
-    custom-red: (
-        base: rgb(255, 20, 20)
+$custom-palettes: (
+    custom: (
+        base: rgb(255, 0, 0)
     )
 );
 
@@ -23,37 +23,23 @@ $custom-palettes:(
         $test: type-of(setup-palettes());
         $expect: map;
 
-        @include assert-equal($test, $expect, 'Returns a map of palettes');
+        @include assert-equal($test, $expect, 'Returns a map');
     }
 
-    //
-    //
-    // // Returns a custom breakpoint value
-    // @include test('setup-breakpoints') {
-    //
-    //     // Setup
-    //     $breakpoints: setup-breakpoints();
-    //
-    //     // Values to compare
-    //     $test: map-get($breakpoints, custom);
-    //     $expect: 200px;
-    //
-    //     @include assert-equal($test, $expect, 'Returns a custom breakpoint value');
-    // }
-    //
-    //
-    //
-    // // Returns a list of the default and custom breakpoints
-    // @include test('setup-breakpoints') {
-    //
-    //     // Setup
-    //     $breakpoints: setup-breakpoints();
-    //
-    //     // Values to compare
-    //     $test: map-keys($breakpoints);
-    //     $expect: large, medium, small, x-small, custom;
-    //
-    //     @include assert-equal($test, $expect, 'Returns a list of the default and custom breakpoints');
-    // }
+
+
+    // Returns a custom palette value
+    @include test('setup-palettes') {
+
+        // Setup
+        $palettes: setup-palettes();
+        $palette: map-get($palettes, custom);
+
+        // Values to compare
+        $test: map-get($palette, base);
+        $expect: rgb(255, 0, 0);
+
+        @include assert-equal($test, $expect, 'Returns a custom palette value');
+    }
 
 }

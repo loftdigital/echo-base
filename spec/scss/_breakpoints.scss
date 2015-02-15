@@ -1,5 +1,5 @@
 
-$custom-breakpoints:(
+$custom-breakpoints: (
     custom: 200px
 );
 
@@ -21,7 +21,7 @@ $custom-breakpoints:(
         $test: type-of(setup-breakpoints());
         $expect: map;
 
-        @include assert-equal($test, $expect, 'Returns a map of breakpoints');
+        @include assert-equal($test, $expect, 'Returns a map');
     }
 
 
