@@ -107,6 +107,11 @@ $h1-text-transform: $heading-text-transform !default;
 }
 
 $h1-font-size: rem-calc(90px / calc-ratio(1, $h1-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h1-line-height: 1.125 !default;
+}
+
 $h1-line-height: 1.05 !default;
 
 $h1-font-ratio--large: calc-ratio(1, $h1-font-mobile-ratio-default) !default;
@@ -146,6 +151,11 @@ $h2-text-transform: $heading-text-transform !default;
 }
 
 $h2-font-size: rem-calc(60px / calc-ratio(1, $h2-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h2-line-height: 1.15384615 !default;
+}
+
 $h2-line-height: 1.25 !default;
 
 $h2-font-ratio--large: calc-ratio(1, $h2-font-mobile-ratio-default) !default;
@@ -184,6 +194,11 @@ $h3-text-transform: $heading-text-transform !default;
 }
 
 $h3-font-size: rem-calc(40px / calc-ratio(1, $h3-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h3-line-height: 1.136 !default;
+}
+
 $h3-line-height: 1.25 !default;
 
 $h3-font-ratio--large: calc-ratio(1, $h3-font-mobile-ratio-default) !default;
@@ -196,11 +211,11 @@ $h3-line-height--medium: 1.25 !default;
 
 $h3-font-ratio--small: calc-ratio(0.79, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--small: $h3-font-size * $h3-font-ratio--small !default;
-$h3-line-height--small: 1.13636364 !default;
+$h3-line-height--small: 1.136 !default;
 
 $h3-font-ratio--x-small: calc-ratio(0.79, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--x-small: $h3-font-size * $h3-font-ratio--x-small !default;
-$h3-line-height--x-small: 1.13636364 !default;
+$h3-line-height--x-small: 1.136 !default;
 
 
 
@@ -222,6 +237,11 @@ $h4-text-transform: $heading-text-transform !default;
 }
 
 $h4-font-size: rem-calc(30px / calc-ratio(1, $h4-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h4-line-height: 1.11 !default;
+}
+
 $h4-line-height: 1.22 !default;
 
 $h4-font-ratio--large: calc-ratio(1, $h4-font-mobile-ratio-default) !default;
@@ -260,6 +280,11 @@ $h5-text-transform: $heading-text-transform !default;
 }
 
 $h5-font-size: rem-calc(25px / calc-ratio(1, $h5-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h5-line-height: 1.2 !default;
+}
+
 $h5-line-height: 1.2 !default;
 
 $h5-font-ratio--large: calc-ratio(1, $h5-font-mobile-ratio-default) !default;
@@ -298,6 +323,11 @@ $h6-text-transform: $heading-text-transform !default;
 }
 
 $h6-font-size: rem-calc(20px / calc-ratio(1, $h6-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $h6-line-height: 1.1 !default;
+}
+
 $h6-line-height: 1.1 !default;
 
 $h6-font-ratio--large: calc-ratio(1, $h6-font-mobile-ratio-default) !default;
@@ -336,6 +366,11 @@ $p-margin-bottom: 1.5rem !default;
 }
 
 $p-font-size: rem-calc($base-font-size / calc-ratio(1, $p-font-mobile-ratio-default)) !default;
+
+@if ($mobile-first == true) {
+    $p-line-height: 1.25 !default;
+}
+
 $p-line-height: 1.375 !default;
 
 $p-font-ratio--large: calc-ratio(1, $p-font-mobile-ratio-default) !default;
