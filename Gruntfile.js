@@ -126,12 +126,6 @@
                 }
             },
 
-            sassdoc: {
-                default: {
-                    src: '<%= config.app %>/scss/',
-                },
-            },
-
             watch: {
                 options: {
                     livereload: true,
@@ -184,9 +178,6 @@
 
         // Run a dev task for all options except sass lint
         grunt.registerTask('dev', ['do-img', 'do-js', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie'] );
-
-        // Do documentation
-        grunt.registerTask('do-docs', ['sassdoc']);
 
         // Do IE8 Legacy specific tasks
         grunt.registerTask('do-ie', ['pixrem']);
