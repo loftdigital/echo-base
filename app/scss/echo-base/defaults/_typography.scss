@@ -59,7 +59,7 @@ $font-weight-bold: 700 !default;
 
 $base-font-family: Arial, sans-serif !default;
 $base-font-weight: $font-weight-regular !default;
-$base-font-size: 16px !default;
+$base-font-size: $global-page-font-size !default;
 $base-font-style: normal;
 $base-line-height: 1.5 !default;
 
@@ -100,22 +100,29 @@ $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
 
-$h1-font-size: rem-calc(90px) !default;
+@if (variable-exists(h1-font-ratio--x-small)) {
+    $h1-font-mobile-ratio-default: $h1-font-ratio--x-small;
+} @else {
+    $h1-font-mobile-ratio-default: 0.67;
+}
+
+$h1-font-size: rem-calc(90px / calc-ratio(1, $h1-font-mobile-ratio-default)) !default;
 $h1-line-height: 1.05 !default;
 
-$h1-font-ratio--large: 1 !default;
+$h1-font-ratio--large: calc-ratio(1, $h1-font-mobile-ratio-default) !default;
 $h1-font-size--large: $h1-font-size * $h1-font-ratio--large !default;
 $h1-line-height--large: 1.05 !default;
 
-$h1-font-ratio--medium: 0.84 !default;
+$h1-font-ratio--medium: calc-ratio(0.84, $h1-font-mobile-ratio-default) !default;
 $h1-font-size--medium: $h1-font-size * $h1-font-ratio--medium !default;
 $h1-line-height--medium: 1.125 !default;
 
-$h1-font-ratio--small: 0.67 !default;
+
+$h1-font-ratio--small: calc-ratio(0.67, $h1-font-mobile-ratio-default) !default;
 $h1-font-size--small: $h1-font-size * $h1-font-ratio--small !default;
 $h1-line-height--small: 1.125 !default;
 
-$h1-font-ratio--x-small: 0.67 !default;
+$h1-font-ratio--x-small: calc-ratio(0.67, $h1-font-mobile-ratio-default) !default;
 $h1-font-size--x-small: $h1-font-size * $h1-font-ratio--x-small !default;
 $h1-line-height--x-small: 1.125 !default;
 
@@ -132,22 +139,28 @@ $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
 
-$h2-font-size: rem-calc(60px) !default;
+@if (variable-exists(h2-font-ratio--x-small)) {
+    $h2-font-mobile-ratio-default: $h2-font-ratio--x-small;
+} @else {
+    $h2-font-mobile-ratio-default: 0.72;
+}
+
+$h2-font-size: rem-calc(60px / calc-ratio(1, $h2-font-mobile-ratio-default)) !default;
 $h2-line-height: 1.25 !default;
 
-$h2-font-ratio--large: 1 !default;
+$h2-font-ratio--large: calc-ratio(1, $h2-font-mobile-ratio-default) !default;
 $h2-font-size--large: $h2-font-size * $h2-font-ratio--large !default;
 $h2-line-height--large: 1.25 !default;
 
-$h2-font-ratio--medium: 0.89 !default;
+$h2-font-ratio--medium: calc-ratio(0.89, $h2-font-mobile-ratio-default) !default;
 $h2-font-size--medium: $h2-font-size * $h2-font-ratio--medium !default;
 $h2-line-height--medium: 1.25 !default;
 
-$h2-font-ratio--small: 0.72 !default;
+$h2-font-ratio--small: calc-ratio(0.72, $h2-font-mobile-ratio-default) !default;
 $h2-font-size--small: $h2-font-size * $h2-font-ratio--small !default;
 $h2-line-height--small: 1.15384615 !default;
 
-$h2-font-ratio--x-small: 0.72 !default;
+$h2-font-ratio--x-small: calc-ratio(0.72, $h2-font-mobile-ratio-default) !default;
 $h2-font-size--x-small: $h2-font-size * $h2-font-ratio--x-small !default;
 $h2-line-height--x-small: 1.15384615 !default;
 
@@ -164,22 +177,28 @@ $h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
 
-$h3-font-size: rem-calc(40px) !default;
+@if (variable-exists(h3-font-ratio--x-small)) {
+    $h3-font-mobile-ratio-default: $h3-font-ratio--x-small;
+} @else {
+    $h3-font-mobile-ratio-default: 0.79;
+}
+
+$h3-font-size: rem-calc(40px / calc-ratio(1, $h3-font-mobile-ratio-default)) !default;
 $h3-line-height: 1.25 !default;
 
-$h3-font-ratio--large: 1 !default;
+$h3-font-ratio--large: calc-ratio(1, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--large: $h3-font-size * $h3-font-ratio--large !default;
 $h3-line-height--large: 1.25 !default;
 
-$h3-font-ratio--medium: 0.86 !default;
+$h3-font-ratio--medium: calc-ratio(0.86, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--medium: $h3-font-size * $h3-font-ratio--medium !default;
 $h3-line-height--medium: 1.25 !default;
 
-$h3-font-ratio--small: 0.79 !default;
+$h3-font-ratio--small: calc-ratio(0.79, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--small: $h3-font-size * $h3-font-ratio--small !default;
 $h3-line-height--small: 1.13636364 !default;
 
-$h3-font-ratio--x-small: 0.79 !default;
+$h3-font-ratio--x-small: calc-ratio(0.79, $h3-font-mobile-ratio-default) !default;
 $h3-font-size--x-small: $h3-font-size * $h3-font-ratio--x-small !default;
 $h3-line-height--x-small: 1.13636364 !default;
 
@@ -196,24 +215,31 @@ $h4-font-text-rendering: $heading-font-text-rendering !default;
 $h4-letter-spacing: $heading-letter-spacing !default;
 $h4-text-transform: $heading-text-transform !default;
 
-$h4-font-size: rem-calc(30px) !default;
+@if (variable-exists(h4-font-ratio--x-small)) {
+    $h4-font-mobile-ratio-default: $h4-font-ratio--x-small;
+} @else {
+    $h4-font-mobile-ratio-default: 0.94;
+}
+
+$h4-font-size: rem-calc(30px / calc-ratio(1, $h4-font-mobile-ratio-default)) !default;
 $h4-line-height: 1.22 !default;
 
-$h4-font-ratio--large: 1 !default;
+$h4-font-ratio--large: calc-ratio(1, $h4-font-mobile-ratio-default) !default;
 $h4-font-size--large: $h4-font-size * $h4-font-ratio--large !default;
 $h4-line-height--large: 1.22 !default;
 
-$h4-font-ratio--medium: 1 !default;
+$h4-font-ratio--medium: calc-ratio(1, $h4-font-mobile-ratio-default) !default;
 $h4-font-size--medium: $h4-font-size * $h4-font-ratio--medium !default;
 $h4-line-height--medium: 1.22 !default;
 
-$h4-font-ratio--small: 0.94 !default;
+$h4-font-ratio--small: calc-ratio(0.94, $h4-font-mobile-ratio-default) !default;
 $h4-font-size--small: $h4-font-size * $h4-font-ratio--small !default;
 $h4-line-height--small: 1.11 !default;
 
-$h4-font-ratio--x-small: 0.94 !default;
+$h4-font-ratio--x-small: calc-ratio(0.94, $h4-font-mobile-ratio-default) !default;
 $h4-font-size--x-small: $h4-font-size * $h4-font-ratio--x-small !default;
 $h4-line-height--x-small: 1.11 !default;
+
 
 
 //  9. Heading - <h5>
@@ -227,22 +253,28 @@ $h5-font-text-rendering: $heading-font-text-rendering !default;
 $h5-letter-spacing: $heading-letter-spacing !default;
 $h5-text-transform: $heading-text-transform !default;
 
-$h5-font-size: rem-calc(25px) !default;
+@if (variable-exists(h5-font-ratio--x-small)) {
+    $h5-font-mobile-ratio-default: $h5-font-ratio--x-small;
+} @else {
+    $h5-font-mobile-ratio-default: 1;
+}
+
+$h5-font-size: rem-calc(25px / calc-ratio(1, $h5-font-mobile-ratio-default)) !default;
 $h5-line-height: 1.2 !default;
 
-$h5-font-ratio--large: 1 !default;
+$h5-font-ratio--large: calc-ratio(1, $h5-font-mobile-ratio-default) !default;
 $h5-font-size--large: $h5-font-size * $h5-font-ratio--large !default;
 $h5-line-height--large: 1.2 !default;
 
-$h5-font-ratio--medium: 1 !default;
+$h5-font-ratio--medium: calc-ratio(1, $h5-font-mobile-ratio-default) !default;
 $h5-font-size--medium: $h5-font-size * $h5-font-ratio--medium !default;
 $h5-line-height--medium: 1.2 !default;
 
-$h5-font-ratio--small: 1 !default;
+$h5-font-ratio--small: calc-ratio(1, $h5-font-mobile-ratio-default) !default;
 $h5-font-size--small: $h5-font-size * $h5-font-ratio--small !default;
 $h5-line-height--small: 1.2 !default;
 
-$h5-font-ratio--x-small: 1 !default;
+$h5-font-ratio--x-small: calc-ratio(1, $h5-font-mobile-ratio-default) !default;
 $h5-font-size--x-small: $h5-font-size * $h5-font-ratio--x-small !default;
 $h5-line-height--x-small: 1.2 !default;
 
@@ -259,22 +291,28 @@ $h6-font-text-rendering: $heading-font-text-rendering !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
 
-$h6-font-size: rem-calc(20px) !default;
+@if (variable-exists(h6-font-ratio--x-small)) {
+    $h6-font-mobile-ratio-default: $h6-font-ratio--x-small;
+} @else {
+    $h6-font-mobile-ratio-default: 1;
+}
+
+$h6-font-size: rem-calc(20px / calc-ratio(1, $h6-font-mobile-ratio-default)) !default;
 $h6-line-height: 1.1 !default;
 
-$h6-font-ratio--large: 1 !default;
+$h6-font-ratio--large: calc-ratio(1, $h6-font-mobile-ratio-default) !default;
 $h6-font-size--large: $h6-font-size * $h6-font-ratio--large !default;
 $h6-line-height--large: 1.1 !default;
 
-$h6-font-ratio--medium: 1 !default;
+$h6-font-ratio--medium: calc-ratio(1, $h6-font-mobile-ratio-default) !default;
 $h6-font-size--medium: $h6-font-size * $h6-font-ratio--medium !default;
 $h6-line-height--medium: 1.1 !default;
 
-$h6-font-ratio--small: 1 !default;
+$h6-font-ratio--small: calc-ratio(1, $h6-font-mobile-ratio-default) !default;
 $h6-font-size--small: $h6-font-size * $h6-font-ratio--small !default;
 $h6-line-height--small: 1.1 !default;
 
-$h6-font-ratio--x-small: 1 !default;
+$h6-font-ratio--x-small: calc-ratio(1, $h6-font-mobile-ratio-default) !default;
 $h6-font-size--x-small: $h6-font-size * $h6-font-ratio--x-small !default;
 $h6-line-height--x-small: 1.1 !default;
 
@@ -291,22 +329,28 @@ $p-text-transform: none !default;
 $p-margin-top: 1.5rem !default;
 $p-margin-bottom: 1.5rem !default;
 
-$p-font-size: rem-calc($base-font-size) !default;
+@if (variable-exists(p-font-ratio--x-small)) {
+    $p-font-mobile-ratio-default: $p-font-ratio--x-small;
+} @else {
+    $p-font-mobile-ratio-default: 1;
+}
+
+$p-font-size: rem-calc($base-font-size / calc-ratio(1, $p-font-mobile-ratio-default)) !default;
 $p-line-height: 1.375 !default;
 
-$p-font-ratio--large: 1 !default;
+$p-font-ratio--large: calc-ratio(1, $p-font-mobile-ratio-default) !default;
 $p-font-size--large: $p-font-size * $p-font-ratio--large !default;
 $p-line-height--large: 1.375 !default;
 
-$p-font-ratio--medium: 1 !default;
+$p-font-ratio--medium: calc-ratio(1, $p-font-mobile-ratio-default) !default;
 $p-font-size--medium: $p-font-size * $p-font-ratio--medium !default;
 $p-line-height--medium: 1.375 !default;
 
-$p-font-ratio--small: 1 !default;
+$p-font-ratio--small: calc-ratio(1, $p-font-mobile-ratio-default) !default;
 $p-font-size--small: $p-font-size * $p-font-ratio--small !default;
 $p-line-height--small: 1.25 !default;
 
-$p-font-ratio--x-small: 1 !default;
+$p-font-ratio--x-small: calc-ratio(1, $p-font-mobile-ratio-default) !default;
 $p-font-size--x-small: $p-font-size * $p-font-ratio--x-small !default;
 $p-line-height--x-small: 1.25 !default;
 

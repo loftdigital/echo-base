@@ -19,9 +19,9 @@
 //  Breakpoint
 //==============================================================================
 
-@mixin breakpoint($key, $flag:max) {
+@mixin breakpoint($key) {
 
-    @if ($flag == 'min') {
+    @if ($mobile-first == true) {
         $flow: min-width;
     } @else {
         $flow: max-width;
