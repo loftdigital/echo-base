@@ -45,6 +45,12 @@
 
 // $global-box-sizing: border-box;
 // $global-border-radius: 5px;
+// $global-page-font-size: 16px;
+
+// Mobile First Flag
+//==============================================================================
+
+// $mobile-first: false;
 
 
 
@@ -150,7 +156,7 @@
 
 // $base-font-family: Arial, sans-serif;
 // $base-font-weight: $font-weight-regular;
-// $base-font-size: 16px;
+// $base-font-size: $global-page-font-size;
 // $base-font-line-height: 150%;
 
 

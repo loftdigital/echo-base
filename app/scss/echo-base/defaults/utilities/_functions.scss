@@ -26,6 +26,12 @@
 //
 //==============================================================================
 
+/// $global-page-font-size is the base font size for the document / page.
+///
+/// @group Global
+/// @type String
+$global-page-font-size: 16px !default;
+
 
 
 
@@ -130,24 +136,36 @@ $breakpoints: ();
     $map-list: ();
 
     @for $i from 1 through length($breakpoint-map) {
-        $current-highest: 0;
-        $current-value: '';
+
+        @if($mobile-first == true){
+            $current-value: 999999;
+        } @else {
+            $current-value: 0;
+        }
+
+        $current-breakpoint: '';
 
         @each $key, $value in $breakpoint-map {
 
             @if (index($map-list, $key) == null) {
                 $value: strip-unit($value);
 
-                @if ($value > $current-highest) {
-                    $current-highest: $value;
-                    $current-value: $key;
+                @if ($mobile-first == true){
+                    @if ($value < $current-value) {
+                        $current-value: $value;
+                        $current-breakpoint: $key;
+                    }
+                } @else {
+                    @if ($value > $current-value) {
+                        $current-value: $value;
+                        $current-breakpoint: $key;
+                    }
                 }
-
             }
 
         }
 
-        $map-list: append($map-list, $current-value);
+        $map-list: append($map-list, $current-breakpoint);
     }
 
     @return $map-list;
@@ -391,6 +409,29 @@ $responsive-text-map: ();
 
 
 
+// 5. Calculate text size ratios
+//==============================================================================
+
+/// As echo base is setup primarily as a desktop first framework we need to do
+/// some work to get the default text element sizing ratios working if the user
+/// turns on mobile first.
+///
+/// @access public
+/// @group Responsive Typography
+/// @param {Int} $ratio - desktop first ratio value
+/// @param {Int} $base-ratio - default x-small ratio
+/// @return {Int}
+
+@function calc-ratio($ratio, $base-ratio) {
+    @if ($mobile-first == true) {
+        @return $ratio / $base-ratio;
+    } @else {
+        @return $ratio;
+    }
+}
+
+
+
 
 //==============================================================================
 //  d. Helpers
@@ -438,15 +479,15 @@ $responsive-text-map: ();
 //  3. Rem Calc
 //==============================================================================
 
-/// Turns a pixel unit into a rem unit by using the base-font-size
+/// Turns a pixel unit into a rem unit by using the global-page-font-size
 ///
 /// @access public
 /// @group Helpers
 /// @param {List|Int|String} $values - Values to remify
-/// @param {Int} $rem-base [$base-font-size] - REM base font size
+/// @param {Int} $rem-base [$global-page-font-size] - REM base font size
 /// @return {Int}
 
-@function rem-calc($values, $rem-base: $base-font-size) {
+@function rem-calc($values, $rem-base: $global-page-font-size) {
     $num-vals: length($values);
 
     @if ($num-vals <= 0) {
