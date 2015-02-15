@@ -10,6 +10,10 @@
 *.css.map
 Gemfile.lock
 
+# SassDoc
+.pages
+.sassdoc
+
 # Node Modules
 node_modules/grunt-newer/.cache
 

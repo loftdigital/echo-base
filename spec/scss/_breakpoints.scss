@@ -1,6 +1,6 @@
 
 $custom-breakpoints:(
-    custom: '200px'
+    custom: 200px
 );
 
 @import "../../app/scss/echo-base/defaults/breakpoints";
@@ -15,7 +15,7 @@ $custom-breakpoints:(
         $test: type-of(setup-breakpoints());
         $expect: map;
 
-        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps');
+        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps1');
     }
 
     // Has custom
@@ -23,9 +23,9 @@ $custom-breakpoints:(
     @include test('setup-breakpoints') {
         $result: setup-breakpoints();
         $test: map-get($result, custom);
-        $expect: '200px';
+        $expect: 200px;
 
-        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps');
+        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps2');
     }
 
     // Has keys
@@ -33,9 +33,9 @@ $custom-breakpoints:(
     @include test('setup-breakpoints') {
         $result: setup-breakpoints();
         $test: map-keys($result);
-        $expect: large, medium, small, custom;
-
-        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps');
+        $expect: large, medium, small, x-small, custom;
+        
+        @include assert-equal($test, $expect, 'Returns the sum of two numeric maps3');
     }
 
 }

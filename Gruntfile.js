@@ -88,7 +88,7 @@
                 },
                 dist: {
                     options: {
-                        outputStyle: 'compressed',
+                        outputStyle: 'expanded',
                     },
                     files: [{
                         expand: true,
@@ -115,6 +115,17 @@
                         dest: '<%= config.dist %>/css/',
                         ext: '.min.css'
                     }]
+                }
+            },
+
+            pixrem: {
+                options: {
+                    rootvalue: '100%',
+                    replace: true
+                },
+                dist: {
+                    src: 'dist/css/main.min.css',
+                    dest: 'dist/css/ie.min.css'
                 }
             },
 
@@ -157,17 +168,6 @@
                 }
             },
 
-            pixrem: {
-                options: {
-                    rootvalue: '100%',
-                    replace: true
-                },
-                dist: {
-                    src: 'dist/css/main.min.css',
-                    dest: 'dist/css/ie.min.css'
-                }
-            }
-
         });
 
         // Do image related tasks
@@ -178,6 +178,9 @@
 
         // Do Sass related tasks
         grunt.registerTask('do-sass', ['scsslint', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie']);
+
+        // Run a dev task for all options except sass lint
+        grunt.registerTask('dev', ['do-img', 'do-js', 'sass:dist', 'autoprefixer:all', 'notify:sass', 'do-ie'] );
 
         // Do IE8 Legacy specific tasks
         grunt.registerTask('do-ie', ['pixrem']);

@@ -27,7 +27,52 @@
         $flow: max-width;
     }
 
-    @media ($flow: break($key)) {
+    @media (#{$flow}: breakpoint($key)) {
         @content;
+    }
+}
+
+
+
+@mixin text-size($element, $breakpoint-name: 'small') {
+    $element-properties: text-properties-for($element, $breakpoint-name);
+
+    @if $element-properties != false {
+
+        // runs through each key, value map to include all values you may have specified for a certain size.
+        @each $key, $value in $element-properties {
+            #{$key}: #{$value};
+        }
+
+    } @else {
+
+        // the breakpoint has no defined properties which to parse
+        @warn "Breakpoint '#{$breakpoint-name}' for <'#{$element}'> is not defined";
+    }
+}
+
+@mixin responsive-text-size($element, $default-size: 'default') {
+
+    @include text-size($element, $default-size);
+
+    $element-breakpoints-map: text-breakpoints-for($element);
+    $element-breakpoints-keys: order-breakpoints();
+
+    @each $breakpoint-name in $element-breakpoints-keys {
+
+        @if $breakpoint-name != $default-size {
+
+            @if breakpoint($breakpoint-name) != false {
+
+                //need to check if breakpoint exists here.
+                @include breakpoint($breakpoint-name) {
+
+                    @include text-size($element, $breakpoint-name);
+                }
+            } @else {
+
+                @warn "Text size '#{$breakpoint-name}' for <'#{$element}'> was skipped as breakpoint: '#{$breakpoint-name}' doesn't exist "
+            }
+        }
     }
 }
