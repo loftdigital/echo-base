@@ -50,7 +50,7 @@ $custom-breakpoints: (
 ///
 /// @group Tests
 
-@mixin breakpoints__return-map() {
+@mixin breakpoints-return-map() {
 
     @include test('setup-breakpoints') {
         // Values to compare
