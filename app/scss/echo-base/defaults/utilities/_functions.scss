@@ -36,6 +36,12 @@
 //  1. Setup breakpoints
 //==============================================================================
 
+/// $breakpoints will hold the result of the merge between the default breakpoints
+/// map in breakpoints.scss and the custom breakpoints map from settings.scss.
+///
+/// @group Breakpoints
+/// @type Map
+
 $breakpoints: ();
 
 /// This function will check to see if custom breakpoints have been specified
@@ -48,6 +54,7 @@ $breakpoints: ();
 /// returned.
 ///
 /// @access private
+/// @group Breakpoints
 /// @return {Map}
 
 @function setup-breakpoints() {
@@ -74,6 +81,7 @@ $breakpoints: ();
 /// key's value else it returns a sass warning.
 ///
 /// @access private
+/// @group Breakpoints
 /// @param {String} $key - Breakpoint map key
 /// @return {Map}
 
@@ -111,6 +119,7 @@ $breakpoints: ();
 /// ordered list.
 ///
 /// @access private
+/// @group Breakpoints
 /// @return {List}
 
 @function order-breakpoints() {
@@ -158,6 +167,7 @@ $breakpoints: ();
 /// returned.
 ///
 /// @access private
+/// @group Palettes
 /// @return {Map}
 
 @function setup-palettes() {
@@ -187,6 +197,7 @@ $breakpoints: ();
 /// Retrieves the palette and the specified tone from the global palettes map
 ///
 /// @access public
+/// @group Palettes
 /// @param {String} $palette - Palette name
 /// @param {String} $tone ['base'] - Palette tone
 /// @return {Map}
@@ -221,6 +232,9 @@ $breakpoints: ();
 
 /// A variable used throughout our functions file. It will hold the merged
 /// responsive text maps.
+///
+/// @group Responsive Typography
+/// @type Map
 
 $responsive-text-map: ();
 
@@ -235,6 +249,7 @@ $responsive-text-map: ();
 /// then this function call merge-responsive-maps to perform the merge.
 ///
 /// @access private
+/// @group Responsive Typography
 /// @param {String} $element - element name
 /// @return {Map}
 
@@ -282,6 +297,7 @@ $responsive-text-map: ();
 /// merged map.
 ///
 /// @access private
+/// @group Responsive Typography
 /// @return {Map}
 
 @function merge-responsive-maps() {
@@ -323,6 +339,7 @@ $responsive-text-map: ();
 /// defaults map and the custom map if used.
 ///
 /// @access private
+/// @group Responsive Typography
 /// @param {String} $element - element to pull properties for
 /// @return {Map}
 
@@ -347,6 +364,7 @@ $responsive-text-map: ();
 /// properties.
 ///
 /// @access private
+/// @group Responsive Typography
 /// @param {String} $element - element name
 /// @param {String} $breakpoint-name - name of the specified breakpoint
 /// @return {Map}
@@ -373,7 +391,9 @@ $responsive-text-map: ();
 //==============================================================================
 
 /// Strips the units from the passed in value
+///
 /// @access private
+/// @group Helpers
 /// @param {String} $value - Value to be stripped of unit
 /// @return {Int}
 
@@ -387,7 +407,9 @@ $responsive-text-map: ();
 //==============================================================================
 
 /// Appends the rem unit to the passed in value
+///
 /// @access private
+/// @group Helpers
 /// @param {Int} $value - Value to append rem unit to
 /// @return {String} - returns the value as a rem unit
 
@@ -407,7 +429,9 @@ $responsive-text-map: ();
 //==============================================================================
 
 /// Turns a pixel unit into a rem unit by using the base-font-size
+///
 /// @access public
+/// @group Helpers
 /// @param {List|Int|String} $values - Values to remify
 /// @param {Int} $rem-base [$base-font-size] - REM base font size
 /// @return {Int}
