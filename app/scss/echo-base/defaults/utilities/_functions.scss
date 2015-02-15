@@ -96,7 +96,7 @@ $breakpoints: ();
     @if (map-has-key($breakpoints, $key)) {
         @return map-get($breakpoints, $key);
     } @else {
-        @warn "Breakpoint '#{$key}' doesn't exist!";
+        @warn "Breakpoint '#{$key}' doesn\'t exist!";
         @return false;
     }
 
@@ -217,11 +217,11 @@ $breakpoints: ();
         @if (map-has-key($color, $tone)) {
             @return map-get($color, $tone);
         } @else {
-            @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
+            @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
         }
 
     } @else {
-        @warn "Palette '#{$palette}' doesn't exist!";
+        @warn "Palette '#{$palette}' doesn\'t exist!";
     }
 
 }
@@ -358,7 +358,7 @@ $responsive-text-map: ();
     @if (map-has-key($responsive-text, $element)) {
         @return map-get($responsive-text, $element);
     } @else {
-        @warn "'<#{$element}>' doesn't exist in the reponsive text map";
+        @warn "'<#{$element}>' doesn\'t exist in the reponsive text map";
     }
 
 }
