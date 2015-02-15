@@ -34,7 +34,7 @@
 
 
 
-@mixin text-size($element, $breakpoint-name: 'small') {
+@mixin text-size($element, $breakpoint-name: 'default') {
     $element-properties: text-properties-for($element, $breakpoint-name);
 
     @if $element-properties != false {
@@ -64,10 +64,24 @@
 
             @if breakpoint($breakpoint-name) != false {
 
-                //need to check if breakpoint exists here.
                 @include breakpoint($breakpoint-name) {
 
-                    @include text-size($element, $breakpoint-name);
+                    @if $mobile-first == true {
+
+                        @if index($element-breakpoints-keys, $breakpoint-name) == length($element-breakpoints-keys) {
+
+                            @include text-size($element, $breakpoint-name);
+
+                        } @else {
+                            $pos: index($element-breakpoints-keys, $breakpoint-name) + 1;
+                            @include text-size($element, nth($element-breakpoints-keys, $pos));
+                        }
+
+                    } @else {
+
+                        @include text-size($element, $breakpoint-name);
+                    }
+
                 }
             } @else {
 
