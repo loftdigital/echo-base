@@ -58,11 +58,13 @@ $breakpoints: ();
 /// @return {Map}
 
 @function setup-breakpoints() {
+
     @if (length($custom-breakpoints) > 0) {
         @return map-merge($default-breakpoints, $custom-breakpoints);
     } @else {
         @return $default-breakpoints;
     }
+
 }
 
 
@@ -97,6 +99,7 @@ $breakpoints: ();
         @warn "Breakpoint '#{$key}' doesn't exist!";
         @return false;
     }
+
 }
 
 
@@ -139,6 +142,7 @@ $breakpoints: ();
                     $current-highest: $value;
                     $current-value: $key;
                 }
+
             }
 
         }
@@ -173,6 +177,7 @@ $breakpoints: ();
 /// @return {Map}
 
 @function setup-palettes() {
+    // Create an empty map holder
     $palettes: ();
 
     // Include if custom palettes are in use
@@ -207,7 +212,6 @@ $breakpoints: ();
     $palettes: setup-palettes();
 
     @if (map-has-key($palettes, $palette)) {
-
         $color: map-get($palettes, $palette);
 
         @if (map-has-key($color, $tone)) {
@@ -219,6 +223,7 @@ $breakpoints: ();
     } @else {
         @warn "Palette '#{$palette}' doesn't exist!";
     }
+
 }
 
 
@@ -319,9 +324,11 @@ $responsive-text-map: ();
             $new-map: ($key: $value);
             $responsive-text-map: map-merge($responsive-text-map, $new-map);
         }
+
     }
 
     @return $responsive-text-map;
+
 }
 
 
@@ -353,6 +360,7 @@ $responsive-text-map: ();
     } @else {
         @warn "'<#{$element}>' doesn't exist in the reponsive text map";
     }
+
 }
 
 
@@ -378,6 +386,7 @@ $responsive-text-map: ();
     } @else {
         @return false;
     }
+
 }
 
 
@@ -421,6 +430,7 @@ $responsive-text-map: ();
     } @else {
         @return $value / strip-unit($rem-base) * 1rem;
     }
+
 }
 
 
@@ -444,7 +454,6 @@ $responsive-text-map: ();
         @warn 'You need to supply at least one value to rem-calc';
 
     } @else if ($num-vals == 1) {
-
         $val: nth($values, 1);
 
         @return remify($val, $rem-base);
@@ -462,4 +471,5 @@ $responsive-text-map: ();
 
         @return $rem-values;
     }
+
 }
