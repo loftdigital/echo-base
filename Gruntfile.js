@@ -98,6 +98,9 @@
                         ext: '.min.css'
                     }]
                 },
+                test: {
+                    files: {'spec/scss/results.css':'spec/scss/test.scss'}
+                }
             },
 
             autoprefixer: {

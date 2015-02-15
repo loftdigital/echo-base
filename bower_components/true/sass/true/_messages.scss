@@ -1,0 +1,53 @@
+// Messages
+// ========
+
+$-tnl: "\a ";
+
+
+// Return a CSS selector for the current context
+@function _true-selector(
+  $scope
+) {
+  $selector: null;
+
+  @each $layer in $scope {
+    $this: '[data-#{$layer}="#{_true-context($layer)}"]';
+    $selector: if($selector, '#{$selector} #{$this}', $this);
+  }
+
+  @return $selector;
+}
+
+
+// Output a spacer comment
+@mixin _true-spacer() {
+/*
+*/
+}
+
+
+// Output a message to CSS, Terminal, or Comments
+@mixin _true-message(
+  $message,
+  $output: comments
+) {
+  $lines: _true-str-split($message, $-tnl);
+  @if index($output, comments) {
+    @each $line in $lines {
+      /* #{$line} */
+    }
+  } @else if index($output, debug) or index($output, terminal) {
+    @each $line in $lines  {
+      @debug $line;
+    }
+  } @else if index($output, warn) {
+    @warn $message;
+    @each $line in $lines {
+      @if index($lines, $line) == length($lines) {
+        @warn $line;
+      } @else {
+        @debug $line;
+      }
+    }
+  }
+}

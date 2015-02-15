@@ -19,5 +19,8 @@
   "dependencies": {
     "susy": "~>2.2.1",
     "normalize.css": "~>3.0.2"
+  },
+  "devDependencies": {
+    "true": "2.0.0.beta.1"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "name": "true",
+  "main": "sass/_true.scss",
+  "description": "Unit testing for Sass.",
+  "authors": [
+    "Eric Suzanne <eric@oddbird.net>",
+    "Scott Davis <me@sdavis.info>",
+    "Chris Eppstein <chris@eppsteins.net>"
+  ],
+  "homepage": "http://ericsuzanne.com/true",
+  "keywords": [
+    "unit-test",
+    "test",
+    "sass",
+    "libsass",
+    "TDD"
+  ],
+  "license": "BSD-3-Clause",
+  "ignore": [
+    "**/.*",
+    "bin/",
+    "*.json",
+    "*.gemspec",
+    "test",
+    "Rakefile"
+  ],
+  "_release": "2.0.0.beta.1",
+  "_resolution": {
+    "type": "tag",
+    "tag": "2.0.0.beta.1",
+    "commit": "468633f8a620df8af970f088b627ef19317a0e24"
+  },
+  "_source": "git://github.com/ericam/true.git",
+  "_target": "2.0.0.beta.1",
+  "_originalSource": "true"
+}

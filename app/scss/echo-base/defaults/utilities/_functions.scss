@@ -174,6 +174,7 @@ $breakpoints: ();
 
     $palettes: ();
 
+
     // Include if custom palettes are in use
     @if (length($custom-palettes) > 0) {
         $palettes: map-merge($default-palettes, $custom-palettes);
@@ -269,7 +270,6 @@ $responsive-text-map: ();
         }
 
     } @else {
-
         @return $responsive-text-defaults;
     }
 }
@@ -306,7 +306,7 @@ $responsive-text-map: ();
 
         @if map-has-key($responsive-text-custom, $key) {
 
-            //assign the defaults map value of the same name to a new map with the key test
+            // Assign the defaults map value of the same name to a new map with the key test
             // if we were to merge two maps with the same key they would overwrite, this way we can be sure that the map will merge
             $existing-map: (test: map-get($responsive-text-defaults, $key));
             $new-map: ($key: map-merge(map-get($existing-map, test), map-get($responsive-text-custom, $key)));
