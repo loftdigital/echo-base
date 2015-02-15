@@ -1,6 +1,22 @@
 True Changelog
 ==============
 
+2.0 (unreleased)
+----------------
+- Improve internal logic, and namespace private functions behind `_true-*`.
+- Add `assert()`, `input`, and `expect` mixins for testing CSS output.
+- Support for LibSass.
+- Add Mocha JS integration.
+— Create NPM package.
+- Simplify output options down to single `$true-terminal-output` setting.
+  Defaults to `false` (required for libsass).
+
+
+1.0.1 (10/18/14)
+----------------
+- LibSass 3.0 compatability.
+
+
 1.0.0 (10/3/14)
 ---------------
 - Add command-line interface: `true-cli <path-to-file>`

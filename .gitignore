@@ -18,3 +18,6 @@ dist/img/*
 dist/js/*
 dist/css/*
 dist/index-old.html
+
+# Tests
+spec/scss/results.css

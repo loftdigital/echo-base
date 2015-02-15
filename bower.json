@@ -21,6 +21,6 @@
     "normalize.css": "~>3.0.2"
   },
   "devDependencies": {
-    "true": "~1.0.1"
+    "true": "2.0.0.beta.1"
   }
 }

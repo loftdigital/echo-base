@@ -34,16 +34,21 @@ bower install true
 Command Line
 ------------
 
-`true-cli [options] PATH`
+_This command-line tool uses Ruby
+and the Ruby Sass compiler._
+
+```bash
+true-cli [options] PATH
+```
 
 Options:
-* `-s` slient
+* `-s` silent
 * `-c` config file
 * `-d` debug config file settings
 
 Config file (optional):
 
-``` yaml
+```yaml
 options:
   color: true #enables colored output
 
@@ -74,7 +79,7 @@ Usage
       'Returns the sum of two numeric maps');
   }
 
-  @include test('Strict Equal [function]') {
+  @include test('Is Equal [function]') {
     $test: is-equal(1, 1rem);
     @include assert-equal($test, false,
       'Returns false for equal numbers with different units.');
@@ -84,20 +89,19 @@ Usage
       'Returns true for numbers that are truely equal.');
   }
 }
+
+@include report;
 ```
 
-**True** will report to both the terminal
-and an output css file by default.
+Settings
+--------
 
-Here's a sample of the CSS output:
+There is only one setting:
+`$true-terminal-output`
+toggles output to the terminal on and off.
 
-```css
-/* ### Utilities ---------- */
-/* - Map Add [function] (1 Assertions, 1 Passed, 0 Failed) */
-/* - Strict Equal [function] (2 Assertions, 2 Passed, 0 Failed) */
-/*
-*/
-/* 2 Tests: */
-/*  - 2 Passed */
-/*  - 0 Failed */
-```
+- `true` will display a final summary of your test results in the terminal,
+  and show detailed information on failing assertions.
+  *Required for `true-cli`.*
+- `false` to turn off all terminal output.
+  *Required for Libsass.*
