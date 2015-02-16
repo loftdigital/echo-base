@@ -1,5 +1,23 @@
 //==============================================================================
-//  Custom dependacies
+//
+//  spec/scss/utilities/_palettes.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+//  Custom test dependencies
 //==============================================================================
 
 $custom-palette-base: rgb(255, 0, 0);
@@ -14,16 +32,16 @@ $custom-palettes: (
 
 
 //==============================================================================
-//  Palette dependancies
+//  Function/mixin dependencies
 //==============================================================================
 
-@import "../../app/scss/echo-base/defaults/palettes";
+@import "../../../app/scss/echo-base/defaults/palettes";
 
 
 
 
 //==============================================================================
-//  Palette functions
+//  Build tests
 //==============================================================================
 
 //  Setup palettes - setup-palettes()
@@ -33,7 +51,7 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__01-return-map() {
+@mixin palettes-return-map() {
 
     @include test('setup-palettes') {
         // Values to compare
@@ -52,7 +70,7 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__02-has-custom-key() {
+@mixin palettes-has-custom-key() {
 
     @include test('setup-palettes') {
         // Setup
@@ -74,10 +92,9 @@ $custom-palettes: (
 ///
 /// @group Tests
 
-@mixin setup-palettes__03-return-custom-value() {
+@mixin palettes-return-custom-value() {
 
     @include test('setup-palettes') {
-
         // Setup
         $palettes: setup-palettes();
         $custom-color: map-get($palettes, custom-palette);
@@ -88,18 +105,22 @@ $custom-palettes: (
 
         @include assert-equal($test, $expect, 'Returns a custom palette value');
     }
+
 }
 
 
 
 //==============================================================================
-//  Tests
+//  Run tests
+//==============================================================================
+
+//  Setup palettes - setup-palettes()
 //==============================================================================
 
 @include test-module('Setup palettes') {
 
-    @include setup-palettes__01-return-map;
-    @include setup-palettes__02-has-custom-key;
-    @include setup-palettes__03-return-custom-value;
+    @include palettes-return-map();
+    @include palettes-has-custom-key();
+    @include palettes-return-custom-value();
 
 }

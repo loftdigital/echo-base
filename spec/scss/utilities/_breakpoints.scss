@@ -1,0 +1,148 @@
+//==============================================================================
+//
+//  spec/scss/utilities/_breakpoints.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+//  Custom test dependencies
+//==============================================================================
+
+$custom-breakpoint-key: custom-breakpoint;
+$custom-breakpoint-value: 200px;
+
+$custom-breakpoints: (
+    $custom-breakpoint-key: $custom-breakpoint-value
+);
+
+
+
+
+//==============================================================================
+//  Function/mixin dependencies
+//==============================================================================
+
+@import "../../../app/scss/echo-base/defaults/breakpoints";
+
+
+
+
+//==============================================================================
+// Build tests
+//==============================================================================
+
+// Setup breakpoints - setup-breakpoints()
+//==============================================================================
+
+/// Test if setup-breakpoints() returns an object of type map
+///
+/// @group Tests
+
+@mixin breakpoints-return-map() {
+
+    @include test('setup-breakpoints') {
+        // Values to compare
+        $test: type-of(setup-breakpoints());
+        $expect: map;
+
+        @include assert-equal($test, $expect, 'Returns a map');
+    }
+
+}
+
+
+
+/// Test if setup-breakpoints() successfully merges the default and custom
+/// palette maps by checking for the existance of a custom key
+///
+/// @group Tests
+
+@mixin breakpoints-has-custom-key() {
+
+    @include test('setup-breakpoints') {
+        // Setup
+        $breakpoints-map: setup-breakpoints();
+
+        // Values to compare
+        $test: map-has-key($breakpoints-map, custom-breakpoint);
+        $expect: true;
+
+        @include assert-equal($test, $expect, 'Returns a merged map of default & custom breakpoints');
+    }
+
+}
+
+
+
+/// Test if setup-breakpoints() successfully merges the default and custom
+/// palette maps by checking the value of a custom key
+///
+/// @group Tests
+
+@mixin breakpoints-return-custom-value() {
+
+    @include test('setup-breakpoints') {
+        // Setup
+        $breakpoints-map: setup-breakpoints();
+
+        // Values to compare
+        $test: map-get($breakpoints-map, $custom-breakpoint-key);
+        $expect: $custom-breakpoint-value;
+
+        @include assert-equal($test, $expect, 'Returns a custom breakpoint value');
+    }
+
+}
+
+
+
+/// Test if setup-breakpoints() returns a list compromised of both default and
+/// custom map keys
+///
+/// @group Tests
+
+@mixin breakpoints-return-merged-key-list() {
+
+    @include test('setup-breakpoints') {
+        // Setup
+        $breakpoints-map: setup-breakpoints();
+
+        // Values to compare
+        $test: map-keys($breakpoints-map);
+        $expect: large, medium, small, x-small, custom-breakpoint;
+
+        @include assert-equal($test, $expect, 'Returns a list of the default and custom breakpoints');
+    }
+
+}
+
+
+
+
+//==============================================================================
+// Build tests
+//==============================================================================
+
+// Setup breakpoints - setup-breakpoints()
+//==============================================================================
+
+@include test-module('Setup breakpoints') {
+
+    @include breakpoints-return-map();
+    @include breakpoints-has-custom-key();
+    @include breakpoints-return-custom-value();
+    @include breakpoints-return-merged-key-list();
+
+}
