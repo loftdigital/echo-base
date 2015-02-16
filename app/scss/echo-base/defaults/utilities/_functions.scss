@@ -102,7 +102,7 @@ $breakpoints: ();
     @if (map-has-key($breakpoints, $key)) {
         @return map-get($breakpoints, $key);
     } @else {
-        @warn "Breakpoint '#{$key}' doesn\'t exist!";
+        @warn "Breakpoint '#{$key}' doesn't exist!";
         @return false;
     }
 
