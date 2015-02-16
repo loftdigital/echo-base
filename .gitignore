@@ -13,6 +13,7 @@ Gemfile.lock
 # SassDoc
 .pages
 .sassdoc
+sassdoc
 
 # Node Modules
 node_modules/grunt-newer/.cache
