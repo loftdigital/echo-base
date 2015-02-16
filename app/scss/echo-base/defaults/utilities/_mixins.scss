@@ -194,7 +194,7 @@
 //==============================================================================
 
 /// Used to retrieve properties for certain echo-base responsive elements such as
-/// <h1> at certain determined sizes. By default each of these elements has certain
+/// h1 at certain determined sizes. By default each of these elements has certain
 /// responsive properties specified at each of the default breakpoints. These can be
 /// extended uisng the responsive-text-custom map and breakpoint maps in settings.scss
 ///
@@ -302,6 +302,7 @@
 ///     .block {
 ///       font-size: 5.625rem;
 ///       line-height: 1.05; } }
+
 @mixin responsive-text-size($element, $default-size: 'default') {
 
     @include text-size($element, $default-size);
