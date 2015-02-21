@@ -15,7 +15,8 @@
         minifyCSS = require('gulp-minify-css'),
         imagemin = require('gulp-imagemin'),
         pixrem = require('gulp-pixrem'),
-        sourcemaps = require('gulp-sourcemaps'),
+        jshint = require('gulp-jshint'),
+        //sourcemaps = require('gulp-sourcemaps'),
         notify = require('gulp-notify');
 
     gulp.task('default', function() {
@@ -61,6 +62,13 @@
             .pipe(notify({
                 message: 'Styles task complete'
             }));
+    });
+
+    gulp.task('scripts', function() {
+        gulp.src(config.app + '/js/**/*.js')
+            .pipe(jshint())
+            .pipe(jshint.reporter('jshint-stylish'))
+            .pipe(jshint.reporter('fail'))
     });
 
     gulp.task('images', function() {
