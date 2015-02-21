@@ -14,8 +14,11 @@ Gemfile.lock
 .pages
 .sassdoc
 
-# Node Modules
+
+# Node modules
 node_modules/*
+
+# Bower components
 bower_components/*
 
 # Dist structure
