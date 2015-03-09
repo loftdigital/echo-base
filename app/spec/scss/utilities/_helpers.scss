@@ -1,0 +1,98 @@
+//==============================================================================
+//
+//  spec/scss/utilities/_helpers.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+//==============================================================================
+//  Custom test dependencies
+//==============================================================================
+
+$base-font-size: 16px;
+
+
+
+//==============================================================================
+//  Function/mixin dependencies
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  Build tests
+//==============================================================================
+
+//  REM calculator - rem-calc()
+//==============================================================================
+
+/// Test if rem-calc() returns an object of type map
+///
+/// @group Tests
+
+@mixin rem-calc-returns-correct-value() {
+
+    @include test('rem-calc') {
+
+        // Values to compare
+        $test: rem-calc(16px);
+        $expect: 1rem;
+
+        @include assert-equal($test, $expect, 'Returns a correct value');
+    }
+}
+
+@mixin rem-calc-returns-correct-value-half() {
+
+    @include test('rem-calc') {
+
+        // Values to compare
+        $test: rem-calc(8px);
+        $expect: 0.5rem;
+
+        @include assert-equal($test, $expect, 'Returns a correct value');
+    }
+
+}
+
+@mixin rem-calc-returns-correct-value-one-and-a-half() {
+
+    @include test('rem-calc') {
+
+        // Values to compare
+        $test: rem-calc(24px);
+        $expect: 1.5rem;
+
+        @include assert-equal($test, $expect, 'Returns a correct value');
+    }
+
+}
+
+
+
+//==============================================================================
+//  Run tests
+//==============================================================================
+
+//  Setup palettes - setup-palettes()
+//==============================================================================
+
+@include test-module('Test rem-calc') {
+
+    @include rem-calc-returns-correct-value();
+    @include rem-calc-returns-correct-value-half();
+    @include rem-calc-returns-correct-value-one-and-a-half();
+
+}
