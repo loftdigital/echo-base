@@ -8,6 +8,8 @@
 //  a. Breakpoints
 //      1. Setup breakpoints
 //      2. Get breakpoint
+//      3. Order Breakpoints by size
+//      4. Check Mobile Breakpoints
 //  b. Palette
 //      1. Setup palettes
 //      2. Get palette
@@ -30,6 +32,7 @@
 ///
 /// @group Global
 /// @type String
+
 $global-page-font-size: 16px !default;
 
 
@@ -113,8 +116,7 @@ $breakpoints: ();
 //  3. Order Breakpoints by size
 //==============================================================================
 
-/// Returns a sorted list of all the specified breakpoints
-/// currently in a descending format for desktop first implementation. This is
+/// Returns a sorted list of all the specified breakpoints. This is
 /// mostly required when specifying custom breakpoints as we need some way of
 /// ordering the custom and default breakpoints once they've been merged to a
 /// single map.
@@ -174,18 +176,18 @@ $breakpoints: ();
 
 
 
-//  3. Check Mobile Breakpoints
+//  4. Check Mobile Breakpoints
 //==============================================================================
 
+/// Returns a list of breakpoint keys where there is a corresponding responsive text
+/// map entry. For example if you create a custom breakpoint but don't specify
+/// how a h1 should respond to that in the $responsive-text-custom map in settings
+/// then you wouldn't want it to interfere with our default text sizing mixin.
 ///
-///
-/// It returns a list of all the breakpoint names specified which can then be used
-/// in list order to ensure that all breakpoints are called in the correct order.
-///
-/// The function loops through the breakpoint map to find the highest value, then
-/// it appends this key to the map-list. The process is repeated but if the key
-/// already exists in map-list() it is ignored. This provides us a descending
-/// ordered list.
+/// This is mainly used when $mobile-first is set to true as our default text ratios
+/// etc need to accommodate the change and work in a slightly different way without
+/// forcing the user to have to specify responsive text points for every breakpoint
+/// they may have specified.
 ///
 /// @access private
 /// @group Breakpoints
@@ -207,11 +209,13 @@ $breakpoints: ();
             }
         }
 
-    }@else {
-        @warn 'here outside #{$item}';
+        @return $temp-list;
+    } @else {
+
+        @return $ordered-breakpoint-keys;
+
     }
 
-    @return $temp-list;
 
 }
 
@@ -279,11 +283,11 @@ $breakpoints: ();
         @if (map-has-key($color, $tone)) {
             @return map-get($color, $tone);
         } @else {
-            @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
+            @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
         }
 
     } @else {
-        @warn "Palette '#{$palette}' doesn\'t exist!";
+        @warn "Palette '#{$palette}' doesn't exist!";
     }
 
 }
@@ -420,7 +424,7 @@ $responsive-text-map: ();
     @if (map-has-key($responsive-text, $element)) {
         @return map-get($responsive-text, $element);
     } @else {
-        @warn "'<#{$element}>' doesn\'t exist in the reponsive text map";
+        @warn "'<#{$element}>' doesn't exist in the reponsive text map";
     }
 
 }
@@ -557,21 +561,4 @@ $responsive-text-map: ();
         @return $rem-values;
     }
 
-}
-
-
-@function remove($list, $value, $recursive: false) {
-  $result: ();
-
-  @for $i from 1 through length($list) {
-    @if type-of(nth($list, $i)) == list and $recursive {
-      $result: append($result, remove(nth($list, $i), $value, $recursive));
-    }
-
-    @else if nth($list, $i) != $value {
-      $result: append($result, nth($list, $i));
-    }
-  }
-
-  @return $result;
 }
