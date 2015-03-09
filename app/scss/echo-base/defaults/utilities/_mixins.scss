@@ -305,10 +305,19 @@
 
 @mixin responsive-text-size($element, $default-size: 'default') {
 
-    @include text-size($element, $default-size);
-
     $element-breakpoints-map: text-breakpoints-for($element);
     $element-breakpoints-keys: order-breakpoints();
+
+
+    $element-breakpoints-keys: check-mobile-breakpoints($element, $element-breakpoints-keys);
+
+    @if $mobile-first == true {
+
+        $default-size: nth($element-breakpoints-keys, 1);
+
+    }
+
+    @include text-size($element, $default-size);
 
     @each $breakpoint-name in $element-breakpoints-keys {
 

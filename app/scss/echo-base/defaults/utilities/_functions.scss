@@ -174,6 +174,50 @@ $breakpoints: ();
 
 
 
+//  3. Check Mobile Breakpoints
+//==============================================================================
+
+///
+///
+/// It returns a list of all the breakpoint names specified which can then be used
+/// in list order to ensure that all breakpoints are called in the correct order.
+///
+/// The function loops through the breakpoint map to find the highest value, then
+/// it appends this key to the map-list. The process is repeated but if the key
+/// already exists in map-list() it is ignored. This provides us a descending
+/// ordered list.
+///
+/// @access private
+/// @group Breakpoints
+/// @return {List}
+
+@function check-mobile-breakpoints($element, $ordered-breakpoint-keys) {
+
+    $temp-list: ();
+    $temp-text-map: setup-responsive-text($element);
+
+    @if (map-has-key($temp-text-map, $element)) {
+
+        $element-map: map-get($temp-text-map, $element);
+
+        @each $item in $ordered-breakpoint-keys {
+
+            @if map-has-key($element-map, $item){
+                $temp-list: append($temp-list, $item);
+            }
+        }
+
+    }@else {
+        @warn 'here outside #{$item}';
+    }
+
+    @return $temp-list;
+
+}
+
+
+
+
 //==============================================================================
 //  b. Palettes
 //==============================================================================
@@ -513,4 +557,21 @@ $responsive-text-map: ();
         @return $rem-values;
     }
 
+}
+
+
+@function remove($list, $value, $recursive: false) {
+  $result: ();
+
+  @for $i from 1 through length($list) {
+    @if type-of(nth($list, $i)) == list and $recursive {
+      $result: append($result, remove(nth($list, $i), $value, $recursive));
+    }
+
+    @else if nth($list, $i) != $value {
+      $result: append($result, nth($list, $i));
+    }
+  }
+
+  @return $result;
 }
