@@ -23,8 +23,16 @@
 $custom-breakpoint-key: custom-breakpoint;
 $custom-breakpoint-value: 200px;
 
+$custom-breakpoint-key-small: custom-breakpoint-small;
+$custom-breakpoint-key-large: custom-breakpoint-large;
+
+$custom-breakpoint-small: 1px;
+$custom-breakpoint-large: 10000000px;
+
 $custom-breakpoints: (
-    $custom-breakpoint-key: $custom-breakpoint-value
+    $custom-breakpoint-key: $custom-breakpoint-value,
+    $custom-breakpoint-key-small: $custom-breakpoint-small,
+    $custom-breakpoint-key-large: $custom-breakpoint-large
 );
 
 
@@ -121,7 +129,7 @@ $custom-breakpoints: (
 
         // Values to compare
         $test: map-keys($breakpoints-map);
-        $expect: large, medium, small, x-small, custom-breakpoint;
+        $expect: large, medium, small, x-small, custom-breakpoint, custom-breakpoint-small, custom-breakpoint-large;
 
         @include assert-equal($test, $expect, 'Returns a list of the default and custom breakpoints');
     }
@@ -129,6 +137,78 @@ $custom-breakpoints: (
 }
 
 
+
+// Get Breakpoints - breakpoint()
+//==============================================================================
+
+// Test if breakpoint() will return the correct breakpoint value
+
+@mixin breakpoints-return-specified-value() {
+
+    @include test('breakpoint') {
+
+        $breakpoint: $custom-breakpoint-key;
+
+        $test: breakpoint($breakpoint);
+        $expect: $custom-breakpoint-value;
+
+        @include assert-equal($test, $expect, 'Return a breakpoint value from the breakpoint map');
+
+    }
+
+}
+
+
+// Test if breakpoint() will return false if a breakpoint that doesn't exist
+// is specified.
+
+@mixin breakpoints-return-false() {
+    @include test('breakpoint') {
+
+        $breakpoint: 'non-existant-breakpoint';
+
+        $test: breakpoint($breakpoint);
+        $expect: false;
+
+        @include assert-equal($test, $expect, 'Returns false when encountering a non existant variable');
+    }
+}
+
+
+
+// Order Breakpoints - order-breakpoints
+//==============================================================================
+
+// Test if order-breakpoints will return a list of breakpoints in large-small list
+
+@mixin return-order-breakpoints-small() {
+    @include test('order-breakpoints') {
+
+        $breakpoints-list: order-breakpoints();
+
+        $test: index($breakpoints-list, $custom-breakpoint-key-small);
+        $expect: length($breakpoints-list);
+
+        @include assert-equal($test, $expect, 'Tests that the smallest breakpoint is first in the ordered breakpoint list');
+
+    }
+}
+
+
+// Test if order-breakpoints will return a list of breakpoints in large-small list
+
+@mixin return-order-breakpoints-large() {
+    @include test('order-breakpoints') {
+
+        $breakpoints-list: order-breakpoints();
+
+        $test: index($breakpoints-list, $custom-breakpoint-key-large);
+        $expect: 1;
+
+        @include assert-equal($test, $expect, 'Tests that the largest breakpoint is last in the ordered breakpoint list');
+
+    }
+}
 
 
 //==============================================================================
@@ -144,5 +224,19 @@ $custom-breakpoints: (
     @include breakpoints-has-custom-key();
     @include breakpoints-return-custom-value();
     @include breakpoints-return-merged-key-list();
+
+}
+
+@include test-module('breakpoint') {
+
+    @include breakpoints-return-specified-value();
+    @include breakpoints-return-false();
+
+}
+
+@include test-module('order-breakpoints') {
+
+    @include return-order-breakpoints-small();
+    @include return-order-breakpoints-large();
 
 }

@@ -13,6 +13,7 @@ Gemfile.lock
 # SassDoc
 .pages
 .sassdoc
+sassdoc
 
 
 # Node modules
@@ -28,4 +29,4 @@ dist/css/*
 dist/index-old.html
 
 # Tests
-spec/scss/results.css
+spec/scss/result

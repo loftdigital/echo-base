@@ -21,10 +21,9 @@
 
 
 //==============================================================================
-//  a. Import utilities
+//  a. Import mixins
 //==============================================================================
 
-@import 'utilities/functions';
 @import 'utilities/mixins';
 
 
@@ -43,8 +42,6 @@
 //  c. Import global defaults
 //==============================================================================
 
-@import 'breakpoints';
-@import 'palettes';
 @import 'typography';
 
 
