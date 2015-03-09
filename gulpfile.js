@@ -108,6 +108,7 @@
         gulp.src(config.app + '/scss/*.scss')
             .pipe(scsslint())
             .pipe(sass({
+                errLogToConsole: true,
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
                 sourceMap: true
@@ -121,7 +122,7 @@
                 suffix: '.min'
             }))
             .pipe(minifyCSS())
-            .pipe(size())
+            //.pipe(size())
             .pipe(gulp.dest(config.dist + '/css/'))
             .pipe(notify({
                 message: 'Styles task complete'
@@ -136,6 +137,7 @@
     gulp.task('old-ie', function() {
         gulp.src(config.app + '/scss/*.scss')
             .pipe(sass({
+                errLogToConsole: true,
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
                 sourceMap: true
@@ -176,7 +178,7 @@
             .pipe(gulp.dest(config.dist + '/js'))
             .pipe(rename({suffix: '.min'}))
             .pipe(uglify())
-            .pipe(size())
+            //.pipe(size())
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(config.dist + '/js'))
             .pipe(notify({
