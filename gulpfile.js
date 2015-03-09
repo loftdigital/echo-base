@@ -21,7 +21,8 @@
         livereload = require('gulp-livereload'),
         notify = require('gulp-notify'),
         size = require('gulp-size'),
-        del = require('del');
+        del = require('del'),
+        plumber = require('gulp-plumber');
 
 
 
@@ -106,9 +107,9 @@
 
     gulp.task('sass', function() {
         gulp.src(config.app + '/scss/*.scss')
+            .pipe(plumber())
             .pipe(scsslint())
             .pipe(sass({
-                errLogToConsole: true,
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
                 sourceMap: true
@@ -136,8 +137,8 @@
 
     gulp.task('old-ie', function() {
         gulp.src(config.app + '/scss/*.scss')
+            .pipe(plumber())
             .pipe(sass({
-                errLogToConsole: true,
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
                 sourceMap: true
@@ -168,6 +169,7 @@
 
     gulp.task('scripts', function() {
         gulp.src(config.app + '/js/**/*.js')
+            .pipe(plumber())
             .pipe(eslint({
                 useEslintrc: true
             }))
@@ -193,6 +195,7 @@
 
     gulp.task('images', function() {
         gulp.src(config.app + '/img/*')
+            .pipe(plumber())
             .pipe(imagemin({
                 progressive: true
             }))
