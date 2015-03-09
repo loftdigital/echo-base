@@ -128,6 +128,38 @@ $custom-breakpoints: (
 
 }
 
+// Test if breakpoint() will return the correct breakpoint value
+
+@mixin breakpoints-return-specified-value() {
+
+    @include test('breakpoints') {
+
+        $breakpoint: $custom-breakpoint-key;
+
+        $test: breakpoint($breakpoint);
+        $expect: $custom-breakpoint-value;
+
+        @include assert-equal($test, $expect, 'Return a breakpoint value from the breakpoint map');
+
+    }
+
+}
+
+
+// Test if breakpoint() will return false if a breakpoint that doesn't exist
+// is specified.
+
+@mixin breakpoints-return-false() {
+    @include test('breakpoints') {
+
+        $breakpoint: 'non-existant-breakpoint';
+
+        $test: breakpoint($breakpoint);
+        $expect: false;
+
+        @include assert-equal($test, $expect, 'Returns false when encountering a non existant variable');
+    }
+}
 
 
 
