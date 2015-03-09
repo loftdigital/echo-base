@@ -33,7 +33,7 @@
     var config = {
             app: './app',
             dist: './dist',
-            tests: './spec'
+            tests: './app/spec'
         };
 
 
