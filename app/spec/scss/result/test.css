@@ -57,8 +57,24 @@
   -result: PASS;
   -description: 'Returns a custom palette value'; }
 
+/* # Test rem-calc ---------- */
+/* rem-calc */
+[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+  -result: PASS;
+  -description: 'Returns a correct value'; }
+
+/* rem-calc */
+[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+  -result: PASS;
+  -description: 'Returns a correct value'; }
+
+/* rem-calc */
+[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+  -result: PASS;
+  -description: 'Returns a correct value'; }
+
 /* # SUMMARY ---------- */
-/* 11 Tests: */
-/*  - 11 Passed */
+/* 14 Tests: */
+/*  - 14 Passed */
 /*  - 0 Failed */
 /* -------------------- */
