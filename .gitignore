@@ -15,7 +15,8 @@ Gemfile.lock
 .sassdoc
 
 # Node Modules
-node_modules/grunt-newer/.cache
+node_modules/*
+bower_components/*
 
 # Dist structure
 dist/img/*
