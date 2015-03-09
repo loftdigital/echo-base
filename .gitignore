@@ -26,7 +26,6 @@ bower_components/*
 dist/img/*
 dist/js/*
 dist/css/*
-dist/index-old.html
 
 # Tests
 app/spec/scss/result
