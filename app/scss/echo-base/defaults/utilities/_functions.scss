@@ -306,7 +306,7 @@ $breakpoints: ();
 /// @group Responsive Typography
 /// @type Map
 
-$responsive-text-map: ();
+// $responsive-text-map: ();
 
 /// Checks to see if the responsive-text-custom map from settings.scss has any
 /// properties defined. If it does it looks to see if the default responsive text map
@@ -323,22 +323,22 @@ $responsive-text-map: ();
 /// @param {String} $element - element name
 /// @return {Map}
 
-@function setup-responsive-text($element) {
-
-    @if (length($responsive-text-custom) > 0) {
-
-        @if (map-has-key($responsive-text-map, $element)) {
-            @return $responsive-text-map;
-        } @else {
-            $repsonsive-text-map: merge-responsive-maps();
-            @return $repsonsive-text-map;
-        }
-
-    } @else {
-        @return $responsive-text-defaults;
-    }
-
-}
+// @function setup-responsive-text($element) {
+//
+//     @if (length($responsive-text-custom) > 0) {
+//
+//         @if (map-has-key($responsive-text-map, $element)) {
+//             @return $responsive-text-map;
+//         } @else {
+//             $repsonsive-text-map: merge-responsive-maps();
+//             @return $repsonsive-text-map;
+//         }
+//
+//     } @else {
+//         @return $responsive-text-defaults;
+//     }
+//
+// }
 
 
 
@@ -369,31 +369,31 @@ $responsive-text-map: ();
 /// @group Responsive Typography
 /// @return {Map}
 
-@function merge-responsive-maps() {
-
-    @each $key, $value in $responsive-text-defaults {
-
-        @if (map-has-key($responsive-text-custom, $key)) {
-
-            // Assign the defaults map value of the same name to a new map with
-            // the key test.
-
-            // If we were to merge two maps with the same key they would
-            // overwrite, this way we can be sure that the map will merge.
-
-            $existing-map: (test: map-get($responsive-text-defaults, $key));
-            $new-map: ($key: map-merge(map-get($existing-map, test), map-get($responsive-text-custom, $key)));
-            $responsive-text-map: map-merge($responsive-text-map, $new-map);
-        } @else {
-            $new-map: ($key: $value);
-            $responsive-text-map: map-merge($responsive-text-map, $new-map);
-        }
-
-    }
-
-    @return $responsive-text-map;
-
-}
+// @function merge-responsive-maps() {
+//
+//     @each $key, $value in $responsive-text-defaults {
+//
+//         @if (map-has-key($responsive-text-custom, $key)) {
+//
+//             // Assign the defaults map value of the same name to a new map with
+//             // the key test.
+//
+//             // If we were to merge two maps with the same key they would
+//             // overwrite, this way we can be sure that the map will merge.
+//
+//             $existing-map: (test: map-get($responsive-text-defaults, $key));
+//             $new-map: ($key: map-merge(map-get($existing-map, test), map-get($responsive-text-custom, $key)));
+//             $responsive-text-map: map-merge($responsive-text-map, $new-map);
+//         } @else {
+//             $new-map: ($key: $value);
+//             $responsive-text-map: map-merge($responsive-text-map, $new-map);
+//         }
+//
+//     }
+//
+//     @return $responsive-text-map;
+//
+// }
 
 
 
@@ -416,16 +416,16 @@ $responsive-text-map: ();
 /// @param {String} $element - element to pull properties for
 /// @return {Map}
 
-@function text-breakpoints-for($element) {
-    $responsive-text: setup-responsive-text($element);
-
-    @if (map-has-key($responsive-text, $element)) {
-        @return map-get($responsive-text, $element);
-    } @else {
-        @warn "'<#{$element}>' doesn't exist in the reponsive text map";
-    }
-
-}
+// @function text-breakpoints-for($element) {
+//     $responsive-text: setup-responsive-text($element);
+//
+//     @if (map-has-key($responsive-text, $element)) {
+//         @return map-get($responsive-text, $element);
+//     } @else {
+//         @warn "'<#{$element}>' doesn't exist in the reponsive text map";
+//     }
+//
+// }
 
 
 
@@ -441,17 +441,17 @@ $responsive-text-map: ();
 /// @param {String} $element - element name
 /// @param {String} $breakpoint-name - name of the specified breakpoint
 /// @return {Map}
-
-@function text-properties-for($element, $breakpoint-name) {
-    $element-breakpoints: text-breakpoints-for($element);
-
-    @if (map-has-key($element-breakpoints, $breakpoint-name)) {
-        @return map-get($element-breakpoints, $breakpoint-name);
-    } @else {
-        @return false;
-    }
-
-}
+//
+// @function text-properties-for($element, $breakpoint-name) {
+//     $element-breakpoints: text-breakpoints-for($element);
+//
+//     @if (map-has-key($element-breakpoints, $breakpoint-name)) {
+//         @return map-get($element-breakpoints, $breakpoint-name);
+//     } @else {
+//         @return false;
+//     }
+//
+// }
 
 
 
@@ -468,13 +468,13 @@ $responsive-text-map: ();
 /// @param {Int} $base-ratio - default x-small ratio
 /// @return {Int}
 
-@function calc-ratio($ratio, $base-ratio) {
-    @if ($mobile-first == true) {
-        @return $ratio / $base-ratio;
-    } @else {
-        @return $ratio;
-    }
-}
+// @function calc-ratio($ratio, $base-ratio) {
+//     @if ($mobile-first == true) {
+//         @return $ratio / $base-ratio;
+//     } @else {
+//         @return $ratio;
+//     }
+// }
 
 
 

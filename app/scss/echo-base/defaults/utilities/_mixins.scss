@@ -218,22 +218,22 @@
 ///    line-height: 1.05;
 /// }
 
-@mixin text-size($element, $breakpoint-name: 'default') {
-    $element-properties: text-properties-for($element, $breakpoint-name);
-
-    @if $element-properties != false {
-
-        // runs through each key, value map to include all values you may have specified for a certain size.
-        @each $key, $value in $element-properties {
-            #{$key}: #{$value};
-        }
-
-    } @else {
-
-        // the breakpoint has no defined properties which to parse
-        @warn "Breakpoint '#{$breakpoint-name}' for <'#{$element}'> is not defined";
-    }
-}
+// @mixin text-size($element, $breakpoint-name: 'default') {
+//     $element-properties: text-properties-for($element, $breakpoint-name);
+//
+//     @if $element-properties != false {
+//
+//         // runs through each key, value map to include all values you may have specified for a certain size.
+//         @each $key, $value in $element-properties {
+//             #{$key}: #{$value};
+//         }
+//
+//     } @else {
+//
+//         // the breakpoint has no defined properties which to parse
+//         @warn "Breakpoint '#{$breakpoint-name}' for <'#{$element}'> is not defined";
+//     }
+// }
 
 
 
@@ -303,51 +303,51 @@
 ///       font-size: 5.625rem;
 ///       line-height: 1.05; } }
 
-@mixin responsive-text-size($element, $default-size: 'default') {
-
-    $element-breakpoints-map: text-breakpoints-for($element);
-    $element-breakpoints-keys: order-breakpoints();
-
-
-    $element-breakpoints-keys: check-mobile-breakpoints($element, $element-breakpoints-keys);
-
-    @if $mobile-first == true {
-
-        $default-size: nth($element-breakpoints-keys, 1);
-
-    }
-
-    @include text-size($element, $default-size);
-
-    @each $breakpoint-name in $element-breakpoints-keys {
-
-        @if $breakpoint-name != $default-size {
-
-            @if breakpoint($breakpoint-name) != false {
-
-                @include breakpoint($breakpoint-name) {
-
-                    @if $mobile-first == true {
-
-                        @if index($element-breakpoints-keys, $breakpoint-name) == length($element-breakpoints-keys) {
-
-                            @include text-size($element, $breakpoint-name);
-
-                        } @else {
-                            $pos: index($element-breakpoints-keys, $breakpoint-name) + 1;
-                            @include text-size($element, nth($element-breakpoints-keys, $pos));
-                        }
-
-                    } @else {
-
-                        @include text-size($element, $breakpoint-name);
-                    }
-
-                }
-            } @else {
-
-                @warn "Text size '#{$breakpoint-name}' for <'#{$element}'> was skipped as breakpoint: '#{$breakpoint-name}' doesn't exist "
-            }
-        }
-    }
-}
+// @mixin responsive-text-size($element, $default-size: 'default') {
+//
+//     $element-breakpoints-map: text-breakpoints-for($element);
+//     $element-breakpoints-keys: order-breakpoints();
+//
+//
+//     $element-breakpoints-keys: check-mobile-breakpoints($element, $element-breakpoints-keys);
+//
+//     @if $mobile-first == true {
+//
+//         $default-size: nth($element-breakpoints-keys, 1);
+//
+//     }
+//
+//     @include text-size($element, $default-size);
+//
+//     @each $breakpoint-name in $element-breakpoints-keys {
+//
+//         @if $breakpoint-name != $default-size {
+//
+//             @if breakpoint($breakpoint-name) != false {
+//
+//                 @include breakpoint($breakpoint-name) {
+//
+//                     @if $mobile-first == true {
+//
+//                         @if index($element-breakpoints-keys, $breakpoint-name) == length($element-breakpoints-keys) {
+//
+//                             @include text-size($element, $breakpoint-name);
+//
+//                         } @else {
+//                             $pos: index($element-breakpoints-keys, $breakpoint-name) + 1;
+//                             @include text-size($element, nth($element-breakpoints-keys, $pos));
+//                         }
+//
+//                     } @else {
+//
+//                         @include text-size($element, $breakpoint-name);
+//                     }
+//
+//                 }
+//             } @else {
+//
+//                 @warn "Text size '#{$breakpoint-name}' for <'#{$element}'> was skipped as breakpoint: '#{$breakpoint-name}' doesn't exist "
+//             }
+//         }
+//     }
+// }
