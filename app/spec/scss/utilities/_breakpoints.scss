@@ -175,42 +175,6 @@ $custom-breakpoints: (
 }
 
 
-
-// Order Breakpoints - order-breakpoints
-//==============================================================================
-
-// Test if order-breakpoints will return a list of breakpoints in large-small list
-
-@mixin return-order-breakpoints-small() {
-    @include test('order-breakpoints') {
-
-        $breakpoints-list: order-breakpoints();
-
-        $test: index($breakpoints-list, $custom-breakpoint-key-small);
-        $expect: length($breakpoints-list);
-
-        @include assert-equal($test, $expect, 'Tests that the smallest breakpoint is first in the ordered breakpoint list');
-
-    }
-}
-
-
-// Test if order-breakpoints will return a list of breakpoints in large-small list
-
-@mixin return-order-breakpoints-large() {
-    @include test('order-breakpoints') {
-
-        $breakpoints-list: order-breakpoints();
-
-        $test: index($breakpoints-list, $custom-breakpoint-key-large);
-        $expect: 1;
-
-        @include assert-equal($test, $expect, 'Tests that the largest breakpoint is last in the ordered breakpoint list');
-
-    }
-}
-
-
 //==============================================================================
 // Build tests
 //==============================================================================
