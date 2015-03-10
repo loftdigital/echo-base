@@ -50,7 +50,7 @@
 // Mobile First Flag
 //==============================================================================
 
-// $mobile-first: false;
+$mobile-first: true;
 
 
 
@@ -188,57 +188,53 @@
 // Responsive font sizes
 //==============================================================================
 
-// @mixin responsive-text-size($size) {
-//
-//     @if ($size == h1) {
-//
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
+// @mixin h1-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 
-//     } @else if ($size == h2) {
+// @mixin h2-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 //
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
+// @mixin h3-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 //
-//     } @else if ($size == h3) {
+// @mixin h4-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 //
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
+// @mixin h5-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 //
-//     } @else if ($size == 'h4') {
+// @mixin h6-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
 //
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
-//
-//     } @else if ($size == 'h5') {
-//
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
-//
-//     } @else if ($size == 'h6') {
-//
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
-//
-//     } @else if ($size == 'p') {
-//
-//         // @include breakpoint(large) {}
-//         // @include breakpoint(medium) {}
-//         // @include breakpoint(small) {}
-//         // @include breakpoint(x-small) {}
-//     }
+// @mixin p-text-size() {
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
 // }
 
 

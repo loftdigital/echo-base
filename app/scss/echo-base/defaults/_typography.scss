@@ -508,10 +508,9 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h1-letter-spacing;
     text-transform: $h1-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h1);
+    @if mixin-exists(h1-text-size) {
+        @include h1-text-size();
     }
-
 }
 
 @mixin h2 {
@@ -524,8 +523,8 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h2-letter-spacing;
     text-transform: $h2-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h2);
+    @if mixin-exists(h2-text-size) {
+        @include h2-text-size();
     }
 }
 
@@ -539,8 +538,8 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h3-letter-spacing;
     text-transform: $h3-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h3);
+    @if mixin-exists(h3-text-size) {
+        @include h3-text-size();
     }
 }
 
@@ -554,8 +553,8 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h4-letter-spacing;
     text-transform: $h4-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h4);
+    @if mixin-exists(h4-text-size) {
+        @include h4-text-size();
     }
 }
 
@@ -569,8 +568,8 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h5-letter-spacing;
     text-transform: $h5-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h5);
+    @if mixin-exists(h5-text-size) {
+        @include h5-text-size();
     }
 }
 
@@ -584,8 +583,8 @@ $code-border-radius: $global-border-radius !default;
     letter-spacing: $h6-letter-spacing;
     text-transform: $h6-text-transform;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(h6);
+    @if mixin-exists(h6-text-size) {
+        @include h6-text-size();
     }
 }
 
@@ -599,8 +598,8 @@ $code-border-radius: $global-border-radius !default;
     margin-top: $p-margin-top;
     margin-bottom: $p-margin-bottom;
 
-    @if mixin-exists(responsive-text-size) {
-        @include responsive-text-size(p);
+    @if mixin-exists(p-text-size) {
+        @include p-text-size();
     }
 }
 
