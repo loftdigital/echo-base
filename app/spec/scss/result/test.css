@@ -1,37 +1,34 @@
-/* # Setup palettes ---------- */
-/* setup-palettes */
-[data-module="Setup palettes"] [data-test="setup-palettes"] .assert-equal {
+/* # Palettes ---------- */
+/* setup-palettes() [function] */
+[data-module="Palettes"] [data-test="setup-palettes() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a map'; }
+  -description: 'Returns an object of type map'; }
+[data-module="Palettes"] [data-test="setup-palettes() [function]"] .assert-equal {
+  -result: PASS;
+  -description: 'Returns a map containing the custom palettes'; }
 
-/* setup-palettes */
-[data-module="Setup palettes"] [data-test="setup-palettes"] .assert-equal {
+/* palette() [function] */
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a merged map of default & custom palettes'; }
-
-/* setup-palettes */
-[data-module="Setup palettes"] [data-test="setup-palettes"] .assert-equal {
+  -description: 'Returns the expected color stored within a single key-value pair from the global $palettes map'; }
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a custom palette value'; }
-
-/* # palette() ---------- */
-/* palette() */
-[data-module="palette()"] [data-test="palette()"] .assert-equal {
+  -description: 'Returns the expected base tone color stored within a palette, from the global $palettes map'; }
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a color using a string'; }
-
-/* palette() */
-[data-module="palette()"] [data-test="palette()"] .assert-equal {
+  -description: 'Returns the expected color tone stored within a palette, from the global $palettes map'; }
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a color using a palette and default tone (none specified)'; }
-
-/* palette() */
-[data-module="palette()"] [data-test="palette()"] .assert-equal {
+  -description: 'Returns the expected color stored with a single key-value pair, itself stored within a sub group, from the global $palettes map'; }
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a color using a string within a sub group'; }
+  -description: 'Returns the expected color stored within a palette, itself stored within a sub-group, from the global $palettes map'; }
+[data-module="Palettes"] [data-test="palette() [function]"] .assert-equal {
+  -result: PASS;
+  -description: 'Returns the expected color tone stored within a palette, itself stored within a sub-group, from the global $palettes map'; }
 
 /* # SUMMARY ---------- */
-/* 6 Tests: */
-/*  - 6 Passed */
+/* 2 Tests: */
+/*  - 2 Passed */
 /*  - 0 Failed */
 /* -------------------- */

@@ -275,25 +275,25 @@ $breakpoints: ();
 
 
 
-@function palette($palette, $tone: 'base') {
-
-
-    $palettes: setup-palettes();
-
-    @if (map-has-key($palettes, $palette)) {
-        $color: map-get($palettes, $palette);
-
-        @if (map-has-key($color, $tone)) {
-            @return map-get($color, $tone);
-        } @else {
-            @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
-        }
-
-    } @else {
-        @warn "Palette '#{$palette}' doesn't exist!";
-    }
-
-}
+// @function palette($palette, $tone: 'base') {
+//
+//
+//     $palettes: setup-palettes();
+//
+//     @if (map-has-key($palettes, $palette)) {
+//         $color: map-get($palettes, $palette);
+//
+//         @if (map-has-key($color, $tone)) {
+//             @return map-get($color, $tone);
+//         } @else {
+//             @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
+//         }
+//
+//     } @else {
+//         @warn "Palette '#{$palette}' doesn't exist!";
+//     }
+//
+// }
 
 
 
@@ -307,7 +307,7 @@ $breakpoints: ();
 
 
 
-@function palette-take-two( $options... ) {
+@function palette( $options... ) {
 
     $palettes: setup-palettes();
 
@@ -360,27 +360,21 @@ $breakpoints: ();
             } @else {
 
                 // Is sub group
+                $sub-group: $child;
 
+                // Check if palette exists in sub-group
 
+                @if ( map-has-key( $sub-group, $args2 ) ) {
 
-                @if ( map-has-key( $child, $args2 ) ) {
-
-                    $grand-child: map-get( $child, $args2 );
-
-                    @debug type-of($grand-child);
+                    $grand-child: map-get( $sub-group, $args2 );
 
                     @if( type-of($grand-child) != map ) {
 
                         @return $grand-child;
 
                     } @else {
-
-                        @warn 'HERE!';
-
-                        $color: map-get( $grand-child, $args2 );
+                        $color: $grand-child;
                         $tone: $args3;
-
-                        @warn $color;
                     }
 
                 } @else {
@@ -401,84 +395,9 @@ $breakpoints: ();
 
 
     } @else {
-        @warn "Palette '#{$args1}' doesn't exist!";
+        @warn "Palette '#{$args1}' doesn\'t exist!";
     }
-
-
-
-
-
-    // @if (map-has-key($palettes, $palette)) {
-    //
-    //     $palettes-child: map-get($palettes, $palette);
-    //
-    //     // Check is palette
-    //     @if ( map-has-key($palettes-child, base) ) {
-    //
-    //         //@debug 'BASE BASE BASE BASE (yep this is a palette)';
-    //
-    //
-    //         @if (map-has-key($palettes-child, $tone)) {
-    //             @return map-get($palettes-child, $tone);
-    //         } @else {
-    //             //@warn "Tone '#{$tone}' doesn't exist for palette '#{$palettes-child}'!";
-    //         }
-    //
-    //
-    //     } @else {
-    //
-    //
-    //
-    //         @return false;
-    //
-    //         //@debug 'Nope...this is a group... we need to go deeper';
-    //
-    //
-    //     }
-    //
-    //
-    //
-    // }
 }
-
-
-
-
-// @function palette( $palette, $tone: 'base' ) {
-//
-//     $palettes: setup-palettes();
-//
-//
-//
-//
-//
-//     @for $i from 1 through length( $options ) {
-//
-//
-//
-//
-//     }
-//
-//
-//
-//
-//
-//     @if (map-has-key($palettes, $palette)) {
-//         $color: map-get($palettes, $palette);
-//
-//         @if (map-has-key($color, $tone)) {
-//             @return map-get($color, $tone);
-//         } @else {
-//             @warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
-//         }
-//
-//     } @else {
-//         @warn "Palette '#{$palette}' doesn't exist!";
-//     }
-//
-// }
-
-
 
 
 //==============================================================================
