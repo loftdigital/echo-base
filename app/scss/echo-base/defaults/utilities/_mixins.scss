@@ -7,7 +7,8 @@
 //  ----------------------------------------------------------------------------
 //  a. Breakpoints
 //      1. breakpoint
-//      2. breakpoint-range
+
+
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -24,22 +25,26 @@
 //  1. breakpoint
 //==============================================================================
 
-/// Used to insert a single named breakpoint into your css. Breakpoints you've
+/// Used to insert a breakpoint into your css. Breakpoints you've
 /// registered in the custom breakpoints map as well as default breakpoints are
 /// available. The mixin will automatically use min or max-width depending on
-/// whethere the mobile-first flag is set to true or false.
+/// whethere the mobile-first flag is set to true or false. It will also organise
+/// and display these by size depending on this mobile first setting.
+///
+/// You may also specify other values such as orientation and resolution as strings
+/// when utilising the breakpoint.
 
 /// @access public
 /// @param {String} $key - A named breakpoint to retrieve from the breakpoint map
 /// @group Breakpoints
 ///
-/// @example scss - Usage
+/// @example scss - Usage with single named breakpoint
 /// .block {
 ///   @include breakpoint(large){
 ///     font-size: 2rem;
 ///   }
 /// }
-/// @example css - Output
+/// @example css - Output usage with single named breakpoint
 /// //if $mobile-first is false
 /// .block {
 ///   @media (max-width: 960px){
@@ -51,42 +56,12 @@
 /// .block {
 ///   @media (min-width: 960px){
 ///      font-size: 2rem;
-///   }
+///   },
 /// }
-
-@mixin breakpoint($key) {
-
-    @if ($mobile-first == true) {
-        $flow: min-width;
-    } @else {
-        $flow: max-width;
-    }
-
-    @media (#{$flow}: breakpoint($key)) {
-        @content;
-    }
-}
-
-
-
-//  2. breakpoint-range
-//==============================================================================
-
-/// Used to insert a breakpoint range into your css. Breakpoints you've
-/// registered in the custom breakpoints map as well as default breakpoints are
-/// available, you can also specify your own values as px/rem/em sizes if you prefer.
-/// The order at which you pass your values doesn't matter as the mixin will sort them
-/// and print them out in the correct order, it also takes into account whether you are
-/// using mobile first or not.
-
-/// @access public
-/// @param {Mixed} $primary - A named breakpoint or value
-/// @param {Mixed} $secondary - A named breakpoint or value
-/// @group Breakpoints
 ///
-/// @example scss - Usage with named breakpoints
+/// @example scss - Usage with multiple named breakpoints
 /// .block {
-///   @include breakpoint-range(large, small){
+///   @include breakpoint(large, small){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -108,7 +83,7 @@
 ///
 /// @example scss - Usage with bespoke values
 /// .block {
-///   @include breakpoint-range(30px, 80px){
+///   @include breakpoint(30px, 80px){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -130,7 +105,7 @@
 ///
 /// @example scss - Usage with mixed values
 /// .block {
-///   @include breakpoint-range(30px, large){
+///   @include breakpoint(30px, large){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -148,34 +123,71 @@
 ///      font-size: 2rem;
 ///   }
 /// }
+///
+/// @example scss - Usage with extra media values
+/// .block {
+///   @include breakpoint('orientation: landscape', 'resolution: 192 dppx'){
+///     font-size: 2rem;
+///   }
+/// }
+///
+/// @example css - Output with mixed values
+///
+/// .block {
+///   @media (orientation: landscape) and (resolution: 192 dppx){
+///      font-size: 2rem;
+///   }
+/// }
+///
+/// @example scss - Usage with everything together
+/// .block {
+///   @include breakpoint(30px, large, 'orientation: landscape', 'resolution: 192dppx'){
+///     font-size: 2rem;
+///   }
+/// }
+///
+/// @example css - Output with everything together
+/// //if $mobile-first is false
+/// .block {
+///   @media (max-width: 960px) and (min-width: 30px) and (orientation: landscape) and (resolution: 192dppx){
+///      font-size: 2rem;
+///   }
+/// }
+///
+/// //if $mobile-first is true
+/// .block {
+///   @media (min-width: 30px) and (max-width: 960px) and (orientation: landscape) and (resolution: 192dppx){
+///      font-size: 2rem;
+///   }
+/// }
+///
 
-@mixin breakpoint-range($primary, $secondary) {
+@mixin breakpoint( $options... ) {
 
-    @if type-of($primary) != number {
-        @if breakpoint($primary) != false {
-            $primary: breakpoint($primary);
+    $key-list: ();
+    $extra-config: ();
+
+    @each $item in $options {
+
+        @if (breakpoint($item) != false or str-index(quote($item), ':') == null ) {
+            $key-list: append($key-list, $item);
+        } @else {
+            $extra-config: append($extra-config, $item);
         }
+
     }
 
-    @if type-of($secondary) != number {
-        @if breakpoint($secondary) != false {
-            $secondary: breakpoint($secondary);
-        }
+    @if (length($key-list) == 0) {
+        $key-list: false;
     }
 
-    @if $primary >= $secondary {
-        $vals: ($primary, $secondary);
-    } @else {
-        $vals: ($secondary, $primary);
+    @if (length($extra-config) == 0) {
+        $extra-config: false;
     }
 
-    @if $mobile-first == true {
-        @media (min-width: #{nth($vals, 2)}) and (max-width: #{nth($vals, 1)}) {
-            @content;
-        }
-    } @else {
-        @media (max-width: #{nth($vals, 1)}) and (min-width: #{nth($vals, 2)}) {
-            @content;
-        }
+    $output: breakpoint-stringify($key-list, $extra-config);
+
+    @media #{$output} {
+        @content;
     }
 }
