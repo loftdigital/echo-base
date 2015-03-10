@@ -1,46 +1,3 @@
-/* # Setup breakpoints ---------- */
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Returns a map'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Returns a merged map of default & custom breakpoints'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Returns a custom breakpoint value'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Returns a list of the default and custom breakpoints'; }
-
-/* # breakpoint ---------- */
-/* breakpoint */
-[data-module="breakpoint"] [data-test="breakpoint"] .assert-equal {
-  -result: PASS;
-  -description: 'Return a breakpoint value from the breakpoint map'; }
-
-/* breakpoint */
-[data-module="breakpoint"] [data-test="breakpoint"] .assert-equal {
-  -result: PASS;
-  -description: 'Returns false when encountering a non existant variable'; }
-
-/* # order-breakpoints ---------- */
-/* order-breakpoints */
-[data-module="order-breakpoints"] [data-test="order-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Tests that the smallest breakpoint is first in the ordered breakpoint list'; }
-
-/* order-breakpoints */
-[data-module="order-breakpoints"] [data-test="order-breakpoints"] .assert-equal {
-  -result: PASS;
-  -description: 'Tests that the largest breakpoint is last in the ordered breakpoint list'; }
-
 /* # Setup palettes ---------- */
 /* setup-palettes */
 [data-module="Setup palettes"] [data-test="setup-palettes"] .assert-equal {
@@ -57,24 +14,24 @@
   -result: PASS;
   -description: 'Returns a custom palette value'; }
 
-/* # Test rem-calc ---------- */
-/* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+/* # palette() ---------- */
+/* palette() */
+[data-module="palette()"] [data-test="palette()"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a correct value'; }
+  -description: 'Returns a color using a string'; }
 
-/* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+/* palette() */
+[data-module="palette()"] [data-test="palette()"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a correct value'; }
+  -description: 'Returns a color using a palette and default tone (none specified)'; }
 
-/* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+/* palette() */
+[data-module="palette()"] [data-test="palette()"] .assert-equal {
   -result: PASS;
-  -description: 'Returns a correct value'; }
+  -description: 'Returns a color using a string within a sub group'; }
 
 /* # SUMMARY ---------- */
-/* 14 Tests: */
-/*  - 14 Passed */
+/* 6 Tests: */
+/*  - 6 Passed */
 /*  - 0 Failed */
 /* -------------------- */

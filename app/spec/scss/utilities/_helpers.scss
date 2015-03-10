@@ -89,10 +89,10 @@ $base-font-size: 16px;
 //  Setup palettes - setup-palettes()
 //==============================================================================
 
-@include test-module('Test rem-calc') {
-
-    @include rem-calc-returns-correct-value();
-    @include rem-calc-returns-correct-value-half();
-    @include rem-calc-returns-correct-value-one-and-a-half();
-
-}
+// @include test-module('Test rem-calc') {
+//
+//     @include rem-calc-returns-correct-value();
+//     @include rem-calc-returns-correct-value-half();
+//     @include rem-calc-returns-correct-value-one-and-a-half();
+//
+// }

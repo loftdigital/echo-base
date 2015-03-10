@@ -218,25 +218,25 @@ $custom-breakpoints: (
 // Setup breakpoints - setup-breakpoints()
 //==============================================================================
 
-@include test-module('Setup breakpoints') {
-
-    @include breakpoints-return-map();
-    @include breakpoints-has-custom-key();
-    @include breakpoints-return-custom-value();
-    @include breakpoints-return-merged-key-list();
-
-}
-
-@include test-module('breakpoint') {
-
-    @include breakpoints-return-specified-value();
-    @include breakpoints-return-false();
-
-}
-
-@include test-module('order-breakpoints') {
-
-    @include return-order-breakpoints-small();
-    @include return-order-breakpoints-large();
-
-}
+// @include test-module('Setup breakpoints') {
+//
+//     @include breakpoints-return-map();
+//     @include breakpoints-has-custom-key();
+//     @include breakpoints-return-custom-value();
+//     @include breakpoints-return-merged-key-list();
+//
+// }
+//
+// @include test-module('breakpoint') {
+//
+//     @include breakpoints-return-specified-value();
+//     @include breakpoints-return-false();
+//
+// }
+//
+// @include test-module('order-breakpoints') {
+//
+//     @include return-order-breakpoints-small();
+//     @include return-order-breakpoints-large();
+//
+// }
