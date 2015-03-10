@@ -30,16 +30,52 @@
   -result: PASS;
   -description: 'Returns false when encountering a non existant variable'; }
 
-/* # order-breakpoints ---------- */
-/* order-breakpoints */
-[data-module="order-breakpoints"] [data-test="order-breakpoints"] .assert-equal {
+/* # key-list ---------- */
+/* key-list */
+[data-module="key-list"] [data-test="key-list"] .assert-equal {
   -result: PASS;
-  -description: 'Tests that the smallest breakpoint is first in the ordered breakpoint list'; }
+  -description: 'setup-key-list() returns a string'; }
 
-/* order-breakpoints */
-[data-module="order-breakpoints"] [data-test="order-breakpoints"] .assert-equal {
+/* key-list */
+[data-module="key-list"] [data-test="key-list"] .assert-equal {
   -result: PASS;
-  -description: 'Tests that the largest breakpoint is last in the ordered breakpoint list'; }
+  -description: 'setup-key-list() returns correctly for named value'; }
+
+/* key-list */
+[data-module="key-list"] [data-test="key-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list() returns correctly for custom value'; }
+
+/* key-list */
+[data-module="key-list"] [data-test="key-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list()  returns correctly and ordered for named value range'; }
+
+/* key-list */
+[data-module="key-list"] [data-test="key-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list() returns correctly and ordered for custom value range'; }
+
+/* # key-list-mobile ---------- */
+/* key-list-mobile */
+[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list() returns correctly for named value - mobile first'; }
+
+/* key-list-mobile */
+[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list() returns correctly for custom value - mobile first'; }
+
+/* key-list-mobile */
+[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list()  returns correctly and ordered for named value range - mobile first'; }
+
+/* key-list-mobile */
+[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-key-list() returns correctly and ordered for custom value range - mobile first'; }
 
 /* # Setup palettes ---------- */
 /* setup-palettes */
@@ -74,7 +110,7 @@
   -description: 'Returns a correct value'; }
 
 /* # SUMMARY ---------- */
-/* 14 Tests: */
-/*  - 14 Passed */
+/* 21 Tests: */
+/*  - 21 Passed */
 /*  - 0 Failed */
 /* -------------------- */

@@ -171,7 +171,7 @@ $breakpoints: ();
 /// @return {String}
 
 
-@function setup-key-list($key-list) {
+@function setup-key-list($key-list: false) {
 
     $key-string: '';
 
@@ -193,7 +193,6 @@ $breakpoints: ();
 
         $key-string: '(' + #{$flow} + ': ' + #{$breakpoint} + ')';
     }
-
 
     @return $key-string;
 }

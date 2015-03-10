@@ -141,7 +141,9 @@ $custom-breakpoints: (
 // Get Breakpoints - breakpoint()
 //==============================================================================
 
-// Test if breakpoint() will return the correct breakpoint value
+/// Test if breakpoint() will return the correct breakpoint value
+///
+/// @group Tests
 
 @mixin breakpoints-return-specified-value() {
 
@@ -159,8 +161,10 @@ $custom-breakpoints: (
 }
 
 
-// Test if breakpoint() will return false if a breakpoint that doesn't exist
-// is specified.
+/// Test if breakpoint() will return false if a breakpoint that doesn't exist
+/// is specified.
+///
+/// @group Tests
 
 @mixin breakpoints-return-false() {
     @include test('breakpoint') {
@@ -173,6 +177,161 @@ $custom-breakpoints: (
         @include assert-equal($test, $expect, 'Returns false when encountering a non existant variable');
     }
 }
+
+// setup-key-list()
+//==============================================================================
+
+/// test if setup-key-list returns a string
+///
+/// @group Tests
+
+@mixin setup-returns-string() {
+    @include test('key-list') {
+
+        $test: type-of(setup-key-list());
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns a string');
+    }
+}
+
+
+/// test if setup-key-list returns the expected string with a named value
+///
+/// @group Tests
+
+@mixin setup-returns-string-named() {
+    @include test('key-list') {
+
+        $val: (large);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a custom value
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom() {
+    @include test('key-list') {
+
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a named value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-range() {
+    @include test('key-list') {
+
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a custom value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-range() {
+    @include test('key-list') {
+
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px) and (min-width: 100px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range');
+    }
+}
+
+
+/// test if setup-key-list returns the expected string with a named value
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 960px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value - mobile first');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a custom value
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value - mobile first');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a named value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-range-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range - mobile first');
+    }
+}
+
+/// test if setup-key-list returns the expected string with a custom value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-range-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 100px) and (max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range - mobile first');
+    }
+}
+
+
+
+
 
 
 //==============================================================================
@@ -198,9 +357,21 @@ $custom-breakpoints: (
 
 }
 
-@include test-module('order-breakpoints') {
+@include test-module('key-list') {
 
-    @include return-order-breakpoints-small();
-    @include return-order-breakpoints-large();
+    @include setup-returns-string();
+    @include setup-returns-string-named();
+    @include setup-returns-string-custom();
+    @include setup-returns-string-named-range();
+    @include setup-returns-string-custom-range();
+
+}
+
+@include test-module('key-list-mobile') {
+
+    @include setup-returns-string-named-mobile();
+    @include setup-returns-string-custom-mobile();
+    @include setup-returns-string-named-range-mobile();
+    @include setup-returns-string-custom-range-mobile();
 
 }
