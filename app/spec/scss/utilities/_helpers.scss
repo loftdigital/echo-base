@@ -20,6 +20,7 @@
 //  Custom test dependencies
 //==============================================================================
 
+$base-font-size: 16px;
 
 //==============================================================================
 //  Function/mixin dependencies
@@ -40,8 +41,6 @@
 //==============================================================================
 
     @include test('rem-calc() [function]') {
-
-
 
         /// Test that the rem-calc() function returns a value of 1 rem
         /// where the px unit passed in is equal to the $base-font-size
@@ -93,6 +92,7 @@
 
         @include assert-equal($test, $expect, 'strip unit returns a number');
     }
+}
 
 
 
@@ -179,9 +179,7 @@
 //==============================================================================
 
 @include test-module('remify') {
-
     @include remify-returns-number();
     @include remify-returns-rem-unit();
     @include remify-returns-zero-value();
-
 }
