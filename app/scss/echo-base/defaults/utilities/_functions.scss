@@ -213,7 +213,7 @@ $breakpoints: ();
 /// @param {List} $extra-config - List of breakpoint keys
 /// @return {String}
 
-@function setup-config-list($extra-config) {
+@function setup-config-list($extra-config: false) {
 
     $config-string: '';
 

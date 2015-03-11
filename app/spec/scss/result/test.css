@@ -77,6 +77,69 @@
   -result: PASS;
   -description: 'setup-key-list() returns correctly and ordered for custom value range - mobile first'; }
 
+/* # config-list ---------- */
+/* config-list */
+[data-module="config-list"] [data-test="config-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-config-list() returns a string'; }
+
+/* config-list */
+[data-module="config-list"] [data-test="config-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-config-list() returns a correct media string with a single value'; }
+
+/* config-list */
+[data-module="config-list"] [data-test="config-list"] .assert-equal {
+  -result: PASS;
+  -description: 'setup-config-list() returns a correct media string with multiple values'; }
+
+/* # breakpoint-range ---------- */
+/* breakpoint-range */
+[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns a string'; }
+
+/* breakpoint-range */
+[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with named values - desktop first'; }
+
+/* breakpoint-range */
+[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with named values & corrected order - desktop first'; }
+
+/* breakpoint-range */
+[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with mixed values - desktop first'; }
+
+/* breakpoint-range */
+[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - desktop first'; }
+
+/* # breakpoint-range-mobile ---------- */
+/* breakpoint-range-mobile */
+[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with named values - mobile first'; }
+
+/* breakpoint-range-mobile */
+[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with named values & corrected order - mobile first'; }
+
+/* breakpoint-range-mobile */
+[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with mixed values - mobile first'; }
+
+/* breakpoint-range-mobile */
+[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+  -result: PASS;
+  -description: 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - mobile first'; }
+
 /* # Setup palettes ---------- */
 /* setup-palettes */
 [data-module="Setup palettes"] [data-test="setup-palettes"] .assert-equal {
@@ -93,24 +156,51 @@
   -result: PASS;
   -description: 'Returns a custom palette value'; }
 
-/* # Test rem-calc ---------- */
+/* # rem-calc ---------- */
 /* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+[data-module="rem-calc"] [data-test="rem-calc"] .assert-equal {
   -result: PASS;
   -description: 'Returns a correct value'; }
 
 /* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+[data-module="rem-calc"] [data-test="rem-calc"] .assert-equal {
   -result: PASS;
   -description: 'Returns a correct value'; }
 
 /* rem-calc */
-[data-module="Test rem-calc"] [data-test="rem-calc"] .assert-equal {
+[data-module="rem-calc"] [data-test="rem-calc"] .assert-equal {
   -result: PASS;
   -description: 'Returns a correct value'; }
+
+/* # strip-unit ---------- */
+/* strip-unit */
+[data-module="strip-unit"] [data-test="strip-unit"] .assert-equal {
+  -result: PASS;
+  -description: 'strip unit returns a number'; }
+
+/* strip-unit */
+[data-module="strip-unit"] [data-test="strip-unit"] .assert-equal {
+  -result: PASS;
+  -description: 'strip unit returns a number with unit stripped'; }
+
+/* # remify ---------- */
+/* remify */
+[data-module="remify"] [data-test="remify"] .assert-equal {
+  -result: PASS;
+  -description: 'remify returns a number'; }
+
+/* remify */
+[data-module="remify"] [data-test="remify"] .assert-equal {
+  -result: PASS;
+  -description: 'remify returns a rem unit'; }
+
+/* remify */
+[data-module="remify"] [data-test="remify"] .assert-equal {
+  -result: PASS;
+  -description: 'remify returns 0 for 0 values'; }
 
 /* # SUMMARY ---------- */
-/* 21 Tests: */
-/*  - 21 Passed */
+/* 38 Tests: */
+/*  - 38 Passed */
 /*  - 0 Failed */
 /* -------------------- */
