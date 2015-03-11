@@ -133,9 +133,7 @@ $breakpoints: ();
     $output: '';
 
     @if ($key-list != false) {
-
         $output: setup-key-list($key-list);
-
     }
 
     @if ($key-list != false and $extra-config != false) {
@@ -143,7 +141,6 @@ $breakpoints: ();
     }
 
     @if($extra-config != false) {
-
         $output: $output + setup-config-list($extra-config);
     }
 
@@ -212,6 +209,7 @@ $breakpoints: ();
 
 @function setup-config-list($extra-config: false) {
 
+<<<<<<< HEAD
     $config-string: '';
 
     @for $i from 1 through length($extra-config) {
@@ -327,6 +325,16 @@ $breakpoints: ();
 
 //  2. Get palette
 //==============================================================================
+
+/// Retrieves the palette and the specified tone from the global palettes map.
+/// Can accept one, two or three parameters.
+///
+/// @access public
+/// @group Palettes
+/// @param {String} $item - Sub-group name, palette name, or color name
+/// @param {String} $args2 ['base'] - Palette name, or color tone
+/// @param {String} $args3 ['base'] - Color tone
+/// @return {Map}
 
 /// Retrieves the palette and the specified tone from the global palettes map.
 /// Can accept one, two or three parameters.
