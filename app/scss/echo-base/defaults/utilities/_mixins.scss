@@ -7,10 +7,8 @@
 //  ----------------------------------------------------------------------------
 //  a. Breakpoints
 //      1. breakpoint
-//      2. breakpoint-range
-//  b. Responsive Typography
-//      1. text-size
-//      2. responsive-text-size
+
+
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -27,22 +25,26 @@
 //  1. breakpoint
 //==============================================================================
 
-/// Used to insert a single named breakpoint into your css. Breakpoints you've
+/// Used to insert a breakpoint into your css. Breakpoints you've
 /// registered in the custom breakpoints map as well as default breakpoints are
 /// available. The mixin will automatically use min or max-width depending on
-/// whethere the mobile-first flag is set to true or false.
+/// whethere the mobile-first flag is set to true or false. It will also organise
+/// and display these by size depending on this mobile first setting.
+///
+/// You may also specify other values such as orientation and resolution as strings
+/// when utilising the breakpoint.
 
 /// @access public
 /// @param {String} $key - A named breakpoint to retrieve from the breakpoint map
 /// @group Breakpoints
 ///
-/// @example scss - Usage
+/// @example scss - Usage with single named breakpoint
 /// .block {
 ///   @include breakpoint(large){
 ///     font-size: 2rem;
 ///   }
 /// }
-/// @example css - Output
+/// @example css - Output usage with single named breakpoint
 /// //if $mobile-first is false
 /// .block {
 ///   @media (max-width: 960px){
@@ -54,42 +56,12 @@
 /// .block {
 ///   @media (min-width: 960px){
 ///      font-size: 2rem;
-///   }
+///   },
 /// }
-
-@mixin breakpoint($key) {
-
-    @if ($mobile-first == true) {
-        $flow: min-width;
-    } @else {
-        $flow: max-width;
-    }
-
-    @media (#{$flow}: breakpoint($key)) {
-        @content;
-    }
-}
-
-
-
-//  2. breakpoint-range
-//==============================================================================
-
-/// Used to insert a breakpoint range into your css. Breakpoints you've
-/// registered in the custom breakpoints map as well as default breakpoints are
-/// available, you can also specify your own values as px/rem/em sizes if you prefer.
-/// The order at which you pass your values doesn't matter as the mixin will sort them
-/// and print them out in the correct order, it also takes into account whether you are
-/// using mobile first or not.
-
-/// @access public
-/// @param {Mixed} $primary - A named breakpoint or value
-/// @param {Mixed} $secondary - A named breakpoint or value
-/// @group Breakpoints
 ///
-/// @example scss - Usage with named breakpoints
+/// @example scss - Usage with multiple named breakpoints
 /// .block {
-///   @include breakpoint-range(large, small){
+///   @include breakpoint(large, small){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -111,7 +83,7 @@
 ///
 /// @example scss - Usage with bespoke values
 /// .block {
-///   @include breakpoint-range(30px, 80px){
+///   @include breakpoint(30px, 80px){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -133,7 +105,7 @@
 ///
 /// @example scss - Usage with mixed values
 /// .block {
-///   @include breakpoint-range(30px, large){
+///   @include breakpoint(30px, large){
 ///     font-size: 2rem;
 ///   }
 /// }
@@ -151,203 +123,71 @@
 ///      font-size: 2rem;
 ///   }
 /// }
-
-@mixin breakpoint-range($primary, $secondary) {
-
-    @if type-of($primary) != number {
-        @if breakpoint($primary) != false {
-            $primary: breakpoint($primary);
-        }
-    }
-
-    @if type-of($secondary) != number {
-        @if breakpoint($secondary) != false {
-            $secondary: breakpoint($secondary);
-        }
-    }
-
-    @if $primary >= $secondary {
-        $vals: ($primary, $secondary);
-    } @else {
-        $vals: ($secondary, $primary);
-    }
-
-    @if $mobile-first == true {
-        @media (min-width: #{nth($vals, 2)}) and (max-width: #{nth($vals, 1)}) {
-            @content;
-        }
-    } @else {
-        @media (max-width: #{nth($vals, 1)}) and (min-width: #{nth($vals, 2)}) {
-            @content;
-        }
-    }
-}
-
-
-
-
-//==============================================================================
-//  a. Responsive Typography
-//==============================================================================
-
-//  1. text-size
-//==============================================================================
-
-/// Used to retrieve properties for certain echo-base responsive elements such as
-/// h1 at certain determined sizes. By default each of these elements has certain
-/// responsive properties specified at each of the default breakpoints. These can be
-/// extended uisng the responsive-text-custom map and breakpoint maps in settings.scss
 ///
-/// This mixin allows you to apply these rules to other elements for certain scenarios.
-/// It's mainly used within the default functionality of echo-base but is still available
-/// for you to use in a scenario of your choosing.
-///
-/// @access public
-/// @param {String} $element - An element name
-/// @param {String} $breakpoint-name - A named breakpoint
-/// @group Responsive Typography
-///
-/// @example scss - Usage
+/// @example scss - Usage with extra media values
 /// .block {
-///   @include text-size(h1, large);
+///   @include breakpoint('orientation: landscape', 'resolution: 192 dppx'){
+///     font-size: 2rem;
+///   }
 /// }
 ///
-/// @example css - Output
+/// @example css - Output with mixed values
+///
 /// .block {
-///    font-size: 5.625rem;
-///    line-height: 1.05;
+///   @media (orientation: landscape) and (resolution: 192 dppx){
+///      font-size: 2rem;
+///   }
 /// }
+///
+/// @example scss - Usage with everything together
+/// .block {
+///   @include breakpoint(30px, large, 'orientation: landscape', 'resolution: 192dppx'){
+///     font-size: 2rem;
+///   }
+/// }
+///
+/// @example css - Output with everything together
+/// //if $mobile-first is false
+/// .block {
+///   @media (max-width: 960px) and (min-width: 30px) and (orientation: landscape) and (resolution: 192dppx){
+///      font-size: 2rem;
+///   }
+/// }
+///
+/// //if $mobile-first is true
+/// .block {
+///   @media (min-width: 30px) and (max-width: 960px) and (orientation: landscape) and (resolution: 192dppx){
+///      font-size: 2rem;
+///   }
+/// }
+///
 
-@mixin text-size($element, $breakpoint-name: 'default') {
-    $element-properties: text-properties-for($element, $breakpoint-name);
+@mixin breakpoint( $options... ) {
 
-    @if $element-properties != false {
+    $key-list: ();
+    $extra-config: ();
 
-        // runs through each key, value map to include all values you may have specified for a certain size.
-        @each $key, $value in $element-properties {
-            #{$key}: #{$value};
+    @each $item in $options {
+
+        @if (breakpoint($item) != false or str-index(quote($item), ':') == null ) {
+            $key-list: append($key-list, $item);
+        } @else {
+            $extra-config: append($extra-config, $item);
         }
-
-    } @else {
-
-        // the breakpoint has no defined properties which to parse
-        @warn "Breakpoint '#{$breakpoint-name}' for <'#{$element}'> is not defined";
-    }
-}
-
-
-
-//  1. responsive-text-size
-//==============================================================================
-///
-/// Used to retrieve all responsive properties for a specific element, will retrieve all
-/// named properties where there is a corresponding breakpoint of the same name specified.
-/// The example below only uses the defaults of echo-base.
-///
-/// This mixin allows you to apply these rules to other elements for certain scenarios.
-/// It's mainly used within the default functionality of echo-base but is still available
-/// for you to use in a scenario of your choosing.
-///
-/// @access public
-/// @param {String} $element - An element name
-/// @param {String} $default-size - The responsive text element to treat as default i.e. not within a mixin
-/// @group Responsive Typography
-///
-/// @example scss - Usage $mobile-first: false
-/// //Usage with only default breakpoints and default responsive-text-properties
-/// .block {
-///   @include responsive-text-size(h1, default);
-/// }
-///
-/// @example css - Output $mobile-first: false
-/// .block {
-///  font-size: 5.625rem;
-///  line-height: 1.05; }
-///  @media (max-width: 960px) {
-///    .block {
-///      font-size: 5.625rem;
-///      line-height: 1.05; } }
-///  @media (max-width: 768px) {
-///    .block {
-///      font-size: 4.725rem;
-///      line-height: 1.125; } }
-///  @media (max-width: 480px) {
-///    .block {
-///      font-size: 3.76875rem;
-///      line-height: 1.125; } }
-///  @media (max-width: 320px) {
-///    .block {
-///      font-size: 3.76875rem;
-///      line-height: 1.125; } }
-///
-/// @example scss - Usage $mobile-first: true
-/// //Usage with only default breakpoints and default responsive-text-properties
-/// .block {
-///   @include responsive-text-size(h1, x-small);
-/// }
-///
-/// @example css - Output $mobile-first: true
-/// .block {
-///   font-size: 3.76875rem;
-///   line-height: 1.125; }
-///   @media (min-width: 480px) {
-///     .block {
-///       font-size: 4.725rem;
-///       line-height: 1.125; } }
-///   @media (min-width: 768px) {
-///     .block {
-///       font-size: 5.625rem;
-///       line-height: 1.05; } }
-///   @media (min-width: 960px) {
-///     .block {
-///       font-size: 5.625rem;
-///       line-height: 1.05; } }
-
-@mixin responsive-text-size($element, $default-size: 'default') {
-
-    $element-breakpoints-map: text-breakpoints-for($element);
-    $element-breakpoints-keys: order-breakpoints();
-
-
-    $element-breakpoints-keys: check-mobile-breakpoints($element, $element-breakpoints-keys);
-
-    @if $mobile-first == true {
-
-        $default-size: nth($element-breakpoints-keys, 1);
 
     }
 
-    @include text-size($element, $default-size);
+    @if (length($key-list) == 0) {
+        $key-list: false;
+    }
 
-    @each $breakpoint-name in $element-breakpoints-keys {
+    @if (length($extra-config) == 0) {
+        $extra-config: false;
+    }
 
-        @if $breakpoint-name != $default-size {
+    $output: breakpoint-stringify($key-list, $extra-config);
 
-            @if breakpoint($breakpoint-name) != false {
-
-                @include breakpoint($breakpoint-name) {
-
-                    @if $mobile-first == true {
-
-                        @if index($element-breakpoints-keys, $breakpoint-name) == length($element-breakpoints-keys) {
-
-                            @include text-size($element, $breakpoint-name);
-
-                        } @else {
-                            $pos: index($element-breakpoints-keys, $breakpoint-name) + 1;
-                            @include text-size($element, nth($element-breakpoints-keys, $pos));
-                        }
-
-                    } @else {
-
-                        @include text-size($element, $breakpoint-name);
-                    }
-
-                }
-            } @else {
-
-                @warn "Text size '#{$breakpoint-name}' for <'#{$element}'> was skipped as breakpoint: '#{$breakpoint-name}' doesn't exist "
-            }
-        }
+    @media #{$output} {
+        @content;
     }
 }

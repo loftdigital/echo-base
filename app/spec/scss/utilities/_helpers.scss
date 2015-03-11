@@ -54,6 +54,12 @@ $base-font-size: 16px;
     }
 }
 
+
+
+/// Test if rem-calc() returns a correct value half of base font size
+///
+/// @group Tests
+
 @mixin rem-calc-returns-correct-value-half() {
 
     @include test('rem-calc') {
@@ -66,6 +72,12 @@ $base-font-size: 16px;
     }
 
 }
+
+
+
+/// Test if rem-calc() returns a correct value one and a half times that of base font size
+///
+/// @group Tests
 
 @mixin rem-calc-returns-correct-value-one-and-a-half() {
 
@@ -82,17 +94,119 @@ $base-font-size: 16px;
 
 
 
+
+//  Strip Unit - strip-unit()
+//==============================================================================
+
+@mixin strip-unit-returns-number() {
+
+    @include test('strip-unit') {
+
+        // Values to compare
+        $test: type-of(strip-unit(24));
+        $expect: number;
+
+        @include assert-equal($test, $expect, 'strip unit returns a number');
+    }
+
+}
+
+@mixin strip-unit-returns-number-without-unit() {
+
+    @include test('strip-unit') {
+
+        // Values to compare
+        $test: strip-unit(24px);
+        $expect: 24;
+
+        @include assert-equal($test, $expect, 'strip unit returns a number with unit stripped');
+    }
+}
+
+
+
+
+//  Remify - remify()
+//==============================================================================
+
+@mixin remify-returns-number() {
+
+    @include test('remify') {
+
+        // Values to compare
+        $test: type-of(remify(1, $base-font-size));
+        $expect: number;
+
+        @include assert-equal($test, $expect, 'remify returns a number');
+    }
+
+}
+
+@mixin remify-returns-rem-unit() {
+
+    @include test('remify') {
+
+        // Values to compare
+        $test: remify(16, $base-font-size);
+        $expect: 1rem;
+
+        @include assert-equal($test, $expect, 'remify returns a rem unit');
+    }
+}
+
+
+
+@mixin remify-returns-zero-value() {
+
+    @include test('remify') {
+
+        // Values to compare
+        $test: remify(0, $base-font-size);
+        $expect: 0;
+
+        @include assert-equal($test, $expect, 'remify returns 0 for 0 values');
+    }
+}
+
+
+
+
 //==============================================================================
 //  Run tests
 //==============================================================================
 
-//  Setup palettes - setup-palettes()
+//  REM Calculator - rem-calc()
 //==============================================================================
 
-@include test-module('Test rem-calc') {
+@include test-module('rem-calc') {
 
     @include rem-calc-returns-correct-value();
     @include rem-calc-returns-correct-value-half();
     @include rem-calc-returns-correct-value-one-and-a-half();
+
+}
+
+
+
+// Strip-unit - strip-unit()
+//==============================================================================
+
+@include test-module('strip-unit') {
+
+    @include strip-unit-returns-number();
+    @include strip-unit-returns-number-without-unit();
+
+}
+
+
+
+//  Remify - remify()
+//==============================================================================
+
+@include test-module('remify') {
+
+    @include remify-returns-number();
+    @include remify-returns-rem-unit();
+    @include remify-returns-zero-value();
 
 }

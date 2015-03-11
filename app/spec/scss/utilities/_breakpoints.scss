@@ -141,7 +141,9 @@ $custom-breakpoints: (
 // Get Breakpoints - breakpoint()
 //==============================================================================
 
-// Test if breakpoint() will return the correct breakpoint value
+/// Test if breakpoint() will return the correct breakpoint value
+///
+/// @group Tests
 
 @mixin breakpoints-return-specified-value() {
 
@@ -159,8 +161,11 @@ $custom-breakpoints: (
 }
 
 
-// Test if breakpoint() will return false if a breakpoint that doesn't exist
-// is specified.
+
+/// Test if breakpoint() will return false if a breakpoint that doesn't exist
+/// is specified.
+///
+/// @group Tests
 
 @mixin breakpoints-return-false() {
     @include test('breakpoint') {
@@ -176,40 +181,395 @@ $custom-breakpoints: (
 
 
 
-// Order Breakpoints - order-breakpoints
+
+// setup-key-list()
 //==============================================================================
 
-// Test if order-breakpoints will return a list of breakpoints in large-small list
+/// test if setup-key-list returns a string
+///
+/// @group Tests
 
-@mixin return-order-breakpoints-small() {
-    @include test('order-breakpoints') {
+@mixin setup-returns-string() {
+    @include test('key-list') {
 
-        $breakpoints-list: order-breakpoints();
+        $test: type-of(setup-key-list());
+        $expect: string;
 
-        $test: index($breakpoints-list, $custom-breakpoint-key-small);
-        $expect: length($breakpoints-list);
-
-        @include assert-equal($test, $expect, 'Tests that the smallest breakpoint is first in the ordered breakpoint list');
-
+        @include assert-equal($test, $expect, 'setup-key-list() returns a string');
     }
 }
 
 
-// Test if order-breakpoints will return a list of breakpoints in large-small list
 
-@mixin return-order-breakpoints-large() {
-    @include test('order-breakpoints') {
+/// test if setup-key-list returns the expected string with a named value
+///
+/// @group Tests
 
-        $breakpoints-list: order-breakpoints();
+@mixin setup-returns-string-named() {
+    @include test('key-list') {
 
-        $test: index($breakpoints-list, $custom-breakpoint-key-large);
-        $expect: 1;
+        $val: (large);
 
-        @include assert-equal($test, $expect, 'Tests that the largest breakpoint is last in the ordered breakpoint list');
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px)';
 
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value');
     }
 }
 
+
+
+/// test if setup-key-list returns the expected string with a custom value
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom() {
+    @include test('key-list') {
+
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value');
+    }
+}
+
+
+
+/// test if setup-key-list returns the expected string with a named value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-range() {
+    @include test('key-list') {
+
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range');
+    }
+}
+
+
+
+/// test if setup-key-list returns the expected string with a custom value range and ordered desktop first
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-range() {
+    @include test('key-list') {
+
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px) and (min-width: 100px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range');
+    }
+}
+
+
+
+
+// setup-key-list() mobile first
+//==============================================================================
+
+/// test if setup-key-list returns the expected string with a named value mobile first
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 960px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value - mobile first');
+    }
+}
+
+
+
+/// test if setup-key-list returns the expected string with a custom value mobile first
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value - mobile first');
+    }
+}
+
+
+
+/// test if setup-key-list returns the expected string with a named value range and ordered mobile first
+///
+/// @group Tests
+
+@mixin setup-returns-string-named-range-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range - mobile first');
+    }
+}
+
+
+
+/// test if setup-key-list returns the expected string with a custom value range and ordered mobile first
+///
+/// @group Tests
+
+@mixin setup-returns-string-custom-range-mobile() {
+    @include test('key-list-mobile') {
+
+        $mobile-first: true;
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 100px) and (max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range - mobile first');
+    }
+}
+
+
+
+
+// setup-config-list()
+//==============================================================================
+
+/// test if setup-config-list returns a string
+///
+/// @group Tests
+
+@mixin setup-config-returns-string() {
+    @include test('config-list') {
+
+        $test: type-of(setup-config-list());
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'setup-config-list() returns a string');
+    }
+}
+
+
+
+/// test if setup-config-list returns the correctly formatted string
+///
+/// @group Tests
+
+@mixin setup-config-returns-string-custom() {
+    @include test('config-list') {
+
+        $val: ('orientation: landscape');
+
+        $test: setup-config-list($val);
+        $expect: '(orientation: landscape)';
+
+        @include assert-equal($test, $expect, 'setup-config-list() returns a correct media string with a single value');
+    }
+}
+
+
+
+/// test if setup-config-list returns the correctly formatted string with mutliple values
+///
+/// @group Tests
+
+@mixin setup-config-returns-string-custom-multiple() {
+    @include test('config-list') {
+
+        $val: ('orientation: landscape', 'resolution: 192dppx');
+
+        $test: setup-config-list($val);
+        $expect: '(orientation: landscape) and (resolution: 192dppx)';
+
+        @include assert-equal($test, $expect, 'setup-config-list() returns a correct media string with multiple values');
+    }
+}
+
+
+
+
+// breakpoint-range()
+//==============================================================================
+
+/// test if breakpoint-range() returns a string
+///
+/// @group Tests
+
+@mixin breakpoint-range-returns-string() {
+    @include test('breakpoint-range') {
+
+        $test: type-of(breakpoint-range(large, small));
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns a string');
+    }
+}
+
+
+
+/// test if breakpoint-range() returns a correctly formatted string desktop first with named values
+///
+/// @group Tests
+
+@mixin breakpoint-range-named-values() {
+    @include test('breakpoint-range') {
+
+        $mobile-first: false;
+
+        $test: breakpoint-range(large, small);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values - desktop first');
+    }
+}
+
+/// test if breakpoint-range() returns a correctly formatted string desktop first with named values and corrected order
+///
+/// @group Tests
+
+@mixin breakpoint-range-named-values-ordered() {
+    @include test('breakpoint-range') {
+
+        $mobile-first: false;
+
+        $test: breakpoint-range(small, large);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values & corrected order - desktop first');
+    }
+}
+
+
+
+/// test if breakpoint-range() returns a correctly formatted string desktop first with mixed values
+///
+/// @group Tests
+
+@mixin breakpoint-range-mixed-values() {
+    @include test('breakpoint-range') {
+
+        $mobile-first: false;
+
+        $test: breakpoint-range(960px, small);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values - desktop first');
+    }
+}
+
+/// test if breakpoint-range() returns a correctly formatted string desktop first with mixed values and corrected order
+///
+/// @group Tests
+
+@mixin breakpoint-range-mixed-values-ordered() {
+    @include test('breakpoint-range') {
+
+        $mobile-first: false;
+
+        $test: breakpoint-range(small, 960px);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - desktop first');
+    }
+}
+
+
+
+
+// breakpoint-range() mobile first
+//==============================================================================
+
+/// test if breakpoint-range() returns a correctly formatted string mobile first with named values
+///
+/// @group Tests
+
+@mixin breakpoint-range-named-values-mobile() {
+    @include test('breakpoint-range-mobile') {
+
+        $mobile-first: true;
+
+        $test: breakpoint-range(small, large);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values - mobile first');
+    }
+}
+
+
+
+/// test if breakpoint-range() returns a correctly formatted string mobile first with named values and corrected order
+///
+/// @group Tests
+
+@mixin breakpoint-range-named-values-ordered-mobile() {
+    @include test('breakpoint-range-mobile') {
+
+        $mobile-first: true;
+
+        $test: breakpoint-range(large, small);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values & corrected order - mobile first');
+    }
+}
+
+
+
+/// test if breakpoint-range() returns a correctly formatted string mobile first with mixed values
+///
+/// @group Tests
+
+@mixin breakpoint-range-mixed-values-mobile() {
+    @include test('breakpoint-range-mobile') {
+
+        $mobile-first: true;
+
+        $test: breakpoint-range(small, 960px);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values - mobile first');
+    }
+}
+
+
+
+/// test if breakpoint-range() returns a correctly formatted string mobile first with mixed values and corrected order
+///
+/// @group Tests
+
+@mixin breakpoint-range-mixed-values-ordered-mobile() {
+    @include test('breakpoint-range-mobile') {
+
+        $mobile-first: true;
+
+        $test: breakpoint-range(960px, small);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - mobile first');
+    }
+}
 
 //==============================================================================
 // Build tests
@@ -227,6 +587,11 @@ $custom-breakpoints: (
 
 }
 
+
+
+// Get Breakpoints - breakpoint()
+//==============================================================================
+
 @include test-module('breakpoint') {
 
     @include breakpoints-return-specified-value();
@@ -234,9 +599,69 @@ $custom-breakpoints: (
 
 }
 
-@include test-module('order-breakpoints') {
 
-    @include return-order-breakpoints-small();
-    @include return-order-breakpoints-large();
 
+// setup-key-list()
+//==============================================================================
+
+@include test-module('key-list') {
+
+    @include setup-returns-string();
+    @include setup-returns-string-named();
+    @include setup-returns-string-custom();
+    @include setup-returns-string-named-range();
+    @include setup-returns-string-custom-range();
+
+}
+
+
+
+// setup-key-list() mobile first
+//==============================================================================
+
+@include test-module('key-list-mobile') {
+
+    @include setup-returns-string-named-mobile();
+    @include setup-returns-string-custom-mobile();
+    @include setup-returns-string-named-range-mobile();
+    @include setup-returns-string-custom-range-mobile();
+
+}
+
+
+
+// setup-config-list()
+//==============================================================================
+
+@include test-module('config-list') {
+
+    @include setup-config-returns-string();
+    @include setup-config-returns-string-custom();
+    @include setup-config-returns-string-custom-multiple();
+}
+
+
+// breakpoint-range()
+//==============================================================================
+
+@include test-module('breakpoint-range') {
+
+    @include breakpoint-range-returns-string();
+    @include breakpoint-range-named-values();
+    @include breakpoint-range-named-values-ordered();
+    @include breakpoint-range-mixed-values();
+    @include breakpoint-range-mixed-values-ordered();
+}
+
+
+
+// breakpoint-range() mobile first
+//==============================================================================
+
+@include test-module('breakpoint-range-mobile') {
+
+    @include breakpoint-range-named-values-mobile();
+    @include breakpoint-range-named-values-ordered-mobile();
+    @include breakpoint-range-mixed-values-mobile();
+    @include breakpoint-range-mixed-values-ordered-mobile();
 }
