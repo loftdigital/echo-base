@@ -1,142 +1,92 @@
 /* # Setup breakpoints ---------- */
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
+/* setup-breakpoints() [function] */
+[data-module="Setup breakpoints"] [data-test="setup-breakpoints() [function]"] .assert-equal {
   -result: PASS;
   -description: 'Returns a map'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-breakpoints() [function]"] .assert-true {
   -result: PASS;
   -description: 'Returns a merged map of default & custom breakpoints'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-breakpoints() [function]"] .assert-equal {
   -result: PASS;
   -description: 'Returns a custom breakpoint value'; }
-
-/* setup-breakpoints */
-[data-module="Setup breakpoints"] [data-test="setup-breakpoints"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-breakpoints() [function]"] .assert-equal {
   -result: PASS;
   -description: 'Returns a list of the default and custom breakpoints'; }
 
-/* # breakpoint ---------- */
-/* breakpoint */
-[data-module="breakpoint"] [data-test="breakpoint"] .assert-equal {
+/* breakpoint() [function] */
+[data-module="Setup breakpoints"] [data-test="breakpoint() [function]"] .assert-equal {
   -result: PASS;
   -description: 'Return a breakpoint value from the breakpoint map'; }
-
-/* breakpoint */
-[data-module="breakpoint"] [data-test="breakpoint"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint() [function]"] .assert-false {
   -result: PASS;
   -description: 'Returns false when encountering a non existant variable'; }
 
-/* # key-list ---------- */
-/* key-list */
-[data-module="key-list"] [data-test="key-list"] .assert-equal {
+/* setup-key-list() [function] */
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns a string'; }
-
-/* key-list */
-[data-module="key-list"] [data-test="key-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly for named value'; }
-
-/* key-list */
-[data-module="key-list"] [data-test="key-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly for custom value'; }
-
-/* key-list */
-[data-module="key-list"] [data-test="key-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list()  returns correctly and ordered for named value range'; }
-
-/* key-list */
-[data-module="key-list"] [data-test="key-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly and ordered for custom value range'; }
-
-/* # key-list-mobile ---------- */
-/* key-list-mobile */
-[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly for named value - mobile first'; }
-
-/* key-list-mobile */
-[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly for custom value - mobile first'; }
-
-/* key-list-mobile */
-[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list()  returns correctly and ordered for named value range - mobile first'; }
-
-/* key-list-mobile */
-[data-module="key-list-mobile"] [data-test="key-list-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-key-list() [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-key-list() returns correctly and ordered for custom value range - mobile first'; }
 
-/* # config-list ---------- */
-/* config-list */
-[data-module="config-list"] [data-test="config-list"] .assert-equal {
+/* setup-config-list() - [function] */
+[data-module="Setup breakpoints"] [data-test="setup-config-list() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-config-list() returns a string'; }
-
-/* config-list */
-[data-module="config-list"] [data-test="config-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-config-list() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-config-list() returns a correct media string with a single value'; }
-
-/* config-list */
-[data-module="config-list"] [data-test="config-list"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="setup-config-list() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'setup-config-list() returns a correct media string with multiple values'; }
 
-/* # breakpoint-range ---------- */
-/* breakpoint-range */
-[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+/* breakpoint-range() - [function] */
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns a string'; }
-
-/* breakpoint-range */
-[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with named values - desktop first'; }
-
-/* breakpoint-range */
-[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with named values & corrected order - desktop first'; }
-
-/* breakpoint-range */
-[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with mixed values - desktop first'; }
-
-/* breakpoint-range */
-[data-module="breakpoint-range"] [data-test="breakpoint-range"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - desktop first'; }
-
-/* # breakpoint-range-mobile ---------- */
-/* breakpoint-range-mobile */
-[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with named values - mobile first'; }
-
-/* breakpoint-range-mobile */
-[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with named values & corrected order - mobile first'; }
-
-/* breakpoint-range-mobile */
-[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with mixed values - mobile first'; }
-
-/* breakpoint-range-mobile */
-[data-module="breakpoint-range-mobile"] [data-test="breakpoint-range-mobile"] .assert-equal {
+[data-module="Setup breakpoints"] [data-test="breakpoint-range() - [function]"] .assert-equal {
   -result: PASS;
   -description: 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - mobile first'; }
 
@@ -200,7 +150,7 @@
   -description: 'remify returns 0 for 0 values'; }
 
 /* # SUMMARY ---------- */
-/* 38 Tests: */
-/*  - 38 Passed */
+/* 16 Tests: */
+/*  - 16 Passed */
 /*  - 0 Failed */
 /* -------------------- */
