@@ -209,7 +209,6 @@ $breakpoints: ();
 
 @function setup-config-list($extra-config: false) {
 
-<<<<<<< HEAD
     $config-string: '';
 
     @for $i from 1 through length($extra-config) {
