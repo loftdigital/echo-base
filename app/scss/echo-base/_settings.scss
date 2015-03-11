@@ -142,7 +142,7 @@
 
 
 
-//  Font weight
+//  1. Font weights
 //==============================================================================
 
 // $font-weight-light: 100;
@@ -151,100 +151,141 @@
 
 
 
-//  Base font
+//  2. Base font
 //==============================================================================
 
 // $base-font-family: Arial, sans-serif;
 // $base-font-weight: $font-weight-regular;
 // $base-font-size: $global-page-font-size;
-// $base-font-line-height: 150%;
+// $base-font-style: normal;
+// $base-line-height: 1.5;
 
 
 
-//  Fixed font
+//  3. Fixed font
 //==============================================================================
 
 // $fixed-font-family: monospace;
 // $fixed-font-weight: normal;
 // $fixed-font-size: 85%;
-// $fixed-line-height: $base-font-line-height;
+// $fixed-line-height: $base-line-height;
 
 
 
-//  Heading font
+//  4. Heading font
 //==============================================================================
 
 // $heading-font-family: Arial, sans-serif;
 // $heading-font-weight: $font-weight-bold;
-// $heading-font-line-height: 1.4;
-// $heading-font-margin-top: .2rem;
-// $heading-font-margin-bottom: .5rem;
+// $heading-font-margin-top: 0.2rem;
+// $heading-font-margin-bottom: 0.5rem;
 // $heading-font-text-rendering: optimizeLegibility;
 // $heading-letter-spacing: normal;
 // $heading-text-transform: none;
 
 
 
-// Responsive font sizes
+//  5. Responsive text sizes
 //==============================================================================
 
-// @mixin h1-text-size() {
+// @mixin h1-text-size-responsive {
+//     @include h1-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin h2-text-size-responsive {
+//     @include h2-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin h3-text-size-responsive {
+//     @include h3-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin h4-text-size-responsive {
+//     @include h4-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin h5-text-size-responsive {
+//     @include h5-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin h6-text-size-responsive {
+//     @include h6-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin p-text-size-responsive {
+//     @include p-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin li-text-size-responsive {
+//     @include li-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin blockquote-text-size-responsive {
+//     @include blockquote-text-size-default;
+//
+//     // @include breakpoint(large) {}
+//     // @include breakpoint(medium) {}
+//     // @include breakpoint(small) {}
+//     // @include breakpoint(x-small) {}
+// }
+//
+// @mixin code-text-size-responsive {
+//     @include code-text-size-default;
+//
 //     // @include breakpoint(large) {}
 //     // @include breakpoint(medium) {}
 //     // @include breakpoint(small) {}
 //     // @include breakpoint(x-small) {}
 // }
 
-// @mixin h2-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
-//
-// @mixin h3-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
-//
-// @mixin h4-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
-//
-// @mixin h5-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
-//
-// @mixin h6-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
-//
-// @mixin p-text-size() {
-//     // @include breakpoint(large) {}
-//     // @include breakpoint(medium) {}
-//     // @include breakpoint(small) {}
-//     // @include breakpoint(x-small) {}
-// }
 
-
-
-//  Heading - <h1>
+//  6. Heading - <h1>
 //==============================================================================
 
+// $h1-font-size: rem-calc(48px);
+// $h1-line-height: 1.05;
 // $h1-font-family: $heading-font-family;
 // $h1-font-weight: $heading-font-weight;
-// $h1-line-height: $heading-line-height;
 // $h1-font-margin-bottom: $heading-font-margin-bottom;
 // $h1-font-margin-top: $heading-font-margin-top;
 // $h1-font-text-rendering: $heading-font-text-rendering;
@@ -253,12 +294,13 @@
 
 
 
-//  Heading - <h2>
+//  7. Heading - <h2>
 //==============================================================================
 
+// $h2-font-size: rem-calc(36px);
+// $h2-line-height: 1.25;
 // $h2-font-family: $heading-font-family;
 // $h2-font-weight: $heading-font-weight;
-// $h2-line-height: $heading-line-height;
 // $h2-font-margin-bottom: $heading-font-margin-bottom;
 // $h2-font-margin-top: $heading-font-margin-top;
 // $h2-font-text-rendering: $heading-font-text-rendering;
@@ -267,12 +309,13 @@
 
 
 
-//  Heading - <h3>
+//  8. Heading - <h3>
 //==============================================================================
 
+// $h3-font-size: rem-calc(28px);
+// $h3-line-height: 1.25;
 // $h3-font-family: $heading-font-family;
 // $h3-font-weight: $heading-font-weight;
-// $h3-line-height: $heading-line-height;
 // $h3-font-margin-bottom: $heading-font-margin-bottom;
 // $h3-font-margin-top: $heading-font-margin-top;
 // $h3-font-text-rendering: $heading-font-text-rendering;
@@ -281,12 +324,13 @@
 
 
 
-//  Heading - <h4>
+//  9. Heading - <h4>
 //==============================================================================
 
+// $h4-font-size: rem-calc(18px);
+// $h4-line-height: 1.22;
 // $h4-font-family: $heading-font-family;
 // $h4-font-weight: $heading-font-weight;
-// $h4-line-height: $heading-line-height;
 // $h4-font-margin-bottom: $heading-font-margin-bottom;
 // $h4-font-margin-top: $heading-font-margin-top;
 // $h4-font-text-rendering: $heading-font-text-rendering;
@@ -295,12 +339,13 @@
 
 
 
-//  Heading - <h5>
+//  10. Heading - <h5>
 //==============================================================================
 
+// $h5-font-size: rem-calc(16px);
+// $h5-line-height: 1.22;
 // $h5-font-family: $heading-font-family;
 // $h5-font-weight: $heading-font-weight;
-// $h5-line-height: $heading-line-height;
 // $h5-font-margin-bottom: $heading-font-margin-bottom;
 // $h5-font-margin-top: $heading-font-margin-top;
 // $h5-font-text-rendering: $heading-font-text-rendering;
@@ -309,12 +354,13 @@
 
 
 
-//  Heading - <h6>
+//  11. heading - <h6>
 //==============================================================================
 
+// $h6-font-size: rem-calc(14px);
+// $h6-line-height: 1.22;
 // $h6-font-family: $heading-font-family;
 // $h6-font-weight: $heading-font-weight;
-// $h6-line-height: $heading-line-height;
 // $h6-font-margin-bottom: $heading-font-margin-bottom;
 // $h6-font-margin-top: $heading-font-margin-top;
 // $h6-font-text-rendering: $heading-font-text-rendering;
@@ -323,7 +369,7 @@
 
 
 
-//  Paragraph - <p>
+//  12. Paragraph - <p>
 //==============================================================================
 
 // $p-font-family: $base-font-family;
@@ -337,7 +383,7 @@
 
 
 
-//  Anchor - <a>
+//  13. Anchor - <a>
 //==============================================================================
 
 // $a-text-decoration: none;
@@ -347,12 +393,12 @@
 
 
 
-//  Unordered list - <ul>
+//  14. Unordered list - <ul>
 //==============================================================================
 
 // $ul-list-style-type: disc;
-// $ul-margin-top: 1rem;
-// $ul-margin-bottom: 1rem;
+// $ul-margin-top: 1.5rem;
+// $ul-margin-bottom: 1.5rem;
 // $ul-margin-right: 0;
 // $ul-margin-left: 1.3rem;
 // $ul-padding-top: 0;
@@ -362,12 +408,12 @@
 
 
 
-//  Ordered list - <ol>
+//  15. Ordered list - <ol>
 //==============================================================================
 
 // $ol-list-style-type: decimal;
-// $ol-margin-top: 1rem;
-// $ol-margin-bottom: 1rem;
+// $ol-margin-top: 1.5rem;
+// $ol-margin-bottom: 1.5rem;
 // $ol-margin-right: 0;
 // $ol-margin-left: 1.3rem;
 // $ol-padding-top: 0;
@@ -377,7 +423,7 @@
 
 
 
-//  List item - <li>
+//  16. List item - <li>
 //==============================================================================
 
 // $li-font-family: $base-font-family;
@@ -395,13 +441,15 @@
 
 
 
-//  Blockquote - <blockquote>
+//  17. Blockquote - <blockquote>
 //==============================================================================
 
+// $blockquote-font-size: rem-calc(24px);
+// $blockquote-line-height: 1.4583;
 // $blockquote-font-family: $base-font-family;
 // $blockquote-font-size: $base-font-size;
 // $blockquote-font-weight: $base-font-weight;
-// $blockquote-line-height: $base-line-height;
+// $blockquote-font-style: italic;
 // $blockquote-margin-top: 1.5rem;
 // $blockquote-margin-bottom: 1.5rem;
 // $blockquote-margin-right: 1rem;
@@ -416,29 +464,22 @@
 
 
 
-//  Code - <code>
+//  18. Code - <code>
 //==============================================================================
 
-// $code-display: block !default;
-// $code-padding: rem-calc(16px) !default;
-// $code-margin: 1.5rem 0 !default;
-// $code-color: palette(default-grey, dark) !default;
-// $code-font-family: $fixed-font-family !default;
-// $code-font-weight: $fixed-font-weight !default;
-// $code-font-size: $fixed-font-size !default;
-// $code-line-height: $fixed-line-height !default;
-// $code-background-color: palette(default-grey, x-light) !default;
-// $code-border-width: 1px !default;
-// $code-border-style: solid !default;
-// $code-border-color: palette(default-grey) !default;
-// $code-border-radius: $global-border-radius !default;
-
-
-
-//  Custom responsive text sizing
-//==============================================================================
-
-// $responsive-text-custom: ();
+// $code-display: block;
+// $code-padding: rem-calc(16px);
+// $code-margin: 1.5rem 0;
+// $code-color: palette(default-grey, dark);
+// $code-font-family: $fixed-font-family;
+// $code-font-weight: $fixed-font-weight;
+// $code-font-size: $fixed-font-size;
+// $code-line-height: $fixed-line-height;
+// $code-background-color: palette(default-grey, x-light);
+// $code-border-width: 1px;
+// $code-border-style: solid;
+// $code-border-color: palette(default-grey);
+// $code-border-radius: $global-border-radius;
 
 
 

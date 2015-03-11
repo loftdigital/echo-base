@@ -45,6 +45,8 @@
 
 $use-type-defaults: $use-echo-base-defaults !default;
 
+
+
 //  1. Font weights
 //==============================================================================
 
@@ -80,7 +82,6 @@ $fixed-line-height: $base-line-height !default;
 
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
-$heading-line-height: 1.5 !default;
 $heading-font-margin-top: 0.2rem !default;
 $heading-font-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizeLegibility !default;
@@ -92,9 +93,10 @@ $heading-text-transform: none !default;
 //  5. Heading - <h1>
 //==============================================================================
 
+$h1-font-size: rem-calc(48px) !default;
+$h1-line-height: 1.05 !default;
 $h1-font-family: $heading-font-family !default;
 $h1-font-weight: $heading-font-weight !default;
-$h1-line-height: $heading-line-height !default;
 $h1-font-margin-bottom: $heading-font-margin-bottom !default;
 $h1-font-margin-top: $heading-font-margin-top !default;
 $h1-font-text-rendering: $heading-font-text-rendering !default;
@@ -106,9 +108,10 @@ $h1-text-transform: $heading-text-transform !default;
 //  6. Heading - <h2>
 //==============================================================================
 
+$h2-font-size: rem-calc(36px) !default;
+$h2-line-height: 1.25 !default;
 $h2-font-family: $heading-font-family !default;
 $h2-font-weight: $heading-font-weight !default;
-$h2-line-height: $heading-line-height !default;
 $h2-font-margin-bottom: $heading-font-margin-bottom !default;
 $h2-font-margin-top: $heading-font-margin-top !default;
 $h2-font-text-rendering: $heading-font-text-rendering !default;
@@ -120,9 +123,10 @@ $h2-text-transform: $heading-text-transform !default;
 //  7. Heading - <h3>
 //==============================================================================
 
+$h3-font-size: rem-calc(28px) !default;
+$h3-line-height: 1.25 !default;
 $h3-font-family: $heading-font-family !default;
 $h3-font-weight: $heading-font-weight !default;
-$h3-line-height: $heading-line-height !default;
 $h3-font-margin-bottom: $heading-font-margin-bottom !default;
 $h3-font-margin-top: $heading-font-margin-top !default;
 $h3-font-text-rendering: $heading-font-text-rendering !default;
@@ -134,9 +138,10 @@ $h3-text-transform: $heading-text-transform !default;
 //  8. Heading - <h4>
 //==============================================================================
 
+$h4-font-size: rem-calc(18px) !default;
+$h4-line-height: 1.22 !default;
 $h4-font-family: $heading-font-family !default;
 $h4-font-weight: $heading-font-weight !default;
-$h4-line-height: $heading-line-height !default;
 $h4-font-margin-bottom: $heading-font-margin-bottom !default;
 $h4-font-margin-top: $heading-font-margin-top !default;
 $h4-font-text-rendering: $heading-font-text-rendering !default;
@@ -148,9 +153,10 @@ $h4-text-transform: $heading-text-transform !default;
 //  9. Heading - <h5>
 //==============================================================================
 
+$h5-font-size: rem-calc(16px) !default;
+$h5-line-height: 1.22 !default;
 $h5-font-family: $heading-font-family !default;
 $h5-font-weight: $heading-font-weight !default;
-$h5-line-height: $heading-line-height !default;
 $h5-font-margin-bottom: $heading-font-margin-bottom !default;
 $h5-font-margin-top: $heading-font-margin-top !default;
 $h5-font-text-rendering: $heading-font-text-rendering !default;
@@ -162,9 +168,10 @@ $h5-text-transform: $heading-text-transform !default;
 //  10. heading - <h6>
 //==============================================================================
 
+$h6-font-size: rem-calc(14px) !default;
+$h6-line-height: 1.22 !default;
 $h6-font-family: $heading-font-family !default;
 $h6-font-weight: $heading-font-weight !default;
-$h6-line-height: $heading-line-height !default;
 $h6-font-margin-bottom: $heading-font-margin-bottom !default;
 $h6-font-margin-top: $heading-font-margin-top !default;
 $h6-font-text-rendering: $heading-font-text-rendering !default;
@@ -248,10 +255,12 @@ $li-padding-left: 0 !default;
 //  16. Blockquote - <blockquote>
 //==============================================================================
 
+$blockquote-font-size: rem-calc(24px) !default;
+$blockquote-line-height: 1.4583 !default;
 $blockquote-font-family: $base-font-family !default;
 $blockquote-font-size: $base-font-size !default;
 $blockquote-font-weight: $base-font-weight !default;
-$blockquote-line-height: $base-line-height !default;
+$blockquote-font-style: italic !default;
 $blockquote-margin-top: 1.5rem !default;
 $blockquote-margin-bottom: 1.5rem !default;
 $blockquote-margin-right: 1rem !default;
@@ -287,221 +296,22 @@ $code-border-radius: $global-border-radius !default;
 
 
 //==============================================================================
-//  b. Responsive text sizing
-//==============================================================================
-
-// $responsive-text-defaults: (
-//
-//     h1: (
-//         default: (
-//             font-size: $h1-font-size,
-//             line-height: $h1-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h1-font-size--large,
-//             line-height: $h1-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h1-font-size--medium,
-//             line-height: $h1-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h1-font-size--small,
-//             line-height: $h1-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h1-font-size--x-small,
-//             line-height: $h1-line-height--x-small
-//         )
-//     ),
-//
-//     h2: (
-//         default: (
-//             font-size: $h2-font-size,
-//             line-height: $h2-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h2-font-size--large,
-//             line-height: $h2-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h2-font-size--medium,
-//             line-height: $h2-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h2-font-size--small,
-//             line-height: $h2-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h2-font-size--x-small,
-//             line-height: $h2-line-height--x-small
-//         )
-//     ),
-//
-//     h3: (
-//         default: (
-//             font-size: $h3-font-size,
-//             line-height: $h3-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h3-font-size--large,
-//             line-height: $h3-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h3-font-size--medium,
-//             line-height: $h3-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h3-font-size--small,
-//             line-height: $h3-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h3-font-size--x-small,
-//             line-height: $h3-line-height--x-small
-//         )
-//     ),
-//
-//     h4: (
-//         default: (
-//             font-size: $h4-font-size,
-//             line-height: $h4-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h4-font-size--large,
-//             line-height: $h4-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h4-font-size--medium,
-//             line-height: $h4-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h4-font-size--small,
-//             line-height: $h4-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h4-font-size--x-small,
-//             line-height: $h4-line-height--x-small
-//         )
-//     ),
-//
-//     h5: (
-//         default: (
-//             font-size: $h5-font-size,
-//             line-height: $h5-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h5-font-size--large,
-//             line-height: $h5-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h5-font-size--medium,
-//             line-height: $h5-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h5-font-size--small,
-//             line-height: $h5-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h5-font-size--x-small,
-//             line-height: $h5-line-height--x-small
-//         )
-//     ),
-//
-//     h6: (
-//         default: (
-//             font-size: $h6-font-size,
-//             line-height: $h6-line-height
-//         ),
-//
-//         large: (
-//             font-size: $h6-font-size--large,
-//             line-height: $h6-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $h6-font-size--medium,
-//             line-height: $h6-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $h6-font-size--small,
-//             line-height: $h6-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $h6-font-size--x-small,
-//             line-height: $h6-line-height--x-small
-//         )
-//     ),
-//
-//     p: (
-//         default: (
-//             font-size: $p-font-size,
-//             line-height: $p-line-height
-//         ),
-//
-//         large: (
-//             font-size: $p-font-size--large,
-//             line-height: $p-line-height--large
-//         ),
-//
-//         medium: (
-//             font-size: $p-font-size--medium,
-//             line-height: $p-line-height--medium
-//         ),
-//
-//         small: (
-//             font-size: $p-font-size--small,
-//             line-height: $p-line-height--small
-//         ),
-//
-//         x-small: (
-//             font-size: $p-font-size--x-small,
-//             line-height: $p-line-height--x-small
-//         )
-//     )
-// );
-
-
-
-
-//==============================================================================
-//  c. Custom responsive text sizing
-//==============================================================================
-
-// $responsive-text-custom: () !default;
-
-
-
-
-//==============================================================================
 //  d. Mixins
 //==============================================================================
+
+
+
+//  1. Heading - <h1>
+//==============================================================================
+
+@mixin h1-text-size-default {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+}
 
 @mixin h1 {
     font-family: $h1-font-family;
     font-weight: $h1-font-weight;
-    line-height: $h1-line-height;
     margin-bottom: $h1-font-margin-bottom;
     margin-top: $h1-font-margin-top;
     text-rendering: $h1-font-text-rendering;
@@ -509,14 +319,25 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h1-text-transform;
 
     @if mixin-exists(h1-text-size) {
-        @include h1-text-size();
+        @include h1-text-size;
+    } @else {
+        @include h1-text-size-default;
     }
+}
+
+
+
+//  2. Heading - <h2>
+//==============================================================================
+
+@mixin h2-text-size-default {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
 }
 
 @mixin h2 {
     font-family: $h2-font-family;
     font-weight: $h2-font-weight;
-    line-height: $h2-line-height;
     margin-bottom: $h2-font-margin-bottom;
     margin-top: $h2-font-margin-top;
     text-rendering: $h2-font-text-rendering;
@@ -524,14 +345,25 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h2-text-transform;
 
     @if mixin-exists(h2-text-size) {
-        @include h2-text-size();
+        @include h2-text-size;
+    } @else {
+        @include h2-text-size-default;
     }
+}
+
+
+
+//  3. Heading - <h3>
+//==============================================================================
+
+@mixin h3-text-size-default {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
 }
 
 @mixin h3 {
     font-family: $h3-font-family;
     font-weight: $h3-font-weight;
-    line-height: $h3-line-height;
     margin-bottom: $h3-font-margin-bottom;
     margin-top: $h3-font-margin-top;
     text-rendering: $h3-font-text-rendering;
@@ -539,14 +371,25 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h3-text-transform;
 
     @if mixin-exists(h3-text-size) {
-        @include h3-text-size();
+        @include h3-text-size;
+    } @else {
+        @include h3-text-size-default;
     }
+}
+
+
+
+//  4. Heading - <h4>
+//==============================================================================
+
+@mixin h4-text-size-default {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
 }
 
 @mixin h4 {
     font-family: $h4-font-family;
     font-weight: $h4-font-weight;
-    line-height: $h4-line-height;
     margin-bottom: $h4-font-margin-bottom;
     margin-top: $h4-font-margin-top;
     text-rendering: $h4-font-text-rendering;
@@ -554,14 +397,25 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h4-text-transform;
 
     @if mixin-exists(h4-text-size) {
-        @include h4-text-size();
+        @include h4-text-size;
+    } @else {
+        @include h4-text-size-default;
     }
+}
+
+
+
+//  5. Heading - <h5>
+//==============================================================================
+
+@mixin h5-text-size-default {
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
 }
 
 @mixin h5 {
     font-family: $h5-font-family;
     font-weight: $h5-font-weight;
-    line-height: $h5-line-height;
     margin-bottom: $h5-font-margin-bottom;
     margin-top: $h5-font-margin-top;
     text-rendering: $h5-font-text-rendering;
@@ -569,14 +423,25 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h5-text-transform;
 
     @if mixin-exists(h5-text-size) {
-        @include h5-text-size();
+        @include h5-text-size;
+    } @else {
+        @include h5-text-size-default;
     }
+}
+
+
+
+//  6. Heading - <h6>
+//==============================================================================
+
+@mixin h6-text-size-default {
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
 }
 
 @mixin h6 {
     font-family: $h6-font-family;
     font-weight: $h6-font-weight;
-    line-height: $h6-line-height;
     margin-bottom: $h6-font-margin-bottom;
     margin-top: $h6-font-margin-top;
     text-rendering: $h6-font-text-rendering;
@@ -584,24 +449,41 @@ $code-border-radius: $global-border-radius !default;
     text-transform: $h6-text-transform;
 
     @if mixin-exists(h6-text-size) {
-        @include h6-text-size();
+        @include h6-text-size;
+    } @else {
+        @include h6-text-size-default;
     }
+}
+
+
+
+//  7. Paragraph - <p>
+//==============================================================================
+
+@mixin p-text-size-default {
+    font-size: $p-font-size;
+    line-height: $p-line-height;
 }
 
 @mixin p {
     font-family: $p-font-family;
-    font-size: $p-font-size;
     font-weight: $p-font-weight;
-    line-height: $p-line-height;
     letter-spacing: $p-letter-spacing;
     text-transform: $p-text-transform;
     margin-top: $p-margin-top;
     margin-bottom: $p-margin-bottom;
 
     @if mixin-exists(p-text-size) {
-        @include p-text-size();
+        @include p-text-size;
+    } @else {
+        @include p-text-size-default;
     }
 }
+
+
+
+//  8. Anchor - <a>
+//==============================================================================
 
 @mixin anchor {
     text-decoration: $a-text-decoration;
@@ -613,7 +495,12 @@ $code-border-radius: $global-border-radius !default;
     }
 }
 
-@mixin unordered-list {
+
+
+//  9. Unordered list - <ul>
+//==============================================================================
+
+@mixin ul {
     list-style-type: $ul-list-style-type;
     margin-top: $ul-margin-top;
     margin-bottom: $ul-margin-bottom;
@@ -625,7 +512,12 @@ $code-border-radius: $global-border-radius !default;
     padding-left: $ul-padding-left;
 }
 
-@mixin ordered-list {
+
+
+//  10. Ordered list - <ol>
+//==============================================================================
+
+@mixin ol {
     list-style-type: $ol-list-style-type;
     margin-top: $ol-margin-top;
     margin-bottom: $ol-margin-bottom;
@@ -637,11 +529,19 @@ $code-border-radius: $global-border-radius !default;
     padding-left: $ol-padding-left;
 }
 
-@mixin list-item {
-    font-family: $li-font-family;
+
+
+//  11. List item - <li>
+//==============================================================================
+
+@mixin li-text-size-default {
     font-size: $li-font-size;
-    font-weight: $li-font-weight;
     line-height: $li-line-height;
+}
+
+@mixin li {
+    font-family: $li-font-family;
+    font-weight: $li-font-weight;
     margin-top: $li-margin-top;
     margin-bottom: $li-margin-bottom;
     margin-right: $li-margin-right;
@@ -650,13 +550,28 @@ $code-border-radius: $global-border-radius !default;
     padding-bottom: $li-padding-bottom;
     padding-right: $li-padding-right;
     padding-left: $li-padding-left;
+
+    @if mixin-exists(li-text-size) {
+        @include li-text-size;
+    } @else {
+        @include li-text-size-default;
+    }
+}
+
+
+
+//  12. Blockquote - <blockquote>
+//==============================================================================
+
+@mixin blockquote-text-size-default {
+    font-size: $blockquote-font-size;
+    line-height: $blockquote-line-height;
 }
 
 @mixin blockquote {
     font-family: $blockquote-font-family;
-    font-size: $blockquote-font-size;
     font-weight: $blockquote-font-weight;
-    line-height: $blockquote-line-height;
+    font-style: $blockquote-font-style;
     margin-top: $blockquote-margin-top;
     margin-bottom: $blockquote-margin-bottom;
     margin-right: $blockquote-margin-right;
@@ -668,6 +583,22 @@ $code-border-radius: $global-border-radius !default;
     border-left-width: $blockquote-border-left-width;
     border-left-style: $blockquote-border-left-style;
     border-left-color: $blockquote-border-left-color;
+
+    @if mixin-exists(blockquote-text-size) {
+        @include blockquote-text-size;
+    } @else {
+        @include blockquote-text-size-default;
+    }
+}
+
+
+
+//  13. Code - <code>
+//==============================================================================
+
+@mixin code-text-size-default {
+    font-size: $code-font-size;
+    line-height: $code-line-height;
 }
 
 @mixin code {
@@ -677,13 +608,17 @@ $code-border-radius: $global-border-radius !default;
     color: $code-color;
     font-family: $code-font-family;
     font-weight: $code-font-weight;
-    font-size: $code-font-size;
-    line-height: $code-line-height;
     background-color: $code-background-color;
     border-width: $code-border-width;
     border-style: $code-border-style;
     border-color: $code-border-color;
     border-radius: $code-border-radius;
+
+    @if mixin-exists(code-text-size) {
+        @include code-text-size;
+    } @else {
+        @include code-text-size-default;
+    }
 }
 
 
@@ -748,15 +683,15 @@ $code-border-radius: $global-border-radius !default;
 //==============================================================================
 
     ul {
-        @include unordered-list;
+        @include ul;
     }
 
     ol {
-        @include ordered-list;
+        @include ol;
     }
 
     li {
-        @include list-item;
+        @include li;
     }
 
 
