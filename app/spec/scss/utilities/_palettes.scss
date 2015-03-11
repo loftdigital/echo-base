@@ -22,11 +22,46 @@
 
 $custom-palette-base: rgb(255, 0, 0);
 
+
+$custom-string-color: rgb(255, 0, 0);
+$custom-palette-color: rgb(0, 255, 0);
+
+$custom-sub-group-string-color: rgb(255, 255, 0);
+$custom-sub-group-palette-color: rgb(0, 0, 255);
+
+
+
 $custom-palettes: (
+
     custom-palette: (
         base: $custom-palette-base
+    ),
+
+
+
+
+    // Setup custom string color
+    custom-string-color: $custom-string-color,
+
+    // Setup custom palette color
+    custom-palette-color: (
+        base: $custom-palette-color
+    ),
+
+    // Setup custom sub group
+    custom-sub-group: (
+
+        // Setup custom sub group string color
+        custom-sub-group-string-color: $custom-sub-group-string-color,
+
+        // Setup custom sub group palette color
+        custom-sub-group-palette-color: (
+            base: $custom-sub-group-palette-color
+        )
     )
 );
+
+
 
 
 
@@ -110,6 +145,95 @@ $custom-palettes: (
 
 
 
+//  Palette - palette()
+//==============================================================================
+
+
+/// Test if palette() returns the primary color correctly
+///
+/// @group Tests
+
+@mixin palette-get-string-color() {
+
+    @include test('palette()') {
+
+        $palettes: setup-palettes();
+
+        // Values to compare
+        $test: palette-take-two(custom-string-color);
+        $expect: $custom-string-color;
+
+        @include assert-equal($test, $expect, 'Returns a color using a string');
+    }
+}
+
+
+
+
+/// Test if palette() returns the primary color correctly
+///
+/// @group Tests
+
+@mixin palette-get-palette-color() {
+
+    @include test('palette()') {
+
+        $palettes: setup-palettes();
+
+        // Values to compare
+        $test: palette-take-two(custom-palette-color);
+        $expect: $custom-palette-color;
+
+        @include assert-equal($test, $expect, 'Returns a color using a palette and default tone (none specified)');
+    }
+}
+
+
+
+
+/// Test if palette() with 2 args returns the base tone
+///
+/// @group Tests
+
+@mixin palette-get-sub-group-string-color() {
+
+    @include test('palette()') {
+
+        $palettes: setup-palettes();
+
+        @debug $palettes;
+
+        // Values to compare
+        $test: palette-take-two(custom-sub-group, custom-sub-group-string-color);
+        $expect: $custom-sub-group-string-color;
+
+        @include assert-equal($test, $expect, 'Returns a color using a string within a sub group');
+    }
+}
+
+
+/// Test if palette() with 2 args returns the base tone
+///
+/// @group Tests
+
+@mixin palette-get-sub-group-palette-color() {
+
+    @include test('palette()') {
+
+        $palettes: setup-palettes();
+
+        // Values to compare
+        $test: palette-take-two(custom-sub-group, custom-sub-group-palette-color, base);
+        $expect: $custom-sub-group-palette-color;
+
+        @include assert-equal($test, $expect, 'Returns a color using a palette within a sub group');
+    }
+}
+
+
+
+
+
 //==============================================================================
 //  Run tests
 //==============================================================================
@@ -122,5 +246,16 @@ $custom-palettes: (
     @include palettes-return-map();
     @include palettes-has-custom-key();
     @include palettes-return-custom-value();
+}
+
+//  Palette - palettes()
+//==============================================================================
+
+@include test-module('palette()') {
+
+    @include palette-get-string-color();
+    @include palette-get-palette-color();
+    @include palette-get-sub-group-string-color();
+    @include palette-get-sub-group-palette-color();
 
 }

@@ -217,6 +217,7 @@ $breakpoints: ();
 
     $config-string: '';
 
+
     @for $i from 1 through length($extra-config) {
 
 		$item: '';
@@ -340,22 +341,102 @@ $breakpoints: ();
 /// @param {String} $tone ['base'] - Palette tone
 /// @return {Map}
 
-@function palette($palette, $tone: 'base') {
-	$palettes: setup-palettes();
+@function palette-take-two( $options... ) {
 
-	@if (map-has-key($palettes, $palette)) {
-		$color: map-get($palettes, $palette);
+    $palettes: setup-palettes();
 
-		@if (map-has-key($color, $tone)) {
-			@return map-get($color, $tone);
-		} @else {
-			@warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
-		}
 
-	} @else {
-		@warn "Palette '#{$palette}' doesn't exist!";
-	}
+    $args1: nth( $options, 1);
+    $args2: 'base';
+    $args3: 'base';
 
+    @if ( length($options) > 1 ) {
+        @if ( nth( $options, 2) ) {
+            $args2: nth( $options, 2);
+        }
+    }
+
+    @if ( length($options) > 2 ) {
+        @if ( nth( $options, 3) ) {
+            $args3: nth( $options, 3);
+        }
+    }
+
+
+    // First check if palette exists in global palettes map
+
+    @if (map-has-key($palettes, $args1)) {
+
+        $child: map-get($palettes, $args1);
+
+        // STEP 1
+        // Check if string or map
+
+        @if( type-of($child) != map ) {
+
+            // Is string - return color
+            @return $child;
+
+        } @else {
+
+            // Is map
+
+            // Check if palette or subgroup
+
+            @if ( map-has-key($child, base) ) {
+
+                // Is palette
+                $color: $child;
+                $tone: $args2;
+
+                // Go to step 2
+
+            } @else {
+
+                // Is sub group
+
+
+
+                @if ( map-has-key( $child, $args2 ) ) {
+
+                    $grand-child: map-get( $child, $args2 );
+
+                    @debug type-of($grand-child);
+
+                    @if( type-of($grand-child) != map ) {
+
+                        @return $grand-child;
+
+                    } @else {
+
+                        @warn 'HERE!';
+
+                        $color: map-get( $grand-child, $args2 );
+                        $tone: $args3;
+
+                        @warn $color;
+                    }
+
+                } @else {
+                    @warn "Color '#{$args2}' doesn\'t exist within sub-group '#{$grand-child}'!";
+                }
+            }
+
+
+            // STEP 2
+
+            @if (map-has-key($color, $tone)) {
+                @return map-get($color, $tone);
+            } @else {
+                @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
+            }
+
+        }
+
+
+    } @else {
+        @warn "Palette '#{$args1}' doesn't exist!";
+    }
 }
 
 
