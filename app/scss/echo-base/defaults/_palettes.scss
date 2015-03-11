@@ -40,7 +40,7 @@ $primary-color: rgb(0, 200, 162) !default;
 
 // $default-palettes: (
 //     echo-base: (
-//         eb-black: rgb(0, 0, 0),
+//
 //         eb-grey-x-light: rgb(245, 245, 245),
 //         eb-grey-light: rgb(228, 228, 228),
 //         eb-grey-base: rgb(200, 200, 200),
@@ -52,27 +52,24 @@ $primary-color: rgb(0, 200, 162) !default;
 
 $default-palettes: (
 
-
     primary: (
         base: $primary-color
     ),
 
 
-    echo-base: (
 
-        eb-grey: (
+
+    echo-base: (
+        black: rgb(0, 0, 0),
+        white: rgb(255, 255, 255),
+
+        grey: (
+            x-light: rgb(245, 245, 245),
             light: rgb(228, 228, 228),
             base: rgb(200, 200, 200),
             dark: rgb(150, 150, 150)
         ),
-
-        eb-red: (
-            base: rgb(255, 0, 0)
-        )
-
-    ),
-
-
+    )
 );
 
 

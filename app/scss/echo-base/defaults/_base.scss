@@ -25,8 +25,8 @@
 //  1. Body - <body>
 //==============================================================================
 
-$body-background: palette(default-white) !default;
-$body-font-color: palette(default-black) !default;
+$body-background: palette(echo-base, white) !default;
+$body-font-color: palette(echo-base, black) !default;
 $body-font-family: $base-font-family !default;
 $body-font-weight: $base-font-weight !default;
 $body-font-style: $base-font-style !default;
@@ -37,7 +37,7 @@ $body-line-height: $base-line-height !default;
 //  2. Horizontal rule - <hr>
 //==============================================================================
 
-$hr-border-color: palette(default-grey, light) !default;
+$hr-border-color: palette(echo-base, grey, light) !default;
 
 
 

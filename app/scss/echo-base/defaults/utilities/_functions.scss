@@ -341,6 +341,7 @@ $breakpoints: ();
 /// @param {String} $tone ['base'] - Palette tone
 /// @return {Map}
 
+
 @function palette-take-two( $options... ) {
 
     $palettes: setup-palettes();
@@ -394,27 +395,21 @@ $breakpoints: ();
             } @else {
 
                 // Is sub group
+                $sub-group: $child;
 
+                // Check if palette exists in sub-group
 
+                @if ( map-has-key( $sub-group, $args2 ) ) {
 
-                @if ( map-has-key( $child, $args2 ) ) {
-
-                    $grand-child: map-get( $child, $args2 );
-
-                    @debug type-of($grand-child);
+                    $grand-child: map-get( $sub-group, $args2 );
 
                     @if( type-of($grand-child) != map ) {
 
                         @return $grand-child;
 
                     } @else {
-
-                        @warn 'HERE!';
-
-                        $color: map-get( $grand-child, $args2 );
+                        $color: $grand-child;
                         $tone: $args3;
-
-                        @warn $color;
                     }
 
                 } @else {
@@ -435,7 +430,7 @@ $breakpoints: ();
 
 
     } @else {
-        @warn "Palette '#{$args1}' doesn't exist!";
+        @warn "Palette '#{$args1}' doesn\'t exist!";
     }
 }
 

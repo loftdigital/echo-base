@@ -281,15 +281,15 @@ $blockquote-border-left-color: palette(primary) !default;
 $code-display: block !default;
 $code-padding: rem-calc(16px) !default;
 $code-margin: 1.5rem 0 !default;
-$code-color: palette(default-grey, dark) !default;
+$code-color: palette(echo-base, grey, dark) !default;
 $code-font-family: $fixed-font-family !default;
 $code-font-weight: $fixed-font-weight !default;
 $code-font-size: $fixed-font-size !default;
 $code-line-height: $fixed-line-height !default;
-$code-background-color: palette(default-grey, x-light) !default;
+$code-background-color: palette(echo-base, grey, x-light) !default;
 $code-border-width: 1px !default;
 $code-border-style: solid !default;
-$code-border-color: palette(default-grey) !default;
+$code-border-color: palette(echo-base, grey) !default;
 $code-border-radius: $global-border-radius !default;
 
 

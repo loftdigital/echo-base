@@ -470,17 +470,16 @@
 // $code-display: block;
 // $code-padding: rem-calc(16px);
 // $code-margin: 1.5rem 0;
-// $code-color: palette(default-grey, dark);
+// $code-color: palette(echo-base, grey, dark);
 // $code-font-family: $fixed-font-family;
 // $code-font-weight: $fixed-font-weight;
 // $code-font-size: $fixed-font-size;
 // $code-line-height: $fixed-line-height;
-// $code-background-color: palette(default-grey, x-light);
+// $code-background-color: palette(echo-base, grey, x-light);
 // $code-border-width: 1px;
 // $code-border-style: solid;
-// $code-border-color: palette(default-grey);
+// $code-border-color: palette(echo-base, grey);
 // $code-border-radius: $global-border-radius;
-
 
 
 
@@ -491,8 +490,8 @@
 //  Body - <body>
 //==============================================================================
 
-// $body-background: palette(default-white);
-// $body-font-color: palette(default-black);
+// $body-background: palette(echo-base, white);
+// $body-font-color: palette(echo-base, black);
 // $body-font-family: $base-font-family;
 // $body-font-weight: $base-font-weight;
 // $body-font-style: $base-font-style;
@@ -503,7 +502,7 @@
 //  Horizontal rule - <hr>
 //==============================================================================
 
-// $hr-border-color: palette(default-grey, light);
+// $hr-border-color: palette(echo-base, grey, light);
 
 
 
@@ -551,7 +550,7 @@
 // $fieldset-margin-bottom: 1rem;
 // $fieldset-margin-top: 0;
 // $fieldset-background-color: transparent;
-// $fieldset-border-color: palette(default-grey);
+// $fieldset-border-color: palette(echo-base, grey);
 // $fieldset-border-style: solid;
 // $fieldset-border-width: 1px;
 // $fieldset-border-radius: $global-border-radius;
@@ -614,7 +613,7 @@
 //  Label inline :disabled Defaults
 //==============================================================================
 
-// $label-inline-color-disabled: palette(default-grey, dark);
+// $label-inline-color-disabled: palette(echo-base, grey, dark);
 // $label-inline-cursor-disabled: not-allowed;
 
 
@@ -640,16 +639,16 @@
 // $select-padding-right: 0.5rem;
 // $select-margin-bottom: 1rem;
 // $select-margin-top: 0;
-// $select-background-color: palette(default-white);
+// $select-background-color: palette(echo-base, white);
 // $select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
 // $select-background-repeat: no-repeat;
 // $select-background-position: 100% center;
-// $select-border-color: palette(default-grey);
+// $select-border-color: palette(echo-base, grey);
 // $select-border-style: solid;
 // $select-border-width: 1px;
 // $select-border-radius: $global-border-radius;
-// $select-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
-// $select-color: palette(default-grey, dark);
+// $select-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1);
+// $select-color: palette(echo-base, grey, dark);
 // $select-font-family: $base-font-family;
 // $select-font-size: $base-font-size;
 // $select-font-weight: $base-font-weight;
@@ -661,10 +660,10 @@
 //  Select :focus Defaults
 //==============================================================================
 
-// $select-background-color-focus: palette(default-white);
-// $select-border-color-focus: palette(default-grey);
-// $select-box-shadow-focus: 0 0 3px palette(default-grey);
-// $select-color-focus: palette(default-grey, dark);
+// $select-background-color-focus: palette(echo-base, white);
+// $select-border-color-focus: palette(echo-base, grey);
+// $select-box-shadow-focus: 0 0 3px palette(echo-base, grey);
+// $select-color-focus: palette(echo-base, grey, dark);
 // $select-outline-focus: none;
 
 
@@ -672,9 +671,9 @@
 //  Select :disabled Defaults
 //==============================================================================
 
-// $select-background-color-disabled: palette(default-grey, x-light);
-// $select-border-color-disabled: palette(default-grey, light);
-// $select-color-disabled: palette(default-grey, dark);
+// $select-background-color-disabled: palette(echo-base, grey, x-light);
+// $select-border-color-disabled: palette(echo-base, grey, light);
+// $select-color-disabled: palette(echo-base, grey, dark);
 // $select-cursor-disabled: not-allowed;
 
 
@@ -703,13 +702,13 @@
 // $input-text-padding-right: 0.5rem;
 // $input-text-margin-bottom: 1rem;
 // $input-text-margin-top: 0;
-// $input-text-background-color: palette(default-white);
-// $input-text-border-color: palette(default-grey);
+// $input-text-background-color: palette(echo-base, white);
+// $input-text-border-color: palette(echo-base, grey);
 // $input-text-border-style: solid;
 // $input-text-border-width: 1px;
 // $input-text-border-radius: $global-border-radius;
-// $input-text-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
-// $input-text-color: palette(default-grey, dark);
+// $input-text-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1);
+// $input-text-color: palette(echo-base, grey, dark);
 // $input-text-font-family: $base-font-family;
 // $input-text-font-size: $base-font-size;
 // $input-text-font-weight: $base-font-weight;
@@ -721,10 +720,10 @@
 //  Input :focus Defaults
 //==============================================================================
 
-// $input-text-background-color-focus: palette(default-white);
-// $input-text-border-color-focus: palette(default-grey);
-// $input-text-box-shadow-focus: 0 0 3px palette(default-grey);
-// $input-text-color-focus: palette(default-grey, dark);
+// $input-text-background-color-focus: palette(echo-base, white);
+// $input-text-border-color-focus: palette(echo-base, grey);
+// $input-text-box-shadow-focus: 0 0 3px palette(echo-base, grey);
+// $input-text-color-focus: palette(echo-base, grey, dark);
 // $input-text-outline-focus: none;
 
 
@@ -732,9 +731,9 @@
 //  Input :disabled Defaults
 //==============================================================================
 
-// $input-text-background-color-disabled: palette(default-grey, x-light);
-// $input-text-border-color-disabled: palette(default-grey, light);
-// $input-text-color-disabled: palette(default-grey, dark);
+// $input-text-background-color-disabled: palette(echo-base, grey, x-light);
+// $input-text-border-color-disabled: palette(echo-base, grey, light);
+// $input-text-color-disabled: palette(echo-base, grey, dark);
 // $input-text-cursor-disabled: not-allowed;
 
 
@@ -770,13 +769,13 @@
 // $textarea-padding-left: 0.5rem;
 // $textarea-margin-bottom: 1rem;
 // $textarea-margin-top: 0;
-// $textarea-background-color: palette(default-white);
-// $textarea-border-color: palette(default-grey);
+// $textarea-background-color: palette(echo-base, white);
+// $textarea-border-color: palette(echo-base, grey);
 // $textarea-border-style: solid;
 // $textarea-border-width: 1px;
 // $textarea-border-radius: $global-border-radius;
-// $textarea-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1);
-// $textarea-color: palette(default-grey, dark);
+// $textarea-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1);
+// $textarea-color: palette(echo-base, grey, dark);
 // $textarea-font-family: $base-font-family;
 // $textarea-font-size: $base-font-size;
 // $textarea-font-weight: $base-font-weight;
@@ -788,10 +787,10 @@
 //  Textarea :focus Defaults
 //==============================================================================
 
-// $textarea-background-color-focus: palette(default-white);
-// $textarea-border-color-focus: palette(default-grey);
-// $textarea-box-shadow-focus: 0 0 3px palette(default-grey);
-// $textarea-color-focus: palette(default-grey, dark);
+// $textarea-background-color-focus: palette(echo-base, white);
+// $textarea-border-color-focus: palette(echo-base, grey);
+// $textarea-box-shadow-focus: 0 0 3px palette(echo-base, grey);
+// $textarea-color-focus: palette(echo-base, grey, dark);
 // $textarea-outline-focus: none;
 
 
@@ -799,9 +798,9 @@
 //  Textarea :disabled Defaults
 //==============================================================================
 
-// $textarea-background-color-disabled: palette(default-grey, x-light);
-// $textarea-border-color-disabled: palette(default-grey, light);
-// $textarea-color-disabled: palette(default-grey, dark);
+// $textarea-background-color-disabled: palette(echo-base, grey, x-light);
+// $textarea-border-color-disabled: palette(echo-base, grey, light);
+// $textarea-color-disabled: palette(echo-base, grey, dark);
 // $textarea-cursor-disabled: not-allowed;
 
 
@@ -889,7 +888,7 @@
 
 // $thead-border-bottom-width: 2px;
 // $thead-border-bottom-style: solid;
-// $thead-border-bottom-color: palette(default-grey, light);
+// $thead-border-bottom-color: palette(echo-base, grey, light);
 
 
 
@@ -901,8 +900,8 @@
 //  Table row Defaults
 //==============================================================================
 
-// $tr-background-color-odd: palette(default-grey, x-light);
-// $tr-background-color-even: palette(default-grey, light);
+// $tr-background-color-odd: palette(echo-base, grey, x-light);
+// $tr-background-color-even: palette(echo-base, grey, light);
 
 
 
@@ -913,7 +912,7 @@
 // $th-padding-bottom: 1rem;
 // $th-padding-right: 1rem;
 // $th-padding-left: 1rem;
-// $th-background-color: palette(default-white);
+// $th-background-color: palette(echo-base, white);
 // $th-font-weight: $base-font-weight;
 
 
