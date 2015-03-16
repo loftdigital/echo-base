@@ -46,16 +46,6 @@ $grid-content-block-padding-right: 2% !default;
 //  b. Grid layouts
 //==============================================================================
 
-//  Default susy grid
-//==============================================================================
-
-// This is required as by default Susy sets gutters to be a fraction which
-// Libsass flags up as an error. Wait for fix.
-
-$susy: (
-    gutters: 0.25,
-);
-
 
 
 //  Window grid
