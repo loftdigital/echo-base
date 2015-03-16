@@ -46,6 +46,16 @@ $grid-content-block-padding-right: 2% !default;
 //  b. Grid layouts
 //==============================================================================
 
+//  Default susy grid
+//==============================================================================
+
+// This is required as by default Susy sets gutters to be a fraction which
+// Libsass flags up as an error. Wait for fix.
+
+$susy: (
+    gutters: 0.25,
+);
+
 
 
 //  Window grid
@@ -62,9 +72,10 @@ $window: (
 //==============================================================================
 
 $content: (
-    columns: 1,
-    gutters: 0,
-    container: $grid-content-container,
+    columns: 12,
+    column-width: 90px,
+    gutters: 20px / 90px,
+    //container: $grid-content-container,
 );
 
 
@@ -97,13 +108,13 @@ $content: (
 
         @include with-layout($content) {
             &-content__container {
-                @include container;
+                @include container(show);
+                padding-left: $grid-content-block-padding-left;
+                padding-right: $grid-content-block-padding-right;
             }
 
             &-content__block {
                 @include full;
-                padding-left: $grid-content-block-padding-left;
-                padding-right: $grid-content-block-padding-right;
             }
         }
     }
