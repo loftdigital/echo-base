@@ -128,7 +128,6 @@ $input-other-cursor-disabled: not-allowed !default;
         cursor: $input-text-cursor-disabled;
     }
 
-
 }
 
 @mixin input-other {
@@ -159,15 +158,11 @@ $input-other-cursor-disabled: not-allowed !default;
     input[type="tel"],
     input[type="time"],
     input[type="url"] {
-
         @include input;
-
     }
 
     input[type="radio"],
     input[type="checkbox"] {
-
         @include input-other;
-
     }
 }

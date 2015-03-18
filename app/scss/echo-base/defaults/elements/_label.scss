@@ -35,7 +35,11 @@ $label-display: block !default;
 $label-cursor: pointer !default;
 $label-font-size: $base-font-size !default;
 $label-font-weight: $base-font-weight !default;
+$label-font-style: $base-font-style !default;
 $label-line-height: $base-line-height !default;
+$label-color: $base-color !default;
+$label-text-transform: none !default;
+$label-letter-spacing: normal !default;
 
 $label-inline-display: inline-block !default;
 $label-inline-margin-bottom: 0 !default;
@@ -53,36 +57,32 @@ $label-inline-cursor-disabled: not-allowed !default;
 //==============================================================================
 
 @mixin label {
-
     display: $label-display;
     font-size: $label-font-size;
     font-weight: $label-font-weight;
+    font-style: $label-font-style;
     line-height: $label-line-height;
+    color: $label-color;
+    text-transform: $label-text-transform;
+    letter-spacing: $label-letter-spacing;
 
     &[for] {
-
         cursor: $label-cursor;
-
     }
-
 }
 
 @mixin label-other {
-
     display: $label-inline-display;
     margin-bottom: $label-inline-margin-bottom;
     margin-top: $label-inline-margin-top;
     margin-right: $label-inline-margin-right;
     margin-left: $label-inline-margin-left;
     vertical-align: $label-inline-vertical-align;
-
 }
 
 @mixin label-disabled {
-
     color: $label-inline-color-disabled;
     cursor: $label-inline-cursor-disabled;
-
 }
 
 
@@ -99,15 +99,11 @@ $label-inline-cursor-disabled: not-allowed !default;
 
     input[type="radio"] + label,
     input[type="checkbox"] + label {
-
         @include label-other;
-
     }
 
     input[disabled] + label {
-
         @include label-disabled;
-
     }
-
+    
 }

@@ -51,8 +51,6 @@ $form-margin-left: 0 !default;
 @if $use-form-defaults {
 
     form {
-
         @include form;
-
     }
 }
