@@ -335,16 +335,6 @@ $breakpoints: ();
 /// @param {String} $args3 ['base'] - Color tone
 /// @return {Map}
 
-/// Retrieves the palette and the specified tone from the global palettes map.
-/// Can accept one, two or three parameters.
-///
-/// @access public
-/// @group Palettes
-/// @param {String} $item - Sub-group name, palette name, or color name
-/// @param {String} $args2 ['base'] - Palette name, or color tone
-/// @param {String} $args3 ['base'] - Color tone
-/// @return {Map}
-
 @function palette( $item, $args2:'base', $args3:'base' ) {
 
     // Set up the global palettes - merges all palettes into one
