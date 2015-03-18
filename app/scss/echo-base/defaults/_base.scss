@@ -26,11 +26,7 @@
 //==============================================================================
 
 $body-background: palette(echo-base, white) !default;
-$body-font-color: palette(echo-base, black) !default;
-$body-font-family: $base-font-family !default;
-$body-font-weight: $base-font-weight !default;
-$body-font-style: $base-font-style !default;
-$body-line-height: $base-line-height !default;
+
 
 
 
@@ -54,17 +50,11 @@ $hr-border-color: palette(echo-base, grey, light) !default;
 
 html,
 body {
-    font-size: $base-font-size;
     height: 100%;
 }
 
 body {
     background: $body-background;
-    color: $body-font-color;
-    font-family: $body-font-family;
-    font-style: $body-font-style;
-    font-weight: $body-font-weight;
-    line-height: $body-line-height;
     margin: 0;
     padding: 0;
     position: relative;

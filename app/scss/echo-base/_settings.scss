@@ -47,6 +47,8 @@
 // $global-border-radius: 5px;
 // $global-page-font-size: 16px;
 
+
+
 // Mobile First Flag
 //==============================================================================
 
@@ -159,6 +161,7 @@
 // $base-font-size: $global-page-font-size;
 // $base-font-style: normal;
 // $base-line-height: 1.5;
+// $base-color: palette(echo-base, grey, x-dark);
 
 
 
@@ -168,7 +171,9 @@
 // $fixed-font-family: monospace;
 // $fixed-font-weight: normal;
 // $fixed-font-size: 85%;
+// $fixed-font-style: normal;
 // $fixed-line-height: $base-line-height;
+// $fixed-color: palette(echo-base, grey, dark);
 
 
 
@@ -177,8 +182,10 @@
 
 // $heading-font-family: Arial, sans-serif;
 // $heading-font-weight: $font-weight-bold;
-// $heading-font-margin-top: 0.2rem;
-// $heading-font-margin-bottom: 0.5rem;
+// $heading-font-style: italic;
+// $heading-color: palette(echo-base, grey, x-dark);
+// $heading-margin-top: 0.2rem;
+// $heading-margin-bottom: 0.5rem;
 // $heading-font-text-rendering: optimizeLegibility;
 // $heading-letter-spacing: normal;
 // $heading-text-transform: none;
@@ -279,103 +286,129 @@
 // }
 
 
-//  6. Heading - <h1>
+
+//  6. Body - <body>
+//==============================================================================
+
+// $body-font-family: $base-font-family;
+// $body-font-weight: $base-font-weight;
+// $body-font-style: $base-font-style;
+// $body-line-height: $base-line-height;
+// $body-color: $base-color;
+
+
+
+//  7. Heading - <h1>
 //==============================================================================
 
 // $h1-font-size: rem-calc(48px);
 // $h1-line-height: 1.05;
 // $h1-font-family: $heading-font-family;
 // $h1-font-weight: $heading-font-weight;
-// $h1-font-margin-bottom: $heading-font-margin-bottom;
-// $h1-font-margin-top: $heading-font-margin-top;
+// $h1-font-style: $heading-font-style;
+// $h1-color: $heading-color;
+// $h1-margin-bottom: $heading-margin-bottom;
+// $h1-margin-top: $heading-margin-top;
 // $h1-font-text-rendering: $heading-font-text-rendering;
 // $h1-letter-spacing: $heading-letter-spacing;
 // $h1-text-transform: $heading-text-transform;
 
 
 
-//  7. Heading - <h2>
+//  8. Heading - <h2>
 //==============================================================================
 
 // $h2-font-size: rem-calc(36px);
 // $h2-line-height: 1.25;
 // $h2-font-family: $heading-font-family;
 // $h2-font-weight: $heading-font-weight;
-// $h2-font-margin-bottom: $heading-font-margin-bottom;
-// $h2-font-margin-top: $heading-font-margin-top;
+// $h2-font-style: $heading-font-style;
+// $h2-color: $heading-color;
+// $h2-margin-bottom: $heading-margin-bottom;
+// $h2-margin-top: $heading-margin-top;
 // $h2-font-text-rendering: $heading-font-text-rendering;
 // $h2-letter-spacing: $heading-letter-spacing;
 // $h2-text-transform: $heading-text-transform;
 
 
 
-//  8. Heading - <h3>
+//  9. Heading - <h3>
 //==============================================================================
 
 // $h3-font-size: rem-calc(28px);
 // $h3-line-height: 1.25;
 // $h3-font-family: $heading-font-family;
 // $h3-font-weight: $heading-font-weight;
-// $h3-font-margin-bottom: $heading-font-margin-bottom;
-// $h3-font-margin-top: $heading-font-margin-top;
+// $h3-font-style: $heading-font-style;
+// $h3-color: $heading-color;
+// $h3-margin-bottom: $heading-margin-bottom;
+// $h3-margin-top: $heading-margin-top;
 // $h3-font-text-rendering: $heading-font-text-rendering;
 // $h3-letter-spacing: $heading-letter-spacing;
 // $h3-text-transform: $heading-text-transform;
 
 
 
-//  9. Heading - <h4>
+//  10. Heading - <h4>
 //==============================================================================
 
 // $h4-font-size: rem-calc(18px);
 // $h4-line-height: 1.22;
 // $h4-font-family: $heading-font-family;
 // $h4-font-weight: $heading-font-weight;
-// $h4-font-margin-bottom: $heading-font-margin-bottom;
-// $h4-font-margin-top: $heading-font-margin-top;
+// $h4-font-style: $heading-font-style;
+// $h4-color: $heading-color;
+// $h4-margin-bottom: $heading-margin-bottom;
+// $h4-margin-top: $heading-margin-top;
 // $h4-font-text-rendering: $heading-font-text-rendering;
 // $h4-letter-spacing: $heading-letter-spacing;
 // $h4-text-transform: $heading-text-transform;
 
 
 
-//  10. Heading - <h5>
+//  11. Heading - <h5>
 //==============================================================================
 
 // $h5-font-size: rem-calc(16px);
 // $h5-line-height: 1.22;
 // $h5-font-family: $heading-font-family;
 // $h5-font-weight: $heading-font-weight;
-// $h5-font-margin-bottom: $heading-font-margin-bottom;
-// $h5-font-margin-top: $heading-font-margin-top;
+// $h5-font-style: $heading-font-style;
+// $h5-color: $heading-color;
+// $h5-margin-bottom: $heading-margin-bottom;
+// $h5-margin-top: $heading-margin-top;
 // $h5-font-text-rendering: $heading-font-text-rendering;
 // $h5-letter-spacing: $heading-letter-spacing;
 // $h5-text-transform: $heading-text-transform;
 
 
 
-//  11. heading - <h6>
+//  12. heading - <h6>
 //==============================================================================
 
 // $h6-font-size: rem-calc(14px);
 // $h6-line-height: 1.22;
 // $h6-font-family: $heading-font-family;
 // $h6-font-weight: $heading-font-weight;
-// $h6-font-margin-bottom: $heading-font-margin-bottom;
-// $h6-font-margin-top: $heading-font-margin-top;
+// $h6-font-style: $heading-font-style;
+// $h6-color: $heading-color;
+// $h6-margin-bottom: $heading-margin-bottom;
+// $h6-margin-top: $heading-margin-top;
 // $h6-font-text-rendering: $heading-font-text-rendering;
 // $h6-letter-spacing: $heading-letter-spacing;
 // $h6-text-transform: $heading-text-transform;
 
 
 
-//  12. Paragraph - <p>
+//  13. Paragraph - <p>
 //==============================================================================
 
 // $p-font-family: $base-font-family;
 // $p-font-size: $base-font-size;
+// $p-font-style: $base-font-style;
 // $p-font-weight: $base-font-weight;
 // $p-line-height: $base-line-height;
+// $p-color: $base-color;
 // $p-letter-spacing: normal;
 // $p-text-transform: none;
 // $p-margin-top: 1.5rem;
@@ -383,7 +416,7 @@
 
 
 
-//  13. Anchor - <a>
+//  14. Anchor - <a>
 //==============================================================================
 
 // $a-text-decoration: none;
@@ -393,7 +426,7 @@
 
 
 
-//  14. Unordered list - <ul>
+//  15. Unordered list - <ul>
 //==============================================================================
 
 // $ul-list-style-type: disc;
@@ -408,7 +441,7 @@
 
 
 
-//  15. Ordered list - <ol>
+//  16. Ordered list - <ol>
 //==============================================================================
 
 // $ol-list-style-type: decimal;
@@ -423,13 +456,17 @@
 
 
 
-//  16. List item - <li>
+//  17. List item - <li>
 //==============================================================================
 
 // $li-font-family: $base-font-family;
 // $li-font-size: $base-font-size;
+// $li-font-style: $base-font-style;
 // $li-font-weight: $base-font-weight;
 // $li-line-height: $base-line-height;
+// $li-color: $base-color;
+// $li-letter-spacing: normal;
+// $li-text-transform: none;
 // $li-margin-top: 0;
 // $li-margin-bottom: 0;
 // $li-margin-right: 0;
@@ -441,15 +478,17 @@
 
 
 
-//  17. Blockquote - <blockquote>
+//  18. Blockquote - <blockquote>
 //==============================================================================
 
-// $blockquote-font-size: rem-calc(24px);
-// $blockquote-line-height: 1.4583;
 // $blockquote-font-family: $base-font-family;
-// $blockquote-font-size: $base-font-size;
-// $blockquote-font-weight: $base-font-weight;
+// $blockquote-font-size: rem-calc(24px);
 // $blockquote-font-style: italic;
+// $blockquote-font-weight: $base-font-weight;
+// $blockquote-line-height: 1.4583;
+// $blockquote-color: $base-color;
+// $blockquote-letter-spacing: normal;
+// $blockquote-text-transform: none;
 // $blockquote-margin-top: 1.5rem;
 // $blockquote-margin-bottom: 1.5rem;
 // $blockquote-margin-right: 1rem;
@@ -458,23 +497,27 @@
 // $blockquote-padding-bottom: 0;
 // $blockquote-padding-right: 0;
 // $blockquote-padding-left: 1rem;
+// $blockquote-background-color: transparent;
 // $blockquote-border-left-width: 5px;
 // $blockquote-border-left-style: solid;
 // $blockquote-border-left-color: palette(primary);
 
 
 
-//  18. Code - <code>
+//  19. Code - <code>
 //==============================================================================
 
 // $code-display: block;
 // $code-padding: rem-calc(16px);
 // $code-margin: 1.5rem 0;
-// $code-color: palette(echo-base, grey, dark);
 // $code-font-family: $fixed-font-family;
-// $code-font-weight: $fixed-font-weight;
 // $code-font-size: $fixed-font-size;
+// $code-font-style: $fixed-font-style;
+// $code-font-weight: $fixed-font-weight;
 // $code-line-height: $fixed-line-height;
+// $code-color: palette(echo-base, grey, dark);
+// $code-letter-spacing: normal;
+// $code-text-transform: none;
 // $code-background-color: palette(echo-base, grey, x-light);
 // $code-border-width: 1px;
 // $code-border-style: solid;
@@ -491,11 +534,7 @@
 //==============================================================================
 
 // $body-background: palette(echo-base, white);
-// $body-font-color: palette(echo-base, black);
-// $body-font-family: $base-font-family;
-// $body-font-weight: $base-font-weight;
-// $body-font-style: $base-font-style;
-// $body-line-height: $base-line-height;
+
 
 
 
@@ -594,7 +633,11 @@
 // $label-cursor: pointer;
 // $label-font-size: $base-font-size;
 // $label-font-weight: $base-font-weight;
+// $label-font-style: $base-font-style;
 // $label-line-height: $base-line-height;
+// $label-color: $base-color;
+// $label-text-transform: none;
+// $label-letter-spacing: normal;
 
 
 
@@ -648,11 +691,14 @@
 // $select-border-width: 1px;
 // $select-border-radius: $global-border-radius;
 // $select-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1);
-// $select-color: palette(echo-base, grey, dark);
 // $select-font-family: $base-font-family;
 // $select-font-size: $base-font-size;
+// $select-font-style: $base-font-style;
 // $select-font-weight: $base-font-weight;
 // $select-line-height: $base-line-height;
+// $select-color: palette(echo-base, grey, dark);
+// $select-text-transform: none;
+// $select-letter-spacing: normal;
 // $select-appearance: none;
 
 
@@ -775,11 +821,14 @@
 // $textarea-border-width: 1px;
 // $textarea-border-radius: $global-border-radius;
 // $textarea-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1);
-// $textarea-color: palette(echo-base, grey, dark);
 // $textarea-font-family: $base-font-family;
 // $textarea-font-size: $base-font-size;
 // $textarea-font-weight: $base-font-weight;
+// $textarea-font-style: $base-font-style;
 // $textarea-line-height: $base-line-height;
+// $textarea-color: palette(echo-base, grey, dark);
+// $textarea-text-transform: none;
+// $textarea-letter-spacing: normal;
 // $textarea-appearance: none;
 
 
@@ -823,6 +872,8 @@
 
 // $button-position: relative;
 // $button-display: inline-block;
+// $button-width: auto;
+// $button-height: auto;
 // $button-padding-bottom: 0.75rem;
 // $button-padding-top: 0.75rem;
 // $button-padding-right: 1rem;
@@ -835,11 +886,13 @@
 // $button-border-style: solid;
 // $button-border-width: 1px;
 // $button-border-radius: $global-border-radius;
+// $button-font-family: $base-font-family;
 // $button-font-size: $base-font-size;
 // $button-font-weight: $base-font-weight;
 // $button-line-height: $base-line-height;
-// $button-text-decoration: none;
 // $button-text-align: center;
+// $button-text-decoration: none;
+// $button-text-transform: none;
 // $button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out);
 // $button-vertical-align: middle;
 

@@ -34,6 +34,10 @@ $use-legend-defaults: $use-echo-base-defaults !default;
 $legend-font-family: $base-font-family !default;
 $legend-font-size: $base-font-size !default;
 $legend-font-weight: $base-font-weight !default;
+$legend-font-style: $base-font-style !default;
+$legend-color: $base-color !default;
+$legend-text-transform: none !default;
+$legend-letter-spacing: normal !default;
 
 
 
@@ -43,12 +47,15 @@ $legend-font-weight: $base-font-weight !default;
 //==============================================================================
 
 @mixin legend {
-
     font-family: $legend-font-family;
     font-size: $legend-font-size;
     font-weight: $legend-font-weight;
-
+    font-style: $legend-font-style;
+    color: $legend-color;
+    text-transform: $legend-text-transform;
+    letter-spacing: $legend-letter-spacing;
 }
+
 
 
 
@@ -59,9 +66,7 @@ $legend-font-weight: $base-font-weight !default;
 @if $use-legend-defaults {
 
     legend {
-
         @include legend;
-
     }
 
 }

@@ -62,8 +62,9 @@ $font-weight-bold: 700 !default;
 $base-font-family: Arial, sans-serif !default;
 $base-font-weight: $font-weight-regular !default;
 $base-font-size: $global-page-font-size !default;
-$base-font-style: normal;
+$base-font-style: normal !default;
 $base-line-height: 1.5 !default;
+$base-color: palette(echo-base, grey, x-dark) !default;
 
 
 
@@ -71,9 +72,11 @@ $base-line-height: 1.5 !default;
 //==============================================================================
 
 $fixed-font-family: monospace !default;
-$fixed-font-weight: normal;
+$fixed-font-weight: normal !default;
 $fixed-font-size: 85% !default;
+$fixed-font-style: normal !default;
 $fixed-line-height: $base-line-height !default;
+$fixed-color: palette(echo-base, grey, dark) !default;
 
 
 
@@ -82,8 +85,10 @@ $fixed-line-height: $base-line-height !default;
 
 $heading-font-family: Arial, sans-serif !default;
 $heading-font-weight: $font-weight-bold !default;
-$heading-font-margin-top: 0.2rem !default;
-$heading-font-margin-bottom: 0.5rem !default;
+$heading-font-style: normal !default;
+$heading-color: palette(echo-base, grey, x-dark) !default;
+$heading-margin-top: 0.2rem !default;
+$heading-margin-bottom: 0.5rem !default;
 $heading-font-text-rendering: optimizeLegibility !default;
 $heading-letter-spacing: normal !default;
 $heading-text-transform: none !default;
@@ -97,8 +102,10 @@ $h1-font-size: rem-calc(48px) !default;
 $h1-line-height: 1.05 !default;
 $h1-font-family: $heading-font-family !default;
 $h1-font-weight: $heading-font-weight !default;
-$h1-font-margin-bottom: $heading-font-margin-bottom !default;
-$h1-font-margin-top: $heading-font-margin-top !default;
+$h1-font-style: $heading-font-style !default;
+$h1-color: $heading-color !default;
+$h1-margin-bottom: $heading-margin-bottom !default;
+$h1-margin-top: $heading-margin-top !default;
 $h1-font-text-rendering: $heading-font-text-rendering !default;
 $h1-letter-spacing: $heading-letter-spacing !default;
 $h1-text-transform: $heading-text-transform !default;
@@ -112,8 +119,10 @@ $h2-font-size: rem-calc(36px) !default;
 $h2-line-height: 1.25 !default;
 $h2-font-family: $heading-font-family !default;
 $h2-font-weight: $heading-font-weight !default;
-$h2-font-margin-bottom: $heading-font-margin-bottom !default;
-$h2-font-margin-top: $heading-font-margin-top !default;
+$h2-font-style: $heading-font-style !default;
+$h2-color: $heading-color !default;
+$h2-margin-bottom: $heading-margin-bottom !default;
+$h2-margin-top: $heading-margin-top !default;
 $h2-font-text-rendering: $heading-font-text-rendering !default;
 $h2-letter-spacing: $heading-letter-spacing !default;
 $h2-text-transform: $heading-text-transform !default;
@@ -127,8 +136,10 @@ $h3-font-size: rem-calc(28px) !default;
 $h3-line-height: 1.25 !default;
 $h3-font-family: $heading-font-family !default;
 $h3-font-weight: $heading-font-weight !default;
-$h3-font-margin-bottom: $heading-font-margin-bottom !default;
-$h3-font-margin-top: $heading-font-margin-top !default;
+$h3-font-style: $heading-font-style !default;
+$h3-color: $heading-color !default;
+$h3-margin-bottom: $heading-margin-bottom !default;
+$h3-margin-top: $heading-margin-top !default;
 $h3-font-text-rendering: $heading-font-text-rendering !default;
 $h3-letter-spacing: $heading-letter-spacing !default;
 $h3-text-transform: $heading-text-transform !default;
@@ -142,8 +153,10 @@ $h4-font-size: rem-calc(18px) !default;
 $h4-line-height: 1.22 !default;
 $h4-font-family: $heading-font-family !default;
 $h4-font-weight: $heading-font-weight !default;
-$h4-font-margin-bottom: $heading-font-margin-bottom !default;
-$h4-font-margin-top: $heading-font-margin-top !default;
+$h4-font-style: $heading-font-style !default;
+$h4-color: $heading-color !default;
+$h4-margin-bottom: $heading-margin-bottom !default;
+$h4-margin-top: $heading-margin-top !default;
 $h4-font-text-rendering: $heading-font-text-rendering !default;
 $h4-letter-spacing: $heading-letter-spacing !default;
 $h4-text-transform: $heading-text-transform !default;
@@ -157,8 +170,10 @@ $h5-font-size: rem-calc(16px) !default;
 $h5-line-height: 1.22 !default;
 $h5-font-family: $heading-font-family !default;
 $h5-font-weight: $heading-font-weight !default;
-$h5-font-margin-bottom: $heading-font-margin-bottom !default;
-$h5-font-margin-top: $heading-font-margin-top !default;
+$h5-font-style: $heading-font-style !default;
+$h5-color: $heading-color !default;
+$h5-margin-bottom: $heading-margin-bottom !default;
+$h5-margin-top: $heading-margin-top !default;
 $h5-font-text-rendering: $heading-font-text-rendering !default;
 $h5-letter-spacing: $heading-letter-spacing !default;
 $h5-text-transform: $heading-text-transform !default;
@@ -172,8 +187,10 @@ $h6-font-size: rem-calc(14px) !default;
 $h6-line-height: 1.22 !default;
 $h6-font-family: $heading-font-family !default;
 $h6-font-weight: $heading-font-weight !default;
-$h6-font-margin-bottom: $heading-font-margin-bottom !default;
-$h6-font-margin-top: $heading-font-margin-top !default;
+$h6-font-style: $heading-font-style !default;
+$h6-color: $heading-color !default;
+$h6-margin-bottom: $heading-margin-bottom !default;
+$h6-margin-top: $heading-margin-top !default;
 $h6-font-text-rendering: $heading-font-text-rendering !default;
 $h6-letter-spacing: $heading-letter-spacing !default;
 $h6-text-transform: $heading-text-transform !default;
@@ -185,8 +202,10 @@ $h6-text-transform: $heading-text-transform !default;
 
 $p-font-family: $base-font-family !default;
 $p-font-size: $base-font-size !default;
+$p-font-style: $base-font-style !default;
 $p-font-weight: $base-font-weight !default;
 $p-line-height: $base-line-height !default;
+$p-color: $base-color !default;
 $p-letter-spacing: normal !default;
 $p-text-transform: none !default;
 $p-margin-top: 1.5rem !default;
@@ -239,8 +258,12 @@ $ol-padding-right: 0 !default;
 
 $li-font-family: $base-font-family !default;
 $li-font-size: $base-font-size !default;
+$li-font-style: $base-font-style !default;
 $li-font-weight: $base-font-weight !default;
 $li-line-height: $base-line-height !default;
+$li-color: $base-color !default;
+$li-letter-spacing: normal !default;
+$li-text-transform: none !default;
 $li-margin-top: 0 !default;
 $li-margin-bottom: 0 !default;
 $li-margin-right: 0 !default;
@@ -255,12 +278,14 @@ $li-padding-left: 0 !default;
 //  16. Blockquote - <blockquote>
 //==============================================================================
 
-$blockquote-font-size: rem-calc(24px) !default;
-$blockquote-line-height: 1.4583 !default;
 $blockquote-font-family: $base-font-family !default;
-$blockquote-font-size: $base-font-size !default;
-$blockquote-font-weight: $base-font-weight !default;
+$blockquote-font-size: rem-calc(24px) !default;
 $blockquote-font-style: italic !default;
+$blockquote-font-weight: $base-font-weight !default;
+$blockquote-line-height: 1.4583 !default;
+$blockquote-color: $base-color !default;
+$blockquote-letter-spacing: normal !default;
+$blockquote-text-transform: none !default;
 $blockquote-margin-top: 1.5rem !default;
 $blockquote-margin-bottom: 1.5rem !default;
 $blockquote-margin-right: 1rem !default;
@@ -269,6 +294,7 @@ $blockquote-padding-top: 0 !default;
 $blockquote-padding-bottom: 0 !default;
 $blockquote-padding-right: 0 !default;
 $blockquote-padding-left: 1rem !default;
+$blockquote-background-color: transparent !default;
 $blockquote-border-left-width: 5px !default;
 $blockquote-border-left-style: solid !default;
 $blockquote-border-left-color: palette(primary) !default;
@@ -281,11 +307,14 @@ $blockquote-border-left-color: palette(primary) !default;
 $code-display: block !default;
 $code-padding: rem-calc(16px) !default;
 $code-margin: 1.5rem 0 !default;
-$code-color: palette(echo-base, grey, dark) !default;
 $code-font-family: $fixed-font-family !default;
-$code-font-weight: $fixed-font-weight !default;
 $code-font-size: $fixed-font-size !default;
+$code-font-style: $fixed-font-style !default;
+$code-font-weight: $fixed-font-weight !default;
 $code-line-height: $fixed-line-height !default;
+$code-letter-spacing: normal !default;
+$code-text-transform: none !default;
+$code-color: palette(echo-base, grey, dark) !default;
 $code-background-color: palette(echo-base, grey, x-light) !default;
 $code-border-width: 1px !default;
 $code-border-style: solid !default;
@@ -312,8 +341,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h1 {
     font-family: $h1-font-family;
     font-weight: $h1-font-weight;
-    margin-bottom: $h1-font-margin-bottom;
-    margin-top: $h1-font-margin-top;
+    font-style: $h1-font-style;
+    color: $h1-color;
+    margin-bottom: $h1-margin-bottom;
+    margin-top: $h1-margin-top;
     text-rendering: $h1-font-text-rendering;
     letter-spacing: $h1-letter-spacing;
     text-transform: $h1-text-transform;
@@ -338,8 +369,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h2 {
     font-family: $h2-font-family;
     font-weight: $h2-font-weight;
-    margin-bottom: $h2-font-margin-bottom;
-    margin-top: $h2-font-margin-top;
+    font-style: $h2-font-style;
+    color: $h2-color;
+    margin-bottom: $h2-margin-bottom;
+    margin-top: $h2-margin-top;
     text-rendering: $h2-font-text-rendering;
     letter-spacing: $h2-letter-spacing;
     text-transform: $h2-text-transform;
@@ -364,8 +397,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h3 {
     font-family: $h3-font-family;
     font-weight: $h3-font-weight;
-    margin-bottom: $h3-font-margin-bottom;
-    margin-top: $h3-font-margin-top;
+    font-style: $h3-font-style;
+    color: $h3-color;
+    margin-bottom: $h3-margin-bottom;
+    margin-top: $h3-margin-top;
     text-rendering: $h3-font-text-rendering;
     letter-spacing: $h3-letter-spacing;
     text-transform: $h3-text-transform;
@@ -390,8 +425,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h4 {
     font-family: $h4-font-family;
     font-weight: $h4-font-weight;
-    margin-bottom: $h4-font-margin-bottom;
-    margin-top: $h4-font-margin-top;
+    font-style: $h4-font-style;
+    color: $h4-color;
+    margin-bottom: $h4-margin-bottom;
+    margin-top: $h4-margin-top;
     text-rendering: $h4-font-text-rendering;
     letter-spacing: $h4-letter-spacing;
     text-transform: $h4-text-transform;
@@ -416,8 +453,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h5 {
     font-family: $h5-font-family;
     font-weight: $h5-font-weight;
-    margin-bottom: $h5-font-margin-bottom;
-    margin-top: $h5-font-margin-top;
+    font-style: $h5-font-style;
+    color: $h5-color;
+    margin-bottom: $h5-margin-bottom;
+    margin-top: $h5-margin-top;
     text-rendering: $h5-font-text-rendering;
     letter-spacing: $h5-letter-spacing;
     text-transform: $h5-text-transform;
@@ -442,8 +481,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin h6 {
     font-family: $h6-font-family;
     font-weight: $h6-font-weight;
-    margin-bottom: $h6-font-margin-bottom;
-    margin-top: $h6-font-margin-top;
+    font-style: $h6-font-style;
+    color: $h6-color;
+    margin-bottom: $h6-margin-bottom;
+    margin-top: $h6-margin-top;
     text-rendering: $h6-font-text-rendering;
     letter-spacing: $h6-letter-spacing;
     text-transform: $h6-text-transform;
@@ -468,6 +509,8 @@ $code-border-radius: $global-border-radius !default;
 @mixin p {
     font-family: $p-font-family;
     font-weight: $p-font-weight;
+    font-style: $p-font-style;
+    color: $p-color;
     letter-spacing: $p-letter-spacing;
     text-transform: $p-text-transform;
     margin-top: $p-margin-top;
@@ -542,6 +585,10 @@ $code-border-radius: $global-border-radius !default;
 @mixin li {
     font-family: $li-font-family;
     font-weight: $li-font-weight;
+    font-style: $li-font-style;
+    color: $li-color;
+    letter-spacing: $li-letter-spacing;
+    text-transform: $li-text-transform;
     margin-top: $li-margin-top;
     margin-bottom: $li-margin-bottom;
     margin-right: $li-margin-right;
@@ -572,6 +619,9 @@ $code-border-radius: $global-border-radius !default;
     font-family: $blockquote-font-family;
     font-weight: $blockquote-font-weight;
     font-style: $blockquote-font-style;
+    color: $blockquote-color;
+    letter-spacing: $blockquote-letter-spacing;
+    text-transform: $blockquote-text-transform;
     margin-top: $blockquote-margin-top;
     margin-bottom: $blockquote-margin-bottom;
     margin-right: $blockquote-margin-right;
@@ -580,6 +630,7 @@ $code-border-radius: $global-border-radius !default;
     padding-bottom: $blockquote-padding-bottom;
     padding-right: $blockquote-padding-right;
     padding-left: $blockquote-padding-left;
+    background-color: $blockquote-background-color;
     border-left-width: $blockquote-border-left-width;
     border-left-style: $blockquote-border-left-style;
     border-left-color: $blockquote-border-left-color;
@@ -605,9 +656,12 @@ $code-border-radius: $global-border-radius !default;
     display: $code-display;
     padding: $code-padding;
     margin: $code-margin;
-    color: $code-color;
     font-family: $code-font-family;
     font-weight: $code-font-weight;
+    font-style: $code-font-style;
+    color: $code-color;
+    letter-spacing: $code-letter-spacing;
+    text-transform: $code-text-transform;
     background-color: $code-background-color;
     border-width: $code-border-width;
     border-style: $code-border-style;
@@ -628,8 +682,20 @@ $code-border-radius: $global-border-radius !default;
 //  e. Classes
 //==============================================================================
 
-// @if $use-type-defaults {
+@if $use-type-defaults {
 
+    html,
+    body {
+        font-size: $base-font-size;
+    }
+
+    body {
+        font-family: $base-font-family;
+        font-weight: $base-font-weight;
+        font-style: $base-font-style;
+        line-height: $base-line-height;
+        color: $base-color;
+    }
 
 
 //  Headings
@@ -712,4 +778,4 @@ $code-border-radius: $global-border-radius !default;
         @include code;
     }
 
-// }
+}
