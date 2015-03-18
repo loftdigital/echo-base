@@ -824,6 +824,8 @@
 
 // $button-position: relative;
 // $button-display: inline-block;
+// $button-width: auto;
+// $button-height: auto;
 // $button-padding-bottom: 0.75rem;
 // $button-padding-top: 0.75rem;
 // $button-padding-right: 1rem;
@@ -836,11 +838,13 @@
 // $button-border-style: solid;
 // $button-border-width: 1px;
 // $button-border-radius: $global-border-radius;
+// $button-font-family: $base-font-family;
 // $button-font-size: $base-font-size;
 // $button-font-weight: $base-font-weight;
 // $button-line-height: $base-line-height;
-// $button-text-decoration: none;
 // $button-text-align: center;
+// $button-text-decoration: none;
+// $button-text-transform: none;
 // $button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out);
 // $button-vertical-align: middle;
 
