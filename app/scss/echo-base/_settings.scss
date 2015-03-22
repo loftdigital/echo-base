@@ -78,9 +78,12 @@
 //  Content grid
 //==============================================================================
 
-// $grid-content-container: 1280px;
-// $grid-content-block-padding-left: 2%;
-// $grid-content-block-padding-right: 2%;
+// $grid-content-container: auto;
+// $grid-content-columns: 12;
+// $grid-content-column-width: 90px;
+// $grid-content-gutters: 20px / 90px;
+// $grid-content-padding-left-overwrite: false;
+// $grid-content-padding-right-overwrite: false;
 
 
 
@@ -160,7 +163,7 @@
 // $base-font-weight: $font-weight-regular;
 // $base-font-size: $global-page-font-size;
 // $base-font-style: normal;
-// $base-line-height: 1.5;
+// $base-line-height: 24px;
 // $base-color: palette(echo-base, grey, x-dark);
 
 

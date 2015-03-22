@@ -35,9 +35,12 @@ $use-grid-defaults: $use-echo-base-defaults !default;
 //  Content grid
 //==============================================================================
 
-$grid-content-container: 1280px !default;
-$grid-content-block-padding-left: 2% !default;
-$grid-content-block-padding-right: 2% !default;
+$grid-content-container: auto !default;
+$grid-content-columns: 12 !default;
+$grid-content-column-width: 90px !default;
+$grid-content-gutters: 20px / 90px !default;
+$grid-content-padding-left-overwrite: false !default;
+$grid-content-padding-right-overwrite: false !default;
 
 
 
@@ -45,16 +48,6 @@ $grid-content-block-padding-right: 2% !default;
 //==============================================================================
 //  b. Grid layouts
 //==============================================================================
-
-//  Default susy grid
-//==============================================================================
-
-// This is required as by default Susy sets gutters to be a fraction which
-// Libsass flags up as an error. Wait for fix.
-
-$susy: (
-    gutters: 0.25,
-);
 
 
 
@@ -72,9 +65,10 @@ $window: (
 //==============================================================================
 
 $content: (
-    columns: 1,
-    gutters: 0,
     container: $grid-content-container,
+    columns: $grid-content-columns,
+    column-width: $grid-content-column-width,
+    gutters: $grid-content-gutters,
 );
 
 
@@ -108,12 +102,12 @@ $content: (
         @include with-layout($content) {
             &-content__container {
                 @include container;
+                padding-left: if($grid-content-padding-left-overwrite, $grid-content-padding-left-overwrite, gutters(map-get($content, columns)));
+                padding-right: if($grid-content-padding-right-overwrite, $grid-content-padding-right-overwrite, gutters(map-get($content, columns)));
             }
 
             &-content__block {
                 @include full;
-                padding-left: $grid-content-block-padding-left;
-                padding-right: $grid-content-block-padding-right;
             }
         }
     }
