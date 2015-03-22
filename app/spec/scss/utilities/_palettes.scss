@@ -17,21 +17,29 @@
 //==============================================================================
 
 
+
+
 //==============================================================================
 //  Custom test dependencies
 //==============================================================================
 
+
+
+//  Custom test variables
+//==============================================================================
+
 $custom-palette-base: rgb(255, 0, 0);
-
-
 $custom-string-color: rgb(255, 0, 0);
 $custom-palette-color: rgb(0, 255, 0);
 $custom-palette-color-tone: rgb(0, 100, 0);
-
 $custom-sub-group-string-color: rgb(0, 0, 255);
 $custom-sub-group-palette-color: rgb(255, 255, 0);
 $custom-sub-group-palette-color-tone: rgb(100, 100, 0);
 
+
+
+//  Custom test maps
+//==============================================================================
 
 $custom-palettes: (
 
@@ -61,8 +69,6 @@ $custom-palettes: (
 
 
 
-
-
 //==============================================================================
 //  Function/mixin dependencies
 //==============================================================================
@@ -85,9 +91,7 @@ $custom-palettes: (
 
     @include test('setup-palettes() [function]') {
 
-
-
-        /// Test that the setup-palettes function returns an object of type map
+        /// Test that setup-palettes() returns a value of type Map
         ///
         /// @group Tests
 
@@ -98,8 +102,8 @@ $custom-palettes: (
 
 
 
-        /// Test that the setup-palettes function returns a map that contains
-        /// the requested custom palette color key
+        /// Test that setup-palettes() returns a map that contains the requested
+        /// custom palette color key
         ///
         /// @group Tests
 
@@ -116,10 +120,8 @@ $custom-palettes: (
 
     @include test('palette() [function]') {
 
-
-
-        /// Test that the palette function can return a color stored within a
-        /// single key-value pair from the global $palettes map
+        /// Test that palette() can return a color stored within a single
+        /// key-value pair from the global $palettes map
         ///
         /// @group Tests
         ///
@@ -135,8 +137,8 @@ $custom-palettes: (
 
 
 
-        /// Test that the palette function can return a base tone color stored
-        /// within a palette, from the global $palettes map
+        /// Test that palette() can return a base tone color stored within a
+        /// palette, from the global $palettes map
         ///
         /// @group Tests
         ///
@@ -154,8 +156,8 @@ $custom-palettes: (
 
 
 
-        /// Test that the palette function can return a color tone stored within
-        /// a palette, from the global $palettes map
+        /// Test that palette() can return a color tone stored within a palette,
+        /// from the global $palettes map
         ///
         /// @group Tests
         ///
@@ -173,9 +175,9 @@ $custom-palettes: (
 
 
 
-        /// Test that the palette function can return a color stored with a
-        /// single key-value pair, itself stored within a sub group, from the
-        /// global $palettes map
+        /// Test that palette() can return a color stored with a single
+        /// key-value pair, itself stored within a sub group, from the global
+        /// $palettes map
         ///
         /// @group Tests
         ///
@@ -193,9 +195,8 @@ $custom-palettes: (
 
 
 
-        /// Test that the palette function can return a color stored within a
-        /// palette, itself stored within a sub-group, from the global $palettes
-        /// map
+        /// Test that palette() can return a color stored within a palette,
+        /// itself stored within a sub-group, from the global $palettes map
         ///
         /// @group Tests
         ///
@@ -215,9 +216,8 @@ $custom-palettes: (
 
 
 
-        /// Test that the palette function can return a color tone stored within
-        /// a palette, itself stored within a sub-group, from the global
-        /// $palettes map
+        /// Test that palette() can return a color tone stored within a palette,
+        /// itself stored within a sub-group, from the global $palettes map
         ///
         /// @group Tests
         ///

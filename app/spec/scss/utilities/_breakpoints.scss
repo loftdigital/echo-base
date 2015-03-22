@@ -16,18 +16,28 @@
 //==============================================================================
 
 
+
+
 //==============================================================================
 //  Custom test dependencies
 //==============================================================================
 
+
+
+//  Custom test variables
+//==============================================================================
+
 $custom-breakpoint-key: custom-breakpoint;
 $custom-breakpoint-value: 200px;
-
 $custom-breakpoint-key-small: custom-breakpoint-small;
 $custom-breakpoint-key-large: custom-breakpoint-large;
-
 $custom-breakpoint-small: 1px;
 $custom-breakpoint-large: 10000000px;
+
+
+
+//  Custom test maps
+//==============================================================================
 
 $custom-breakpoints: (
     $custom-breakpoint-key: $custom-breakpoint-value,
@@ -59,19 +69,19 @@ $custom-breakpoints: (
 
     @include test('setup-breakpoints() [function]') {
 
-        /// Test if setup-breakpoints() returns an object of type map
+        /// Test that setup-breakpoints() returns a value of type Map
         ///
         /// @group Tests
 
         $test: type-of(setup-breakpoints());
         $expect: map;
 
-        @include assert-equal($test, $expect, 'Returns a map');
+        @include assert-equal($test, $expect, 'Returns a Map');
 
 
 
-        /// Test if setup-breakpoints() successfully merges the default and custom
-        /// palette maps by checking for the existance of a custom key
+        /// Test that setup-breakpoints() successfully merges the default and
+        /// custom palette maps by checking for the existance of a custom key
         ///
         /// @group Tests
 
@@ -83,8 +93,8 @@ $custom-breakpoints: (
 
 
 
-        /// Test if setup-breakpoints() successfully merges the default and custom
-        /// palette maps by checking the value of a custom key
+        /// Test that setup-breakpoints() successfully merges the default and
+        /// custom palette maps by checking the value of a custom key
         ///
         /// @group Tests
 
@@ -97,8 +107,8 @@ $custom-breakpoints: (
 
 
 
-        /// Test if setup-breakpoints() returns a list compromised of both default and
-        /// custom map keys
+        /// Test that setup-breakpoints() returns a list compromised of both
+        /// default and custom map keys
         ///
         /// @group Tests
 
@@ -108,16 +118,17 @@ $custom-breakpoints: (
         $expect: large, medium, small, x-small, custom-breakpoint, custom-breakpoint-small, custom-breakpoint-large;
 
         @include assert-equal($test, $expect, 'Returns a list of the default and custom breakpoints');
+
     }
 
 
 
-// Get Breakpoints - breakpoint()
+//  breakpoint() [function]
 //==============================================================================
 
     @include test('breakpoint() [function]') {
 
-        /// Test if breakpoint() will return the correct breakpoint value
+        /// Test that breakpoint() returns the correct breakpoint value
         ///
         /// @group Tests
 
@@ -130,8 +141,8 @@ $custom-breakpoints: (
 
 
 
-        /// Test if breakpoint() will return false if a breakpoint that doesn't exist
-        /// is specified.
+        /// Test that breakpoint() returns false if a breakpoint that doesn't
+        /// exist is specified
         ///
         /// @group Tests
 
@@ -144,21 +155,15 @@ $custom-breakpoints: (
 
 
 
-// setup-key-list()
+//  setup-key-list() [function]
 //==============================================================================
 
     @include test('setup-key-list() [function]') {
 
-
-
-
-        //======================================================================
         // Non-mobile first
         //======================================================================
 
-
-
-        /// test if setup-key-list returns a string
+        /// Test that setup-key-list() returns a value of type String
         ///
         /// @group Tests
 
@@ -167,11 +172,11 @@ $custom-breakpoints: (
         $test: type-of(setup-key-list());
         $expect: string;
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns a string');
+        @include assert-equal($test, $expect, 'Returns a String');
 
 
 
-        /// test if setup-key-list returns the expected string with a named
+        /// Test that setup-key-list() returns the expected string with a named
         /// value
         ///
         /// @group Tests
@@ -182,11 +187,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value');
+        @include assert-equal($test, $expect, 'Returns correctly for named value');
 
 
 
-        /// test if setup-key-list returns the expected string with a custom
+        /// Test that setup-key-list() returns the expected string with a custom
         /// value
         ///
         /// @group Tests
@@ -197,11 +202,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(max-width: 900px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value');
+        @include assert-equal($test, $expect, 'Returns correctly for custom value');
 
 
 
-        /// test if setup-key-list returns the expected string with a named
+        /// Test that setup-key-list() returns the expected string with a named
         /// value range and ordered desktop first
         ///
         /// @group Tests
@@ -212,11 +217,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(max-width: 960px) and (min-width: 480px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range');
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for named value range');
 
 
 
-        /// test if setup-key-list returns the expected string with a custom
+        /// Test that setup-key-list() returns the expected string with a custom
         /// value range and ordered desktop first
         ///
         /// @group Tests
@@ -227,18 +232,14 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(max-width: 900px) and (min-width: 100px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range');
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for custom value range');
 
 
 
-
-        //======================================================================
         // Mobile first
         //======================================================================
 
-
-
-        /// test if setup-key-list returns the expected string with a named
+        /// Test that setup-key-list() returns the expected string with a named
         /// value mobile first
         ///
         /// @group Tests
@@ -249,11 +250,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(min-width: 960px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for named value - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly for named value - mobile first');
 
 
 
-        /// test if setup-key-list returns the expected string with a custom
+        /// Test that setup-key-list() returns the expected string with a custom
         /// value mobile first
         ///
         /// @group Tests
@@ -264,11 +265,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(min-width: 900px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly for custom value - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly for custom value - mobile first');
 
 
 
-        /// test if setup-key-list returns the expected string with a named
+        /// Test that setup-key-list() returns the expected string with a named
         /// value range and ordered mobile first
         ///
         /// @group Tests
@@ -279,11 +280,11 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(min-width: 480px) and (max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list()  returns correctly and ordered for named value range - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for named value range - mobile first');
 
 
 
-        /// test if setup-key-list returns the expected string with a custom
+        /// Test that setup-key-list() returns the expected string with a custom
         /// value range and ordered mobile first
         ///
         /// @group Tests
@@ -294,30 +295,28 @@ $custom-breakpoints: (
         $test: setup-key-list($val);
         $expect: '(min-width: 100px) and (max-width: 900px)';
 
-        @include assert-equal($test, $expect, 'setup-key-list() returns correctly and ordered for custom value range - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for custom value range - mobile first');
     }
 
 
 
-// setup-config-list()
+//  setup-config-list() [function]
 //==============================================================================
 
     @include test('setup-config-list() - [function]') {
 
-
-
-        /// test if setup-config-list returns a string
+        /// Test that setup-config-list() returns a value of type String
         ///
         /// @group Tests
 
         $test: type-of(setup-config-list());
         $expect: string;
 
-        @include assert-equal($test, $expect, 'setup-config-list() returns a string');
+        @include assert-equal($test, $expect, 'Returns a String');
 
 
 
-        /// test if setup-config-list returns the correctly formatted string
+        /// Test that setup-config-list() returns the correctly formatted string
         ///
         /// @group Tests
 
@@ -326,11 +325,11 @@ $custom-breakpoints: (
         $test: setup-config-list($val);
         $expect: '(orientation: landscape)';
 
-        @include assert-equal($test, $expect, 'setup-config-list() returns a correct media string with a single value');
+        @include assert-equal($test, $expect, 'Returns a correct media string with a single value');
 
 
 
-        /// test if setup-config-list returns the correctly formatted string
+        /// Test that setup-config-list() returns the correctly formatted string
         /// with mutliple values
         ///
         /// @group Tests
@@ -340,35 +339,31 @@ $custom-breakpoints: (
         $test: setup-config-list($val);
         $expect: '(orientation: landscape) and (resolution: 192dppx)';
 
-        @include assert-equal($test, $expect, 'setup-config-list() returns a correct media string with multiple values');
+        @include assert-equal($test, $expect, 'Returns a correct media string with multiple values');
     }
 
 
 
-// breakpoint-range()
+//  breakpoint-range() [function]
 //==============================================================================
 
     @include test('breakpoint-range() - [function]') {
 
-        /// test if breakpoint-range() returns a string
+        /// Test that breakpoint-range() returns a value of type String
         ///
         /// @group Tests
 
         $test: type-of(breakpoint-range(large, small));
         $expect: string;
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns a string');
+        @include assert-equal($test, $expect, 'Returns a String');
 
 
 
-
-        //======================================================================
         // Non-mobile first
         //======================================================================
 
-
-
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// desktop first with named values
         ///
         /// @group Tests
@@ -378,11 +373,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(large, small);
         $expect: '(max-width: 960px) and (min-width: 480px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values - desktop first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values - desktop first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// desktop first with named values and corrected order
         ///
         /// @group Tests
@@ -392,11 +387,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(small, large);
         $expect: '(max-width: 960px) and (min-width: 480px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values & corrected order - desktop first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values & corrected order - desktop first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// desktop first with mixed values
         ///
         /// @group Tests
@@ -406,11 +401,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(960px, small);
         $expect: '(max-width: 960px) and (min-width: 480px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values - desktop first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values - desktop first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// desktop first with mixed values and corrected order
         ///
         /// @group Tests
@@ -420,18 +415,14 @@ $custom-breakpoints: (
         $test: breakpoint-range(small, 960px);
         $expect: '(max-width: 960px) and (min-width: 480px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - desktop first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values & corrected order - desktop first');
 
 
 
-
-        //======================================================================
         // Mobile first
         //======================================================================
 
-
-
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// mobile first with named values
         ///
         /// @group Tests
@@ -441,11 +432,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(small, large);
         $expect: '(min-width: 480px) and (max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values - mobile first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// mobile first with named values and corrected order
         ///
         /// @group Tests
@@ -455,11 +446,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(large, small);
         $expect: '(min-width: 480px) and (max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with named values & corrected order - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values & corrected order - mobile first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// mobile first with mixed values
         ///
         /// @group Tests
@@ -469,11 +460,11 @@ $custom-breakpoints: (
         $test: breakpoint-range(small, 960px);
         $expect: '(min-width: 480px) and (max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values - mobile first');
 
 
 
-        /// test if breakpoint-range() returns a correctly formatted string
+        /// Test that breakpoint-range() returns a correctly formatted string
         /// mobile first with mixed values and corrected order
         ///
         /// @group Tests
@@ -483,6 +474,6 @@ $custom-breakpoints: (
         $test: breakpoint-range(960px, small);
         $expect: '(min-width: 480px) and (max-width: 960px)';
 
-        @include assert-equal($test, $expect, 'breakpoint-range() returns correctly formatted string with mixed values & corrected order - mobile first');
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values & corrected order - mobile first');
     }
 }
