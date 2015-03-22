@@ -39,21 +39,21 @@ $select-padding-left: 0.5rem !default;
 $select-padding-right: 0.5rem !default;
 $select-margin-bottom: 1rem !default;
 $select-margin-top: 0 !default;
-$select-background-color: palette(default-white) !default;
+$select-background-color: palette(echo-base, white) !default;
 $select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) !default;
 $select-background-repeat: no-repeat !default;
 $select-background-position: 100% center !default;
-$select-border-color: palette(default-grey) !default;
+$select-border-color: palette(echo-base, grey) !default;
 $select-border-style: solid !default;
 $select-border-width: 1px !default;
 $select-border-radius: $global-border-radius !default;
-$select-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1) !default;
+$select-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1) !default;
+$select-color: palette(echo-base, grey, dark) !default;
 $select-font-family: $base-font-family !default;
 $select-font-size: $base-font-size !default;
 $select-font-style: $base-font-style !default;
 $select-font-weight: $base-font-weight !default;
 $select-line-height: $base-line-height !default;
-$select-color: palette(default-grey, dark) !default;
 $select-text-transform: none !default;
 $select-letter-spacing: normal !default;
 $select-appearance: none !default;
@@ -63,10 +63,10 @@ $select-appearance: none !default;
 //  select :focus
 //==============================================================================
 
-$select-background-color-focus: palette(default-white) !default;
-$select-border-color-focus: palette(default-grey) !default;
-$select-box-shadow-focus: 0 0 3px palette(default-grey) !default;
-$select-color-focus: palette(default-grey, dark) !default;
+$select-background-color-focus: palette(echo-base, white) !default;
+$select-border-color-focus: palette(echo-base, grey) !default;
+$select-box-shadow-focus: 0 0 3px palette(echo-base, grey) !default;
+$select-color-focus: palette(echo-base, grey, dark) !default;
 $select-outline-focus: none !default;
 
 
@@ -74,9 +74,9 @@ $select-outline-focus: none !default;
 //  select :disabled
 //==============================================================================
 
-$select-background-color-disabled: palette(default-grey, x-light) !default;
-$select-border-color-disabled: palette(default-grey, light) !default;
-$select-color-disabled: palette(default-grey, dark) !default;
+$select-background-color-disabled: palette(echo-base, grey, x-light) !default;
+$select-border-color-disabled: palette(echo-base, grey, light) !default;
+$select-color-disabled: palette(echo-base, grey, dark) !default;
 $select-cursor-disabled: not-allowed !default;
 
 
@@ -147,5 +147,5 @@ $select-cursor-disabled: not-allowed !default;
     select {
         @include select;
     }
-    
+
 }

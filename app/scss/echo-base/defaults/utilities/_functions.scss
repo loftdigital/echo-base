@@ -70,7 +70,6 @@ $breakpoints: ();
 	} @else {
 		@return $default-breakpoints;
 	}
-
 }
 
 
@@ -104,7 +103,6 @@ $breakpoints: ();
 	} @else {
 		@return false;
 	}
-
 }
 
 
@@ -135,9 +133,7 @@ $breakpoints: ();
     $output: '';
 
     @if ($key-list != false) {
-
         $output: setup-key-list($key-list);
-
     }
 
     @if ($key-list != false and $extra-config != false) {
@@ -145,12 +141,10 @@ $breakpoints: ();
     }
 
     @if($extra-config != false) {
-
         $output: $output + setup-config-list($extra-config);
     }
 
     @return $output;
-
 }
 
 
@@ -231,7 +225,6 @@ $breakpoints: ();
     }
 
     @return $config-string;
-
 }
 
 
@@ -332,30 +325,75 @@ $breakpoints: ();
 //  2. Get palette
 //==============================================================================
 
-/// Retrieves the palette and the specified tone from the global palettes map
+/// Retrieves the palette and the specified tone from the global palettes map.
+/// Can accept one, two or three parameters.
 ///
 /// @access public
 /// @group Palettes
-/// @param {String} $palette - Palette name
-/// @param {String} $tone ['base'] - Palette tone
+/// @param {String} $item - Sub-group name, palette name, or color name
+/// @param {String} $args2 ['base'] - Palette name, or color tone
+/// @param {String} $args3 ['base'] - Color tone
 /// @return {Map}
 
-@function palette($palette, $tone: 'base') {
-	$palettes: setup-palettes();
+@function palette( $item, $args2:'base', $args3:'base' ) {
 
-	@if (map-has-key($palettes, $palette)) {
-		$color: map-get($palettes, $palette);
+    // Set up the global palettes - merges all palettes into one
+    $palettes: setup-palettes();
 
-		@if (map-has-key($color, $tone)) {
-			@return map-get($color, $tone);
-		} @else {
-			@warn "Tone '#{$tone}' doesn't exist for palette '#{$color}'!";
-		}
+    // Check if item exists within the global palettes map
+    @if (map-has-key($palettes, $item)) {
 
-	} @else {
-		@warn "Palette '#{$palette}' doesn't exist!";
-	}
+        // Pull child item from palettes
+        $child: map-get($palettes, $item);
 
+        // Now let's check if the second argument is a string or a map.
+        // If it's a string it should be a color tone and we can return it.
+        // If it's a map we need to dig deeper.
+        @if( type-of($child) != map ) {
+            @return $child;
+        } @else {
+
+            // Check if $child is a palette map or sub-group map
+            // If it has a base key then assume it's a palette map
+            @if ( map-has-key($child, base) ) {
+                $color: $child;
+                $tone: $args2;
+            } @else {
+
+                // Assume it's a subgroup since it has no base
+                $sub-group: $child;
+
+                // Check if palette exists in sub-group
+                @if ( map-has-key( $sub-group, $args2 ) ) {
+
+                    // Pull item from sub group
+                    $grand-child: map-get( $sub-group, $args2 );
+
+                    // If grand child is a string, it must be the tone
+                    // If grand child is a map, grand child is a palette and
+                    // args 3 must be the tone
+                    @if ( type-of($grand-child) != map ) {
+                        @return $grand-child;
+                    } @else {
+                        $color: $grand-child;
+                        $tone: $args3;
+                    }
+
+                } @else {
+                    @warn "Color '#{$args2}' doesn\'t exist within sub-group '#{$grand-child}'!";
+                }
+            }
+
+            // With color and tone set, let's return the correct color string
+            @if (map-has-key($color, $tone)) {
+                @return map-get($color, $tone);
+            } @else {
+                @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
+            }
+        }
+    } @else {
+        @warn "Item '#{$item}' doesn\'t exist in palettes!";
+    }
 }
 
 
@@ -399,7 +437,6 @@ $breakpoints: ();
 	} @else {
 		@return $value / strip-unit($rem-base) * 1rem;
 	}
-
 }
 
 
@@ -440,5 +477,4 @@ $breakpoints: ();
 
 		@return $rem-values;
 	}
-
 }

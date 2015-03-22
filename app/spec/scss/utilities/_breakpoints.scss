@@ -578,6 +578,8 @@ $custom-breakpoints: (
 // Setup breakpoints - setup-breakpoints()
 //==============================================================================
 
+
+
 @include test-module('Setup breakpoints') {
 
     @include breakpoints-return-map();
@@ -589,8 +591,11 @@ $custom-breakpoints: (
 
 
 
+
 // Get Breakpoints - breakpoint()
 //==============================================================================
+
+
 
 @include test-module('breakpoint') {
 
@@ -598,6 +603,7 @@ $custom-breakpoints: (
     @include breakpoints-return-false();
 
 }
+
 
 
 

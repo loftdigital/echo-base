@@ -25,7 +25,7 @@
 //  1. Body - <body>
 //==============================================================================
 
-$body-background: palette(default-white) !default;
+$body-background: palette(echo-base, white) !default;
 
 
 
@@ -33,7 +33,7 @@ $body-background: palette(default-white) !default;
 //  2. Horizontal rule - <hr>
 //==============================================================================
 
-$hr-border-color: palette(default-grey, light) !default;
+$hr-border-color: palette(echo-base, grey, light) !default;
 
 
 
