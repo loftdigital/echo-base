@@ -40,13 +40,13 @@ $input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
 $input-text-margin-bottom: 1rem !default;
 $input-text-margin-top: 0 !default;
-$input-text-background-color: palette(default-white) !default;
-$input-text-border-color: palette(default-grey) !default;
+$input-text-background-color: palette(echo-base, white) !default;
+$input-text-border-color: palette(echo-base, grey) !default;
 $input-text-border-style: solid !default;
 $input-text-border-width: 1px !default;
 $input-text-border-radius: $global-border-radius !default;
-$input-text-box-shadow: inset 0 1px 2px rgba(palette(default-black), 0.1) !default;
-$input-text-color: palette(default-grey, dark) !default;
+$input-text-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1) !default;
+$input-text-color: palette(echo-base, grey, dark) !default;
 $input-text-font-family: $base-font-family !default;
 $input-text-font-size: $base-font-size !default;
 $input-text-font-weight: $base-font-weight !default;
@@ -58,10 +58,10 @@ $input-text-appearance: none !default;
 //  Input :focus
 //==============================================================================
 
-$input-text-background-color-focus: palette(default-white) !default;
-$input-text-border-color-focus: palette(default-grey) !default;
-$input-text-box-shadow-focus: 0 0 3px palette(default-grey) !default;
-$input-text-color-focus: palette(default-grey, dark) !default;
+$input-text-background-color-focus: palette(echo-base, white) !default;
+$input-text-border-color-focus: palette(echo-base, grey) !default;
+$input-text-box-shadow-focus: 0 0 3px palette(echo-base, grey) !default;
+$input-text-color-focus: palette(echo-base, grey, dark) !default;
 $input-text-outline-focus: none !default;
 
 
@@ -69,9 +69,9 @@ $input-text-outline-focus: none !default;
 //  Input :disabled
 //==============================================================================
 
-$input-text-background-color-disabled: palette(default-grey, x-light) !default;
-$input-text-border-color-disabled: palette(default-grey, light) !default;
-$input-text-color-disabled: palette(default-grey, dark) !default;
+$input-text-background-color-disabled: palette(echo-base, grey, x-light) !default;
+$input-text-border-color-disabled: palette(echo-base, grey, light) !default;
+$input-text-color-disabled: palette(echo-base, grey, dark) !default;
 $input-text-cursor-disabled: not-allowed !default;
 
 

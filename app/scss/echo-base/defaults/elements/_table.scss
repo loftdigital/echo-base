@@ -49,7 +49,7 @@ $table-width: 100% !default;
 
 $thead-border-bottom-width: 2px !default;
 $thead-border-bottom-style: solid !default;
-$thead-border-bottom-color: palette(default-grey, light) !default;
+$thead-border-bottom-color: palette(echo-base, grey, light) !default;
 
 
 
@@ -61,8 +61,8 @@ $thead-border-bottom-color: palette(default-grey, light) !default;
 //  Table row
 //==============================================================================
 
-$tr-background-color-odd: palette(default-grey, x-light) !default;
-$tr-background-color-even: palette(default-grey, light) !default;
+$tr-background-color-odd: palette(echo-base, grey, x-light) !default;
+$tr-background-color-even: palette(echo-base, grey, light) !default;
 
 
 
@@ -73,7 +73,7 @@ $th-padding-top: 1rem !default;
 $th-padding-bottom: 1rem !default;
 $th-padding-right: 1rem !default;
 $th-padding-left: 1rem !default;
-$th-background-color: palette(default-white) !default;
+$th-background-color: palette(echo-base, white) !default;
 $th-font-weight: $base-font-weight !default;
 
 

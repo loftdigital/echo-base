@@ -22,8 +22,6 @@
 
 $base-font-size: 16px;
 
-
-
 //==============================================================================
 //  Function/mixin dependencies
 //==============================================================================
@@ -32,64 +30,50 @@ $base-font-size: 16px;
 
 
 //==============================================================================
-//  Build tests
+//  Tests
 //==============================================================================
 
-//  REM calculator - rem-calc()
+@include test-module('Helpers') {
+
+
+
+//  rem-calc() [function]
 //==============================================================================
 
-/// Test if rem-calc() returns an object of type map
-///
-/// @group Tests
+    @include test('rem-calc() [function]') {
 
-@mixin rem-calc-returns-correct-value() {
+        /// Test that the rem-calc() function returns a value of 1 rem
+        /// where the px unit passed in is equal to the $base-font-size
+        ///
+        /// @group Tests
 
-    @include test('rem-calc') {
-
-        // Values to compare
         $test: rem-calc(16px);
         $expect: 1rem;
 
-        @include assert-equal($test, $expect, 'Returns a correct value');
-    }
-}
+        @include assert-equal($test, $expect, 'Returns a value of 1rem when passed the base-font-size');
 
 
 
-/// Test if rem-calc() returns a correct value half of base font size
-///
-/// @group Tests
+        /// Test if rem-calc() returns a correct value half of base font size
+        ///
+        /// @group Tests
 
-@mixin rem-calc-returns-correct-value-half() {
-
-    @include test('rem-calc') {
-
-        // Values to compare
-        $test: rem-calc(8px);
+        $test: rem-calc(8px); // (16px / 2) = 8px
         $expect: 0.5rem;
 
-        @include assert-equal($test, $expect, 'Returns a correct value');
-    }
-
-}
+        @include assert-equal($test, $expect, 'Returns a value of 0.5rem when passed a value of half the base-font-size');
 
 
 
-/// Test if rem-calc() returns a correct value one and a half times that of base font size
-///
-/// @group Tests
+        /// Test if rem-calc() returns a correct value one and a half times that of base font size
+        ///
+        /// @group Tests
 
-@mixin rem-calc-returns-correct-value-one-and-a-half() {
-
-    @include test('rem-calc') {
-
-        // Values to compare
-        $test: rem-calc(24px);
+        $test: rem-calc(24px); // (16px * 1.5) = 24px
         $expect: 1.5rem;
 
-        @include assert-equal($test, $expect, 'Returns a correct value');
+        @include assert-equal($test, $expect, 'Returns a value of 1.5rem when passed a value of one and half the base-font-size');
     }
-
 }
 
 
@@ -108,8 +92,10 @@ $base-font-size: 16px;
 
         @include assert-equal($test, $expect, 'strip unit returns a number');
     }
-
 }
+
+
+
 
 @mixin strip-unit-returns-number-without-unit() {
 
@@ -175,17 +161,6 @@ $base-font-size: 16px;
 //  Run tests
 //==============================================================================
 
-//  REM Calculator - rem-calc()
-//==============================================================================
-
-@include test-module('rem-calc') {
-
-    @include rem-calc-returns-correct-value();
-    @include rem-calc-returns-correct-value-half();
-    @include rem-calc-returns-correct-value-one-and-a-half();
-
-}
-
 
 
 // Strip-unit - strip-unit()
@@ -204,9 +179,7 @@ $base-font-size: 16px;
 //==============================================================================
 
 @include test-module('remify') {
-
     @include remify-returns-number();
     @include remify-returns-rem-unit();
     @include remify-returns-zero-value();
-
 }

@@ -7,8 +7,9 @@
 //  ----------------------------------------------------------------------------
 //  a. Custom test dependencies
 //  b. Function/mixin dependencies
-//  c. Build tests
-//  d. Run tests
+//  c. Tests
+//      1. setup-palettes() [function]
+//      2. palette() [function]
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -22,11 +23,42 @@
 
 $custom-palette-base: rgb(255, 0, 0);
 
+
+$custom-string-color: rgb(255, 0, 0);
+$custom-palette-color: rgb(0, 255, 0);
+$custom-palette-color-tone: rgb(0, 100, 0);
+
+$custom-sub-group-string-color: rgb(0, 0, 255);
+$custom-sub-group-palette-color: rgb(255, 255, 0);
+$custom-sub-group-palette-color-tone: rgb(100, 100, 0);
+
+
 $custom-palettes: (
-    custom-palette: (
-        base: $custom-palette-base
+
+    // Setup custom string color
+    custom-string-color: $custom-string-color,
+
+    // Setup custom palette color
+    custom-palette-color: (
+        base: $custom-palette-color,
+        dark: $custom-palette-color-tone
+    ),
+
+    // Setup custom sub group
+    custom-sub-group: (
+
+        // Setup custom sub group string color
+        custom-sub-group-string-color: $custom-sub-group-string-color,
+
+        // Setup custom sub group palette color
+        custom-sub-group-palette-color: (
+            base: $custom-sub-group-palette-color,
+            dark: $custom-sub-group-palette-color-tone
+        )
     )
 );
+
+
 
 
 
@@ -41,86 +73,166 @@ $custom-palettes: (
 
 
 //==============================================================================
-//  Build tests
+//  Tests
 //==============================================================================
 
-//  Setup palettes - setup-palettes()
+@include test-module('Palettes') {
+
+
+
+//  setup-palette() [function]
 //==============================================================================
 
-/// Test if setup-palettes() returns an object of type map
-///
-/// @group Tests
+    @include test('setup-palettes() [function]') {
 
-@mixin palettes-return-map() {
 
-    @include test('setup-palettes') {
-        // Values to compare
+
+        /// Test that the setup-palettes function returns an object of type map
+        ///
+        /// @group Tests
+
         $test: type-of(setup-palettes());
         $expect: map;
 
-        @include assert-equal($test, $expect, 'Returns a map');
-    }
-
-}
+        @include assert-equal($test, $expect, 'Returns an object of type map');
 
 
 
-/// Test if setup-palettes() successfully merges the default and custom
-/// palette maps by checking for the existance of a custom key
-///
-/// @group Tests
+        /// Test that the setup-palettes function returns a map that contains
+        /// the requested custom palette color key
+        ///
+        /// @group Tests
 
-@mixin palettes-has-custom-key() {
-
-    @include test('setup-palettes') {
-        // Setup
-        $palettes: setup-palettes();
-
-        // Values to compare
-        $test: map-has-key($palettes, custom-palette);
+        $test: map-has-key(setup-palettes(), custom-palette-color);
         $expect: true;
 
-        @include assert-equal($test, $expect, 'Returns a merged map of default & custom palettes');
+        @include assert-equal($test, $expect, 'Returns a map containing the custom palettes');
     }
 
-}
+
+
+//  palette() [function]
+//==============================================================================
+
+    @include test('palette() [function]') {
 
 
 
-/// Test if setup-palettes() successfully merges the default and custom
-/// palette maps by checking the value of a custom key
-///
-/// @group Tests
+        /// Test that the palette function can return a color stored within a
+        /// single key-value pair from the global $palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-string-color: rgb(255, 0, 0)
+        ///     );
 
-@mixin palettes-return-custom-value() {
+        $test: palette(custom-string-color);
+        $expect: $custom-string-color;
 
-    @include test('setup-palettes') {
-        // Setup
-        $palettes: setup-palettes();
-        $custom-color: map-get($palettes, custom-palette);
+        @include assert-equal($test, $expect, 'Returns the expected color stored within a single key-value pair from the global $palettes map');
 
-        // Values to compare
-        $test: map-get($custom-color, base);
-        $expect: $custom-palette-base;
 
-        @include assert-equal($test, $expect, 'Returns a custom palette value');
+
+        /// Test that the palette function can return a base tone color stored
+        /// within a palette, from the global $palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-palette-color: (
+        ///             base: rgb(255, 0, 0)
+        ///         )
+        ///     );
+
+        $test: palette(custom-palette-color);
+        $expect: $custom-palette-color;
+
+        @include assert-equal($test, $expect, 'Returns the expected base tone color stored within a palette, from the global $palettes map');
+
+
+
+        /// Test that the palette function can return a color tone stored within
+        /// a palette, from the global $palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-palette-color: (
+        ///             dark: rgb(0, 100, 0)
+        ///         )
+        ///     );
+
+        $test: palette(custom-palette-color, dark);
+        $expect: $custom-palette-color-tone;
+
+        @include assert-equal($test, $expect, 'Returns the expected color tone stored within a palette, from the global $palettes map');
+
+
+
+        /// Test that the palette function can return a color stored with a
+        /// single key-value pair, itself stored within a sub group, from the
+        /// global $palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-sub-group: (
+        ///             custom-sub-group-string-color: rgb(255, 0, 0)
+        ///         )
+        ///     );
+
+        $test: palette(custom-sub-group, custom-sub-group-string-color);
+        $expect: $custom-sub-group-string-color;
+
+        @include assert-equal($test, $expect, 'Returns the expected color stored with a single key-value pair, itself stored within a sub group, from the global $palettes map');
+
+
+
+        /// Test that the palette function can return a color stored within a
+        /// palette, itself stored within a sub-group, from the global $palettes
+        /// map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-sub-group: (
+        ///             custom-palette-color: (
+        ///                 base: rgb(255, 255, 0)
+        ///             )
+        ///         )
+        ///     );
+
+        $test: palette(custom-sub-group, custom-sub-group-palette-color);
+        $expect: $custom-sub-group-palette-color;
+
+        @include assert-equal($test, $expect, 'Returns the expected color stored within a palette, itself stored within a sub-group, from the global $palettes map');
+
+
+
+        /// Test that the palette function can return a color tone stored within
+        /// a palette, itself stored within a sub-group, from the global
+        /// $palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-sub-group: (
+        ///             custom-palette-color: (
+        ///                 dark: rgb(100, 100, 0)
+        ///             )
+        ///         )
+        ///     );
+
+        $test: palette(custom-sub-group, custom-sub-group-palette-color, dark);
+        $expect: $custom-sub-group-palette-color-tone;
+
+        @include assert-equal($test, $expect, 'Returns the expected color tone stored within a palette, itself stored within a sub-group, from the global $palettes map');
     }
-
-}
-
-
-
-//==============================================================================
-//  Run tests
-//==============================================================================
-
-//  Setup palettes - setup-palettes()
-//==============================================================================
-
-@include test-module('Setup palettes') {
-
-    @include palettes-return-map();
-    @include palettes-has-custom-key();
-    @include palettes-return-custom-value();
-
 }

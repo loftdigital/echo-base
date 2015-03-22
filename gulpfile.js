@@ -89,6 +89,7 @@
 
     gulp.task('sass-test', function() {
         gulp.src(config.tests + '/scss/test.scss')
+            .pipe(plumber())
             .pipe(sass())
             .pipe(gulp.dest(config.tests + '/scss/result'));
     });
