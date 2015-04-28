@@ -198,7 +198,7 @@
 //  5. Responsive text sizes
 //==============================================================================
 
-// @mixin h1-text-size-responsive {
+// @mixin h1-text-size {
 //     @include h1-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -207,7 +207,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin h2-text-size-responsive {
+// @mixin h2-text-size {
 //     @include h2-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -216,7 +216,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin h3-text-size-responsive {
+// @mixin h3-text-size {
 //     @include h3-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -225,7 +225,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin h4-text-size-responsive {
+// @mixin h4-text-size {
 //     @include h4-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -234,7 +234,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin h5-text-size-responsive {
+// @mixin h5-text-size {
 //     @include h5-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -243,7 +243,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin h6-text-size-responsive {
+// @mixin h6-text-size {
 //     @include h6-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -252,7 +252,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin p-text-size-responsive {
+// @mixin p-text-size {
 //     @include p-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -261,7 +261,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin li-text-size-responsive {
+// @mixin li-text-size {
 //     @include li-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -270,7 +270,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin blockquote-text-size-responsive {
+// @mixin blockquote-text-size {
 //     @include blockquote-text-size-default;
 //
 //     // @include breakpoint(large) {}
@@ -279,7 +279,7 @@
 //     // @include breakpoint(x-small) {}
 // }
 //
-// @mixin code-text-size-responsive {
+// @mixin code-text-size {
 //     @include code-text-size-default;
 //
 //     // @include breakpoint(large) {}
