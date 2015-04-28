@@ -14,13 +14,15 @@
 //  g. Base
 //  h. Form
 //  i. Fieldset
-//  j. Legend
-//  k. Label
-//  l. Select
-//  m. Input
-//  n. Textarea
-//  o. Buttons
-//  p. Table
+//  j. Figure
+//  k. Figcaption
+//  l. Legend
+//  m. Label
+//  n. Select
+//  o. Input
+//  p. Textarea
+//  q. Buttons
+//  r. Table
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
@@ -598,8 +600,71 @@
 // $fieldset-border-radius: $global-border-radius;
 
 
+
 //==============================================================================
-//  j. Legend
+//  j. Figure
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-figure-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//==============================================================================
+
+// $figure-margin-top: 0;
+// $figure-margin-right: 0;
+// $figure-margin-bottom: 0;
+// $figure-margin-left: 0;
+
+
+
+//==============================================================================
+//  k. Figcaption
+//==============================================================================
+
+//  Enable Defaults
+//==============================================================================
+
+// $use-figcaption-defaults: $use-echo-base-defaults;
+
+
+
+//  Defaults
+//==============================================================================
+
+// $figcaption-width: 100%;
+// $figcaption-height: auto;
+// $figcaption-padding-top: 0;
+// $figcaption-padding-right: 0;
+// $figcaption-padding-bottom: 0;
+// $figcaption-padding-left: 0;
+// $figcaption-margin-top: 0;
+// $figcaption-margin-right: 0;
+// $figcaption-margin-left: 0;
+// $figcaption-margin-bottom: 0;
+// $figcaption-background-color: transparent;
+// $figcaption-border-color: transparent;
+// $figcaption-border-style: solid;
+// $figcaption-border-width: 0;
+// $figcaption-border-radius: $global-border-radius;
+// $figcaption-font-family: $base-font-family;
+// $figcaption-font-size: $base-font-size;
+// $figcaption-font-style: $base-font-style;
+// $figcaption-font-weight: $base-font-weight;
+// $figcaption-line-height: $base-line-height;
+// $figcaption-color: palette(echo-base, grey, dark);
+// $figcaption-text-transform: none;
+// $figcaption-letter-spacing: normal;
+// $figcaption-appearance: none;
+
+
+
+//==============================================================================
+//  l. Legend
 //==============================================================================
 
 //  Enable Defaults
@@ -619,7 +684,7 @@
 
 
 //==============================================================================
-//  k. Label
+//  m. Label
 //==============================================================================
 
 //  Enable Defaults
@@ -664,7 +729,7 @@
 
 
 //==============================================================================
-//  l. Select
+//  n. Select
 //==============================================================================
 
 //  Enable Defaults
@@ -729,7 +794,7 @@
 
 
 //==============================================================================
-//  m. Input
+//  o. Input
 //==============================================================================
 
 //  Enable Defaults
@@ -796,7 +861,7 @@
 
 
 //==============================================================================
-//  n. Textarea
+//  p. Textarea
 //==============================================================================
 
 //  Enable Defaults
@@ -859,7 +924,7 @@
 
 
 //==============================================================================
-//  o. Buttons
+//  q. Buttons
 //==============================================================================
 
 
@@ -921,7 +986,7 @@
 
 
 //==============================================================================
-//  p. Tables
+//  r. Tables
 //==============================================================================
 
 
