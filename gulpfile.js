@@ -149,10 +149,7 @@
                 cascade: false
             }))
             .pipe(minifyCSS())
-            .pipe(pixrem({
-                rootvalue: '100%',
-                replace: true
-            }))
+            .pipe(pixrem('100%', { replace: true }))
             .pipe(rename({
                 basename: 'ie',
                 suffix: '.min'
