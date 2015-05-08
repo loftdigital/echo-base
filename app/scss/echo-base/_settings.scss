@@ -428,6 +428,7 @@
 // $a-text-decoration-hover: none;
 // $a-font-color: palette(primary);
 // $a-font-color-hover: scale-color($a-font-color, $lightness: -14%);
+// $a-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out);
 
 
 
@@ -961,7 +962,7 @@
 // $button-text-align: center;
 // $button-text-decoration: none;
 // $button-text-transform: none;
-// $button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out);
+// $button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out);
 // $button-vertical-align: middle;
 
 
