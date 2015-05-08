@@ -28,4 +28,4 @@ dist/js/*
 dist/css/*
 
 # Tests
-app/spec/scss/result/*
+app/tests/scss/result/*
