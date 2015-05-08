@@ -25,6 +25,7 @@
 //  1. Body - <body>
 //==============================================================================
 
+$body-min-width: 320px !default;
 $body-background: palette(echo-base, white) !default;
 
 
@@ -55,6 +56,7 @@ body {
 
 body {
     background: $body-background;
+    min-width: $body-min-width;
     margin: 0;
     padding: 0;
     position: relative;
