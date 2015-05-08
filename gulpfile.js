@@ -89,7 +89,16 @@
 
     gulp.task('sass-test', function() {
         gulp.src(config.tests + '/scss/test.scss')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "Sass Test Error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(sass())
             .pipe(gulp.dest(config.tests + '/scss/result'));
     });
@@ -108,7 +117,16 @@
 
     gulp.task('sass', function() {
         gulp.src(config.app + '/scss/*.scss')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "Sass Compile Error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(scsslint())
             .pipe(sass({
                 style: 'expanded',
@@ -138,7 +156,16 @@
 
     gulp.task('old-ie', function() {
         gulp.src(config.app + '/scss/*.scss')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "IE Compile Error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(sass({
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
@@ -167,7 +194,16 @@
 
     gulp.task('scripts', function() {
         gulp.src(config.app + '/js/**/*.js')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "Script Compile Error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(eslint({
                 useEslintrc: true
             }))
@@ -193,7 +229,16 @@
 
     gulp.task('images', function() {
         gulp.src(config.app + '/img/*')
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "Image Minification Error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(imagemin({
                 progressive: true
             }))
