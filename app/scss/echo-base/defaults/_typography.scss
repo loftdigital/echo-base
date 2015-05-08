@@ -220,6 +220,7 @@ $a-text-decoration: none !default;
 $a-text-decoration-hover: none !default;
 $a-font-color: palette(primary) !default;
 $a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
+$a-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out) !default;
 
 
 
@@ -531,6 +532,7 @@ $code-border-radius: $global-border-radius !default;
 @mixin anchor {
     text-decoration: $a-text-decoration;
     color: $a-font-color;
+    transition: $a-transition;
 
     &:hover {
         text-decoration: $a-text-decoration-hover;
