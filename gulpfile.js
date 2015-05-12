@@ -7,6 +7,7 @@
     //==========================================================================
 
     var gulp = require('gulp'),
+        mocha = require('gulp-mocha'),
         sass = require('gulp-sass'),
         scsslint = require('gulp-scss-lint'),
         autoprefixer = require('gulp-autoprefixer'),
@@ -48,7 +49,7 @@
     //==========================================================================
 
     gulp.task('default', ['clean'], function() {
-        gulp.start('styles', 'images', 'scripts', 'watch');
+        gulp.start('styles', 'images', 'scripts', 'tests', 'watch');
     });
 
 
@@ -84,24 +85,14 @@
 
 
 
-    // Sass-test - Tests
+    // Test
     //==========================================================================
 
-    // gulp.task('sass-test', function() {
-    //     gulp.src(config.tests + '/scss/test.scss')
-    //         .pipe(plumber({
-    //             errorHandler: function(err) {
-    //                 notify.onError({
-    //                     title:    "Sass Test Error",
-    //                     message:  "<%= error.message %>",
-    //                     sound:    "Sosumi"
-    //                 })(err);
-    //                 this.emit('end');
-    //             }
-    //         }))
-    //         .pipe(sass())
-    //         .pipe(gulp.dest(config.tests + '/scss/result'));
-    // });
+    gulp.task('tests', function () {
+        return gulp.src(config.tests + '/scss/test.js', {read: false})
+            // gulp-mocha needs filepaths so you can't have any plugins before it
+            .pipe(mocha({reporter: 'spec'}));
+    });
 
 
 
