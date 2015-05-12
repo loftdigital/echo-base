@@ -1,15 +1,13 @@
-
-
 (function () {
-  'use strict';
+    'use strict';
 
-  var path = require('path'),
-    truesass = require('sass-true');
+    var path = require('path'),
+        truesass = require('sass-true');
 
-  var sassFile = path.join(__dirname, 'test.scss');
+    var sassFile = path.join(__dirname, 'test.scss');
 
-  console.log(sassFile);
+    console.log(sassFile);
 
-  truesass.runSass({file: sassFile}, describe, it);
+    truesass.runSass({file: sassFile}, describe, it);
 
 })();
