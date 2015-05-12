@@ -87,21 +87,21 @@
     // Sass-test - Tests
     //==========================================================================
 
-    gulp.task('sass-test', function() {
-        gulp.src(config.tests + '/scss/test.scss')
-            .pipe(plumber({
-                errorHandler: function(err) {
-                    notify.onError({
-                        title:    "Sass Test Error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
-                    })(err);
-                    this.emit('end');
-                }
-            }))
-            .pipe(sass())
-            .pipe(gulp.dest(config.tests + '/scss/result'));
-    });
+    // gulp.task('sass-test', function() {
+    //     gulp.src(config.tests + '/scss/test.scss')
+    //         .pipe(plumber({
+    //             errorHandler: function(err) {
+    //                 notify.onError({
+    //                     title:    "Sass Test Error",
+    //                     message:  "<%= error.message %>",
+    //                     sound:    "Sosumi"
+    //                 })(err);
+    //                 this.emit('end');
+    //             }
+    //         }))
+    //         .pipe(sass())
+    //         .pipe(gulp.dest(config.tests + '/scss/result'));
+    // });
 
 
 

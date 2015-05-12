@@ -20,7 +20,7 @@
 //  Import True
 //==============================================================================
 
-@import "../../../bower_components/true/sass/true";
+@import "true";
 
 
 
@@ -39,6 +39,7 @@
 //==============================================================================
 
 @import "utilities/breakpoints";
+@import "utilities/breakpoints-mobile";
 @import "utilities/palettes";
 @import "utilities/helpers";
 

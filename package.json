@@ -27,6 +27,7 @@
     "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
-    "gulp-watch": "^4.2.4"
+    "gulp-watch": "^4.2.4",
+    "sass-true": "^2.0.1"
   }
 }
