@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "~>2.2.3"
+    "susy": "~>2.2.5"
   }
 }
