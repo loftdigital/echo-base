@@ -185,7 +185,7 @@ $breakpoints: ();
             $breakpoint: nth($key-list, 1);
         }
 
-        $key-string: '(' + #{$flow} + ': ' + #{$breakpoint} + ')';
+        $key-string: '(' + $flow + ': ' + $breakpoint + ')';
     }
 
     @return $key-string;
