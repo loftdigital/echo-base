@@ -99,11 +99,24 @@
     // Styles - Sass, old-ie
     //==========================================================================
 
-    gulp.task('styles', ['sass', 'old-ie']);
+    gulp.task('styles', ['scss-lint', 'sass', 'old-ie']);
 
 
 
-    // Sass - SCSS Lint, Sass, autoprefixer, minify css
+    // SCSS Lint
+    //==========================================================================
+
+    gulp.task('scss-lint', function() {
+        gulp.src(config.app + '/scss/echo-base/**/*.scss')
+            .pipe(plumber())
+            .pipe(scsslint())
+            .pipe(notify({
+                message: 'Scss lint task complete'
+            }));
+    });
+
+
+    // Sass - Sass, autoprefixer, minify css
     //==========================================================================
 
     gulp.task('sass', function() {
@@ -118,7 +131,6 @@
                     this.emit('end');
                 }
             }))
-            .pipe(scsslint())
             .pipe(sass({
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
