@@ -107,7 +107,7 @@
     //==========================================================================
 
     gulp.task('scss-lint', function() {
-        gulp.src(config.app + '/scss/echo-base/**/*.scss')
+        gulp.src([config.app + '/scss/*.scss', config.app + '/scss/echo-base/**/*.scss'])
             .pipe(plumber())
             .pipe(scsslint())
             .pipe(notify({

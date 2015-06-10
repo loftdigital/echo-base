@@ -1,13 +1,22 @@
-# Default application configuration that all configurations inherit from.
 linters:
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    enabled: true
+    max_elements: 1
+
   BorderZero:
     enabled: true
-
-  CapitalizationInSelector:
-    enabled: true
+    convention: none # or `none`
 
   ColorKeyword:
-    enabled: true
+    enabled: false
+
+  ColorVariable:
+    enabled: false
 
   Comment:
     enabled: true
@@ -21,12 +30,19 @@ linters:
   DuplicateProperty:
     enabled: true
 
+  ElsePlacement:
+    enabled: true
+    style: same_line # or 'new_line'
+
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: true
 
   EmptyRule:
     enabled: true
+
+  ExtendDirective:
+    enabled: false
 
   FinalNewline:
     enabled: true
@@ -43,16 +59,26 @@ linters:
   HexValidation:
     enabled: true
 
-  IdWithExtraneousSelector:
+  IdSelector:
     enabled: true
+
+  ImportantRule:
+    enabled: true
+
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
 
   Indentation:
     enabled: true
+    allow_non_nested_indentation: false
+    character: space # or 'tab'
     width: 4
 
   LeadingZero:
     enabled: true
-    style: include_zero # or 'exclude_zero'
+    style: include_zero # or 'include_zero'
 
   MergeableSelector:
     enabled: true
@@ -60,28 +86,65 @@ linters:
 
   NameFormat:
     enabled: true
-    convention: BEM # hyphenated_lowercase or 'BEM', or a regex pattern
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+
+  NestingDepth:
+    enabled: true
+    max_depth: 5
 
   PlaceholderInExtend:
     enabled: true
 
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: {}
+
   PropertySortOrder:
     enabled: false
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
 
   PropertySpelling:
     enabled: true
-    extra_properties: ['appearance']
+    extra_properties: []
 
   QualifyingElement:
     enabled: true
     allow_element_with_attribute: true
+    allow_element_with_class: false
+    allow_element_with_id: false
 
   SelectorDepth:
     enabled: true
     max_depth: 3
 
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+
   Shorthand:
     enabled: true
+    allowed_shorthands: [1, 2, 3]
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: true
 
   SingleLinePerSelector:
     enabled: true
@@ -91,12 +154,14 @@ linters:
 
   SpaceAfterPropertyColon:
     enabled: true
+    style: one_space_or_newline # or 'no_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true
 
   SpaceBeforeBrace:
     enabled: true
+    style: space # or 'new_line'
     allow_single_line_padding: false
 
   SpaceBetweenParens:
@@ -107,10 +172,19 @@ linters:
     enabled: true
     style: single_quotes # or double_quotes
 
-  TrailingSemicolonAfterPropertyValue:
+  TrailingSemicolon:
     enabled: true
 
+  TrailingWhitespace:
+    enabled: true
+
+  TrailingZero:
+    enabled: false
+
   UnnecessaryMantissa:
+    enabled: true
+
+  UnnecessaryParentReference:
     enabled: true
 
   UrlFormat:
@@ -118,6 +192,16 @@ linters:
 
   UrlQuotes:
     enabled: true
+
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  VendorPrefix:
+    enabled: true
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
 
   ZeroUnit:
     enabled: true
