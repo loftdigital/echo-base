@@ -1,0 +1,56 @@
+//==============================================================================
+//
+//  echo-base/defaults/elements/_form.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. General defaults
+//  b. CSS defaults
+//  c. Mixins
+//  d. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. General defaults
+//==============================================================================
+
+$use-form-defaults: $use-echo-base-defaults !default;
+
+
+
+
+//==============================================================================
+//  b. CSS defaults
+//==============================================================================
+
+$form-margin-bottom: 1rem !default;
+$form-margin-top: 0 !default;
+$form-margin-right: 0 !default;
+$form-margin-left: 0 !default;
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+
+@mixin form {
+    margin-bottom: $form-margin-bottom;
+    margin-top: $form-margin-top;
+    margin-right: $form-margin-right;
+    margin-left: $form-margin-left;
+}
+
+@if $use-form-defaults {
+
+    form {
+        @include form;
+    }
+}

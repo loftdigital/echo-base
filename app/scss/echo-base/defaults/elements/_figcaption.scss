@@ -1,0 +1,105 @@
+//==============================================================================
+//
+//  echo-base/defaults/elements/_figcaption.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. General defaults
+//  b. CSS defaults
+//  c. Mixins
+//  d. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. General defaults
+//==============================================================================
+
+$use-figcaption-defaults: $use-echo-base-defaults !default;
+
+
+
+
+//==============================================================================
+//  b. CSS defaults
+//==============================================================================
+
+$figcaption-width: 100% !default;
+$figcaption-height: auto !default;
+$figcaption-padding-top: 0 !default;
+$figcaption-padding-right: 0 !default;
+$figcaption-padding-bottom: 0 !default;
+$figcaption-padding-left: 0 !default;
+$figcaption-margin-top: 0 !default;
+$figcaption-margin-right: 0 !default;
+$figcaption-margin-left: 0 !default;
+$figcaption-margin-bottom: 0 !default;
+$figcaption-background-color: transparent !default;
+$figcaption-border-color: transparent !default;
+$figcaption-border-style: solid !default;
+$figcaption-border-width: 0 !default;
+$figcaption-border-radius: $global-border-radius !default;
+$figcaption-font-family: $base-font-family !default;
+$figcaption-font-size: $base-font-size !default;
+$figcaption-font-style: $base-font-style !default;
+$figcaption-font-weight: $base-font-weight !default;
+$figcaption-line-height: $base-line-height !default;
+$figcaption-color: palette(echo-base, grey, dark) !default;
+$figcaption-text-transform: none !default;
+$figcaption-letter-spacing: normal !default;
+$figcaption-appearance: none !default;
+
+
+
+
+//==============================================================================
+//  c. Mixins
+//==============================================================================
+
+@mixin figcaption {
+    width: $figcaption-width;
+    height: $figcaption-height;
+    padding-top: $figcaption-padding-top;
+    padding-right: $figcaption-padding-right;
+    padding-bottom: $figcaption-padding-bottom;
+    padding-left: $figcaption-padding-left;
+    margin-top: $figcaption-margin-top;
+    margin-right: $figcaption-margin-right;
+    margin-bottom: $figcaption-margin-bottom;
+    margin-left: $figcaption-margin-left;
+    background-color: $figcaption-background-color;
+    border-color: $figcaption-border-color;
+    border-style: $figcaption-border-style;
+    border-width: $figcaption-border-width;
+    border-radius: $figcaption-border-radius;
+    font-family: $figcaption-font-family;
+    font-size: $figcaption-font-size;
+    font-style: $figcaption-font-style;
+    font-weight: $figcaption-font-weight;
+    line-height: $figcaption-line-height;
+    color: $figcaption-color;
+    text-transform: $figcaption-text-transform;
+    letter-spacing: $figcaption-letter-spacing;
+}
+
+
+
+
+//==============================================================================
+//  d. Classes
+//==============================================================================
+
+@if $use-figcaption-defaults {
+
+    figcaption {
+        @include figcaption;
+    }
+
+}

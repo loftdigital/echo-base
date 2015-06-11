@@ -1,0 +1,22 @@
+{
+  "name": "Echo-base",
+  "version": "0.3.0",
+  "authors": [
+    "Loft Digital"
+  ],
+  "description": "Echo base front end framework",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~>2.2.5"
+  }
+}

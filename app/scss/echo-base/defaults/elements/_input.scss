@@ -1,0 +1,168 @@
+//==============================================================================
+//
+//  echo-base/defaults/elements/_input.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. General defaults
+//  b. CSS defaults
+//  c. Mixins
+//  d. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. General defaults
+//==============================================================================
+
+$use-input-defaults: $use-echo-base-defaults !default;
+
+
+
+
+//==============================================================================
+//  b. CSS defaults
+//==============================================================================
+
+$input-text-display: block !default;
+$input-text-width: 100% !default;
+$input-text-height: auto !default;
+$input-text-padding-bottom: 0.5rem !default;
+$input-text-padding-top: 0.75rem !default;
+$input-text-padding-left: 0.5rem !default;
+$input-text-padding-right: 0.5rem !default;
+$input-text-margin-bottom: 1rem !default;
+$input-text-margin-top: 0 !default;
+$input-text-background-color: palette(echo-base, white) !default;
+$input-text-border-color: palette(echo-base, grey) !default;
+$input-text-border-style: solid !default;
+$input-text-border-width: 1px !default;
+$input-text-border-radius: $global-border-radius !default;
+$input-text-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1) !default;
+$input-text-color: palette(echo-base, grey, dark) !default;
+$input-text-font-family: $base-font-family !default;
+$input-text-font-size: $base-font-size !default;
+$input-text-font-weight: $base-font-weight !default;
+$input-text-line-height: $base-line-height !default;
+$input-text-appearance: none !default;
+
+
+
+//  Input :focus
+//==============================================================================
+
+$input-text-background-color-focus: palette(echo-base, white) !default;
+$input-text-border-color-focus: palette(echo-base, grey) !default;
+$input-text-box-shadow-focus: 0 0 3px palette(echo-base, grey) !default;
+$input-text-color-focus: palette(echo-base, grey, dark) !default;
+$input-text-outline-focus: none !default;
+
+
+
+//  Input :disabled
+//==============================================================================
+
+$input-text-background-color-disabled: palette(echo-base, grey, x-light) !default;
+$input-text-border-color-disabled: palette(echo-base, grey, light) !default;
+$input-text-color-disabled: palette(echo-base, grey, dark) !default;
+$input-text-cursor-disabled: not-allowed !default;
+
+
+
+//  Input other :disabled
+//==============================================================================
+
+$input-other-cursor-disabled: not-allowed !default;
+
+
+
+
+//==============================================================================
+//  c. Mixins
+//==============================================================================
+
+@mixin input {
+
+    display: $input-text-display;
+    width: $input-text-width;
+    height: $input-text-height;
+    padding-bottom: $input-text-padding-bottom;
+    padding-top: $input-text-padding-top;
+    padding-left: $input-text-padding-left;
+    padding-right: $input-text-padding-right;
+    margin-bottom: $input-text-margin-bottom;
+    margin-top: $input-text-margin-top;
+    background-color: $input-text-background-color;
+    border-color: $input-text-border-color;
+    border-style: $input-text-border-style;
+    border-width: $input-text-border-width;
+    border-radius: $input-text-border-radius;
+    box-shadow: $input-text-box-shadow;
+    color: $input-text-color;
+    font-family: $input-text-font-family;
+    font-size: $input-text-font-size;
+    font-weight: $input-text-font-weight;
+    line-height: $input-text-line-height;
+    -moz-appearance: $input-text-appearance;
+    -webkit-appearance: $input-text-appearance;
+
+    &:focus {
+        background-color: $input-text-background-color-focus;
+        border-color: $input-text-border-color-focus;
+        box-shadow: $input-text-box-shadow-focus;
+        color: $input-text-color-focus;
+        outline: $input-text-outline-focus;
+    }
+
+    &:disabled {
+        background-color: $input-text-background-color-disabled;
+        border-color: $input-text-border-color-disabled;
+        color: $input-text-color-disabled;
+        cursor: $input-text-cursor-disabled;
+    }
+
+}
+
+@mixin input-other {
+
+    &:disabled {
+        cursor: $input-other-cursor-disabled;
+    }
+
+}
+
+//==============================================================================
+//  d. Classes
+//==============================================================================
+
+
+@if $use-input-defaults {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="number"],
+    input[type="week"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"] {
+        @include input;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        @include input-other;
+    }
+}

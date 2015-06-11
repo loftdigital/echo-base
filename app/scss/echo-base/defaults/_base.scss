@@ -1,0 +1,77 @@
+//==============================================================================
+//
+//  echo-base/defaults/_base.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Body - <body>
+//      2. Horizontal rule - <hr>
+//  b. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. Defaults
+//==============================================================================
+
+//  1. Body - <body>
+//==============================================================================
+
+$body-min-width: 320px !default;
+$body-background: palette(echo-base, white) !default;
+
+
+
+
+//  2. Horizontal rule - <hr>
+//==============================================================================
+
+$hr-border-color: palette(echo-base, grey, light) !default;
+
+
+
+
+//==============================================================================
+//  b. Classes
+//==============================================================================
+
+*,
+*:before,
+*:after {
+    box-sizing: $global-box-sizing;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: $body-background;
+    min-width: $body-min-width;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+hr {
+    height: 0;
+    margin: 1.5rem 0;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: $hr-border-color;
+}

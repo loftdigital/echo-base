@@ -1,0 +1,31 @@
+# OS X
+.DS_Store
+._*
+
+# Windows
+.thumb
+
+# Sass
+.sass-cache
+*.css.map
+Gemfile.lock
+
+# SassDoc
+.pages
+.sassdoc
+sassdoc
+
+
+# Node modules
+node_modules/*
+
+# Bower components
+bower_components/*
+
+# Dist structure
+dist/img/*
+dist/js/*
+dist/css/*
+
+# Tests
+app/tests/scss/result/*

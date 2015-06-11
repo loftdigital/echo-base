@@ -1,0 +1,783 @@
+//==============================================================================
+//
+//  echo-base/defaults/_typography.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Font weight
+//      2. Base font
+//      3. Fixed font
+//      4. Heading font
+//      5. Heading - <h1>
+//      6. Heading - <h2>
+//      7. Heading - <h3>
+//      8. Heading - <h4>
+//      9. Heading - <h5>
+//      10. Heading - <h6>
+//      11. Paragraph - <p>
+//      12. Anchor - <a>
+//      13. Unordered list - <ul>
+//      14. Ordered list - <ol>
+//      15. List item - <li>
+//      16. Blockquote - <blockquote>
+//      17. Code - <code>
+//  b. Responsive text sizing
+//  c. Custom responsive text sizing
+//  d. Mixins
+//  e. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//  Responsive text scale
+//  - http://typecast.com/blog/a-more-modern-scale-for-web-typography
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. Defaults
+//==============================================================================
+
+$use-type-defaults: $use-echo-base-defaults !default;
+
+
+
+//  1. Font weights
+//==============================================================================
+
+$font-weight-light: 100 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+
+
+
+//  2. Base font
+//==============================================================================
+
+$base-font-family: Arial, sans-serif !default;
+$base-font-weight: $font-weight-regular !default;
+$base-font-size: $global-page-font-size !default;
+$base-font-style: normal !default;
+$base-line-height: 24px !default;
+$base-color: palette(echo-base, grey, x-dark) !default;
+
+
+
+//  3. Fixed font
+//==============================================================================
+
+$fixed-font-family: monospace !default;
+$fixed-font-weight: normal !default;
+$fixed-font-size: 85% !default;
+$fixed-font-style: normal !default;
+$fixed-line-height: $base-line-height !default;
+$fixed-color: palette(echo-base, grey, dark) !default;
+
+
+
+//  4. Heading font
+//==============================================================================
+
+$heading-font-family: Arial, sans-serif !default;
+$heading-font-weight: $font-weight-bold !default;
+$heading-font-style: normal !default;
+$heading-color: palette(echo-base, grey, x-dark) !default;
+$heading-margin-top: 0.2rem !default;
+$heading-margin-bottom: 0.5rem !default;
+$heading-font-text-rendering: optimizeLegibility !default;
+$heading-letter-spacing: normal !default;
+$heading-text-transform: none !default;
+
+
+
+//  5. Heading - <h1>
+//==============================================================================
+
+$h1-font-size: rem-calc(48px) !default;
+$h1-line-height: 1.05 !default;
+$h1-font-family: $heading-font-family !default;
+$h1-font-weight: $heading-font-weight !default;
+$h1-font-style: $heading-font-style !default;
+$h1-color: $heading-color !default;
+$h1-margin-bottom: $heading-margin-bottom !default;
+$h1-margin-top: $heading-margin-top !default;
+$h1-font-text-rendering: $heading-font-text-rendering !default;
+$h1-letter-spacing: $heading-letter-spacing !default;
+$h1-text-transform: $heading-text-transform !default;
+
+
+
+//  6. Heading - <h2>
+//==============================================================================
+
+$h2-font-size: rem-calc(36px) !default;
+$h2-line-height: 1.25 !default;
+$h2-font-family: $heading-font-family !default;
+$h2-font-weight: $heading-font-weight !default;
+$h2-font-style: $heading-font-style !default;
+$h2-color: $heading-color !default;
+$h2-margin-bottom: $heading-margin-bottom !default;
+$h2-margin-top: $heading-margin-top !default;
+$h2-font-text-rendering: $heading-font-text-rendering !default;
+$h2-letter-spacing: $heading-letter-spacing !default;
+$h2-text-transform: $heading-text-transform !default;
+
+
+
+//  7. Heading - <h3>
+//==============================================================================
+
+$h3-font-size: rem-calc(28px) !default;
+$h3-line-height: 1.25 !default;
+$h3-font-family: $heading-font-family !default;
+$h3-font-weight: $heading-font-weight !default;
+$h3-font-style: $heading-font-style !default;
+$h3-color: $heading-color !default;
+$h3-margin-bottom: $heading-margin-bottom !default;
+$h3-margin-top: $heading-margin-top !default;
+$h3-font-text-rendering: $heading-font-text-rendering !default;
+$h3-letter-spacing: $heading-letter-spacing !default;
+$h3-text-transform: $heading-text-transform !default;
+
+
+
+//  8. Heading - <h4>
+//==============================================================================
+
+$h4-font-size: rem-calc(18px) !default;
+$h4-line-height: 1.22 !default;
+$h4-font-family: $heading-font-family !default;
+$h4-font-weight: $heading-font-weight !default;
+$h4-font-style: $heading-font-style !default;
+$h4-color: $heading-color !default;
+$h4-margin-bottom: $heading-margin-bottom !default;
+$h4-margin-top: $heading-margin-top !default;
+$h4-font-text-rendering: $heading-font-text-rendering !default;
+$h4-letter-spacing: $heading-letter-spacing !default;
+$h4-text-transform: $heading-text-transform !default;
+
+
+
+//  9. Heading - <h5>
+//==============================================================================
+
+$h5-font-size: rem-calc(16px) !default;
+$h5-line-height: 1.22 !default;
+$h5-font-family: $heading-font-family !default;
+$h5-font-weight: $heading-font-weight !default;
+$h5-font-style: $heading-font-style !default;
+$h5-color: $heading-color !default;
+$h5-margin-bottom: $heading-margin-bottom !default;
+$h5-margin-top: $heading-margin-top !default;
+$h5-font-text-rendering: $heading-font-text-rendering !default;
+$h5-letter-spacing: $heading-letter-spacing !default;
+$h5-text-transform: $heading-text-transform !default;
+
+
+
+//  10. heading - <h6>
+//==============================================================================
+
+$h6-font-size: rem-calc(14px) !default;
+$h6-line-height: 1.22 !default;
+$h6-font-family: $heading-font-family !default;
+$h6-font-weight: $heading-font-weight !default;
+$h6-font-style: $heading-font-style !default;
+$h6-color: $heading-color !default;
+$h6-margin-bottom: $heading-margin-bottom !default;
+$h6-margin-top: $heading-margin-top !default;
+$h6-font-text-rendering: $heading-font-text-rendering !default;
+$h6-letter-spacing: $heading-letter-spacing !default;
+$h6-text-transform: $heading-text-transform !default;
+
+
+
+//  11. Paragraph - <p>
+//==============================================================================
+
+$p-font-family: $base-font-family !default;
+$p-font-size: $base-font-size !default;
+$p-font-style: $base-font-style !default;
+$p-font-weight: $base-font-weight !default;
+$p-line-height: $base-line-height !default;
+$p-color: $base-color !default;
+$p-letter-spacing: normal !default;
+$p-text-transform: none !default;
+$p-margin-top: 1.5rem !default;
+$p-margin-bottom: 1.5rem !default;
+
+
+
+//  12. Anchor - <a>
+//==============================================================================
+
+$a-text-decoration: none !default;
+$a-text-decoration-hover: none !default;
+$a-font-color: palette(primary) !default;
+$a-font-color-hover: scale-color($a-font-color, $lightness: -14%) !default;
+$a-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out) !default;
+
+
+
+//  13. Unordered list - <ul>
+//==============================================================================
+
+$ul-list-style-type: disc !default;
+$ul-margin-top: 1.5rem !default;
+$ul-margin-bottom: 1.5rem !default;
+$ul-margin-right: 0 !default;
+$ul-margin-left: 1.3rem !default;
+$ul-padding-top: 0 !default;
+$ul-padding-bottom: 0 !default;
+$ul-padding-left: 2rem !default;
+$ul-padding-right: 0 !default;
+
+
+
+//  14. Ordered list - <ol>
+//==============================================================================
+
+$ol-list-style-type: decimal !default;
+$ol-margin-top: 1.5rem !default;
+$ol-margin-bottom: 1.5rem !default;
+$ol-margin-right: 0 !default;
+$ol-margin-left: 1.3rem !default;
+$ol-padding-top: 0 !default;
+$ol-padding-bottom: 0 !default;
+$ol-padding-left: 2rem !default;
+$ol-padding-right: 0 !default;
+
+
+
+//  15. List item - <li>
+//==============================================================================
+
+$li-font-family: $base-font-family !default;
+$li-font-size: $base-font-size !default;
+$li-font-style: $base-font-style !default;
+$li-font-weight: $base-font-weight !default;
+$li-line-height: $base-line-height !default;
+$li-color: $base-color !default;
+$li-letter-spacing: normal !default;
+$li-text-transform: none !default;
+$li-margin-top: 0 !default;
+$li-margin-bottom: 0 !default;
+$li-margin-right: 0 !default;
+$li-margin-left: 0 !default;
+$li-padding-top: 0 !default;
+$li-padding-bottom: 0 !default;
+$li-padding-right: 0 !default;
+$li-padding-left: 0 !default;
+
+
+
+//  16. Blockquote - <blockquote>
+//==============================================================================
+
+$blockquote-font-family: $base-font-family !default;
+$blockquote-font-size: rem-calc(24px) !default;
+$blockquote-font-style: italic !default;
+$blockquote-font-weight: $base-font-weight !default;
+$blockquote-line-height: 1.4583 !default;
+$blockquote-color: $base-color !default;
+$blockquote-letter-spacing: normal !default;
+$blockquote-text-transform: none !default;
+$blockquote-margin-top: 1.5rem !default;
+$blockquote-margin-bottom: 1.5rem !default;
+$blockquote-margin-right: 1rem !default;
+$blockquote-margin-left: 1rem !default;
+$blockquote-padding-top: 0 !default;
+$blockquote-padding-bottom: 0 !default;
+$blockquote-padding-right: 0 !default;
+$blockquote-padding-left: 1rem !default;
+$blockquote-background-color: transparent !default;
+$blockquote-border-left-width: 5px !default;
+$blockquote-border-left-style: solid !default;
+$blockquote-border-left-color: palette(primary) !default;
+
+
+
+//  17. Code - <code>
+//==============================================================================
+
+$code-display: block !default;
+$code-padding: rem-calc(16px) !default;
+$code-margin: 1.5rem 0 !default;
+$code-font-family: $fixed-font-family !default;
+$code-font-size: $fixed-font-size !default;
+$code-font-style: $fixed-font-style !default;
+$code-font-weight: $fixed-font-weight !default;
+$code-line-height: $fixed-line-height !default;
+$code-letter-spacing: normal !default;
+$code-text-transform: none !default;
+$code-color: palette(echo-base, grey, dark) !default;
+$code-background-color: palette(echo-base, grey, x-light) !default;
+$code-border-width: 1px !default;
+$code-border-style: solid !default;
+$code-border-color: palette(echo-base, grey) !default;
+$code-border-radius: $global-border-radius !default;
+
+
+
+
+//==============================================================================
+//  d. Mixins
+//==============================================================================
+
+
+
+//  1. Heading - <h1>
+//==============================================================================
+
+@mixin h1-text-size-default {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+}
+
+@mixin h1 {
+    font-family: $h1-font-family;
+    font-weight: $h1-font-weight;
+    font-style: $h1-font-style;
+    color: $h1-color;
+    margin-bottom: $h1-margin-bottom;
+    margin-top: $h1-margin-top;
+    text-rendering: $h1-font-text-rendering;
+    letter-spacing: $h1-letter-spacing;
+    text-transform: $h1-text-transform;
+
+    @if mixin-exists(h1-text-size) {
+        @include h1-text-size;
+    } @else {
+        @include h1-text-size-default;
+    }
+}
+
+
+
+//  2. Heading - <h2>
+//==============================================================================
+
+@mixin h2-text-size-default {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+}
+
+@mixin h2 {
+    font-family: $h2-font-family;
+    font-weight: $h2-font-weight;
+    font-style: $h2-font-style;
+    color: $h2-color;
+    margin-bottom: $h2-margin-bottom;
+    margin-top: $h2-margin-top;
+    text-rendering: $h2-font-text-rendering;
+    letter-spacing: $h2-letter-spacing;
+    text-transform: $h2-text-transform;
+
+    @if mixin-exists(h2-text-size) {
+        @include h2-text-size;
+    } @else {
+        @include h2-text-size-default;
+    }
+}
+
+
+
+//  3. Heading - <h3>
+//==============================================================================
+
+@mixin h3-text-size-default {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+}
+
+@mixin h3 {
+    font-family: $h3-font-family;
+    font-weight: $h3-font-weight;
+    font-style: $h3-font-style;
+    color: $h3-color;
+    margin-bottom: $h3-margin-bottom;
+    margin-top: $h3-margin-top;
+    text-rendering: $h3-font-text-rendering;
+    letter-spacing: $h3-letter-spacing;
+    text-transform: $h3-text-transform;
+
+    @if mixin-exists(h3-text-size) {
+        @include h3-text-size;
+    } @else {
+        @include h3-text-size-default;
+    }
+}
+
+
+
+//  4. Heading - <h4>
+//==============================================================================
+
+@mixin h4-text-size-default {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+}
+
+@mixin h4 {
+    font-family: $h4-font-family;
+    font-weight: $h4-font-weight;
+    font-style: $h4-font-style;
+    color: $h4-color;
+    margin-bottom: $h4-margin-bottom;
+    margin-top: $h4-margin-top;
+    text-rendering: $h4-font-text-rendering;
+    letter-spacing: $h4-letter-spacing;
+    text-transform: $h4-text-transform;
+
+    @if mixin-exists(h4-text-size) {
+        @include h4-text-size;
+    } @else {
+        @include h4-text-size-default;
+    }
+}
+
+
+
+//  5. Heading - <h5>
+//==============================================================================
+
+@mixin h5-text-size-default {
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
+}
+
+@mixin h5 {
+    font-family: $h5-font-family;
+    font-weight: $h5-font-weight;
+    font-style: $h5-font-style;
+    color: $h5-color;
+    margin-bottom: $h5-margin-bottom;
+    margin-top: $h5-margin-top;
+    text-rendering: $h5-font-text-rendering;
+    letter-spacing: $h5-letter-spacing;
+    text-transform: $h5-text-transform;
+
+    @if mixin-exists(h5-text-size) {
+        @include h5-text-size;
+    } @else {
+        @include h5-text-size-default;
+    }
+}
+
+
+
+//  6. Heading - <h6>
+//==============================================================================
+
+@mixin h6-text-size-default {
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
+}
+
+@mixin h6 {
+    font-family: $h6-font-family;
+    font-weight: $h6-font-weight;
+    font-style: $h6-font-style;
+    color: $h6-color;
+    margin-bottom: $h6-margin-bottom;
+    margin-top: $h6-margin-top;
+    text-rendering: $h6-font-text-rendering;
+    letter-spacing: $h6-letter-spacing;
+    text-transform: $h6-text-transform;
+
+    @if mixin-exists(h6-text-size) {
+        @include h6-text-size;
+    } @else {
+        @include h6-text-size-default;
+    }
+}
+
+
+
+//  7. Paragraph - <p>
+//==============================================================================
+
+@mixin p-text-size-default {
+    font-size: $p-font-size;
+    line-height: $p-line-height;
+}
+
+@mixin p {
+    font-family: $p-font-family;
+    font-weight: $p-font-weight;
+    font-style: $p-font-style;
+    color: $p-color;
+    letter-spacing: $p-letter-spacing;
+    text-transform: $p-text-transform;
+    margin-top: $p-margin-top;
+    margin-bottom: $p-margin-bottom;
+
+    @if mixin-exists(p-text-size) {
+        @include p-text-size;
+    } @else {
+        @include p-text-size-default;
+    }
+}
+
+
+
+//  8. Anchor - <a>
+//==============================================================================
+
+@mixin anchor {
+    text-decoration: $a-text-decoration;
+    color: $a-font-color;
+    transition: $a-transition;
+
+    &:hover {
+        text-decoration: $a-text-decoration-hover;
+        color: $a-font-color-hover;
+    }
+}
+
+
+
+//  9. Unordered list - <ul>
+//==============================================================================
+
+@mixin ul {
+    list-style-type: $ul-list-style-type;
+    margin-top: $ul-margin-top;
+    margin-bottom: $ul-margin-bottom;
+    margin-right: $ul-margin-right;
+    margin-left: $ul-margin-left;
+    padding-top: $ul-padding-top;
+    padding-bottom: $ul-padding-bottom;
+    padding-right: $ul-padding-right;
+    padding-left: $ul-padding-left;
+}
+
+
+
+//  10. Ordered list - <ol>
+//==============================================================================
+
+@mixin ol {
+    list-style-type: $ol-list-style-type;
+    margin-top: $ol-margin-top;
+    margin-bottom: $ol-margin-bottom;
+    margin-right: $ol-margin-right;
+    margin-left: $ol-margin-left;
+    padding-top: $ol-padding-top;
+    padding-bottom: $ol-padding-bottom;
+    padding-right: $ol-padding-right;
+    padding-left: $ol-padding-left;
+}
+
+
+
+//  11. List item - <li>
+//==============================================================================
+
+@mixin li-text-size-default {
+    font-size: $li-font-size;
+    line-height: $li-line-height;
+}
+
+@mixin li {
+    font-family: $li-font-family;
+    font-weight: $li-font-weight;
+    font-style: $li-font-style;
+    color: $li-color;
+    letter-spacing: $li-letter-spacing;
+    text-transform: $li-text-transform;
+    margin-top: $li-margin-top;
+    margin-bottom: $li-margin-bottom;
+    margin-right: $li-margin-right;
+    margin-left: $li-margin-left;
+    padding-top: $li-padding-top;
+    padding-bottom: $li-padding-bottom;
+    padding-right: $li-padding-right;
+    padding-left: $li-padding-left;
+
+    @if mixin-exists(li-text-size) {
+        @include li-text-size;
+    } @else {
+        @include li-text-size-default;
+    }
+}
+
+
+
+//  12. Blockquote - <blockquote>
+//==============================================================================
+
+@mixin blockquote-text-size-default {
+    font-size: $blockquote-font-size;
+    line-height: $blockquote-line-height;
+}
+
+@mixin blockquote {
+    font-family: $blockquote-font-family;
+    font-weight: $blockquote-font-weight;
+    font-style: $blockquote-font-style;
+    color: $blockquote-color;
+    letter-spacing: $blockquote-letter-spacing;
+    text-transform: $blockquote-text-transform;
+    margin-top: $blockquote-margin-top;
+    margin-bottom: $blockquote-margin-bottom;
+    margin-right: $blockquote-margin-right;
+    margin-left: $blockquote-margin-left;
+    padding-top: $blockquote-padding-top;
+    padding-bottom: $blockquote-padding-bottom;
+    padding-right: $blockquote-padding-right;
+    padding-left: $blockquote-padding-left;
+    background-color: $blockquote-background-color;
+    border-left-width: $blockquote-border-left-width;
+    border-left-style: $blockquote-border-left-style;
+    border-left-color: $blockquote-border-left-color;
+
+    @if mixin-exists(blockquote-text-size) {
+        @include blockquote-text-size;
+    } @else {
+        @include blockquote-text-size-default;
+    }
+}
+
+
+
+//  13. Code - <code>
+//==============================================================================
+
+@mixin code-text-size-default {
+    font-size: $code-font-size;
+    line-height: $code-line-height;
+}
+
+@mixin code {
+    display: $code-display;
+    padding: $code-padding;
+    margin: $code-margin;
+    font-family: $code-font-family;
+    font-weight: $code-font-weight;
+    font-style: $code-font-style;
+    color: $code-color;
+    letter-spacing: $code-letter-spacing;
+    text-transform: $code-text-transform;
+    background-color: $code-background-color;
+    border-width: $code-border-width;
+    border-style: $code-border-style;
+    border-color: $code-border-color;
+    border-radius: $code-border-radius;
+
+    @if mixin-exists(code-text-size) {
+        @include code-text-size;
+    } @else {
+        @include code-text-size-default;
+    }
+}
+
+
+
+
+//==============================================================================
+//  e. Classes
+//==============================================================================
+
+@if $use-type-defaults {
+
+    html,
+    body {
+        font-size: $base-font-size;
+    }
+
+    body {
+        font-family: $base-font-family;
+        font-weight: $base-font-weight;
+        font-style: $base-font-style;
+        line-height: $base-line-height;
+        color: $base-color;
+    }
+
+
+//  Headings
+//==============================================================================
+
+    h1 {
+        @include h1;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    h4 {
+        @include h4;
+    }
+
+    h5 {
+        @include h5;
+    }
+
+    h6 {
+        @include h6;
+    }
+
+
+
+//  Paragraph
+//==============================================================================
+
+    p {
+        @include p;
+    }
+
+
+
+//  Anchors
+//==============================================================================
+
+    a {
+        @include anchor;
+    }
+
+
+
+//  Lists
+//==============================================================================
+
+    ul {
+        @include ul;
+    }
+
+    ol {
+        @include ol;
+    }
+
+    li {
+        @include li;
+    }
+
+
+
+//  Blockquote
+//==============================================================================
+
+    blockquote {
+        @include blockquote;
+    }
+
+
+
+//  Code
+//==============================================================================
+
+    code {
+        @include code;
+    }
+
+}

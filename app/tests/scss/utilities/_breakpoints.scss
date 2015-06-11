@@ -1,0 +1,344 @@
+//==============================================================================
+//
+//  tests/scss/utilities/_breakpoints.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  Custom test dependencies
+//==============================================================================
+
+
+
+//  Custom test variables
+//==============================================================================
+
+$mobile-first: false;
+$custom-breakpoint-key: custom-breakpoint;
+$custom-breakpoint-value: 200px;
+$custom-breakpoint-key-small: custom-breakpoint-small;
+$custom-breakpoint-key-large: custom-breakpoint-large;
+$custom-breakpoint-small: 1px;
+$custom-breakpoint-large: 10000000px;
+
+
+
+//  Custom test maps
+//==============================================================================
+
+$custom-breakpoints: (
+    $custom-breakpoint-key: $custom-breakpoint-value,
+    $custom-breakpoint-key-small: $custom-breakpoint-small,
+    $custom-breakpoint-key-large: $custom-breakpoint-large
+);
+
+
+
+
+//==============================================================================
+//  Function/mixin dependencies
+//==============================================================================
+
+@import "../../../scss/echo-base/defaults/breakpoints";
+
+
+
+//==============================================================================
+//  Tests
+//==============================================================================
+
+@include test-module('Breakpoints') {
+
+
+
+//  setup-breakpoints() [function]
+//==============================================================================
+
+    @include test('setup-breakpoints() [function]') {
+
+        /// Test that setup-breakpoints() returns a value of type Map
+        ///
+        /// @group Tests
+
+        $test: type-of(setup-breakpoints());
+        $expect: map;
+
+        @include assert-equal($test, $expect, 'Returns a Map');
+
+
+
+        /// Test that setup-breakpoints() successfully merges the default and
+        /// custom palette maps by checking for the existance of a custom key
+        ///
+        /// @group Tests
+
+        $breakpoints-map: setup-breakpoints();
+
+        $test: map-has-key($breakpoints-map, custom-breakpoint);
+
+        @include assert-true($test, 'Returns a merged map of default & custom breakpoints');
+
+
+
+        /// Test that setup-breakpoints() successfully merges the default and
+        /// custom palette maps by checking the value of a custom key
+        ///
+        /// @group Tests
+
+        $breakpoints-map: setup-breakpoints();
+
+        $test: map-get($breakpoints-map, $custom-breakpoint-key);
+        $expect: $custom-breakpoint-value;
+
+        @include assert-equal($test, $expect, 'Returns a custom breakpoint value');
+
+
+
+        /// Test that setup-breakpoints() returns a list compromised of both
+        /// default and custom map keys
+        ///
+        /// @group Tests
+
+        $breakpoints-map: setup-breakpoints();
+
+        $test: map-keys($breakpoints-map);
+        $expect: large, medium, small, x-small, custom-breakpoint, custom-breakpoint-small, custom-breakpoint-large;
+
+        @include assert-equal($test, $expect, 'Returns a list of the default and custom breakpoints');
+
+    }
+
+
+
+//  breakpoint() [function]
+//==============================================================================
+
+    @include test('breakpoint() [function]') {
+
+        /// Test that breakpoint() returns the correct breakpoint value
+        ///
+        /// @group Tests
+
+        $breakpoint: $custom-breakpoint-key;
+
+        $test: breakpoint($breakpoint);
+        $expect: $custom-breakpoint-value;
+
+        @include assert-equal($test, $expect, 'Return a breakpoint value from the breakpoint map');
+
+
+
+        /// Test that breakpoint() returns false if a breakpoint that doesn't
+        /// exist is specified
+        ///
+        /// @group Tests
+
+        $breakpoint: 'non-existant-breakpoint';
+
+        $test: breakpoint($breakpoint);
+
+        @include assert-false($test, 'Returns false when encountering a non existant variable');
+    }
+
+
+
+//  setup-key-list() [function]
+//==============================================================================
+
+    @include test('setup-key-list() [function]') {
+
+        // Non-mobile first
+        //======================================================================
+
+        /// Test that setup-key-list() returns a value of type String
+        ///
+        /// @group Tests
+
+        $test: type-of(setup-key-list());
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'Returns a String');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a named
+        /// value
+        ///
+        /// @group Tests
+
+        $val: (large);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly for named value');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a custom
+        /// value
+        ///
+        /// @group Tests
+
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly for custom value');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a named
+        /// value range and ordered desktop first
+        ///
+        /// @group Tests
+
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for named value range');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a custom
+        /// value range and ordered desktop first
+        ///
+        /// @group Tests
+
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(max-width: 900px) and (min-width: 100px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for custom value range');
+    }
+
+
+
+//  setup-config-list() [function]
+//==============================================================================
+
+    @include test('setup-config-list() - [function]') {
+
+        /// Test that setup-config-list() returns a value of type String
+        ///
+        /// @group Tests
+
+        $test: type-of(setup-config-list());
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'Returns a String');
+
+
+
+        /// Test that setup-config-list() returns the correctly formatted string
+        ///
+        /// @group Tests
+
+        $val: ('orientation: landscape');
+
+        $test: setup-config-list($val);
+        $expect: '(orientation: landscape)';
+
+        @include assert-equal($test, $expect, 'Returns a correct media string with a single value');
+
+
+
+        /// Test that setup-config-list() returns the correctly formatted string
+        /// with mutliple values
+        ///
+        /// @group Tests
+
+        $val: ('orientation: landscape', 'resolution: 192dppx');
+
+        $test: setup-config-list($val);
+        $expect: '(orientation: landscape) and (resolution: 192dppx)';
+
+        @include assert-equal($test, $expect, 'Returns a correct media string with multiple values');
+    }
+
+
+
+//  breakpoint-range() [function]
+//==============================================================================
+
+    @include test('breakpoint-range() - [function]') {
+
+        /// Test that breakpoint-range() returns a value of type String
+        ///
+        /// @group Tests
+
+        $test: type-of(breakpoint-range(large, small));
+        $expect: string;
+
+        @include assert-equal($test, $expect, 'Returns a String');
+
+
+
+        // Non-mobile first
+        //======================================================================
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// desktop first with named values
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(large, small);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values - desktop first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// desktop first with named values and corrected order
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(small, large);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values & corrected order - desktop first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// desktop first with mixed values
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(960px, small);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values - desktop first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// desktop first with mixed values and corrected order
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(small, 960px);
+        $expect: '(max-width: 960px) and (min-width: 480px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values & corrected order - desktop first');
+    }
+}

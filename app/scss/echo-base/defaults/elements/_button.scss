@@ -1,0 +1,138 @@
+//==============================================================================
+//
+//  echo-base/defaults/elements/_button.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. General defaults
+//  b. CSS defaults
+//  c. Mixins
+//  d. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. General defaults
+//==============================================================================
+
+$use-button-defaults: $use-echo-base-defaults !default;
+
+
+
+
+//==============================================================================
+//  b. CSS defaults
+//==============================================================================
+
+$button-position: relative !default;
+$button-display: inline-block !default;
+$button-width: auto !default;
+$button-height: auto !default;
+$button-padding-bottom: 0.75rem !default;
+$button-padding-top: 0.75rem !default;
+$button-padding-right: 1rem !default;
+$button-padding-left: 1rem !default;
+$button-margin-bottom: 1rem !default;
+$button-margin-top: 0 !default;
+$button-margin-right: 0 !default;
+$button-margin-left: 0 !default;
+$button-cursor: pointer !default;
+$button-border-style: solid !default;
+$button-border-width: 1px !default;
+$button-border-radius: $global-border-radius !default;
+$button-font-family: $base-font-family !default;
+$button-font-size: $base-font-size !default;
+$button-font-weight: $base-font-weight !default;
+$button-line-height: $base-line-height !default;
+$button-text-align: center !default;
+$button-text-decoration: none !default;
+$button-text-transform: none !default;
+$button-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out) !default;
+$button-vertical-align: middle !default;
+
+
+
+//  Standard color
+//==============================================================================
+
+$button-background-color: rgb(241, 241, 241) !default;
+$button-border-color: rgb(228, 228, 228) !default;
+$button-color: rgb(40, 40, 40) !default;
+
+
+
+//  Standard color :hover
+//==============================================================================
+
+$button-background-color-hover: darken($button-background-color, 5%) !default;
+$button-border-color-hover: darken($button-border-color, 5%) !default;
+$button-color-hover: rgb(40, 40, 40) !default;
+
+
+
+
+//==============================================================================
+//  c. Mixins
+//==============================================================================
+
+@mixin button {
+    position: $button-position;
+    display: $button-display;
+    width: $button-width;
+    height: $button-height;
+    padding-bottom: $button-padding-bottom;
+    padding-top: $button-padding-top;
+    padding-right: $button-padding-right;
+    padding-left: $button-padding-left;
+    margin-bottom: $button-margin-bottom;
+    margin-top: $button-margin-top;
+    margin-right: $button-margin-right;
+    margin-left: $button-margin-left;
+    cursor: $button-cursor;
+    border-style: $button-border-style;
+    border-width: $button-border-width;
+    border-radius: $button-border-radius;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    line-height: $button-line-height;
+    text-align: $button-text-align;
+    text-decoration: $button-text-decoration;
+    text-transform: $button-text-transform;
+    transition: $button-transition;
+    vertical-align: $button-vertical-align;
+    background-color: $button-background-color;
+    border-color: $button-border-color;
+    color: $button-color;
+
+    &:hover {
+        background-color: $button-background-color-hover;
+        border-color: $button-border-color-hover;
+        color: $button-color-hover;
+    }
+}
+
+
+
+
+//==============================================================================
+//  d. Classes
+//==============================================================================
+
+@if $use-button-defaults {
+
+    button,
+    input[type="button"],
+    input[type="submit"],
+    .button {
+        @include button;
+    }
+
+}

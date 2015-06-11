@@ -1,0 +1,174 @@
+//==============================================================================
+//
+//  tests/scss/utilities/_helpers.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  Custom test dependencies
+//==============================================================================
+
+$base-font-size: 16px;
+
+
+
+
+//==============================================================================
+//  Function/mixin dependencies
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  Tests
+//==============================================================================
+
+@include test-module('Helpers') {
+
+
+
+//  rem-calc() [function]
+//==============================================================================
+
+    @include test('rem-calc() [function]') {
+
+        /// Test that the rem-calc() function returns a value of 1 rem where the
+        /// px unit passed in is equal to the $base-font-size
+        ///
+        /// @group Tests
+
+        $test: rem-calc(16px);
+        $expect: 1rem;
+
+        @include assert-equal($test, $expect, 'Returns a value of 1rem when passed the base-font-size');
+
+
+
+        /// Test if rem-calc() returns a correct value half of base font size
+        ///
+        /// @group Tests
+
+        $test: rem-calc(8px); // (16px / 2) = 8px
+        $expect: 0.5rem;
+
+        @include assert-equal($test, $expect, 'Returns a value of 0.5rem when passed a value of half the base-font-size');
+
+
+
+        /// Test if rem-calc() returns a correct value one and a half times that
+        /// of base font size
+        ///
+        /// @group Tests
+
+        $test: rem-calc(24px); // (16px * 1.5) = 24px
+        $expect: 1.5rem;
+
+        @include assert-equal($test, $expect, 'Returns a value of 1.5rem when passed a value of one and half the base-font-size');
+    }
+
+
+
+//  strip-unit() [function]
+//==============================================================================
+
+    @include test('strip-unit [function()]') {
+
+        /// Test that strip-unit() returns a value of type Number
+        ///
+        /// @group Tests
+
+        $test: type-of(strip-unit(24px));
+        $expect: number;
+
+        @include assert-equal($test, $expect, 'Returns a Number');
+
+
+
+        /// Test that strip-unit() returns a unitless value
+        ///
+        /// @group Tests
+
+        $test: unitless(strip-unit(24px));
+
+        @include assert-true($test, 'Returns a unitless value');
+
+
+
+        /// Test that strip-unit() returns a unitless value
+        ///
+        /// @group Tests
+
+        $test: strip-unit(24px);
+        $expect: 24;
+
+        @include assert-equal($test, $expect, 'Returns a unitless value');
+
+    }
+
+
+
+//  remify() [function]
+//==============================================================================
+
+    @include test('remify [function()]') {
+
+        /// Test that remify() returns a value of type Number
+        ///
+        /// @group Tests
+
+        $test: type-of(remify(1, $base-font-size));
+        $expect: number;
+
+        @include assert-equal($test, $expect, 'Returns a Number');
+
+
+
+        /// Test that remify() returns a value of 1rem when the base-font-size
+        /// is passed
+        ///
+        /// @group Tests
+
+        $test: remify(16, $base-font-size);
+        $expect: 1rem;
+
+        @include assert-equal($test, $expect, 'Returns a value of 1rem when passed base-font-size');
+
+
+
+        /// Test that remify() returns a value that is of unit type rem passed
+        ///
+        /// @group Tests
+
+        $test: unit(remify(16, $base-font-size));
+        $expect: rem;
+
+        @include assert-equal($test, $expect, 'Returns a rem unit value');
+
+
+
+        /// Test that remify() returns a value of 0 when passed 0
+        ///
+        /// @group Tests
+
+        $test: remify(0, $base-font-size);
+        $expect: 0;
+
+        @include assert-equal($test, $expect, 'Returns a value of 0 when passed a 0');
+
+    }
+}

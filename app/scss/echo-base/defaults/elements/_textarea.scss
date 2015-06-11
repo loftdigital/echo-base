@@ -1,0 +1,142 @@
+//==============================================================================
+//
+//  echo-base/defaults/elements/_textarea.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. General defaults
+//  b. CSS defaults
+//  c. Mixins
+//  d. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. General defaults
+//==============================================================================
+
+$use-textarea-defaults: $use-echo-base-defaults !default;
+
+
+
+
+//==============================================================================
+//  b. CSS defaults
+//==============================================================================
+
+$textarea-display: block !default;
+$textarea-width: 100% !default;
+$textarea-height: auto !default;
+$textarea-padding-bottom: 0.5rem !default;
+$textarea-padding-top: 0.5rem !default;
+$textarea-padding-right: 0.5rem !default;
+$textarea-padding-left: 0.5rem !default;
+$textarea-margin-bottom: 1rem !default;
+$textarea-margin-top: 0 !default;
+$textarea-background-color: palette(echo-base, white) !default;
+$textarea-border-color: palette(echo-base, grey) !default;
+$textarea-border-style: solid !default;
+$textarea-border-width: 1px !default;
+$textarea-border-radius: $global-border-radius !default;
+$textarea-box-shadow: inset 0 1px 2px rgba(palette(echo-base, black), 0.1) !default;
+$textarea-color: palette(echo-base, grey, dark) !default;
+$textarea-font-family: $base-font-family !default;
+$textarea-font-size: $base-font-size !default;
+$textarea-font-weight: $base-font-weight !default;
+$textarea-font-style: $base-font-style !default;
+$textarea-line-height: $base-line-height !default;
+$textarea-text-transform: none !default;
+$textarea-letter-spacing: normal !default;
+$textarea-appearance: none !default;
+
+
+
+// textarea :focus
+//==============================================================================
+
+$textarea-background-color-focus: palette(echo-base, white) !default;
+$textarea-border-color-focus: palette(echo-base, grey) !default;
+$textarea-box-shadow-focus: 0 0 3px palette(echo-base, grey) !default;
+$textarea-color-focus: palette(echo-base, grey, dark) !default;
+$textarea-outline-focus: none !default;
+
+
+
+// textarea :disabled
+//==============================================================================
+
+$textarea-background-color-disabled: palette(echo-base, grey, x-light) !default;
+$textarea-border-color-disabled: palette(echo-base, grey, light) !default;
+$textarea-color-disabled: palette(echo-base, grey, dark) !default;
+$textarea-cursor-disabled: not-allowed !default;
+
+
+
+
+//==============================================================================
+//  c. Mixins
+//==============================================================================
+
+@mixin textarea {
+    display: $textarea-display;
+    width: $textarea-width;
+    height: $textarea-height;
+    padding-bottom: $textarea-padding-bottom;
+    padding-top: $textarea-padding-top;
+    padding-right: $textarea-padding-right;
+    padding-left: $textarea-padding-left;
+    margin-bottom: $textarea-margin-bottom;
+    margin-top: $textarea-margin-top;
+    background-color: $textarea-background-color;
+    border-color: $textarea-border-color;
+    border-style: $textarea-border-style;
+    border-width: $textarea-border-width;
+    border-radius: $textarea-border-radius;
+    box-shadow: $textarea-box-shadow;
+    color: $textarea-color;
+    font-family: $textarea-font-family;
+    font-size: $textarea-font-size;
+    font-weight: $textarea-font-weight;
+    font-style: $textarea-font-style;
+    line-height: $textarea-line-height;
+    text-transform: $textarea-text-transform;
+    letter-spacing: $textarea-letter-spacing;
+    -moz-appearance: $textarea-appearance;
+    -webkit-appearance: $textarea-appearance;
+
+    &:focus {
+        background-color: $textarea-background-color-focus;
+        border-color: $textarea-border-color-focus;
+        box-shadow: $textarea-box-shadow-focus;
+        color: $textarea-color-focus;
+        outline: $textarea-outline-focus;
+    }
+
+    &:disabled {
+        background-color: $textarea-background-color-disabled;
+        border-color: $textarea-border-color-disabled;
+        color: $textarea-color-disabled;
+        cursor: $textarea-cursor-disabled;
+    }
+}
+
+
+
+
+//==============================================================================
+//  d. Classes
+//==============================================================================
+
+@if $use-textarea-defaults {
+
+    textarea {
+        @include textarea;
+    }
+}

@@ -1,0 +1,114 @@
+//==============================================================================
+//
+//  echo-base/defaults/_grid.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Defaults
+//      1. Window
+//      2. Content
+//  b. Layouts
+//  c. Classes
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  a. Defaults
+//==============================================================================
+
+$use-grid-defaults: $use-echo-base-defaults !default;
+
+//  Window grid
+//==============================================================================
+
+// None
+
+
+
+//  Content grid
+//==============================================================================
+
+$grid-content-container: auto !default;
+$grid-content-columns: 12 !default;
+$grid-content-column-width: 90px !default;
+$grid-content-gutters: 20px / 90px !default;
+$grid-content-padding-left-overwrite: false !default;
+$grid-content-padding-right-overwrite: false !default;
+
+
+
+
+//==============================================================================
+//  b. Grid layouts
+//==============================================================================
+
+
+
+//  Window grid
+//==============================================================================
+
+$window: (
+    columns: 1,
+    gutters: 0,
+);
+
+
+
+//  Content grid
+//==============================================================================
+
+$content: (
+    container: $grid-content-container,
+    columns: $grid-content-columns,
+    column-width: $grid-content-column-width,
+    gutters: $grid-content-gutters,
+);
+
+
+
+
+//==============================================================================
+//  c. Grid classes
+//==============================================================================
+
+@if $use-grid-defaults {
+    .grid {
+
+//  Window grid
+//==============================================================================
+
+        @include with-layout($window) {
+            &-window__container {
+                @include container;
+            }
+
+            &-window__block {
+                @include full;
+            }
+        }
+
+
+
+//  Content grid
+//==============================================================================
+
+        @include with-layout($content) {
+            &-content__container {
+                @include container;
+                padding-left: if($grid-content-padding-left-overwrite, $grid-content-padding-left-overwrite, gutters(map-get($content, columns)));
+                padding-right: if($grid-content-padding-right-overwrite, $grid-content-padding-right-overwrite, gutters(map-get($content, columns)));
+            }
+
+            &-content__block {
+                @include full;
+            }
+        }
+    }
+}

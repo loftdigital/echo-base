@@ -1,0 +1,480 @@
+//==============================================================================
+//
+//  echo-base/defaults/utilities/_functions.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Breakpoints
+//      1. Setup breakpoints
+//      2. Get breakpoint
+//      3. Stringify breakpoints
+//      4. Setup Key List
+//      5. Setup config list
+//      6. Breakpoint range
+//  b. Palette
+//      1. Setup palettes
+//      2. Get palette
+//  c. Helpers
+//      1. Strip Unit
+//      2. Remify
+//      3. Rem Calc
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+/// $global-page-font-size is the base font size for the document / page.
+///
+/// @group Global
+/// @type String
+
+$global-page-font-size: 16px !default;
+
+
+
+
+//==============================================================================
+//  a. Breakpoints
+//==============================================================================
+
+//  1. Setup breakpoints
+//==============================================================================
+
+/// $breakpoints will hold the result of the merge between the default breakpoints
+/// map in breakpoints.scss and the custom breakpoints map from settings.scss.
+///
+/// @group Breakpoints
+/// @type Map
+
+$breakpoints: ();
+
+/// This function will check to see if custom breakpoints have been specified
+/// within the $custom-breakpoints map within the _settings.scss file.
+///
+/// If custom breakpoints have been specified it will return a new map which
+/// comprises the contents of $default-breakpoints and $custom-breakpoints.
+///
+/// If no custom breakpoints are specified only the default breakpoints will be
+/// returned.
+///
+/// @access private
+/// @group Breakpoints
+/// @return {Map}
+
+@function setup-breakpoints() {
+
+    @if (length($custom-breakpoints) > 0) {
+        @return map-merge($default-breakpoints, $custom-breakpoints);
+    } @else {
+        @return $default-breakpoints;
+    }
+}
+
+
+
+//  2. Get breakpoint
+//==============================================================================
+
+/// The break function is used within the Breakpoint mixin.
+///
+/// It is used to pull the specified key from the breakpoints map, first it sets
+/// the map returned from our setup-breakpoints function and assigns it to a
+/// $breakpoints variable.
+///
+/// Using the sass function map-has-key it then looks to see if the key passed
+/// to the function exists in the map. If the key does exist it returns that
+/// key's value else it returns a sass warning.
+///
+/// @access private
+/// @group Breakpoints
+/// @param {String} $key - Breakpoint map key
+/// @return {Map}
+
+@function breakpoint($key) {
+
+    @if (length($breakpoints) == 0) {
+        $breakpoints: setup-breakpoints();
+    }
+
+    @if (map-has-key($breakpoints, $key)) {
+        @return map-get($breakpoints, $key);
+    } @else {
+        @return false;
+    }
+}
+
+
+
+//  3. Stringify breakpoint - breakpoint-stringify()
+//==============================================================================
+
+/// Used by the breakpoint mixin.
+///
+/// This function is passed a possible list of media query breakpoint keys for the breakpoint map
+/// and a possible list of other media query values such as orientation, resolution. If these lists
+/// aren't provided it will set the values to false by default.
+///
+/// The aim of the function is to return a complete string of media query parameters ready formatted
+/// for the mixin to output.
+///
+/// Two other functions setup-key-list() and setup-config-list() are crucial to this happening.
+///
+/// @access private
+/// @group Breakpoints
+/// @param {List} $key-list - Possible list of breakpoint keys
+/// @param {List} $extra-config - Possible list of extra media query flags such as oritentation etc
+/// @return {String}
+
+
+@function breakpoint-stringify($key-list: false, $extra-config: false) {
+
+    $output: '';
+
+    @if ($key-list != false) {
+        $output: setup-key-list($key-list);
+    }
+
+    @if ($key-list != false and $extra-config != false) {
+        $output: $output + ' and ';
+    }
+
+    @if($extra-config != false) {
+        $output: $output + setup-config-list($extra-config);
+    }
+
+    @return $output;
+}
+
+
+
+//  4. Setup Key List - setup-key-list()
+//==============================================================================
+
+/// Used by the breakpoint-stringify().
+///
+/// Takes the list of breakpoint keys and formats them correctly for use within
+/// a media query. Takes into account the number of keys passed to it allowing
+/// for key ranges to be specified. Also takes into account whether the mobile first
+/// option is enabled and will pump out the min/max width statements accordingly.
+///
+/// @access private
+/// @group Breakpoints
+/// @param {List} $key-list - List of breakpoint keys
+/// @return {String}
+
+
+@function setup-key-list($key-list: false) {
+
+    $key-string: '';
+
+    @if ($mobile-first == true) {
+        $flow: min-width;
+    } @else {
+        $flow: max-width;
+    }
+
+    @if (length($key-list) > 1) {
+        $key-string: breakpoint-range(nth($key-list, 1), nth($key-list, 2));
+    } @else {
+
+        @if (type-of(nth($key-list, 1)) != number) {
+            $breakpoint: breakpoint(nth($key-list, 1));
+        } @else {
+            $breakpoint: nth($key-list, 1);
+        }
+
+        $key-string: '(' + $flow + ': ' + $breakpoint + ')';
+    }
+
+    @return $key-string;
+}
+
+
+
+//  5. Setup Config List - setup-config-list()
+//==============================================================================
+
+/// Used by the breakpoint-stringify().
+///
+/// Takes the list of other breakpoint flags and formats them correctly for use within
+/// a media query. Takes into account the number of options passed to it allowing
+/// for multiple linked statements.
+///
+/// @access private
+/// @group Breakpoints
+/// @param {List} $extra-config - List of breakpoint keys
+/// @return {String}
+
+@function setup-config-list($extra-config: false) {
+
+    $config-string: '';
+
+    @for $i from 1 through length($extra-config) {
+
+        $item: '';
+
+        @if ($i > 1) {
+            $item: ' and ';
+        }
+
+        $item: $item + '(' + nth($extra-config, $i) + ')';
+
+        $config-string: $config-string + $item;
+    }
+
+    @return $config-string;
+}
+
+
+
+//  6. breakpoint-range
+//==============================================================================
+
+/// Used by the breakpoint mixin and more specifically called from setup-key-list()
+///
+/// If multiple breakpoint keys are specified within the breakpoint mixin this function
+/// will be used to organise them into a properly formatted range argument.
+///
+/// This function will also arrange the two keys depending on the users mobile-first option
+/// allowing the breakpoint keys to be specified in any order.
+
+/// @access private
+/// @param {Mixed} $primary - A named breakpoint or value
+/// @param {Mixed} $secondary - A named breakpoint or value
+/// @group Breakpoints
+/// @return {String}
+
+
+@function breakpoint-range($primary, $secondary) {
+
+    @if type-of($primary) != number {
+        @if breakpoint($primary) != false {
+            $primary: breakpoint($primary);
+        }
+    }
+
+    @if type-of($secondary) != number {
+        @if breakpoint($secondary) != false {
+            $secondary: breakpoint($secondary);
+        }
+    }
+
+    @if $primary >= $secondary {
+        $vals: ($primary, $secondary);
+    } @else {
+        $vals: ($secondary, $primary);
+    }
+
+    @if $mobile-first == true {
+
+        @return '(min-width: ' + #{nth($vals, 2)} + ') and (' + 'max-width: ' + #{nth($vals, 1)} + ')';
+
+    } @else {
+
+        @return '(max-width: ' + #{nth($vals, 1)} + ') and (' + 'min-width: ' + #{nth($vals, 2)} + ')';
+
+    }
+}
+
+
+
+
+//==============================================================================
+//  b. Palettes
+//==============================================================================
+
+//  1. Setup palettes
+//==============================================================================
+
+/// This function will check to see if custom palettes have been specified
+/// within the $custom-palettes map within the _settings.scss file.
+///
+/// If custom palettes have been specified then this function will return a new
+/// map which comprises the contents of $default-palettes and $custom-palettes.
+///
+/// If no custom palettes are specified only the default palette map will be
+/// returned.
+///
+/// @access private
+/// @group Palettes
+/// @return {Map}
+
+@function setup-palettes() {
+    // Create an empty map holder
+    $palettes: ();
+
+    // Include if custom palettes are in use
+    @if (length($custom-palettes) > 0) {
+        $palettes: map-merge($default-palettes, $custom-palettes);
+    } @else {
+        $palettes: $default-palettes;
+    }
+
+    // Include third-party palette if enabled
+    @if ($use-third-party-palette) {
+        $palettes: map-merge($palettes, $third-party-palettes);
+    }
+
+    @return $palettes;
+}
+
+
+
+//  2. Get palette
+//==============================================================================
+
+/// Retrieves the palette and the specified tone from the global palettes map.
+/// Can accept one, two or three parameters.
+///
+/// @access public
+/// @group Palettes
+/// @param {String} $item - Sub-group name, palette name, or color name
+/// @param {String} $args2 ['base'] - Palette name, or color tone
+/// @param {String} $args3 ['base'] - Color tone
+/// @return {Map}
+
+@function palette($item, $args2:'base', $args3:'base') {
+
+    // Set up the global palettes - merges all palettes into one
+    $palettes: setup-palettes();
+
+    // Check if item exists within the global palettes map
+    @if (map-has-key($palettes, $item)) {
+
+        // Pull child item from palettes
+        $child: map-get($palettes, $item);
+
+        // Now let's check if the second argument is a string or a map.
+        // If it's a string it should be a color tone and we can return it.
+        // If it's a map we need to dig deeper.
+        @if (type-of($child) != map) {
+            @return $child;
+        } @else {
+
+            // Check if $child is a palette map or sub-group map
+            // If it has a base key then assume it's a palette map
+            @if (map-has-key($child, base)) {
+                $color: $child;
+                $tone: $args2;
+            } @else {
+
+                // Assume it's a subgroup since it has no base
+                $sub-group: $child;
+
+                // Check if palette exists in sub-group
+                @if (map-has-key($sub-group, $args2)) {
+
+                    // Pull item from sub group
+                    $grand-child: map-get($sub-group, $args2);
+
+                    // If grand child is a string, it must be the tone
+                    // If grand child is a map, grand child is a palette and
+                    // args 3 must be the tone
+                    @if (type-of($grand-child) != map) {
+                        @return $grand-child;
+                    } @else {
+                        $color: $grand-child;
+                        $tone: $args3;
+                    }
+
+                } @else {
+                    @warn "Color '#{$args2}' doesn\'t exist within sub-group '#{$sub-group}'!";
+                }
+            }
+
+            // With color and tone set, let's return the correct color string
+            @if (map-has-key($color, $tone)) {
+                @return map-get($color, $tone);
+            } @else {
+                @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
+            }
+        }
+    } @else {
+        @warn "Item '#{$item}' doesn\'t exist in palettes!";
+    }
+}
+
+
+
+
+//==============================================================================
+//  c. Helpers
+//==============================================================================
+
+//  1. Strip Unit
+//==============================================================================
+
+/// Strips the units from the passed in value
+///
+/// @access private
+/// @group Helpers
+/// @param {String} $value - Value to be stripped of unit
+/// @return {Int}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+
+
+//  2. Remify
+//==============================================================================
+
+/// Appends the rem unit to the passed in value
+///
+/// @access private
+/// @group Helpers
+/// @param {Int} $value - Value to append rem unit to
+/// @return {String} - returns the value as a rem unit
+
+@function remify($value, $rem-base) {
+    $value: strip-unit($value);
+
+    @if ($value == 0) {
+        @return 0;
+    } @else {
+        @return $value / strip-unit($rem-base) * 1rem;
+    }
+}
+
+
+
+//  3. Rem Calc
+//==============================================================================
+
+/// Turns a pixel unit into a rem unit by using the global-page-font-size
+///
+/// @access public
+/// @group Helpers
+/// @param {List|Int|String} $values - Values to remify
+/// @param {Int} $rem-base [$global-page-font-size] - REM base font size
+/// @return {Int}
+
+@function rem-calc($values, $rem-base: $global-page-font-size) {
+    $num-vals: length($values);
+
+    @if ($num-vals <= 0) {
+
+        @warn 'You need to supply at least one value to rem-calc';
+
+    } @else if ($num-vals == 1) {
+        $val: nth($values, 1);
+
+        @return remify($val, $rem-base);
+
+    } @else if ($num-vals > 4) {
+
+        @warn "You\'ve supplied too many values to rem-calc";
+
+    } @else {
+        $rem-values: ();
+
+        @for $i from 1 through $num-vals {
+            $rem-values: append($rem-values, remify(nth($values, $i), $rem-base));
+        }
+
+        @return $rem-values;
+    }
+}

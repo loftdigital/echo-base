@@ -1,0 +1,187 @@
+//==============================================================================
+//
+//  tests/scss/utilities/_breakpoints.scss
+//
+//  ----------------------------------------------------------------------------
+//  Table of contents
+//  ----------------------------------------------------------------------------
+//  a. Custom test dependencies
+//  b. Function/mixin dependencies
+//  c. Build tests
+//  d. Run tests
+//
+//
+//  @copyright 2015, Loft Digital, www.weareloft.com
+//
+//==============================================================================
+
+
+
+
+//==============================================================================
+//  Custom test dependencies
+//==============================================================================
+
+
+
+//  Custom test variables
+//==============================================================================
+
+$mobile-first: true;
+$custom-breakpoint-key: custom-breakpoint;
+$custom-breakpoint-value: 200px;
+$custom-breakpoint-key-small: custom-breakpoint-small;
+$custom-breakpoint-key-large: custom-breakpoint-large;
+$custom-breakpoint-small: 1px;
+$custom-breakpoint-large: 10000000px;
+
+
+
+//  Custom test maps
+//==============================================================================
+
+$custom-breakpoints: (
+    $custom-breakpoint-key: $custom-breakpoint-value,
+    $custom-breakpoint-key-small: $custom-breakpoint-small,
+    $custom-breakpoint-key-large: $custom-breakpoint-large
+);
+
+
+
+
+//==============================================================================
+//  Function/mixin dependencies
+//==============================================================================
+
+@import "../../../scss/echo-base/defaults/breakpoints";
+
+
+
+//==============================================================================
+//  Tests
+//==============================================================================
+
+@include test-module('Breakpoints Mobile') {
+
+
+
+//  setup-key-list() [function]
+//==============================================================================
+
+    @include test('setup-key-list() [function]') {
+
+        // Mobile first
+        //======================================================================
+
+        /// Test that setup-key-list() returns the expected string with a named
+        /// value mobile first
+        ///
+        /// @group Tests
+
+        $val: (large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly for named value - mobile first');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a custom
+        /// value mobile first
+        ///
+        /// @group Tests
+
+        $val: (900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 900px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly for custom value - mobile first');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a named
+        /// value range and ordered mobile first
+        ///
+        /// @group Tests
+
+        $val: (small, large);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for named value range - mobile first');
+
+
+
+        /// Test that setup-key-list() returns the expected string with a custom
+        /// value range and ordered mobile first
+        ///
+        /// @group Tests
+
+        $val: (100px, 900px);
+
+        $test: setup-key-list($val);
+        $expect: '(min-width: 100px) and (max-width: 900px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly and ordered for custom value range - mobile first');
+    }
+
+
+
+//  breakpoint-range() [function]
+//==============================================================================
+
+    @include test('breakpoint-range() - [function]') {
+
+        // Mobile first
+        //======================================================================
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// mobile first with named values
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(small, large);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values - mobile first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// mobile first with named values and corrected order
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(large, small);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with named values & corrected order - mobile first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// mobile first with mixed values
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(small, 960px);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values - mobile first');
+
+
+
+        /// Test that breakpoint-range() returns a correctly formatted string
+        /// mobile first with mixed values and corrected order
+        ///
+        /// @group Tests
+
+        $test: breakpoint-range(960px, small);
+        $expect: '(min-width: 480px) and (max-width: 960px)';
+
+        @include assert-equal($test, $expect, 'Returns correctly formatted string with mixed values & corrected order - mobile first');
+    }
+}
