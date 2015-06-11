@@ -175,11 +175,11 @@ $breakpoints: ();
         $flow: max-width;
     }
 
-    @if (length($key-list) > 1 ) {
+    @if (length($key-list) > 1) {
         $key-string: breakpoint-range(nth($key-list, 1), nth($key-list, 2));
     } @else {
 
-        @if type-of(nth($key-list, 1)) != number {
+        @if (type-of(nth($key-list, 1)) != number) {
             $breakpoint: breakpoint(nth($key-list, 1));
         } @else {
             $breakpoint: nth($key-list, 1);
@@ -335,7 +335,7 @@ $breakpoints: ();
 /// @param {String} $args3 ['base'] - Color tone
 /// @return {Map}
 
-@function palette( $item, $args2:'base', $args3:'base' ) {
+@function palette($item, $args2:'base', $args3:'base') {
 
     // Set up the global palettes - merges all palettes into one
     $palettes: setup-palettes();
@@ -349,13 +349,13 @@ $breakpoints: ();
         // Now let's check if the second argument is a string or a map.
         // If it's a string it should be a color tone and we can return it.
         // If it's a map we need to dig deeper.
-        @if( type-of($child) != map ) {
+        @if (type-of($child) != map) {
             @return $child;
         } @else {
 
             // Check if $child is a palette map or sub-group map
             // If it has a base key then assume it's a palette map
-            @if ( map-has-key($child, base) ) {
+            @if (map-has-key($child, base)) {
                 $color: $child;
                 $tone: $args2;
             } @else {
@@ -364,15 +364,15 @@ $breakpoints: ();
                 $sub-group: $child;
 
                 // Check if palette exists in sub-group
-                @if ( map-has-key( $sub-group, $args2 ) ) {
+                @if (map-has-key($sub-group, $args2)) {
 
                     // Pull item from sub group
-                    $grand-child: map-get( $sub-group, $args2 );
+                    $grand-child: map-get($sub-group, $args2);
 
                     // If grand child is a string, it must be the tone
                     // If grand child is a map, grand child is a palette and
                     // args 3 must be the tone
-                    @if ( type-of($grand-child) != map ) {
+                    @if (type-of($grand-child) != map) {
                         @return $grand-child;
                     } @else {
                         $color: $grand-child;

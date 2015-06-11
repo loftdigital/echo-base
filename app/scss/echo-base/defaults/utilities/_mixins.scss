@@ -162,14 +162,14 @@
 /// }
 ///
 
-@mixin breakpoint( $options... ) {
+@mixin breakpoint($options...) {
 
     $key-list: ();
     $extra-config: ();
 
     @each $item in $options {
 
-        @if (breakpoint($item) != false or str-index(quote($item), ':') == null ) {
+        @if ((breakpoint($item) != false or str-index(quote($item), ':') == null)) {
             $key-list: append($key-list, $item);
         } @else {
             $extra-config: append($extra-config, $item);
