@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem "sass", "~> 3.4.13"
+gem "sass", "~> 3.4.14"
 gem "rainbow", "~> 2.0"
-gem "scss-lint", "~> 0.32.0"
+gem "scss_lint", "~> 0.39.0"
