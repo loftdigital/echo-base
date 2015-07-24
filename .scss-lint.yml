@@ -137,7 +137,7 @@ linters:
     enabled: true
     ignore_unspecified: false
     min_properties: 2
-    order: concentric
+    order: recess
     separate_groups: false
     severity: error
 
