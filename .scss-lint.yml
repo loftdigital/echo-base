@@ -3,103 +3,130 @@ linters:
     enabled: true
     space_before_bang: true
     space_after_bang: false
+    severity: error
 
   BemDepth:
     enabled: true
     max_elements: 1
+    severity: error
 
   BorderZero:
     enabled: true
     convention: none # or `none`
+    severity: error
 
   ColorKeyword:
     enabled: false
+    severity: error
 
   ColorVariable:
     enabled: false
+    severity: error
 
   Comment:
     enabled: true
+    severity: error
 
   DebugStatement:
     enabled: true
+    severity: error
 
   DeclarationOrder:
     enabled: true
+    severity: error
 
   DuplicateProperty:
     enabled: true
+    severity: error
 
   ElsePlacement:
     enabled: true
     style: same_line # or 'new_line'
+    severity: error
 
   EmptyLineBetweenBlocks:
     enabled: true
     ignore_single_line_blocks: true
+    severity: error
 
   EmptyRule:
     enabled: true
+    severity: error
 
   ExtendDirective:
     enabled: false
+    severity: error
 
   FinalNewline:
     enabled: true
     present: true
+    severity: error
 
   HexLength:
     enabled: true
     style: short # or 'long'
+    severity: error
 
   HexNotation:
     enabled: true
     style: lowercase # or 'uppercase'
+    severity: error
 
   HexValidation:
     enabled: true
+    severity: error
 
   IdSelector:
     enabled: true
+    severity: error
 
   ImportantRule:
-    enabled: true
+    enabled: false
+    severity: error
 
   ImportPath:
     enabled: true
     leading_underscore: false
     filename_extension: false
+    severity: error
 
   Indentation:
     enabled: true
     allow_non_nested_indentation: false
     character: space # or 'tab'
     width: 4
+    severity: error
 
   LeadingZero:
     enabled: true
     style: include_zero # or 'include_zero'
+    severity: error
 
   MergeableSelector:
     enabled: true
     force_nesting: true
+    severity: error
 
   NameFormat:
     enabled: true
     allow_leading_underscore: true
     convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+    severity: error
 
   NestingDepth:
     enabled: true
     max_depth: 5
+    severity: error
 
   PlaceholderInExtend:
     enabled: true
+    severity: error
 
   PropertyCount:
     enabled: false
     include_nested: false
     max_properties: 10
+    severity: error
 
   PropertyUnits:
     enabled: true
@@ -113,98 +140,124 @@ linters:
       'dpi', 'dpcm', 'dppx',                   # Resolution
       '%']                                     # Other
     properties: {}
+    severity: error
 
   PropertySortOrder:
     enabled: false
     ignore_unspecified: false
     min_properties: 2
     separate_groups: false
+    severity: error
 
   PropertySpelling:
     enabled: true
     extra_properties: []
+    severity: error
 
   QualifyingElement:
     enabled: true
     allow_element_with_attribute: true
     allow_element_with_class: false
     allow_element_with_id: false
+    severity: error
 
   SelectorDepth:
     enabled: true
     max_depth: 3
+    severity: error
 
   SelectorFormat:
     enabled: true
     convention: hyphenated_BEM # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    severity: error
 
   Shorthand:
     enabled: true
     allowed_shorthands: [1, 2, 3]
+    severity: error
 
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: true
+    severity: error
 
   SingleLinePerSelector:
     enabled: true
+    severity: error
 
   SpaceAfterComma:
     enabled: true
+    severity: error
 
   SpaceAfterPropertyColon:
     enabled: true
     style: one_space_or_newline # or 'no_space', or 'at_least_one_space', or 'aligned'
+    severity: error
 
   SpaceAfterPropertyName:
     enabled: true
+    severity: error
 
   SpaceBeforeBrace:
     enabled: true
     style: space # or 'new_line'
     allow_single_line_padding: false
+    severity: error
 
   SpaceBetweenParens:
     enabled: true
     spaces: 0
+    severity: error
 
   StringQuotes:
     enabled: true
     style: single_quotes # or double_quotes
+    severity: error
 
   TrailingSemicolon:
     enabled: true
+    severity: error
 
   TrailingWhitespace:
     enabled: true
+    severity: error
 
   TrailingZero:
     enabled: false
+    severity: error
 
   UnnecessaryMantissa:
     enabled: true
+    severity: error
 
   UnnecessaryParentReference:
     enabled: true
+    severity: error
 
   UrlFormat:
     enabled: true
+    severity: error
 
   UrlQuotes:
     enabled: true
+    severity: error
 
   VariableForProperty:
     enabled: false
     properties: []
+    severity: error
 
   VendorPrefix:
     enabled: true
     identifier_list: base
     additional_identifiers: []
     excluded_identifiers: []
+    severity: error
 
   ZeroUnit:
     enabled: true
+    severity: error
 
   Compass::*:
     enabled: false
+    severity: error
