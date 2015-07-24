@@ -113,8 +113,8 @@ $button-color-hover: rgb(40, 40, 40) !default;
     color: $button-color;
 
     &:hover {
-        background-color: $button-background-color-hover;
         border-color: $button-border-color-hover;
+        background-color: $button-background-color-hover;
         color: $button-color-hover;
     }
 }

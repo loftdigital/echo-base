@@ -105,5 +105,4 @@ $label-inline-cursor-disabled: not-allowed !default;
     input[disabled] + label {
         @include label-disabled;
     }
-    
 }

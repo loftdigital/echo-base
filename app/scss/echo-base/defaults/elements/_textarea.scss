@@ -112,18 +112,18 @@ $textarea-cursor-disabled: not-allowed !default;
     -webkit-appearance: $textarea-appearance;
 
     &:focus {
-        background-color: $textarea-background-color-focus;
+        outline: $textarea-outline-focus;
         border-color: $textarea-border-color-focus;
         box-shadow: $textarea-box-shadow-focus;
+        background-color: $textarea-background-color-focus;
         color: $textarea-color-focus;
-        outline: $textarea-outline-focus;
     }
 
     &:disabled {
-        background-color: $textarea-background-color-disabled;
         border-color: $textarea-border-color-disabled;
-        color: $textarea-color-disabled;
+        background-color: $textarea-background-color-disabled;
         cursor: $textarea-cursor-disabled;
+        color: $textarea-color-disabled;
     }
 }
 

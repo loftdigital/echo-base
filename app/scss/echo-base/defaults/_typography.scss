@@ -692,11 +692,11 @@ $code-border-radius: $global-border-radius !default;
     }
 
     body {
+        line-height: $base-line-height;
+        color: $base-color;
         font-family: $base-font-family;
         font-weight: $base-font-weight;
         font-style: $base-font-style;
-        line-height: $base-line-height;
-        color: $base-color;
     }
 
 
