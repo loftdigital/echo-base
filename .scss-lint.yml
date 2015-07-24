@@ -12,19 +12,23 @@ linters:
 
   BorderZero:
     enabled: true
-    convention: none # or `none`
+    convention: none
     severity: error
 
   ColorKeyword:
-    enabled: false
+    enabled: false # revisit with palette functions
     severity: error
 
   ColorVariable:
-    enabled: false
+    enabled: false # revisit with palette functions
     severity: error
 
   Comment:
     enabled: true
+    severity: error
+
+  Compass::*:
+    enabled: false
     severity: error
 
   DebugStatement:
@@ -41,7 +45,7 @@ linters:
 
   ElsePlacement:
     enabled: true
-    style: same_line # or 'new_line'
+    style: same_line
     severity: error
 
   EmptyLineBetweenBlocks:
@@ -54,7 +58,7 @@ linters:
     severity: error
 
   ExtendDirective:
-    enabled: false
+    enabled: true
     severity: error
 
   FinalNewline:
@@ -64,12 +68,12 @@ linters:
 
   HexLength:
     enabled: true
-    style: short # or 'long'
-    severity: error
+    style: long
+    severity: warning
 
   HexNotation:
     enabled: true
-    style: lowercase # or 'uppercase'
+    style: lowercase
     severity: error
 
   HexValidation:
@@ -81,7 +85,7 @@ linters:
     severity: error
 
   ImportantRule:
-    enabled: false
+    enabled: true
     severity: error
 
   ImportPath:
@@ -93,13 +97,13 @@ linters:
   Indentation:
     enabled: true
     allow_non_nested_indentation: false
-    character: space # or 'tab'
+    character: space
     width: 4
     severity: error
 
   LeadingZero:
     enabled: true
-    style: include_zero # or 'include_zero'
+    style: include_zero
     severity: error
 
   MergeableSelector:
@@ -109,13 +113,14 @@ linters:
 
   NameFormat:
     enabled: true
-    allow_leading_underscore: true
-    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+    allow_leading_underscore: false
+    convention: hyphenated_lowercase
     severity: error
 
   NestingDepth:
     enabled: true
     max_depth: 5
+    ignore_parent_selectors: false
     severity: error
 
   PlaceholderInExtend:
@@ -126,6 +131,19 @@ linters:
     enabled: false
     include_nested: false
     max_properties: 10
+    severity: error
+
+  PropertySortOrder:
+    enabled: true
+    ignore_unspecified: false
+    min_properties: 2
+    order: concentric
+    separate_groups: false
+    severity: error
+
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
     severity: error
 
   PropertyUnits:
@@ -139,19 +157,8 @@ linters:
       'Hz', 'kHz',                             # Frequency
       'dpi', 'dpcm', 'dppx',                   # Resolution
       '%']                                     # Other
-    properties: {}
-    severity: error
-
-  PropertySortOrder:
-    enabled: false
-    ignore_unspecified: false
-    min_properties: 2
-    separate_groups: false
-    severity: error
-
-  PropertySpelling:
-    enabled: true
-    extra_properties: []
+    properties:
+      line-height: []
     severity: error
 
   QualifyingElement:
@@ -168,7 +175,7 @@ linters:
 
   SelectorFormat:
     enabled: true
-    convention: hyphenated_BEM # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    convention: hyphenated_BEM
     severity: error
 
   Shorthand:
@@ -178,7 +185,7 @@ linters:
 
   SingleLinePerProperty:
     enabled: true
-    allow_single_line_rule_sets: true
+    allow_single_line_rule_sets: false
     severity: error
 
   SingleLinePerSelector:
@@ -191,16 +198,20 @@ linters:
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space_or_newline # or 'no_space', or 'at_least_one_space', or 'aligned'
+    style: one_space_or_newline
     severity: error
 
   SpaceAfterPropertyName:
     enabled: true
     severity: error
 
+  SpaceAroundOperator:
+    enabled: true
+    severity: error
+
   SpaceBeforeBrace:
     enabled: true
-    style: space # or 'new_line'
+    style: space
     allow_single_line_padding: false
     severity: error
 
@@ -211,7 +222,7 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: single_quotes # or double_quotes
+    style: single_quotes
     severity: error
 
   TrailingSemicolon:
@@ -223,7 +234,7 @@ linters:
     severity: error
 
   TrailingZero:
-    enabled: false
+    enabled: true
     severity: error
 
   UnnecessaryMantissa:
@@ -256,8 +267,4 @@ linters:
 
   ZeroUnit:
     enabled: true
-    severity: error
-
-  Compass::*:
-    enabled: false
     severity: error
