@@ -535,8 +535,8 @@ $code-border-radius: $global-border-radius !default;
     transition: $a-transition;
 
     &:hover {
-        text-decoration: $a-text-decoration-hover;
         color: $a-font-color-hover;
+        text-decoration: $a-text-decoration-hover;
     }
 }
 
@@ -693,8 +693,8 @@ $code-border-radius: $global-border-radius !default;
 
     body {
         font-family: $base-font-family;
-        font-weight: $base-font-weight;
         font-style: $base-font-style;
+        font-weight: $base-font-weight;
         line-height: $base-line-height;
         color: $base-color;
     }

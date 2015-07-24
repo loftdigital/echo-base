@@ -121,18 +121,18 @@ $select-cursor-disabled: not-allowed !default;
     }
 
     &:focus {
+        color: $select-color-focus;
         background-color: $select-background-color-focus;
         border-color: $select-border-color-focus;
-        box-shadow: $select-box-shadow-focus;
-        color: $select-color-focus;
         outline: $select-outline-focus;
+        box-shadow: $select-box-shadow-focus;
     }
 
     &:disabled {
-        background-color: $select-background-color-disabled;
-        border-color: $select-border-color-disabled;
         color: $select-color-disabled;
         cursor: $select-cursor-disabled;
+        background-color: $select-background-color-disabled;
+        border-color: $select-border-color-disabled;
     }
 }
 

@@ -114,18 +114,18 @@ $input-other-cursor-disabled: not-allowed !default;
     -webkit-appearance: $input-text-appearance;
 
     &:focus {
+        color: $input-text-color-focus;
         background-color: $input-text-background-color-focus;
         border-color: $input-text-border-color-focus;
-        box-shadow: $input-text-box-shadow-focus;
-        color: $input-text-color-focus;
         outline: $input-text-outline-focus;
+        box-shadow: $input-text-box-shadow-focus;
     }
 
     &:disabled {
-        background-color: $input-text-background-color-disabled;
-        border-color: $input-text-border-color-disabled;
         color: $input-text-color-disabled;
         cursor: $input-text-cursor-disabled;
+        background-color: $input-text-background-color-disabled;
+        border-color: $input-text-border-color-disabled;
     }
 
 }
