@@ -380,7 +380,10 @@ $breakpoints: ();
                     }
 
                 } @else {
-                    @warn "Color '#{$args2}' doesn\'t exist within sub-group '#{$sub-group}'!";
+                    @if ($args2 != 'base') {
+                        @warn "Color '#{$args2}' doesn\'t exist within sub-group !";
+                    }
+                    @return $sub-group;
                 }
             }
 

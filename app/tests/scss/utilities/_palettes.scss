@@ -120,6 +120,43 @@ $custom-palettes: (
 
     @include test('palette() [function]') {
 
+        /// Test that palette() can return a child map of colours stored within
+        /// the global palettes map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-sub-group: (
+        ///             // Colors...
+        ///         )
+        ///     )
+
+        $test: type-of(palette(custom-sub-group));
+        $expect: map;
+
+        @include assert-equal($test, $expect, 'Returns the desired map of values from the global $palettes map');
+
+
+
+        /// Test that palette() can return an object of type color from within
+        /// a sub-group map
+        ///
+        /// @group Tests
+        ///
+        /// @example
+        ///     $palettes: (
+        ///         custom-sub-group: (
+        ///             custom-sub-group-string-color: rgb(255, 0, 0)
+        ///         )
+        ///     )
+
+        $test: type-of(palette(custom-sub-group, custom-sub-group-string-color));
+        $expect: color;
+
+        @include assert-equal($test, $expect, 'Returns an object of type color from a sub-group from the global $palettes map');
+
+
         /// Test that palette() can return a color stored within a single
         /// key-value pair from the global $palettes map
         ///
