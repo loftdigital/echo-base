@@ -541,7 +541,12 @@
 //  Horizontal rule - <hr>
 //==============================================================================
 
+// $hr-height: 0;
+// $hr-margin: 1.5rem 0;
 // $hr-border-color: palette(echo-base, grey, light);
+// $hr-border-style: solid;
+// $hr-border-width: 1px 0 0;
+// $hr-box-sizing: content-box;
 
 
 
@@ -848,10 +853,24 @@
 
 
 
+//  Input other
+//==============================================================================
+
+// $input-other-box-sizing: $global-box-sizing;
+
+
+
 //  Input other :disabled Defaults
 //==============================================================================
 
 // $input-other-cursor-disabled: not-allowed;
+
+
+
+//  Input search
+//==============================================================================
+
+// $input-search-box-sizing: $global-box-sizing;
 
 
 

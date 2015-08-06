@@ -76,6 +76,13 @@ $input-text-cursor-disabled: not-allowed !default;
 
 
 
+//  Input other
+//==============================================================================
+
+$input-other-box-sizing: $global-box-sizing !default;
+
+
+
 //  Input other :disabled
 //==============================================================================
 
@@ -83,6 +90,10 @@ $input-other-cursor-disabled: not-allowed !default;
 
 
 
+//  Input search
+//==============================================================================
+
+$input-search-box-sizing: $global-box-sizing !default;
 
 //==============================================================================
 //  c. Mixins
@@ -131,6 +142,7 @@ $input-other-cursor-disabled: not-allowed !default;
 }
 
 @mixin input-other {
+    box-sizing: $input-other-box-sizing;
 
     &:disabled {
         cursor: $input-other-cursor-disabled;
@@ -164,5 +176,9 @@ $input-other-cursor-disabled: not-allowed !default;
     input[type="radio"],
     input[type="checkbox"] {
         @include input-other;
+    }
+
+    input[type="search"] {
+        box-sizing: $input-search-box-sizing;
     }
 }
