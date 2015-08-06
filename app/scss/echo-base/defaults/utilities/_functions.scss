@@ -335,6 +335,54 @@ $breakpoints: ();
 /// @param {String} $args3 ['base'] - Color tone
 /// @return {Map}
 
+
+
+@function get-palette-map($iterator, $map, $keys...) {
+    $i: $iterator;
+    $key: nth($keys, $i);
+
+    // Check if the passed nth key exists in the map
+    @if (map-has-key($map, $key)) {
+        $value: map-get($map, $key);
+
+        // Check if value is map and if there are any more keys to utilise
+        @if ((type-of($value) == map) and ($i < length($keys))) {
+            // Increase iterator by 1 so that we get a new key value to play
+            // with then re-run this function
+            $i: $i + 1;
+
+            $value: get-palette-map($i, $value, $keys...);
+        }
+
+    } @else {
+        @warn $key + " doesn\'t exist in your palettes.";
+    }
+}
+
+
+
+@function palette2($items...) {
+    $palettes: setup-palettes();
+
+    $result: get-palette-map(1, $palettes, $items...);
+
+    @return $result;
+}
+
+.test {
+    color: palette2(echo-base, grey, base);
+}
+
+
+
+
+
+
+
+
+
+
+
 @function palette($item, $args2:'base', $args3:'base') {
 
     // Set up the global palettes - merges all palettes into one

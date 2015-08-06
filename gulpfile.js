@@ -49,7 +49,7 @@
     //==========================================================================
 
     gulp.task('default', ['clean'], function() {
-        gulp.start('styles', 'images', 'scripts', 'tests', 'watch');
+        gulp.start('styles', 'images', 'scripts',  'watch'); //'tests',
     });
 
 
@@ -99,7 +99,7 @@
     // Styles - Sass, old-ie
     //==========================================================================
 
-    gulp.task('styles', ['scss-lint', 'sass', 'old-ie']);
+    gulp.task('styles', ['scss-lint', 'sass']); //, 'old-ie'
 
 
 
