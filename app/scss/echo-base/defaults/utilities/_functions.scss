@@ -323,13 +323,18 @@ $breakpoints: ();
 
 
 
-
-
-
-
-
 //  2. Get palette
 //==============================================================================
+
+/// Retrieves a single color or a color map from the global palette map
+///
+/// @access public
+/// @group Palettes
+/// @param {number} $iterator
+/// @param {object} $type
+/// @param {map} $map
+/// @param {list} $keys...
+/// @return {color}
 
 @function get-palette($iterator, $type, $map, $keys...) {
     $i: $iterator;
@@ -344,14 +349,12 @@ $breakpoints: ();
             // Increase iterator by 1 so that we get a new key value to play
             // with then re-run this function
             $i: $i + 1;
-
             @return get-palette($i, $type, $value, $keys...);
         }
 
         // Once we're iterated through all the $keys list values and have stored
         // the required value, lets check that it is of the desired type
         @return get-palette-of-type($value, $type);
-
     } @else {
         @warn $key + " doesn\'t exist in your palettes.";
     }
@@ -362,8 +365,16 @@ $breakpoints: ();
 //  2. Get palette of defined type
 //==============================================================================
 
-@function get-palette-of-type($item, $type) {
+/// Checks and returns either the desired palette type or returns a type
+/// missmatch error
+///
+/// @access public
+/// @group Palettes
+/// @param {map} $item
+/// @param {object} $type
+/// @return {color}
 
+@function get-palette-of-type($item, $type) {
     @if (type-of($item) == $type) {
         @return $item;
     } @else {
@@ -379,6 +390,15 @@ $breakpoints: ();
 
 //  3. Base fallback - defaults to base if enabled
 //==============================================================================
+
+/// If the user is after the base color from a tone map of a color, it is not
+/// required to pass the value base
+///
+/// @access public
+/// @group Palettes
+/// @param {map} $item
+/// @param {object} $type
+/// @return {color}
 
 @function base-fallback($item, $type) {
     @if ((type-of($item) == map) and ($type == color)) {
@@ -425,95 +445,6 @@ $breakpoints: ();
 
     @return $result;
 }
-
-// .test {
-//     color: palette2(echo-base, grey);
-// }
-
-
-
-
-
-
-
-
-
-//  2. Get palette
-//==============================================================================
-
-/// Retrieves the palette and the specified tone from the global palettes map.
-/// Can accept one, two or three parameters.
-///
-/// @access public
-/// @group Palettes
-/// @param {String} $item - Sub-group name, palette name, or color name
-/// @param {String} $args2 ['base'] - Palette name, or color tone
-/// @param {String} $args3 ['base'] - Color tone
-/// @return {Map}
-//
-// @function palette($item, $args2:'base', $args3:'base') {
-//
-//     // Set up the global palettes - merges all palettes into one
-//     $palettes: setup-palettes();
-//
-//     // Check if item exists within the global palettes map
-//     @if (map-has-key($palettes, $item)) {
-//
-//         // Pull child item from palettes
-//         $child: map-get($palettes, $item);
-//
-//         // Now let's check if the second argument is a string or a map.
-//         // If it's a string it should be a color tone and we can return it.
-//         // If it's a map we need to dig deeper.
-//         @if (type-of($child) != map) {
-//             @return $child;
-//         } @else {
-//
-//             // Check if $child is a palette map or sub-group map
-//             // If it has a base key then assume it's a palette map
-//             @if (map-has-key($child, base)) {
-//                 $color: $child;
-//                 $tone: $args2;
-//             } @else {
-//
-//                 // Assume it's a subgroup since it has no base
-//                 $sub-group: $child;
-//
-//                 // Check if palette exists in sub-group
-//                 @if (map-has-key($sub-group, $args2)) {
-//
-//                     // Pull item from sub group
-//                     $grand-child: map-get($sub-group, $args2);
-//
-//                     // If grand child is a string, it must be the tone
-//                     // If grand child is a map, grand child is a palette and
-//                     // args 3 must be the tone
-//                     @if (type-of($grand-child) != map) {
-//                         @return $grand-child;
-//                     } @else {
-//                         $color: $grand-child;
-//                         $tone: $args3;
-//                     }
-//
-//                 } @else {
-//                     @if ($args2 != 'base') {
-//                         @warn "Color '#{$args2}' doesn\'t exist within sub-group !";
-//                     }
-//                     @return $sub-group;
-//                 }
-//             }
-//
-//             // With color and tone set, let's return the correct color string
-//             @if (map-has-key($color, $tone)) {
-//                 @return map-get($color, $tone);
-//             } @else {
-//                 @warn "Tone '#{$tone}' doesn\'t exist for palette '#{$color}'!";
-//             }
-//         }
-//     } @else {
-//         @warn "Item '#{$item}' doesn\'t exist in palettes!";
-//     }
-// }
 
 
 
