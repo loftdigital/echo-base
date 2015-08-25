@@ -332,8 +332,9 @@ $breakpoints: ();
 /// @group Palettes
 /// @param {number} $iterator - Used to loop through the keys parameter
 /// @param {object} $type - Can be a map or color
-/// @param {map} $map - The that we're searching
-/// @param {list} $keys...
+/// @param {map} $map - The map that we're searching
+/// @param {list} $keys... - A list of a varying length containing the keys used
+/// to get the desired color or map
 /// @return {color}
 
 @function get-palette($iterator, $type, $map, $keys...) {
@@ -370,7 +371,8 @@ $breakpoints: ();
 ///
 /// @access private
 /// @group Palettes
-/// @param {map} $item
+/// @param {map} $item -  A specific key to be used to get the desired color or
+/// map
 /// @param {object} $type - Can be a map or color
 /// @return {color}
 
@@ -396,7 +398,8 @@ $breakpoints: ();
 ///
 /// @access private
 /// @group Palettes
-/// @param {map} $item
+/// @param {map} $item - A specific key to be used to get the desired color or
+/// map
 /// @param {object} $type - Can be a map or color
 /// @return {color}
 
@@ -417,8 +420,52 @@ $breakpoints: ();
 ///
 /// @access public
 /// @group Palettes
-/// @param {list} $items...
+/// @param {list} $items... - A list of a varying length containing the keys
+/// used to get the desired color or map
 /// @return {color}
+///
+/// @example scss - Get the specific tone of a color
+/// // Where primary-colors is a color map defined in _settings.scss
+/// //
+/// // primary-colors: (
+/// //   red: (
+/// //     light: rgb(255, 200, 200),
+/// //     base: rgb(255, 100, 100),
+/// //     dark: rgb(100, 0, 0)
+/// //   ),
+/// //   blue: (
+/// //     light: rgb(200, 200, 255),
+/// //     base: rgb(100, 100, 255),
+/// //     dark: rgb(0, 0, 100)
+/// //   )
+/// // );
+///
+/// // Usage - SCSS
+///
+/// .block {
+///   color: palette(primary-colors, red, light);
+/// }
+///
+/// // Output - CSS
+///
+/// .block {
+///   color: rgb(255, 200, 200);
+/// }
+///
+/// @example scss - Get the base tone of a color (base fallback enabled)
+/// ...
+///
+/// // Usage - SCSS
+///
+/// .block {
+///   color: palette(primary-colors, blue);
+/// }
+///
+/// // Output - CSS
+///
+/// .block {
+///   color: rgb(100, 100, 255);
+/// }
 
 @function palette($items...) {
     $palettes: setup-palettes();
