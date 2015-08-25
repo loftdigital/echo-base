@@ -330,9 +330,9 @@ $breakpoints: ();
 ///
 /// @access public
 /// @group Palettes
-/// @param {number} $iterator
-/// @param {object} $type
-/// @param {map} $map
+/// @param {number} $iterator - Used to loop through the keys parameter
+/// @param {object} $type - Can be a map or color
+/// @param {map} $map - The that we're searching
 /// @param {list} $keys...
 /// @return {color}
 
@@ -371,7 +371,7 @@ $breakpoints: ();
 /// @access public
 /// @group Palettes
 /// @param {map} $item
-/// @param {object} $type
+/// @param {object} $type - Can be a map or color
 /// @return {color}
 
 @function get-palette-of-type($item, $type) {
@@ -397,7 +397,7 @@ $breakpoints: ();
 /// @access public
 /// @group Palettes
 /// @param {map} $item
-/// @param {object} $type
+/// @param {object} $type - Can be a map or color
 /// @return {color}
 
 @function base-fallback($item, $type) {
