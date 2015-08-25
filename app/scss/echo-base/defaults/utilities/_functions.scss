@@ -328,7 +328,7 @@ $breakpoints: ();
 
 /// Retrieves a single color or a color map from the global palette map
 ///
-/// @access public
+/// @access private
 /// @group Palettes
 /// @param {number} $iterator - Used to loop through the keys parameter
 /// @param {object} $type - Can be a map or color
@@ -368,7 +368,7 @@ $breakpoints: ();
 /// Checks and returns either the desired palette type or returns a type
 /// missmatch error
 ///
-/// @access public
+/// @access private
 /// @group Palettes
 /// @param {map} $item
 /// @param {object} $type - Can be a map or color
@@ -394,7 +394,7 @@ $breakpoints: ();
 /// If the user is after the base color from a tone map of a color, it is not
 /// required to pass the value base
 ///
-/// @access public
+/// @access private
 /// @group Palettes
 /// @param {map} $item
 /// @param {object} $type - Can be a map or color
