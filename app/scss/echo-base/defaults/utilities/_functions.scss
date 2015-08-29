@@ -31,7 +31,16 @@
 /// @type String
 
 $global-page-font-size: 16px !default;
-$palette-base-fallback: true;
+
+/// $global-palette-base-fallback allows you to specify whether you would like the palette
+/// map to use a default tone called 'base' in your custom palette maps.
+/// If set to true not providing a specific tone within a palette map will return an error
+/// whereas if this is set to true the tone named base will be returned if it exists.
+///
+/// @group Global
+/// @type Boolean
+
+$global-palette-base-fallback: true;
 
 
 
@@ -380,7 +389,7 @@ $breakpoints: ();
     @if (type-of($item) == $type) {
         @return $item;
     } @else {
-        @if ($palette-base-fallback) {
+        @if ($global-palette-base-fallback) {
             @return base-fallback($item, $type);
         } @else {
             @warn 'Wrong object type returned from palettes. Expecting ' + $type + ', got ' + type-of($item) + '!';
@@ -422,24 +431,24 @@ $breakpoints: ();
 /// @group Palettes
 /// @param {list} $items... - A list of a varying length containing the keys
 /// used to get the desired color or map
-/// @return {color}
+/// @return {color} a color value
+///
+/// @example scss - Our custom palette map setup in _settings.scss
+///
+/// primary-colors: (
+///   red: (
+///     light: rgb(255, 200, 200),
+///     base: rgb(255, 100, 100),
+///     dark: rgb(100, 0, 0)
+///   ),
+///   blue: (
+///     light: rgb(200, 200, 255),
+///     base: rgb(100, 100, 255),
+///     dark: rgb(0, 0, 100)
+///   )
+/// );
 ///
 /// @example scss - Get the specific tone of a color
-/// // Where primary-colors is a color map defined in _settings.scss
-/// //
-/// // primary-colors: (
-/// //   red: (
-/// //     light: rgb(255, 200, 200),
-/// //     base: rgb(255, 100, 100),
-/// //     dark: rgb(100, 0, 0)
-/// //   ),
-/// //   blue: (
-/// //     light: rgb(200, 200, 255),
-/// //     base: rgb(100, 100, 255),
-/// //     dark: rgb(0, 0, 100)
-/// //   )
-/// // );
-///
 /// // Usage - SCSS
 ///
 /// .block {
@@ -453,7 +462,6 @@ $breakpoints: ();
 /// }
 ///
 /// @example scss - Get the base tone of a color (base fallback enabled)
-/// ...
 ///
 /// // Usage - SCSS
 ///
@@ -479,12 +487,47 @@ $breakpoints: ();
 //  5. Get map from palette
 //==============================================================================
 
-/// Retrieves a map from the global palette map
+/// Retrieves a map from the global palette map, this can be useful for iterating
+/// over colour maps.
 ///
 /// @access public
 /// @group Palettes
 /// @param {list} $items...
-/// @return {map}
+/// @return {map} A palette map
+///
+/// @example scss - Our custom palette map setup in _settings.scss
+///
+/// primary-colors: (
+///   red: (
+///     light: rgb(255, 200, 200),
+///     base: rgb(255, 100, 100),
+///     dark: rgb(100, 0, 0)
+///   )
+/// );
+///
+/// @example scss - using a palette map to create a moddifier class for each palette tone
+/// // Usage - SCSS
+///
+/// .test-class {
+///     @each $tone, $colval in palette-map(primary-colors, red) {
+///         &--#{$tone} {
+///             background-color: $colval;
+///         }
+///     }
+/// }
+///
+/// // output - CSS
+/// .test-class--light {
+///     background-color: #ffc8c8;
+/// }
+///
+/// .test-class--base {
+///     background-color: #ff6464;
+/// }
+///
+/// .test-class--dark {
+///     background-color: #640000;
+/// }
 
 @function palette-map($items...) {
     $palettes: setup-palettes();
