@@ -61,7 +61,7 @@
         ///
         /// @group Tests
 
-        $test: rem-calc(8px); // (16px / 2) = 8px
+        $test: rem-calc(8px);
         $expect: '0.5rem';
 
         @include assert-equal($test, $expect, 'Returns a value of 0.5rem when passed a value of half the base-font-size');
@@ -73,7 +73,7 @@
         ///
         /// @group Tests
 
-        $test: rem-calc(24px); // (16px * 1.5) = 24px
+        $test: rem-calc(24px);
         $expect: '1.5rem';
 
         @include assert-equal($test, $expect, 'Returns a value of 1.5rem when passed a value of one and half the base-font-size');
