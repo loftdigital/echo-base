@@ -658,6 +658,6 @@ $breakpoints: ();
             $rem-values: append($rem-values, remify($val));
         }
 
-        @return $rem-values;
+        @return #{$rem-values};
     }
 }

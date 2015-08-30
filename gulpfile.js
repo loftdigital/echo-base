@@ -49,7 +49,7 @@
     //==========================================================================
 
     gulp.task('default', ['clean'], function() {
-        gulp.start('styles', 'images', 'scripts',  'watch'); //'tests',
+        gulp.start('styles', 'images', 'scripts', 'watch'); //'tests',
     });
 
 
