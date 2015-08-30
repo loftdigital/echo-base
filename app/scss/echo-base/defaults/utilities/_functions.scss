@@ -505,7 +505,7 @@ $breakpoints: ();
 ///   )
 /// );
 ///
-/// @example scss - using a palette map to create a moddifier class for each palette tone
+/// @example scss - using a palette map to create a modifier class for each palette tone
 /// // Usage - SCSS
 ///
 /// .test-class {
@@ -546,7 +546,7 @@ $breakpoints: ();
 //  1. Strip Unit
 //==============================================================================
 
-/// Strips the units from the passed in value
+/// Strips the units from the passed in value e.g. 16px becomes 16
 ///
 /// @access private
 /// @group Helpers
@@ -569,13 +569,14 @@ $breakpoints: ();
 /// @param {Int} $value - Value to append rem unit to
 /// @return {String} - returns the value as a rem unit
 
-@function remify($value, $rem-base) {
+@function remify($value) {
+    $rem-base: strip-unit($global-page-font-size);
     $value: strip-unit($value);
 
     @if ($value == 0) {
         @return 0;
     } @else {
-        @return $value / strip-unit($rem-base) * 1rem;
+        @return $value / $rem-base * 1rem;
     }
 }
 
@@ -584,25 +585,67 @@ $breakpoints: ();
 //  3. Rem Calc
 //==============================================================================
 
-/// Turns a pixel unit into a rem unit by using the global-page-font-size
+/// Turns a pixel unit into a rem unit based on the global-page-font-size
 ///
 /// @access public
 /// @group Helpers
-/// @param {List|Int|String} $values - Values to remify
-/// @param {Int} $rem-base [$global-page-font-size] - REM base font size
-/// @return {Int}
+/// @param {Int|String} $values - Values to remify
+/// @return {String}
+///
+/// @example scss - Our $global-page-font-size setting left at the default 16px in _settings.scss
+///
+/// $global-page-font-size: 16px;
+///
+/// @example scss - useage with single or a map of arguments
+///
+/// .foo {
+///     font-size: rem-calc(32px);
+/// }
+///
+/// .bar {
+///     margin: rem-calc(16px, 32px, 18px, 12px);
+/// }
+///
+/// @example css - CSS output
+///
+/// .foo {
+///     font-size: 2rem;
+/// }
+///
+/// .bar {
+///     margin: 1rem 2rem 1.125rem 0.75rem;
+/// }
+///
+/// @example scss - Our $global-page-font-size setting set to 32px in _settings.scss
+///
+/// $global-page-font-size: 32px;
+///
+/// @example scss - useage with single or a map of arguments
+///
+/// .foo {
+///     font-size: rem-calc(32px);
+/// }
+///
+/// .bar {
+///     margin: rem-calc(16px, 32px, 18px, 12px);
+/// }
+///
+/// @example css - CSS output
+///
+/// .foo {
+///     font-size: 1rem;
+/// }
+///
+/// .bar {
+///     margin: 0.5rem 1rem 0.5625rem 0.375rem;
+/// }
 
-@function rem-calc($values, $rem-base: $global-page-font-size) {
-    $num-vals: length($values);
+@function rem-calc($pxvalues...) {
+    $num-vals: length($pxvalues);
 
     @if ($num-vals <= 0) {
 
         @warn 'You need to supply at least one value to rem-calc';
-
-    } @else if ($num-vals == 1) {
-        $val: nth($values, 1);
-
-        @return remify($val, $rem-base);
 
     } @else if ($num-vals > 4) {
 
@@ -611,10 +654,10 @@ $breakpoints: ();
     } @else {
         $rem-values: ();
 
-        @for $i from 1 through $num-vals {
-            $rem-values: append($rem-values, remify(nth($values, $i), $rem-base));
+        @each $val in $pxvalues {
+            $rem-values: append($rem-values, remify($val));
         }
 
-        @return $rem-values;
+        @return #{$rem-values};
     }
 }
