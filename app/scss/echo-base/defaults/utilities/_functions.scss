@@ -589,8 +589,8 @@ $breakpoints: ();
 ///
 /// @access public
 /// @group Helpers
-/// @param {List|Int|String} $values - Values to remify
-/// @return {Int|Map}
+/// @param {Int|String} $values - Values to remify
+/// @return {List}
 ///
 /// @example scss - Our $global-page-font-size setting left at the default 16px in _settings.scss
 ///
