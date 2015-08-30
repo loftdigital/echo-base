@@ -123,10 +123,10 @@
 
 
 
-//  Custom palette variables
+//  Allow use of default base value in palette maps
 //==============================================================================
 
-// $primary-color: rgb(0, 200, 162);
+// $global-palette-base-fallback: true;
 
 
 
@@ -426,7 +426,7 @@
 
 // $a-text-decoration: none;
 // $a-text-decoration-hover: none;
-// $a-font-color: palette(primary);
+// $a-font-color: palette(echo-base, black);
 // $a-font-color-hover: scale-color($a-font-color, $lightness: -14%);
 // $a-transition: (background-color 0.25s ease-out, border-color 0.25s ease-out, color 0.25s ease-out);
 
@@ -506,7 +506,7 @@
 // $blockquote-background-color: transparent;
 // $blockquote-border-left-width: 5px;
 // $blockquote-border-left-style: solid;
-// $blockquote-border-left-color: palette(primary);
+// $blockquote-border-left-color: palette(echo-base, black);
 
 
 
@@ -548,7 +548,12 @@
 //  Horizontal rule - <hr>
 //==============================================================================
 
+// $hr-height: 0;
+// $hr-margin: 1.5rem 0;
 // $hr-border-color: palette(echo-base, grey, light);
+// $hr-border-style: solid;
+// $hr-border-width: 1px 0 0;
+// $hr-box-sizing: content-box;
 
 
 
@@ -855,10 +860,24 @@
 
 
 
+//  Input other
+//==============================================================================
+
+// $input-other-box-sizing: $global-box-sizing;
+
+
+
 //  Input other :disabled Defaults
 //==============================================================================
 
 // $input-other-cursor-disabled: not-allowed;
+
+
+
+//  Input search
+//==============================================================================
+
+// $input-search-box-sizing: $global-box-sizing;
 
 
 

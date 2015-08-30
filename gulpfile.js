@@ -49,7 +49,7 @@
     //==========================================================================
 
     gulp.task('default', ['clean'], function() {
-        gulp.start('styles', 'images', 'scripts', 'tests', 'watch');
+        gulp.start('styles', 'images', 'scripts', 'watch'); //'tests',
     });
 
 
@@ -99,7 +99,7 @@
     // Styles - Sass, old-ie
     //==========================================================================
 
-    gulp.task('styles', ['scss-lint', 'sass', 'old-ie']);
+    gulp.task('styles', ['scss-lint', 'sass']); //, 'old-ie'
 
 
 
@@ -108,8 +108,18 @@
 
     gulp.task('scss-lint', function() {
         gulp.src([config.app + '/scss/*.scss', config.app + '/scss/echo-base/**/*.scss'])
-            .pipe(plumber())
+            .pipe(plumber({
+                errorHandler: function(err) {
+                    notify.onError({
+                        title:    "Sass-lint error",
+                        message:  "<%= error.message %>",
+                        sound:    "Sosumi"
+                    })(err);
+                    this.emit('end');
+                }
+            }))
             .pipe(scsslint())
+            .pipe(scsslint.failReporter())
             .pipe(notify({
                 message: 'Scss lint task complete'
             }));

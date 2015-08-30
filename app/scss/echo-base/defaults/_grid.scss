@@ -102,8 +102,8 @@ $content: (
         @include with-layout($content) {
             &-content__container {
                 @include container;
-                padding-left: if($grid-content-padding-left-overwrite, $grid-content-padding-left-overwrite, gutters(map-get($content, columns)));
                 padding-right: if($grid-content-padding-right-overwrite, $grid-content-padding-right-overwrite, gutters(map-get($content, columns)));
+                padding-left: if($grid-content-padding-left-overwrite, $grid-content-padding-left-overwrite, gutters(map-get($content, columns)));
             }
 
             &-content__block {

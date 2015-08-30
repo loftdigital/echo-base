@@ -34,10 +34,12 @@ $body-background: palette(echo-base, white) !default;
 //  2. Horizontal rule - <hr>
 //==============================================================================
 
+$hr-height: 0 !default;
+$hr-margin: 1.5rem 0 !default;
 $hr-border-color: palette(echo-base, grey, light) !default;
-
-
-
+$hr-border-style: solid !default;
+$hr-border-width: 1px 0 0 !default;
+$hr-box-sizing: content-box !default;
 
 //==============================================================================
 //  b. Classes
@@ -55,11 +57,12 @@ body {
 }
 
 body {
-    background: $body-background;
-    min-width: $body-min-width;
-    margin: 0;
-    padding: 0;
     position: relative;
+    min-width: $body-min-width;
+    padding: 0;
+    margin: 0;
+    background: $body-background;
+
 }
 
 img {
@@ -69,9 +72,10 @@ img {
 }
 
 hr {
-    height: 0;
-    margin: 1.5rem 0;
-    border-width: 1px 0 0;
-    border-style: solid;
+    height: $hr-height;
+    margin: $hr-margin;
     border-color: $hr-border-color;
+    border-style: $hr-border-style;
+    border-width: $hr-border-width;
+    box-sizing: $hr-box-sizing;
 }
