@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Loft Digital",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "del": "^1.2.0",
     "gulp": "^3.9.0",
