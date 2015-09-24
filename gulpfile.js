@@ -5,7 +5,7 @@
     'use strict';
 
     // =========================================================================
-    // Set Gulp vars
+    // Set vars
     // =========================================================================
 
     //  Require Gulp modules
@@ -45,8 +45,8 @@
     //  Default
     // =========================================================================
 
-    gulp.task('default', ['clean'], function gulpTaskDefault() {
-        gulp.start('styles', 'images', 'scripts', 'tests', 'watch');
+    gulp.task('default', function gulpTaskDefault() {
+        gulp.start('styles', 'images', 'scripts', 'watch');
     });
 
     //  Watch
@@ -183,11 +183,39 @@
             }));
     });
 
-    //  Scripts - ESLint, concat, uglify
+    //  Scripts - ESLint, js
     // =========================================================================
 
-    gulp.task('scripts', function gulpTaskScripts() {
-        gulp.src([config.app + '/js/**/*.js', '/gulpfile.js'])
+    gulp.task('scripts', ['eslint', 'js']);
+
+    //  Eslint
+    // =========================================================================
+
+    gulp.task('eslint', function gulpTaskESLint() {
+        gulp.src(['./gulpfile.js', config.app + '/js/**/*.js'])
+            .pipe(plumber({
+                errorHandler: function plumberScripts(err) {
+                    notify.onError({
+                        title: 'ESLint Compile Error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
+                    })(err);
+                    this.emit('end');
+                }
+            }))
+            .pipe(eslint())
+            .pipe(eslint.format())
+            .pipe(eslint.failAfterError())
+            .pipe(notify({
+                message: 'ESLint complete'
+            }));
+    });
+
+    //  JS - Concat, minify etc
+    // =========================================================================
+
+    gulp.task('js', function gulpTaskJS() {
+        gulp.src([config.app + '/js/**/*.js'])
             .pipe(plumber({
                 errorHandler: function plumberScripts(err) {
                     notify.onError({
@@ -198,11 +226,6 @@
                     this.emit('end');
                 }
             }))
-            .pipe(eslint({
-                useEslintrc: true
-            }))
-            .pipe(eslint.format())
-            .pipe(eslint.failAfterError())
             .pipe(sourcemaps.init())
             .pipe(concat('main.js'))
             .pipe(gulp.dest(config.dist + '/js'))
