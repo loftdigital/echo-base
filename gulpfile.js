@@ -28,6 +28,7 @@
         notify = require('gulp-notify'),
         del = require('del'),
         plumber = require('gulp-plumber'),
+        sequence = require('gulp-sequence'),
 
         //  Config vars
         // =====================================================================
@@ -45,9 +46,7 @@
     //  Default
     // =========================================================================
 
-    gulp.task('default', function gulpTaskDefault() {
-        gulp.start('styles', 'images', 'scripts', 'watch');
-    });
+    gulp.task('default', sequence('clean', ['styles', 'images', 'scripts'], 'tests', 'watch'));
 
     //  Watch
     // =========================================================================
@@ -73,7 +72,7 @@
     // =========================================================================
 
     gulp.task('clean', function gulpTaskClean(cb) {
-        del([config.dist + '/css', config.dist + '/js', config.dist + '/img'], cb);
+        return del([config.dist + '/css', config.dist + '/js', config.dist + '/img'], cb);
     });
 
     //  Test
