@@ -1,13 +1,15 @@
 //  @copyright 2015, Loft Digital, www.weareloft.com
 //  Licensed under MIT (https://github.loftdigital.net/LoftDigital/echo-base/blob/master/LICENSE)
 
-(function() {
-
+(function gulpTasks() {
     'use strict';
 
-    //==========================================================================
-    // Require modules
-    //==========================================================================
+    // =========================================================================
+    // Set Gulp vars
+    // =========================================================================
+
+    //  Require Gulp modules
+    // =========================================================================
 
     var gulp = require('gulp'),
         mocha = require('gulp-mocha'),
@@ -24,43 +26,33 @@
         sourcemaps = require('gulp-sourcemaps'),
         livereload = require('gulp-livereload'),
         notify = require('gulp-notify'),
-        size = require('gulp-size'),
         del = require('del'),
-        plumber = require('gulp-plumber');
+        plumber = require('gulp-plumber'),
 
+        //  Config vars
+        // =====================================================================
 
-
-
-    //==========================================================================
-    // Config vars
-    //==========================================================================
-
-    var config = {
+        config = {
             app: './app',
             dist: './dist',
             tests: './app/tests'
         };
 
+    // =========================================================================
+    //  Tasks
+    // =========================================================================
 
+    //  Default
+    // =========================================================================
 
-
-    //==========================================================================
-    // Tasks
-    //==========================================================================
-
-    // Default
-    //==========================================================================
-
-    gulp.task('default', ['clean'], function() {
-        gulp.start('styles', 'images', 'scripts', 'watch'); //'tests',
+    gulp.task('default', ['clean'], function gulpTaskDefault() {
+        gulp.start('styles', 'images', 'scripts', 'tests', 'watch');
     });
 
+    //  Watch
+    // =========================================================================
 
-
-    // Watch
-    //==========================================================================
-
-    gulp.task('watch', function() {
+    gulp.task('watch', function gulpTaskWatch() {
         // Do Sass related tasks
         gulp.watch(config.app + '/scss/**/*.scss', ['styles']);
 
@@ -77,46 +69,38 @@
         gulp.watch([config.dist + '/**']).on('change', livereload.changed);
     });
 
+    //  Clean
+    // =========================================================================
 
-
-    // Clean
-    //==========================================================================
-
-    gulp.task('clean', function(cb) {
-        del([config.dist + '/css', config.dist + '/js', config.dist + '/img'], cb)
+    gulp.task('clean', function gulpTaskClean(cb) {
+        del([config.dist + '/css', config.dist + '/js', config.dist + '/img'], cb);
     });
 
+    //  Test
+    // =========================================================================
 
-
-    // Test
-    //==========================================================================
-
-    gulp.task('tests', function () {
+    gulp.task('tests', function gulpTaskTests() {
         return gulp.src(config.tests + '/scss/test.js', {read: false})
             // gulp-mocha needs filepaths so you can't have any plugins before it
             .pipe(mocha({reporter: 'spec'}));
     });
 
+    //  Styles - Sass, old-ie
+    // =========================================================================
 
+    gulp.task('styles', ['scss-lint', 'sass']);
 
-    // Styles - Sass, old-ie
-    //==========================================================================
+    //  SCSS Lint
+    // =========================================================================
 
-    gulp.task('styles', ['scss-lint', 'sass']); //, 'old-ie'
-
-
-
-    // SCSS Lint
-    //==========================================================================
-
-    gulp.task('scss-lint', function() {
+    gulp.task('scss-lint', function gulpTaskSCSSLint() {
         gulp.src([config.app + '/scss/*.scss', config.app + '/scss/echo-base/**/*.scss'])
             .pipe(plumber({
-                errorHandler: function(err) {
+                errorHandler: function plumberSCSSLint(err) {
                     notify.onError({
-                        title:    "Sass-lint error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
+                        title: 'Sass-lint error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
                     })(err);
                     this.emit('end');
                 }
@@ -128,18 +112,17 @@
             }));
     });
 
+    //  Sass - Sass, autoprefixer, minify css
+    // =========================================================================
 
-    // Sass - Sass, autoprefixer, minify css
-    //==========================================================================
-
-    gulp.task('sass', function() {
+    gulp.task('sass', function gulpTaskSass() {
         gulp.src(config.app + '/scss/*.scss')
             .pipe(plumber({
-                errorHandler: function(err) {
+                errorHandler: function plumberSass(err) {
                     notify.onError({
-                        title:    "Sass Compile Error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
+                        title: 'Sass Compile Error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
                     })(err);
                     this.emit('end');
                 }
@@ -158,26 +141,23 @@
                 suffix: '.min'
             }))
             .pipe(minifyCSS())
-            //.pipe(size())
             .pipe(gulp.dest(config.dist + '/css/'))
             .pipe(notify({
                 message: 'Styles task complete'
             }));
     });
 
+    //  Old-IE - Sass, autoprefixer, minify css, pixrem
+    // =========================================================================
 
-
-    // Old-IE - Sass, autoprefixer, minify css, pixrem
-    //==========================================================================
-
-    gulp.task('old-ie', function() {
+    gulp.task('old-ie', function gulpTaskOldIE() {
         gulp.src(config.app + '/scss/*.scss')
             .pipe(plumber({
-                errorHandler: function(err) {
+                errorHandler: function plumberOldIE(err) {
                     notify.onError({
-                        title:    "IE Compile Error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
+                        title: 'IE Compile Error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
                     })(err);
                     this.emit('end');
                 }
@@ -203,19 +183,17 @@
             }));
     });
 
+    //  Scripts - ESLint, concat, uglify
+    // =========================================================================
 
-
-    // Scripts - ESLint, concat, uglify
-    //==========================================================================
-
-    gulp.task('scripts', function() {
-        gulp.src(config.app + '/js/**/*.js')
+    gulp.task('scripts', function gulpTaskScripts() {
+        gulp.src([config.app + '/js/**/*.js', '/gulpfile.js'])
             .pipe(plumber({
-                errorHandler: function(err) {
+                errorHandler: function plumberScripts(err) {
                     notify.onError({
-                        title:    "Script Compile Error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
+                        title: 'Script Compile Error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
                     })(err);
                     this.emit('end');
                 }
@@ -230,7 +208,6 @@
             .pipe(gulp.dest(config.dist + '/js'))
             .pipe(rename({suffix: '.min'}))
             .pipe(uglify())
-            //.pipe(size())
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(config.dist + '/js'))
             .pipe(notify({
@@ -238,19 +215,17 @@
             }));
     });
 
+    //  Images - Imagemin
+    // =========================================================================
 
-
-    // Images - Imagemin
-    //==========================================================================
-
-    gulp.task('images', function() {
+    gulp.task('images', function gulpTaskImages() {
         gulp.src(config.app + '/img/*')
             .pipe(plumber({
-                errorHandler: function(err) {
+                errorHandler: function plumberImages(err) {
                     notify.onError({
-                        title:    "Image Minification Error",
-                        message:  "<%= error.message %>",
-                        sound:    "Sosumi"
+                        title: 'Image Minification Error',
+                        message: '<%= error.message %>',
+                        sound: 'Sosumi'
                     })(err);
                     this.emit('end');
                 }
@@ -263,5 +238,4 @@
                 message: 'Images task complete'
             }));
     });
-
 })();
