@@ -12,6 +12,7 @@
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
+//  Licensed under MIT (https://github.loftdigital.net/LoftDigital/echo-base/blob/master/LICENSE)
 //
 //==============================================================================
 
@@ -129,8 +130,8 @@ $button-color-hover: rgb(40, 40, 40) !default;
 @if $use-button-defaults {
 
     button,
-    input[type="button"],
-    input[type="submit"],
+    input[type='button'],
+    input[type='submit'],
     .button {
         @include button;
     }

@@ -13,6 +13,7 @@
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
+//  Licensed under MIT(https://github.loftdigital.net/LoftDigital/echo-base/blob/master/LICENSE)
 //
 //==============================================================================
 
@@ -81,8 +82,10 @@ $content: (
 @if $use-grid-defaults {
     .grid {
 
-//  Window grid
-//==============================================================================
+
+
+        //  Window grid
+        //======================================================================
 
         @include with-layout($window) {
             &-window__container {
@@ -96,8 +99,8 @@ $content: (
 
 
 
-//  Content grid
-//==============================================================================
+        //  Content grid
+        //======================================================================
 
         @include with-layout($content) {
             &-content__container {

@@ -12,6 +12,7 @@
 //
 //
 //  @copyright 2015, Loft Digital, www.weareloft.com
+//  Licensed under MIT (https://github.loftdigital.net/LoftDigital/echo-base/blob/master/LICENSE)
 //
 //==============================================================================
 
@@ -97,8 +98,8 @@ $label-inline-cursor-disabled: not-allowed !default;
         @include label;
     }
 
-    input[type="radio"] + label,
-    input[type="checkbox"] + label {
+    input[type='radio'] + label,
+    input[type='checkbox'] + label {
         @include label-other;
     }
 
