@@ -24,6 +24,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.1",
+    "gulp-sass-lint": "^1.0.1",
     "gulp-scss-lint": "^0.2.0",
     "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.5.2",

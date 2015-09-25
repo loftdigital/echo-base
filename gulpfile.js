@@ -12,7 +12,7 @@
     var gulp = require('gulp'),
         mocha = require('gulp-mocha'),
         sass = require('gulp-sass'),
-        scsslint = require('gulp-scss-lint'),
+        sassLint = require('gulp-sass-lint'),
         autoprefixer = require('gulp-autoprefixer'),
         rename = require('gulp-rename'),
         minifyCSS = require('gulp-minify-css'),
@@ -36,10 +36,10 @@
     //==========================================================================
 
     var config = {
-            app: './app',
-            dist: './dist',
-            tests: './app/tests'
-        };
+        app: './app',
+        dist: './dist',
+        tests: './app/tests'
+    };
 
 
 
@@ -102,14 +102,14 @@
     // Styles - Sass, old-ie
     //==========================================================================
 
-    gulp.task('styles', ['scss-lint', 'sass']); //, 'old-ie'
+    gulp.task('styles', ['sass-lint', 'sass']);
 
 
 
     // SCSS Lint
     //==========================================================================
 
-    gulp.task('scss-lint', function() {
+    gulp.task('sass-lint', function() {
         gulp.src([config.app + '/scss/*.scss', config.app + '/scss/echo-base/**/*.scss'])
             .pipe(plumber({
                 errorHandler: function(err) {
@@ -121,12 +121,14 @@
                     this.emit('end');
                 }
             }))
-            .pipe(scsslint())
-            .pipe(scsslint.failReporter())
+            .pipe(sassLint())
+            .pipe(sassLint.format())
+            .pipe(sassLint.failOnError())
             .pipe(notify({
-                message: 'Scss lint task complete'
+                message: 'Sass lint task complete'
             }));
     });
+
 
 
     // Sass - Sass, autoprefixer, minify css

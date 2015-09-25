@@ -367,7 +367,7 @@ $breakpoints: ();
         // the required value, lets check that it is of the desired type
         @return get-palette-of-type($value, $type);
     } @else {
-        @warn $key + " doesn\'t exist in your palettes.";
+        @warn $key + ' doesn\'t exist in your palettes.';
     }
 }
 
@@ -650,7 +650,7 @@ $breakpoints: ();
 
     } @else if ($num-vals > 4) {
 
-        @warn "You\'ve supplied too many values to rem-calc";
+        @warn 'You\'ve supplied too many values to rem-calc';
 
     } @else {
         $rem-values: ();
