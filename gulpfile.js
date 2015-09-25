@@ -14,7 +14,7 @@
     var gulp = require('gulp'),
         mocha = require('gulp-mocha'),
         sass = require('gulp-sass'),
-        scsslint = require('gulp-scss-lint'),
+        sassLint = require('gulp-sass-lint'),
         autoprefixer = require('gulp-autoprefixer'),
         rename = require('gulp-rename'),
         minifyCSS = require('gulp-minify-css'),
@@ -46,7 +46,7 @@
     //  Default
     // =========================================================================
 
-    gulp.task('default', sequence('clean', ['styles', 'images', 'scripts'], 'tests', 'watch'));
+    gulp.task('default', sequence('clean', ['styles', 'images', 'scripts'], 'watch')); // Options: 'tests'
 
     //  Watch
     // =========================================================================
@@ -84,18 +84,18 @@
             .pipe(mocha({reporter: 'spec'}));
     });
 
-    //  Styles - Sass, old-ie
+    // Styles - Sass, old-ie
     // =========================================================================
 
-    gulp.task('styles', ['scss-lint', 'sass']);
+    gulp.task('styles', ['sass-lint', 'sass']);
 
-    //  SCSS Lint
+    // Sass Lint
     // =========================================================================
 
-    gulp.task('scss-lint', function gulpTaskSCSSLint() {
+    gulp.task('sass-lint', function gulpTaskSassLint() {
         gulp.src([config.app + '/scss/*.scss', config.app + '/scss/echo-base/**/*.scss'])
             .pipe(plumber({
-                errorHandler: function plumberSCSSLint(err) {
+                errorHandler: function plumberSassLint(err) {
                     notify.onError({
                         title: 'Sass-lint error',
                         message: '<%= error.message %>',
@@ -104,10 +104,11 @@
                     this.emit('end');
                 }
             }))
-            .pipe(scsslint())
-            .pipe(scsslint.failReporter())
+            .pipe(sassLint())
+            .pipe(sassLint.format())
+            .pipe(sassLint.failOnError())
             .pipe(notify({
-                message: 'Scss lint task complete'
+                message: 'Sass lint task complete'
             }));
     });
 

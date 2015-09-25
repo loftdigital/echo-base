@@ -98,8 +98,8 @@ $label-inline-cursor-disabled: not-allowed !default;
         @include label;
     }
 
-    input[type="radio"] + label,
-    input[type="checkbox"] + label {
+    input[type='radio'] + label,
+    input[type='checkbox'] + label {
         @include label-other;
     }
 

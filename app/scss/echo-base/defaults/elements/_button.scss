@@ -130,8 +130,8 @@ $button-color-hover: rgb(40, 40, 40) !default;
 @if $use-button-defaults {
 
     button,
-    input[type="button"],
-    input[type="submit"],
+    input[type='button'],
+    input[type='submit'],
     .button {
         @include button;
     }
