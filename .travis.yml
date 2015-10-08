@@ -5,4 +5,4 @@ before_script:
   - npm link
 script:
   - gulp tests
-  - npm lint
+  - gulp sass-lint
