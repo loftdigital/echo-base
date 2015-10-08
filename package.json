@@ -1,11 +1,11 @@
 {
   "name": "Echo-base",
   "version": "0.4.3",
-  "description": "",
+  "description": "Echo-base front-end framework",
   "main": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "sass-lint -v"
   },
   "author": "Loft Digital",
   "license": "MIT",
