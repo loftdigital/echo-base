@@ -71,8 +71,8 @@ $tr-background-color-even: palette(echo-base, grey, light) !default;
 //==============================================================================
 
 $th-padding-top: 1rem !default;
-$th-padding-bottom: 1rem !default;
 $th-padding-right: 1rem !default;
+$th-padding-bottom: 1rem !default;
 $th-padding-left: 1rem !default;
 $th-background-color: palette(echo-base, white) !default;
 $th-font-weight: $base-font-weight !default;
@@ -83,8 +83,8 @@ $th-font-weight: $base-font-weight !default;
 //==============================================================================
 
 $td-padding-top: 1rem !default;
-$td-padding-bottom: 1rem !default;
 $td-padding-right: 1rem !default;
+$td-padding-bottom: 1rem !default;
 $td-padding-left: 1rem !default;
 $td-font-weight: $base-font-weight !default;
 
@@ -100,9 +100,9 @@ $td-font-weight: $base-font-weight !default;
 }
 
 @mixin table-head {
-    border-bottom-width: $thead-border-bottom-width;
-    border-bottom-style: $thead-border-bottom-style;
     border-bottom-color: $thead-border-bottom-color;
+    border-bottom-style: $thead-border-bottom-style;
+    border-bottom-width: $thead-border-bottom-width;
 }
 
 @mixin table-row {
@@ -118,17 +118,17 @@ $td-font-weight: $base-font-weight !default;
 
 @mixin table-heading {
     padding-top: $th-padding-top;
-    padding-bottom: $th-padding-bottom;
     padding-right: $th-padding-right;
+    padding-bottom: $th-padding-bottom;
     padding-left: $th-padding-left;
-    background-color: $th-background-color;
     font-weight: $th-font-weight;
+    background-color: $th-background-color;
 }
 
 @mixin table-data {
     padding-top: $td-padding-top;
-    padding-bottom: $td-padding-bottom;
     padding-right: $td-padding-right;
+    padding-bottom: $td-padding-bottom;
     padding-left: $td-padding-left;
     font-weight: $td-font-weight;
 }

@@ -32,12 +32,12 @@ $use-fieldset-defaults: $use-echo-base-defaults !default;
 //  b. CSS defaults
 //==============================================================================
 
-$fieldset-padding-bottom: 0.5rem !default;
 $fieldset-padding-top: 0.5rem !default;
 $fieldset-padding-right: 0.5rem !default;
+$fieldset-padding-bottom: 0.5rem !default;
 $fieldset-padding-left: 0.5rem !default;
-$fieldset-margin-bottom: 1rem !default;
 $fieldset-margin-top: 0 !default;
+$fieldset-margin-bottom: 1rem !default;
 $fieldset-background-color: transparent !default;
 $fieldset-border-color: palette(echo-base, grey) !default;
 $fieldset-border-style: solid !default;
@@ -52,12 +52,12 @@ $fieldset-border-radius: $global-border-radius !default;
 //==============================================================================
 
 @mixin fieldset {
-    padding-bottom: $fieldset-padding-bottom;
     padding-top: $fieldset-padding-top;
     padding-right: $fieldset-padding-right;
+    padding-bottom: $fieldset-padding-bottom;
     padding-left: $fieldset-padding-left;
-    margin-bottom: $fieldset-margin-bottom;
     margin-top: $fieldset-margin-top;
+    margin-bottom: $fieldset-margin-bottom;
     background-color: $fieldset-background-color;
     border-color: $fieldset-border-color;
     border-style: $fieldset-border-style;

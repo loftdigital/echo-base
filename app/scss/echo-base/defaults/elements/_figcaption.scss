@@ -40,8 +40,8 @@ $figcaption-padding-bottom: 0 !default;
 $figcaption-padding-left: 0 !default;
 $figcaption-margin-top: 0 !default;
 $figcaption-margin-right: 0 !default;
-$figcaption-margin-left: 0 !default;
 $figcaption-margin-bottom: 0 !default;
+$figcaption-margin-left: 0 !default;
 $figcaption-background-color: transparent !default;
 $figcaption-border-color: transparent !default;
 $figcaption-border-style: solid !default;
@@ -75,19 +75,19 @@ $figcaption-appearance: none !default;
     margin-right: $figcaption-margin-right;
     margin-bottom: $figcaption-margin-bottom;
     margin-left: $figcaption-margin-left;
-    background-color: $figcaption-background-color;
-    border-color: $figcaption-border-color;
-    border-style: $figcaption-border-style;
-    border-width: $figcaption-border-width;
-    border-radius: $figcaption-border-radius;
     font-family: $figcaption-font-family;
     font-size: $figcaption-font-size;
     font-style: $figcaption-font-style;
     font-weight: $figcaption-font-weight;
     line-height: $figcaption-line-height;
+    letter-spacing: $figcaption-letter-spacing;
     color: $figcaption-color;
     text-transform: $figcaption-text-transform;
-    letter-spacing: $figcaption-letter-spacing;
+    background-color: $figcaption-background-color;
+    border-color: $figcaption-border-color;
+    border-style: $figcaption-border-style;
+    border-width: $figcaption-border-width;
+    border-radius: $figcaption-border-radius;
 }
 
 
