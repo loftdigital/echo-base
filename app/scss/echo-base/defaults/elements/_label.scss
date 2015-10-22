@@ -43,9 +43,9 @@ $label-text-transform: none !default;
 $label-letter-spacing: normal !default;
 
 $label-inline-display: inline-block !default;
-$label-inline-margin-bottom: 0 !default;
 $label-inline-margin-top: 0 !default;
 $label-inline-margin-right: 1rem !default;
+$label-inline-margin-bottom: 0 !default;
 $label-inline-margin-left: 0.5rem !default;
 $label-inline-vertical-align: baseline !default;
 
@@ -53,19 +53,24 @@ $label-inline-color-disabled: palette(echo-base, grey, dark) !default;
 $label-inline-cursor-disabled: not-allowed !default;
 
 
+
+
 //==============================================================================
 //  c. Mixins
 //==============================================================================
 
 @mixin label {
+    // Position
     display: $label-display;
+
+    // Typography
     font-size: $label-font-size;
-    font-weight: $label-font-weight;
     font-style: $label-font-style;
+    font-weight: $label-font-weight;
     line-height: $label-line-height;
+    letter-spacing: $label-letter-spacing;
     color: $label-color;
     text-transform: $label-text-transform;
-    letter-spacing: $label-letter-spacing;
 
     &[for] {
         cursor: $label-cursor;
@@ -73,10 +78,11 @@ $label-inline-cursor-disabled: not-allowed !default;
 }
 
 @mixin label-other {
+    // Position
     display: $label-inline-display;
-    margin-bottom: $label-inline-margin-bottom;
     margin-top: $label-inline-margin-top;
     margin-right: $label-inline-margin-right;
+    margin-bottom: $label-inline-margin-bottom;
     margin-left: $label-inline-margin-left;
     vertical-align: $label-inline-vertical-align;
 }
@@ -85,6 +91,7 @@ $label-inline-cursor-disabled: not-allowed !default;
     color: $label-inline-color-disabled;
     cursor: $label-inline-cursor-disabled;
 }
+
 
 
 
@@ -98,12 +105,14 @@ $label-inline-cursor-disabled: not-allowed !default;
         @include label;
     }
 
-    input[type='radio'] + label,
-    input[type='checkbox'] + label {
-        @include label-other;
-    }
+    input {
+        &[type='radio'] + label,
+        &[type='checkbox'] + label {
+            @include label-other;
+        }
 
-    input[disabled] + label {
-        @include label-disabled;
+        &[disabled] + label {
+            @include label-disabled;
+        }
     }
 }

@@ -36,13 +36,13 @@ $button-position: relative !default;
 $button-display: inline-block !default;
 $button-width: auto !default;
 $button-height: auto !default;
-$button-padding-bottom: 0.75rem !default;
 $button-padding-top: 0.75rem !default;
 $button-padding-right: 1rem !default;
+$button-padding-bottom: 0.75rem !default;
 $button-padding-left: 1rem !default;
-$button-margin-bottom: 1rem !default;
 $button-margin-top: 0 !default;
 $button-margin-right: 0 !default;
+$button-margin-bottom: 1rem !default;
 $button-margin-left: 0 !default;
 $button-cursor: pointer !default;
 $button-border-style: solid !default;
@@ -88,30 +88,30 @@ $button-color-hover: rgb(40, 40, 40) !default;
     display: $button-display;
     width: $button-width;
     height: $button-height;
-    padding-bottom: $button-padding-bottom;
     padding-top: $button-padding-top;
     padding-right: $button-padding-right;
+    padding-bottom: $button-padding-bottom;
     padding-left: $button-padding-left;
-    margin-bottom: $button-margin-bottom;
     margin-top: $button-margin-top;
     margin-right: $button-margin-right;
+    margin-bottom: $button-margin-bottom;
     margin-left: $button-margin-left;
-    cursor: $button-cursor;
-    border-style: $button-border-style;
-    border-width: $button-border-width;
-    border-radius: $button-border-radius;
     font-family: $button-font-family;
     font-size: $button-font-size;
     font-weight: $button-font-weight;
     line-height: $button-line-height;
+    color: $button-color;
     text-align: $button-text-align;
     text-decoration: $button-text-decoration;
     text-transform: $button-text-transform;
-    transition: $button-transition;
     vertical-align: $button-vertical-align;
+    cursor: $button-cursor;
     background-color: $button-background-color;
     border-color: $button-border-color;
-    color: $button-color;
+    border-style: $button-border-style;
+    border-width: $button-border-width;
+    border-radius: $button-border-radius;
+    transition: $button-transition;
 
     &:hover {
         color: $button-color-hover;
@@ -128,7 +128,7 @@ $button-color-hover: rgb(40, 40, 40) !default;
 //==============================================================================
 
 @if $use-button-defaults {
-
+    
     button,
     input[type='button'],
     input[type='submit'],

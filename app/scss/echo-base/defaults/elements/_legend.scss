@@ -50,11 +50,11 @@ $legend-letter-spacing: normal !default;
 @mixin legend {
     font-family: $legend-font-family;
     font-size: $legend-font-size;
-    font-weight: $legend-font-weight;
     font-style: $legend-font-style;
+    font-weight: $legend-font-weight;
+    letter-spacing: $legend-letter-spacing;
     color: $legend-color;
     text-transform: $legend-text-transform;
-    letter-spacing: $legend-letter-spacing;
 }
 
 
