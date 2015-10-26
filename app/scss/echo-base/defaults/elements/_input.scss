@@ -35,12 +35,12 @@ $use-input-defaults: $use-echo-base-defaults !default;
 $input-text-display: block !default;
 $input-text-width: 100% !default;
 $input-text-height: auto !default;
-$input-text-padding-bottom: 0.5rem !default;
 $input-text-padding-top: 0.75rem !default;
-$input-text-padding-left: 0.5rem !default;
 $input-text-padding-right: 0.5rem !default;
-$input-text-margin-bottom: 1rem !default;
+$input-text-padding-bottom: 0.5rem !default;
+$input-text-padding-left: 0.5rem !default;
 $input-text-margin-top: 0 !default;
+$input-text-margin-bottom: 1rem !default;
 $input-text-background-color: palette(echo-base, white) !default;
 $input-text-border-color: palette(echo-base, grey) !default;
 $input-text-border-style: solid !default;
@@ -96,32 +96,34 @@ $input-other-cursor-disabled: not-allowed !default;
 
 $input-search-box-sizing: $global-box-sizing !default;
 
+
+
+
 //==============================================================================
 //  c. Mixins
 //==============================================================================
 
 @mixin input {
-
     display: $input-text-display;
     width: $input-text-width;
     height: $input-text-height;
-    padding-bottom: $input-text-padding-bottom;
     padding-top: $input-text-padding-top;
-    padding-left: $input-text-padding-left;
     padding-right: $input-text-padding-right;
-    margin-bottom: $input-text-margin-bottom;
+    padding-bottom: $input-text-padding-bottom;
+    padding-left: $input-text-padding-left;
     margin-top: $input-text-margin-top;
+    margin-bottom: $input-text-margin-bottom;
+    font-family: $input-text-font-family;
+    font-size: $input-text-font-size;
+    font-weight: $input-text-font-weight;
+    line-height: $input-text-line-height;
+    color: $input-text-color;
     background-color: $input-text-background-color;
     border-color: $input-text-border-color;
     border-style: $input-text-border-style;
     border-width: $input-text-border-width;
     border-radius: $input-text-border-radius;
     box-shadow: $input-text-box-shadow;
-    color: $input-text-color;
-    font-family: $input-text-font-family;
-    font-size: $input-text-font-size;
-    font-weight: $input-text-font-weight;
-    line-height: $input-text-line-height;
     -moz-appearance: $input-text-appearance;
     -webkit-appearance: $input-text-appearance;
 
@@ -139,7 +141,6 @@ $input-search-box-sizing: $global-box-sizing !default;
         background-color: $input-text-background-color-disabled;
         border-color: $input-text-border-color-disabled;
     }
-
 }
 
 @mixin input-other {
@@ -148,38 +149,40 @@ $input-search-box-sizing: $global-box-sizing !default;
     &:disabled {
         cursor: $input-other-cursor-disabled;
     }
-
 }
+
+
+
 
 //==============================================================================
 //  d. Classes
 //==============================================================================
 
-
 @if $use-input-defaults {
+    input {
+        &[type='text'],
+        &[type='password'],
+        &[type='email'],
+        &[type='date'],
+        &[type='datetime'],
+        &[type='datetime-local'],
+        &[type='month'],
+        &[type='number'],
+        &[type='week'],
+        &[type='search'],
+        &[type='tel'],
+        &[type='time'],
+        &[type='url'] {
+            @include input;
+        }
 
-    input[type='text'],
-    input[type='password'],
-    input[type='email'],
-    input[type='date'],
-    input[type='datetime'],
-    input[type='datetime-local'],
-    input[type='month'],
-    input[type='number'],
-    input[type='week'],
-    input[type='search'],
-    input[type='tel'],
-    input[type='time'],
-    input[type='url'] {
-        @include input;
-    }
+        &[type='radio'],
+        &[type='checkbox'] {
+            @include input-other;
+        }
 
-    input[type='radio'],
-    input[type='checkbox'] {
-        @include input-other;
-    }
-
-    input[type='search'] {
-        box-sizing: $input-search-box-sizing;
+        &[type='search'] {
+            box-sizing: $input-search-box-sizing;
+        }
     }
 }

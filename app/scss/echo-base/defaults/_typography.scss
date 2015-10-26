@@ -339,14 +339,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h1 {
-    font-family: $h1-font-family;
-    font-weight: $h1-font-weight;
-    font-style: $h1-font-style;
-    color: $h1-color;
-    margin-bottom: $h1-margin-bottom;
     margin-top: $h1-margin-top;
-    text-rendering: $h1-font-text-rendering;
+    margin-bottom: $h1-margin-bottom;
+    font-family: $h1-font-family;
+    font-style: $h1-font-style;
+    font-weight: $h1-font-weight;
     letter-spacing: $h1-letter-spacing;
+    color: $h1-color;
+    text-rendering: $h1-font-text-rendering;
     text-transform: $h1-text-transform;
 
     @if mixin-exists(h1-text-size) {
@@ -367,14 +367,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h2 {
-    font-family: $h2-font-family;
-    font-weight: $h2-font-weight;
-    font-style: $h2-font-style;
-    color: $h2-color;
-    margin-bottom: $h2-margin-bottom;
     margin-top: $h2-margin-top;
-    text-rendering: $h2-font-text-rendering;
+    margin-bottom: $h2-margin-bottom;
+    font-family: $h2-font-family;
+    font-style: $h2-font-style;
+    font-weight: $h2-font-weight;
     letter-spacing: $h2-letter-spacing;
+    color: $h2-color;
+    text-rendering: $h2-font-text-rendering;
     text-transform: $h2-text-transform;
 
     @if mixin-exists(h2-text-size) {
@@ -395,14 +395,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h3 {
-    font-family: $h3-font-family;
-    font-weight: $h3-font-weight;
-    font-style: $h3-font-style;
-    color: $h3-color;
-    margin-bottom: $h3-margin-bottom;
     margin-top: $h3-margin-top;
-    text-rendering: $h3-font-text-rendering;
+    margin-bottom: $h3-margin-bottom;
+    font-family: $h3-font-family;
+    font-style: $h3-font-style;
+    font-weight: $h3-font-weight;
     letter-spacing: $h3-letter-spacing;
+    color: $h3-color;
+    text-rendering: $h3-font-text-rendering;
     text-transform: $h3-text-transform;
 
     @if mixin-exists(h3-text-size) {
@@ -423,14 +423,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h4 {
-    font-family: $h4-font-family;
-    font-weight: $h4-font-weight;
-    font-style: $h4-font-style;
-    color: $h4-color;
-    margin-bottom: $h4-margin-bottom;
     margin-top: $h4-margin-top;
-    text-rendering: $h4-font-text-rendering;
+    margin-bottom: $h4-margin-bottom;
+    font-family: $h4-font-family;
+    font-style: $h4-font-style;
+    font-weight: $h4-font-weight;
     letter-spacing: $h4-letter-spacing;
+    color: $h4-color;
+    text-rendering: $h4-font-text-rendering;
     text-transform: $h4-text-transform;
 
     @if mixin-exists(h4-text-size) {
@@ -451,14 +451,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h5 {
-    font-family: $h5-font-family;
-    font-weight: $h5-font-weight;
-    font-style: $h5-font-style;
-    color: $h5-color;
-    margin-bottom: $h5-margin-bottom;
     margin-top: $h5-margin-top;
-    text-rendering: $h5-font-text-rendering;
+    margin-bottom: $h5-margin-bottom;
+    font-family: $h5-font-family;
+    font-style: $h5-font-style;
+    font-weight: $h5-font-weight;
     letter-spacing: $h5-letter-spacing;
+    color: $h5-color;
+    text-rendering: $h5-font-text-rendering;
     text-transform: $h5-text-transform;
 
     @if mixin-exists(h5-text-size) {
@@ -479,14 +479,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin h6 {
-    font-family: $h6-font-family;
-    font-weight: $h6-font-weight;
-    font-style: $h6-font-style;
-    color: $h6-color;
-    margin-bottom: $h6-margin-bottom;
     margin-top: $h6-margin-top;
-    text-rendering: $h6-font-text-rendering;
+    margin-bottom: $h6-margin-bottom;
+    font-family: $h6-font-family;
+    font-style: $h6-font-style;
+    font-weight: $h6-font-weight;
     letter-spacing: $h6-letter-spacing;
+    color: $h6-color;
+    text-rendering: $h6-font-text-rendering;
     text-transform: $h6-text-transform;
 
     @if mixin-exists(h6-text-size) {
@@ -507,14 +507,14 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin p {
-    font-family: $p-font-family;
-    font-weight: $p-font-weight;
-    font-style: $p-font-style;
-    color: $p-color;
-    letter-spacing: $p-letter-spacing;
-    text-transform: $p-text-transform;
     margin-top: $p-margin-top;
     margin-bottom: $p-margin-bottom;
+    font-family: $p-font-family;
+    font-style: $p-font-style;
+    font-weight: $p-font-weight;
+    letter-spacing: $p-letter-spacing;
+    color: $p-color;
+    text-transform: $p-text-transform;
 
     @if mixin-exists(p-text-size) {
         @include p-text-size;
@@ -529,8 +529,8 @@ $code-border-radius: $global-border-radius !default;
 //==============================================================================
 
 @mixin anchor {
-    text-decoration: $a-text-decoration;
     color: $a-font-color;
+    text-decoration: $a-text-decoration;
     transition: $a-transition;
 
     &:hover {
@@ -545,15 +545,15 @@ $code-border-radius: $global-border-radius !default;
 //==============================================================================
 
 @mixin ul {
-    list-style-type: $ul-list-style-type;
-    margin-top: $ul-margin-top;
-    margin-bottom: $ul-margin-bottom;
-    margin-right: $ul-margin-right;
-    margin-left: $ul-margin-left;
     padding-top: $ul-padding-top;
-    padding-bottom: $ul-padding-bottom;
     padding-right: $ul-padding-right;
+    padding-bottom: $ul-padding-bottom;
     padding-left: $ul-padding-left;
+    margin-top: $ul-margin-top;
+    margin-right: $ul-margin-right;
+    margin-bottom: $ul-margin-bottom;
+    margin-left: $ul-margin-left;
+    list-style-type: $ul-list-style-type;
 }
 
 
@@ -562,15 +562,15 @@ $code-border-radius: $global-border-radius !default;
 //==============================================================================
 
 @mixin ol {
-    list-style-type: $ol-list-style-type;
-    margin-top: $ol-margin-top;
-    margin-bottom: $ol-margin-bottom;
-    margin-right: $ol-margin-right;
-    margin-left: $ol-margin-left;
     padding-top: $ol-padding-top;
-    padding-bottom: $ol-padding-bottom;
     padding-right: $ol-padding-right;
+    padding-bottom: $ol-padding-bottom;
     padding-left: $ol-padding-left;
+    margin-top: $ol-margin-top;
+    margin-right: $ol-margin-right;
+    margin-bottom: $ol-margin-bottom;
+    margin-left: $ol-margin-left;
+    list-style-type: $ol-list-style-type;
 }
 
 
@@ -584,20 +584,20 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin li {
-    font-family: $li-font-family;
-    font-weight: $li-font-weight;
-    font-style: $li-font-style;
-    color: $li-color;
-    letter-spacing: $li-letter-spacing;
-    text-transform: $li-text-transform;
-    margin-top: $li-margin-top;
-    margin-bottom: $li-margin-bottom;
-    margin-right: $li-margin-right;
-    margin-left: $li-margin-left;
     padding-top: $li-padding-top;
-    padding-bottom: $li-padding-bottom;
     padding-right: $li-padding-right;
+    padding-bottom: $li-padding-bottom;
     padding-left: $li-padding-left;
+    margin-top: $li-margin-top;
+    margin-right: $li-margin-right;
+    margin-bottom: $li-margin-bottom;
+    margin-left: $li-margin-left;
+    font-family: $li-font-family;
+    font-style: $li-font-style;
+    font-weight: $li-font-weight;
+    letter-spacing: $li-letter-spacing;
+    color: $li-color;
+    text-transform: $li-text-transform;
 
     @if mixin-exists(li-text-size) {
         @include li-text-size;
@@ -617,24 +617,24 @@ $code-border-radius: $global-border-radius !default;
 }
 
 @mixin blockquote {
-    font-family: $blockquote-font-family;
-    font-weight: $blockquote-font-weight;
-    font-style: $blockquote-font-style;
-    color: $blockquote-color;
-    letter-spacing: $blockquote-letter-spacing;
-    text-transform: $blockquote-text-transform;
-    margin-top: $blockquote-margin-top;
-    margin-bottom: $blockquote-margin-bottom;
-    margin-right: $blockquote-margin-right;
-    margin-left: $blockquote-margin-left;
     padding-top: $blockquote-padding-top;
-    padding-bottom: $blockquote-padding-bottom;
     padding-right: $blockquote-padding-right;
+    padding-bottom: $blockquote-padding-bottom;
     padding-left: $blockquote-padding-left;
+    margin-top: $blockquote-margin-top;
+    margin-right: $blockquote-margin-right;
+    margin-bottom: $blockquote-margin-bottom;
+    margin-left: $blockquote-margin-left;
+    font-family: $blockquote-font-family;
+    font-style: $blockquote-font-style;
+    font-weight: $blockquote-font-weight;
+    letter-spacing: $blockquote-letter-spacing;
+    color: $blockquote-color;
+    text-transform: $blockquote-text-transform;
     background-color: $blockquote-background-color;
-    border-left-width: $blockquote-border-left-width;
-    border-left-style: $blockquote-border-left-style;
     border-left-color: $blockquote-border-left-color;
+    border-left-style: $blockquote-border-left-style;
+    border-left-width: $blockquote-border-left-width;
 
     @if mixin-exists(blockquote-text-size) {
         @include blockquote-text-size;
@@ -658,15 +658,15 @@ $code-border-radius: $global-border-radius !default;
     padding: $code-padding;
     margin: $code-margin;
     font-family: $code-font-family;
-    font-weight: $code-font-weight;
     font-style: $code-font-style;
-    color: $code-color;
+    font-weight: $code-font-weight;
     letter-spacing: $code-letter-spacing;
+    color: $code-color;
     text-transform: $code-text-transform;
     background-color: $code-background-color;
-    border-width: $code-border-width;
-    border-style: $code-border-style;
     border-color: $code-border-color;
+    border-style: $code-border-style;
+    border-width: $code-border-width;
     border-radius: $code-border-radius;
 
     @if mixin-exists(code-text-size) {

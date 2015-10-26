@@ -34,14 +34,14 @@ $use-select-defaults: $use-echo-base-defaults !default;
 
 $select-width: 100% !default;
 $select-height: auto !default;
-$select-padding-bottom: 0.5rem !default;
 $select-padding-top: 0.75rem !default;
-$select-padding-left: 0.5rem !default;
 $select-padding-right: 0.5rem !default;
+$select-padding-bottom: 0.5rem !default;
+$select-padding-left: 0.5rem !default;
 $select-margin-bottom: 1rem !default;
 $select-margin-top: 0 !default;
 $select-background-color: palette(echo-base, white) !default;
-$select-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) !default;
+$select-background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+') !default;
 $select-background-repeat: no-repeat !default;
 $select-background-position: 100% center !default;
 $select-border-color: palette(echo-base, grey) !default;
@@ -88,14 +88,27 @@ $select-cursor-disabled: not-allowed !default;
 //==============================================================================
 
 @mixin select {
-    margin-bottom: $select-margin-bottom;
-    margin-top: $select-margin-top;
-    padding-bottom: $select-padding-bottom;
-    padding-top: $select-padding-top;
-    padding-left: $select-padding-left;
-    padding-right: $select-padding-right;
+    // Position
     width: $select-width;
     height: $select-height;
+    padding-top: $select-padding-top;
+    padding-right: $select-padding-right;
+    padding-bottom: $select-padding-bottom;
+    padding-left: $select-padding-left;
+    margin-top: $select-margin-top;
+    margin-bottom: $select-margin-bottom;
+
+    // Typography
+    font-family: $select-font-family;
+    font-size: $select-font-size;
+    font-style: $select-font-style;
+    font-weight: $select-font-weight;
+    line-height: $select-line-height;
+    letter-spacing: $select-letter-spacing;
+    color: $select-color;
+    text-transform: $select-text-transform;
+
+    // Style
     background-color: $select-background-color;
     background-image: $select-background-image;
     background-position: $select-background-position;
@@ -105,14 +118,8 @@ $select-cursor-disabled: not-allowed !default;
     border-width: $select-border-width;
     border-radius: $select-border-radius;
     box-shadow: $select-box-shadow;
-    color: $select-color;
-    font-family: $select-font-family;
-    font-size: $select-font-size;
-    font-weight: $select-font-weight;
-    font-style: $select-font-style;
-    line-height: $select-line-height;
-    text-transform: $select-text-transform;
-    letter-spacing: $select-letter-spacing;
+
+    // Misc
     -moz-appearance: $select-appearance;
     -webkit-appearance: $select-appearance;
 
