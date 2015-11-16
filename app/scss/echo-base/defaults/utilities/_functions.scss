@@ -78,9 +78,8 @@ $breakpoints: ();
 
     @if (length($custom-breakpoints) > 0) {
         @return map-merge($default-breakpoints, $custom-breakpoints);
-    } @else {
-        @return $default-breakpoints;
     }
+    @return $default-breakpoints;
 }
 
 
@@ -104,6 +103,8 @@ $breakpoints: ();
 /// @return {Map}
 
 @function breakpoint($key) {
+
+    $breakpoints: ();
 
     @if (length($breakpoints) == 0) {
         $breakpoints: setup-breakpoints();
@@ -179,21 +180,20 @@ $breakpoints: ();
 @function setup-key-list($key-list: false) {
 
     $key-string: '';
+    $flow: max-width;
 
     @if ($mobile-first == true) {
         $flow: min-width;
-    } @else {
-        $flow: max-width;
     }
 
     @if (length($key-list) > 1) {
         $key-string: breakpoint-range(nth($key-list, 1), nth($key-list, 2));
     } @else {
 
+        $breakpoint: nth($key-list, 1);
+
         @if (type-of(nth($key-list, 1)) != number) {
             $breakpoint: breakpoint(nth($key-list, 1));
-        } @else {
-            $breakpoint: nth($key-list, 1);
         }
 
         $key-string: '(' + $flow + ': ' + $breakpoint + ')';
@@ -272,10 +272,10 @@ $breakpoints: ();
         }
     }
 
+    $vals: ($secondary, $primary);
+
     @if $primary >= $secondary {
         $vals: ($primary, $secondary);
-    } @else {
-        $vals: ($secondary, $primary);
     }
 
     @if $mobile-first == true {
