@@ -1,6 +1,9 @@
 options:
   formatter: stylish
   merge-default-rules: false
+files:
+  include: 'app/**/*.scss'
+  ignore: 'app/tests/**/*.scss'
 rules:
   # Extends
   extends-before-mixins: 1
@@ -26,7 +29,7 @@ rules:
   no-ids: 1
   no-important: 1
   no-invalid-hex: 1
-  no-mergeable-selectors: 0
+  no-mergeable-selectors: 0 # TODO: Enable once sasstools/sass-lint#339 issue fixed
   no-misspelled-properties: 1
   no-qualifying-elements: 0
   no-trailing-zero: 1
