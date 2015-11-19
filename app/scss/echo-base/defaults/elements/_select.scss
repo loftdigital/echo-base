@@ -116,6 +116,7 @@ $select-cursor-disabled: not-allowed !default;
     appearance: $select-appearance;
 
     // Hide the dropdown arrow shown in newer IE versions
+    // TODO: Fix when sass-lint supports comment initiated rule disabling
     &::-ms-expand {
         display: none;
     }
