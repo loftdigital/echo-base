@@ -1,5 +1,6 @@
 options:
   formatter: stylish
+  merge-default-rules: false
 rules:
   # Extends
   extends-before-mixins: 1
