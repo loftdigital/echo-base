@@ -109,8 +109,7 @@ $textarea-cursor-disabled: not-allowed !default;
     line-height: $textarea-line-height;
     text-transform: $textarea-text-transform;
     letter-spacing: $textarea-letter-spacing;
-    -moz-appearance: $textarea-appearance;
-    -webkit-appearance: $textarea-appearance;
+    appearance: $textarea-appearance;
 
     &:focus {
         color: $textarea-color-focus;

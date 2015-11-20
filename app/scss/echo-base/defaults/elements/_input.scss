@@ -122,8 +122,7 @@ $input-search-box-sizing: $global-box-sizing !default;
     font-size: $input-text-font-size;
     font-weight: $input-text-font-weight;
     line-height: $input-text-line-height;
-    -moz-appearance: $input-text-appearance;
-    -webkit-appearance: $input-text-appearance;
+    appearance: $input-text-appearance;
 
     &:focus {
         color: $input-text-color-focus;
