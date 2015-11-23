@@ -11,6 +11,7 @@
   "author": "Loft Digital",
   "license": "MIT",
   "devDependencies": {
+    "bower": "^1.6.5",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
