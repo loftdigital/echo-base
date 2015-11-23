@@ -5,6 +5,7 @@
   "main": "",
   "private": true,
   "scripts": {
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Loft Digital",
