@@ -127,6 +127,7 @@
                     this.emit('end');
                 }
             }))
+            .pipe(sourcemaps.init())
             .pipe(sass({
                 style: 'expanded',
                 includePaths: ['./bower_components/susy/sass/'],
@@ -141,6 +142,7 @@
                 suffix: '.min'
             }))
             .pipe(minifyCSS())
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(config.dist + '/css/'))
             .pipe(notify({
                 message: 'Styles task complete'
