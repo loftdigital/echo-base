@@ -11,3 +11,19 @@ Echo-base is a front-end framework and has been developed with an aim of speedin
 Code and documentation copyright 2015 Loft Digital,
 
 Code released under [the MIT License](https://github.com/loftdigital/echo-base/blob/master/LICENSE)
+
+## Setup
+
+`npm install && bower install`
+
+to run echo-base and build
+
+`npm run build`
+
+## Tests
+
+Echo-base uses [sass-true](https://github.com/oddbird/true).
+
+To run the tests (also runs eslint)
+
+`npm test`
