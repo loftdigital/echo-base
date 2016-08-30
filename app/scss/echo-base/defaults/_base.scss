@@ -47,8 +47,8 @@ $hr-box-sizing: content-box !default;
 //==============================================================================
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: $global-box-sizing;
 }
 
