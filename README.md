@@ -8,7 +8,7 @@ Echo-base is a front-end framework and has been developed with an aim of speedin
 ## Further notes
 
 ### Copyright & License
-Code and documentation copyright 2015 Loft Digital,
+Code and documentation copyright 2016 Loft Digital,
 
 Code released under [the MIT License](https://github.com/loftdigital/echo-base/blob/master/LICENSE)
 
