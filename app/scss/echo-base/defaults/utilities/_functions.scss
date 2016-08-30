@@ -280,11 +280,11 @@ $breakpoints: ();
 
     @if $mobile-first == true {
 
-        @return '(min-width: ' + #{nth($vals, 2)} + ') and (' + 'max-width: ' + #{nth($vals, 1)} + ')';
+        @return '(min-width: ' + nth($vals, 2) + ') and (' + 'max-width: ' + nth($vals, 1) + ')';
 
     } @else {
 
-        @return '(max-width: ' + #{nth($vals, 1)} + ') and (' + 'min-width: ' + #{nth($vals, 2)} + ')';
+        @return '(max-width: ' + nth($vals, 1) + ') and (' + 'min-width: ' + nth($vals, 2) + ')';
 
     }
 }
@@ -394,7 +394,7 @@ $breakpoints: ();
             @return base-fallback($item, $type);
         } @else {
             @warn 'Wrong object type returned from palettes. Expecting ' + $type + ', got ' + type-of($item) + '!';
-            @return null;
+            @return false;
         }
     }
 }
