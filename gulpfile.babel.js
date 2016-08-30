@@ -110,7 +110,11 @@ import sequence from 'gulp-sequence';
           this.emit('end');
         },
       }))
-      .pipe(sassLint())
+      .pipe(sassLint({
+        files: {
+          ignore: `${config.app}/tests/**/*.scss`,
+        },
+      }))
       .pipe(sassLint.format())
       .pipe(sassLint.failOnError())
       .pipe(notify({
