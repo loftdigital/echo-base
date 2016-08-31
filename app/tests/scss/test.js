@@ -1,14 +1,11 @@
-//  @copyright 2015, Loft Digital, www.weareloft.com
+//  @copyright 2016, Loft Digital, www.weareloft.com
 //  Licensed under MIT (https://github.com/loftdigital/echo-base/blob/develop/LICENSE)
 
-(function () {
-    'use strict';
+import path from 'path';
+import truesass from 'sass-true';
 
-    var path = require('path'),
-        truesass = require('sass-true');
+(() => {
+  const sassFile = path.join(__dirname, 'test.scss');
 
-    var sassFile = path.join(__dirname, 'test.scss');
-
-    truesass.runSass({file: sassFile}, describe, it);
-
+  truesass.runSass({ file: sassFile }, describe, it);
 })();
